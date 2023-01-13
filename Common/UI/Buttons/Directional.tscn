@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://drwq23rlohss0"]
+
+[ext_resource type="Script" path="res://Common/UI/Buttons/Directional.gd" id="1_hkf75"]
+
+[node name="Directional" type="Button"]
+flat = true
+script = ExtResource("1_hkf75")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

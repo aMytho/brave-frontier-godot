@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Texture2D" uid="uid://dr3kfgmlfmaph" path="res://Area/UI/header_title_base1.png" id="1_p0qym"]
+[ext_resource type="Script" path="res://Common/UI/BackSection.gd" id="2_eg57i"]
+[ext_resource type="Texture2D" uid="uid://cc6wi3j1fauxp" path="res://Area/UI/header_back_btn1.png" id="3_l480x"]
+[ext_resource type="Texture2D" uid="uid://b1cbd4kbt5ij4" path="res://Area/UI/header_back_btn2.png" id="4_gdk34"]
+[ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="5_qr6hk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_twduu"]
+texture = ExtResource("3_l480x")
+region_rect = Rect2(0, 0, 110, 88)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4so82"]
+texture = ExtResource("3_l480x")
+region_rect = Rect2(0, 0, 110, 88)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q2hxx"]
+texture = ExtResource("4_gdk34")
+region_rect = Rect2(0, 0, 110, 88)
+
+[node name="BackSection" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_p0qym")
+script = ExtResource("2_eg57i")
+
+[node name="Back" type="Button" parent="."]
+offset_top = 2.0
+offset_right = 96.0
+offset_bottom = 82.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_twduu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4so82")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q2hxx")
+
+[node name="SectionHeading" type="Label" parent="."]
+offset_left = 112.0
+offset_top = 24.0
+offset_right = 384.0
+offset_bottom = 66.0
+theme_override_fonts/font = ExtResource("5_qr6hk")
+theme_override_font_sizes/font_size = 34
+text = "Unit"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

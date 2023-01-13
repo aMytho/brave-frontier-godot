@@ -1,0 +1,13 @@
+[gd_resource type="AnimatedTexture" load_steps=4 format=3 uid="uid://dcmx86738cdsa"]
+
+[ext_resource type="Texture2D" uid="uid://bjicrevyx0qaj" path="res://Common/UI/Buttons/Textures/ArrowLeft_52x53.png" id="1_xg7rb"]
+[ext_resource type="Texture2D" uid="uid://b0wi8vok6onob" path="res://Common/UI/Buttons/Textures/ArrowLeft_47x53.png" id="2_t8hn4"]
+[ext_resource type="Texture2D" uid="uid://dyeskfxkwmcdk" path="res://Common/UI/Buttons/Textures/ArrowLeft_51x55.png" id="3_hdc2c"]
+
+[resource]
+frames = 3
+frame_0/texture = ExtResource("1_xg7rb")
+frame_1/texture = ExtResource("2_t8hn4")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_hdc2c")
+frame_2/duration = 1.0
