@@ -1,0 +1,219 @@
+[gd_scene load_steps=22 format=3 uid="uid://cyfml6jsu4fn8"]
+
+[ext_resource type="Texture2D" uid="uid://bkyewhpihrr81" path="res://Battle/UI/battle_ui.png" id="1_0qsqw"]
+[ext_resource type="Script" path="res://Battle/UI/battle_ui.gd" id="1_23wcj"]
+[ext_resource type="PackedScene" uid="uid://bowmdjvwjl874" path="res://Battle/UI/unit.tscn" id="2_nec6n"]
+[ext_resource type="Texture2D" uid="uid://dut14u74yy55d" path="res://Battle/UI/battle_speed_btn1_1.png" id="3_7u56d"]
+[ext_resource type="Texture2D" uid="uid://bjuqeprhebhg" path="res://Battle/UI/battle_speed_btn2_1.png" id="4_xxyad"]
+[ext_resource type="Texture2D" uid="uid://8s1qic3meye5" path="res://Battle/UI/battle_auto_btn1.png" id="5_rhd5n"]
+[ext_resource type="Texture2D" uid="uid://cyu54fdxofqtt" path="res://Battle/UI/battle_auto_btn2.png" id="6_6k537"]
+[ext_resource type="Texture2D" uid="uid://b1ssjhwsadrkk" path="res://Battle/UI/iphx_footer.png" id="7_vq6j1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwo8k"]
+atlas = ExtResource("1_0qsqw")
+region = Rect2(0, 240, 640, 120)
+
+[sub_resource type="Gradient" id="Gradient_l8yft"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xjcv3"]
+gradient = SubResource("Gradient_l8yft")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1fir"]
+atlas = ExtResource("1_0qsqw")
+region = Rect2(1, 526, 597, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr7uk"]
+atlas = ExtResource("1_0qsqw")
+region = Rect2(1, 1014, 619, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ckwn"]
+atlas = ExtResource("1_0qsqw")
+region = Rect2(297, 962, 193, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwrrj"]
+atlas = ExtResource("1_0qsqw")
+region = Rect2(2, 984, 600, 11)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vuv6a"]
+texture = ExtResource("3_7u56d")
+region_rect = Rect2(0, 0, 77, 42)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ja6ig"]
+texture = ExtResource("3_7u56d")
+region_rect = Rect2(0, 0, 77, 42)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hrxwy"]
+texture = ExtResource("4_xxyad")
+region_rect = Rect2(0, 0, 77, 42)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8a60c"]
+texture = ExtResource("5_rhd5n")
+region_rect = Rect2(0, 0, 77, 42)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ni1h"]
+texture = ExtResource("5_rhd5n")
+region_rect = Rect2(0, 0, 77, 42)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xss0a"]
+texture = ExtResource("6_6k537")
+region_rect = Rect2(0, 0, 77, 42)
+
+[node name="BattleUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_23wcj")
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -5
+layout_mode = 0
+offset_top = 86.0
+offset_right = 645.0
+offset_bottom = 501.0
+color = Color(0, 0, 0, 1)
+
+[node name="EnemyHealth" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_dwo8k")
+
+[node name="HP" type="Label" parent="EnemyHealth"]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 89.0
+offset_right = 621.0
+offset_bottom = 115.0
+text = "HP: 48%"
+
+[node name="HPBar" type="TextureProgressBar" parent="EnemyHealth"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 93.0
+offset_right = 63.0
+offset_bottom = 133.0
+value = 50.0
+allow_greater = true
+texture_under = SubResource("GradientTexture1D_xjcv3")
+texture_progress = SubResource("AtlasTexture_h1fir")
+
+[node name="Name" type="Label" parent="EnemyHealth"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 56.0
+offset_right = 251.0
+offset_bottom = 90.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Leshy A"
+
+[node name="Turns" type="Label" parent="."]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 20.0
+offset_right = 215.0
+offset_bottom = 51.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "TURN 1"
+
+[node name="Unit1" parent="." instance=ExtResource("2_nec6n")]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 115.0
+offset_right = 321.0
+offset_bottom = 232.0
+
+[node name="Unit2" parent="." instance=ExtResource("2_nec6n")]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 115.0
+offset_right = 641.0
+offset_bottom = 232.0
+
+[node name="Unit3" parent="." instance=ExtResource("2_nec6n")]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 229.0
+offset_right = 321.0
+offset_bottom = 346.0
+
+[node name="Unit4" parent="." instance=ExtResource("2_nec6n")]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 229.0
+offset_right = 641.0
+offset_bottom = 346.0
+
+[node name="Unit5" parent="." instance=ExtResource("2_nec6n")]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 346.0
+offset_right = 321.0
+offset_bottom = 463.0
+
+[node name="Unit6" parent="." instance=ExtResource("2_nec6n")]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 346.0
+offset_right = 641.0
+offset_bottom = 463.0
+
+[node name="Overdrive" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 462.0
+offset_right = 627.0
+offset_bottom = 479.0
+texture = SubResource("AtlasTexture_pr7uk")
+
+[node name="OverdriveLabel" type="TextureRect" parent="Overdrive"]
+layout_mode = 0
+offset_left = 219.0
+offset_top = -7.0
+offset_right = 412.0
+offset_bottom = 13.0
+texture = SubResource("AtlasTexture_6ckwn")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Overdrive"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 3.0
+offset_right = 611.0
+offset_bottom = 14.0
+value = 30.0
+texture_progress = SubResource("AtlasTexture_dwrrj")
+
+[node name="ChangeSpeed" type="Button" parent="."]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 38.0
+offset_right = 593.0
+offset_bottom = 77.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_vuv6a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ja6ig")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hrxwy")
+
+[node name="ChangeAuto" type="Button" parent="."]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 38.0
+offset_right = 525.0
+offset_bottom = 77.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_8a60c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3ni1h")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xss0a")
+
+[node name="Footer" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 481.0
+offset_right = 644.0
+offset_bottom = 661.0
+texture = ExtResource("7_vq6j1")

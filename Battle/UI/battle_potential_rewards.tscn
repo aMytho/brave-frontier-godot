@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4vk7tm5thel5"]
+
+[ext_resource type="Texture2D" uid="uid://0ru2mjsicek" path="res://Battle/UI/battle_header_ip5.png" id="1_3cd8r"]
+[ext_resource type="Texture2D" uid="uid://bkyewhpihrr81" path="res://Battle/UI/battle_ui.png" id="2_aw2a4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhjrh"]
+atlas = ExtResource("2_aw2a4")
+region = Rect2(326, 120, 148, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylejr"]
+atlas = ExtResource("2_aw2a4")
+region = Rect2(326, 156, 153, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kdm3"]
+atlas = ExtResource("2_aw2a4")
+region = Rect2(326, 192, 99, 32)
+
+[node name="BattlePotentialRewards" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+offset_bottom = -985.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3cd8r")
+
+[node name="Zel" type="TextureRect" parent="."]
+offset_top = 37.0
+offset_right = 148.0
+offset_bottom = 69.0
+texture = SubResource("AtlasTexture_xhjrh")
+
+[node name="Label" type="Label" parent="Zel"]
+offset_left = 35.0
+offset_top = 4.0
+offset_right = 119.0
+offset_bottom = 30.0
+text = "X00000000"
+
+[node name="Karma" type="TextureRect" parent="."]
+offset_left = 274.0
+offset_top = 38.0
+offset_right = 427.0
+offset_bottom = 70.0
+texture = SubResource("AtlasTexture_ylejr")
+
+[node name="Label" type="Label" parent="Karma"]
+offset_left = 37.0
+offset_top = 5.0
+offset_right = 130.0
+offset_bottom = 31.0
+text = "X00000000"
+
+[node name="Units" type="TextureRect" parent="."]
+offset_left = 456.0
+offset_top = 38.0
+offset_right = 555.0
+offset_bottom = 70.0
+texture = SubResource("AtlasTexture_2kdm3")
+
+[node name="Label" type="Label" parent="Units"]
+offset_left = 33.0
+offset_top = 5.0
+offset_right = 73.0
+offset_bottom = 31.0
+text = "x00"

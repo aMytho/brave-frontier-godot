@@ -1,0 +1,174 @@
+[gd_scene load_steps=16 format=3 uid="uid://bowmdjvwjl874"]
+
+[ext_resource type="Texture2D" uid="uid://bkyewhpihrr81" path="res://Battle/UI/battle_ui.png" id="1_lidtk"]
+[ext_resource type="Script" path="res://Battle/UI/unit.gd" id="2_fo5lh"]
+[ext_resource type="Texture2D" uid="uid://bsv37n2mfi26x" path="res://Units/Battle/unit_ills_battle_10011.png" id="2_o6xfs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2iv17"]
+atlas = ExtResource("1_lidtk")
+region = Rect2(2, 2, 320, 117)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3qx3l"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/battle_ui.png-bb93a0b5e37aec3c383ef9f17de593db.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yynhi"]
+resource_local_to_scene = true
+atlas = SubResource("CompressedTexture2D_3qx3l")
+region = Rect2(37.3265, 919.037, 26.4718, 26.4719)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3gik"]
+atlas = ExtResource("1_lidtk")
+region = Rect2(439, 50, 185, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjqh6"]
+atlas = ExtResource("1_lidtk")
+region = Rect2(2, 545, 176, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cln5v"]
+atlas = ExtResource("1_lidtk")
+region = Rect2(440, 91, 184, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3pa1"]
+atlas = ExtResource("1_lidtk")
+region = Rect2(182, 545, 176, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cd8qs"]
+atlas = ExtResource("1_lidtk")
+region = Rect2(300, 861, 110, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tn3ip"]
+atlas = ExtResource("1_lidtk")
+region = Rect2(443, 17, 182, 23)
+
+[sub_resource type="Animation" id="Animation_l6lax"]
+resource_name = "Idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.842, 1), Vector2(3.405, 1.3), Vector2(1.843, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yklab"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dqfs5"]
+_data = {
+"Idle": SubResource("Animation_l6lax"),
+"RESET": SubResource("Animation_yklab")
+}
+
+[node name="Unit" type="TextureRect"]
+clip_contents = true
+offset_right = 320.0
+offset_bottom = 117.0
+texture = SubResource("AtlasTexture_2iv17")
+script = ExtResource("2_fo5lh")
+
+[node name="Element" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 79.0
+offset_right = 35.0
+offset_bottom = 114.0
+texture = SubResource("AtlasTexture_yynhi")
+
+[node name="PlayerFrame" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 9.0
+offset_top = 2.0
+offset_right = 117.0
+offset_bottom = 110.0
+texture = ExtResource("2_o6xfs")
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 12.0
+offset_right = 238.0
+offset_bottom = 38.0
+text = "Flaming Vargas"
+
+[node name="HPContainer" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 51.0
+offset_right = 305.0
+offset_bottom = 78.0
+texture = SubResource("AtlasTexture_a3gik")
+
+[node name="Bar" type="TextureProgressBar" parent="HPContainer"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 13.0
+offset_right = 181.0
+offset_bottom = 24.0
+value = 100.0
+texture_progress = SubResource("AtlasTexture_pjqh6")
+
+[node name="Label" type="Label" parent="HPContainer"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = -19.0
+offset_right = 101.0
+offset_bottom = 7.0
+text = "500 / 500"
+
+[node name="BBContainer" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 89.0
+offset_right = 306.0
+offset_bottom = 104.0
+texture = SubResource("AtlasTexture_cln5v")
+
+[node name="Bar" type="TextureProgressBar" parent="BBContainer"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 179.0
+offset_bottom = 13.0
+value = 70.0
+texture_progress = SubResource("AtlasTexture_o3pa1")
+
+[node name="BBIcon" type="TextureRect" parent="BBContainer"]
+layout_mode = 0
+offset_top = -12.0
+offset_right = 110.0
+texture = SubResource("AtlasTexture_cd8qs")
+
+[node name="BBAnimation" type="TextureRect" parent="."]
+z_index = -2
+layout_mode = 0
+offset_left = -29.0
+offset_top = 4.0
+offset_right = 278.0
+offset_bottom = 102.0
+texture = SubResource("AtlasTexture_tn3ip")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BBAnimation"]
+autoplay = "Idle"
+libraries = {
+"": SubResource("AnimationLibrary_dqfs5")
+}

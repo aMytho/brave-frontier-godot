@@ -1,0 +1,118 @@
+[gd_scene load_steps=16 format=3 uid="uid://b532tqkq87p26"]
+
+[ext_resource type="PackedScene" uid="uid://cyfml6jsu4fn8" path="res://Battle/UI/battle_ui.tscn" id="1_3sce7"]
+[ext_resource type="Script" path="res://Battle/battle.gd" id="1_qlwco"]
+[ext_resource type="PackedScene" uid="uid://b4vk7tm5thel5" path="res://Battle/UI/battle_potential_rewards.tscn" id="3_hj1dv"]
+[ext_resource type="Texture2D" uid="uid://ctfc4iwsqiwes" path="res://Units/Battle/unit_anime_30030.png" id="4_oweeh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlgnm"]
+atlas = ExtResource("4_oweeh")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu2o5"]
+atlas = ExtResource("4_oweeh")
+region = Rect2(0, 42, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ou6ko"]
+atlas = ExtResource("4_oweeh")
+region = Rect2(42, 84, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwjx4"]
+atlas = ExtResource("4_oweeh")
+region = Rect2(84, 84, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kicv"]
+atlas = ExtResource("4_oweeh")
+region = Rect2(42, 42, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qn426"]
+atlas = ExtResource("4_oweeh")
+region = Rect2(0, 84, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga7tm"]
+atlas = ExtResource("4_oweeh")
+region = Rect2(84, 42, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60d1n"]
+atlas = ExtResource("4_oweeh")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exapg"]
+atlas = ExtResource("4_oweeh")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r53ox"]
+atlas = ExtResource("4_oweeh")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_plfdq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlgnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu2o5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ou6ko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ou6ko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwjx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kicv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qn426")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga7tm")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60d1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exapg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r53ox")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_qlwco")
+
+[node name="BattleUI" parent="." instance=ExtResource("1_3sce7")]
+offset_top = 453.0
+offset_bottom = 453.0
+
+[node name="BattlePotentialRewards" parent="." instance=ExtResource("3_hj1dv")]
+anchors_preset = 0
+offset_right = 642.0
+offset_bottom = 95.0
+
+[node name="GreenBoi" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(469, 379)
+scale = Vector2(1.47619, 1.47619)
+frames = SubResource("SpriteFrames_plfdq")
+animation = &"Attack"
+playing = true
+
+[node name="BG" type="TextureRect" parent="."]
+z_index = -4
+offset_top = 89.0
+offset_right = 643.0
+offset_bottom = 543.0
