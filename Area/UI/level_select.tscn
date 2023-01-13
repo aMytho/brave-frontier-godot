@@ -1,0 +1,158 @@
+[gd_scene load_steps=18 format=3 uid="uid://bntu4pet8um37"]
+
+[ext_resource type="Script" path="res://Area/UI/level_select.gd" id="1_r46r0"]
+[ext_resource type="Texture2D" uid="uid://dr3kfgmlfmaph" path="res://Area/UI/header_title_base1.png" id="2_3ka7g"]
+[ext_resource type="Texture2D" uid="uid://cc6wi3j1fauxp" path="res://Area/UI/header_back_btn1.png" id="3_8g4wu"]
+[ext_resource type="Texture2D" uid="uid://b1cbd4kbt5ij4" path="res://Area/UI/header_back_btn2.png" id="4_manpb"]
+[ext_resource type="Texture2D" uid="uid://mfugs6jrdl2h" path="res://Area/UI/info_btn1.png" id="5_skl8h"]
+[ext_resource type="Texture2D" uid="uid://bblmm7emq2ctj" path="res://Area/UI/info_btn2.png" id="6_0ui82"]
+[ext_resource type="Texture2D" uid="uid://dqmfs8lpdy2n2" path="res://Area/UI/home_btn_label1.png" id="7_kgys4"]
+[ext_resource type="Texture2D" uid="uid://c56voygrsqxuf" path="res://Menu/Footer/footer_base.png" id="8_6qtp6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3kjm7"]
+texture = ExtResource("3_8g4wu")
+region_rect = Rect2(0, 0, 110, 88)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sd0rd"]
+texture = ExtResource("3_8g4wu")
+region_rect = Rect2(0, 0, 110, 88)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5wvwe"]
+texture = ExtResource("4_manpb")
+region_rect = Rect2(0, 0, 110, 88)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rvsij"]
+texture = ExtResource("5_skl8h")
+region_rect = Rect2(0, 0, 592, 156)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8triy"]
+texture = ExtResource("5_skl8h")
+region_rect = Rect2(0, 0, 592, 156)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_anxsq"]
+texture = ExtResource("6_0ui82")
+region_rect = Rect2(0, 0, 592, 156)
+
+[sub_resource type="Animation" id="Animation_6urgj"]
+resource_name = "MovingText"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-236, 875), Vector2(700, 875)]
+}
+
+[sub_resource type="Animation" id="Animation_phpcm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-236, 1051)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_83b73"]
+_data = {
+"MovingText": SubResource("Animation_6urgj"),
+"RESET": SubResource("Animation_phpcm")
+}
+
+[node name="Level Select" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_r46r0")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 2.0
+offset_top = 153.0
+offset_right = 639.0
+offset_bottom = 791.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="Levels" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+theme_override_constants/separation = 43
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_top = 36.0
+offset_right = 419.0
+offset_bottom = 124.0
+texture = ExtResource("2_3ka7g")
+
+[node name="AreaName" type="Label" parent="TextureRect"]
+offset_left = 111.0
+offset_top = 22.0
+offset_right = 306.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 29
+text = "The Great Plains"
+
+[node name="Button" type="Button" parent="TextureRect"]
+offset_left = -3.0
+offset_top = 6.0
+offset_right = 104.0
+offset_bottom = 79.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_3kjm7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_sd0rd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5wvwe")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 445.0
+offset_top = 46.0
+offset_right = 585.0
+offset_bottom = 114.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_rvsij")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8triy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_anxsq")
+
+[node name="TextureRect" type="TextureRect" parent="Button"]
+offset_left = -22.0
+offset_top = 2.0
+offset_right = 166.0
+offset_bottom = 66.0
+texture = ExtResource("7_kgys4")
+
+[node name="Message" type="Label" parent="."]
+z_index = 1
+offset_left = -236.0
+offset_top = 1051.0
+offset_right = -25.0
+offset_bottom = 1077.0
+text = "Choose a good map please!"
+
+[node name="MessageBackground" type="TextureRect" parent="."]
+editor_description = "Can someone please tell me why this is so long?"
+offset_left = -0.109375
+offset_top = 1012.0
+offset_right = 232.891
+offset_bottom = 2040.0
+rotation = -1.57079
+texture = ExtResource("8_6qtp6")
+ignore_texture_size = true
+
+[node name="MessageAnimate" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Message")
+autoplay = "MovingText"
+libraries = {
+"": SubResource("AnimationLibrary_83b73")
+}
+
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_home_button_pressed"]

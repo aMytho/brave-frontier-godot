@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://pca8ydb76fnm"]
+
+[ext_resource type="Script" path="res://Area/Dungeons/dungeon_base.gd" id="1_eei1n"]
+
+[resource]
+script = ExtResource("1_eei1n")
+id = null
+name = null
+position = null

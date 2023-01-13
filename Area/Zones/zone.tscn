@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://334dykex8j0n"]
+
+[ext_resource type="Script" path="res://Area/Zones/zone.gd" id="1_tlvf5"]
+[ext_resource type="Resource" uid="uid://df1q6xrrfp471" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/basics_of_battle.tres" id="2_4w5t3"]
+
+[node name="Zone" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tlvf5")
+zone = ExtResource("2_4w5t3")
+
+[node name="ZoneMusic" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0

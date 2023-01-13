@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=3 uid="uid://bd7tlsm7lviqn"]
+
+[ext_resource type="Texture2D" uid="uid://djbh1wxmdewjh" path="res://Area/World/area_0001_iph5.jpg" id="1_fk1dn"]
+[ext_resource type="Script" path="res://Area/World/mistral.gd" id="1_l83ve"]
+[ext_resource type="Texture2D" uid="uid://cngvyovg6rtve" path="res://Area/World/grand_map_name_btn1.png" id="2_hbjgy"]
+[ext_resource type="Texture2D" uid="uid://c2i1pwr0e78e0" path="res://Area/UI/grand_map_name_frame_off.png" id="4_8pe0v"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v0dp3"]
+texture = ExtResource("2_hbjgy")
+region_rect = Rect2(0, 0, 204, 79)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_na8ss"]
+texture = ExtResource("4_8pe0v")
+region_rect = Rect2(0, 0, 204, 79)
+modulate_color = Color(0.372549, 0.372549, 0.372549, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afenm"]
+texture = ExtResource("4_8pe0v")
+region_rect = Rect2(0, 0, 204, 79)
+modulate_color = Color(0.372549, 0.372549, 0.372549, 1)
+
+[node name="Mistral" type="Node2D"]
+script = ExtResource("1_l83ve")
+
+[node name="Background" type="TextureRect" parent="."]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_fk1dn")
+
+[node name="Button" type="Button" parent="Background"]
+offset_left = 214.0
+offset_top = 1033.0
+offset_right = 407.0
+offset_bottom = 1063.0
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxTexture_v0dp3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_na8ss")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_afenm")
+text = "Greenery Area"
+
+[node name="Button2" type="Button" parent="Background"]
+offset_left = 22.0
+offset_top = 739.0
+offset_right = 215.0
+offset_bottom = 769.0
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxTexture_v0dp3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_na8ss")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_afenm")
+text = "Burny Cave"
+
+[node name="Button3" type="Button" parent="Background"]
+offset_left = 315.0
+offset_top = 699.0
+offset_right = 508.0
+offset_bottom = 729.0
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxTexture_v0dp3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_na8ss")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_afenm")
+text = "Cold Boi"
+
+[node name="Button4" type="Button" parent="Background"]
+offset_left = 221.0
+offset_top = 512.0
+offset_right = 414.0
+offset_bottom = 542.0
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxTexture_v0dp3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_na8ss")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_afenm")
+text = "IDK, swamps?"
+
+[node name="Button5" type="Button" parent="Background"]
+offset_left = 41.0
+offset_top = 285.0
+offset_right = 234.0
+offset_bottom = 315.0
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxTexture_v0dp3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_na8ss")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_afenm")
+text = "Cold Mansion"
+
+[node name="Button6" type="Button" parent="Background"]
+offset_left = 318.0
+offset_top = 36.0
+offset_right = 511.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxTexture_v0dp3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_na8ss")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_afenm")
+text = "Mistral Tower"
+
+[connection signal="pressed" from="Background/Button" to="." method="_on_button_pressed"]

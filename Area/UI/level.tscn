@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://vl6y330j5xuf"]
+
+[ext_resource type="Texture2D" uid="uid://dds3s772cbpb7" path="res://Area/UI/list_frame3.png" id="1_5sde8"]
+[ext_resource type="Script" path="res://Area/UI/level.gd" id="1_fn0st"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gww5b"]
+texture = ExtResource("1_5sde8")
+region_rect = Rect2(14.9992, 18, 609.379, 111.843)
+
+[sub_resource type="SystemFont" id="SystemFont_h1l3l"]
+
+[node name="level" type="Control"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 3
+anchors_preset = 0
+offset_bottom = 151.0
+script = ExtResource("1_fn0st")
+
+[node name="LevelSelectButton" type="Button" parent="."]
+unique_name_in_owner = true
+offset_right = 640.0
+offset_bottom = 163.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_gww5b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gww5b")
+alignment = 0
+
+[node name="Energy" type="Label" parent="LevelSelectButton"]
+offset_left = 479.0
+offset_top = 14.0
+offset_right = 548.0
+offset_bottom = 47.0
+theme_override_font_sizes/font_size = 21
+text = "Energy"
+
+[node name="Battles" type="Label" parent="LevelSelectButton"]
+offset_left = 479.0
+offset_top = 45.0
+offset_right = 549.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 21
+text = "Battles"
+
+[node name="EnergyAmount" type="Label" parent="LevelSelectButton"]
+unique_name_in_owner = true
+offset_left = 556.0
+offset_top = 14.0
+offset_right = 625.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0.980392, 0.658824, 0, 1)
+theme_override_font_sizes/font_size = 21
+text = "2"
+
+[node name="BattleCount" type="Label" parent="LevelSelectButton"]
+unique_name_in_owner = true
+offset_left = 558.0
+offset_top = 45.0
+offset_right = 628.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.980392, 0.658824, 0, 1)
+theme_override_font_sizes/font_size = 21
+text = "5"
+
+[node name="LevelName" type="Label" parent="LevelSelectButton"]
+unique_name_in_owner = true
+offset_left = 69.0
+offset_top = 15.0
+offset_right = 338.0
+offset_bottom = 53.0
+theme_override_fonts/font = SubResource("SystemFont_h1l3l")
+theme_override_font_sizes/font_size = 25
+text = "A Basic Prarie"
+
+[node name="Label" type="Label" parent="LevelSelectButton"]
+unique_name_in_owner = true
+offset_left = 68.0
+offset_top = 101.0
+offset_right = 612.0
+offset_bottom = 161.0
+text = "This is a long amount of text for all sorts of lorem ipsum and more t
+this is event more text hmmmmmm aaaa bbb ccc ddd eee ff gg h.. !"
+
+[connection signal="pressed" from="LevelSelectButton" to="." method="_on_level_select_button_pressed"]

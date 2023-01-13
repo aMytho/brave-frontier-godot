@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cwg3m082yntnw"]
+
+[ext_resource type="Script" path="res://Area/Zones/zone_base.gd" id="1_p43sx"]
+
+[resource]
+script = ExtResource("1_p43sx")
