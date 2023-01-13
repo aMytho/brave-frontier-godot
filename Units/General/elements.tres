@@ -1,0 +1,41 @@
+[gd_resource type="AnimatedTexture" load_steps=8 format=3 uid="uid://4c27luviuuhm"]
+
+[ext_resource type="Texture2D" uid="uid://bkyewhpihrr81" path="res://Battle/UI/battle_ui.png" id="1_x32ec"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmxb6"]
+atlas = ExtResource("1_x32ec")
+region = Rect2(37.3631, 919.695, 26.0018, 25.5347)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06ged"]
+atlas = ExtResource("1_x32ec")
+region = Rect2(64.366, 919.764, 26.01, 26.4469)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a481"]
+atlas = ExtResource("1_x32ec")
+region = Rect2(91.7662, 919.904, 25.6327, 25.4828)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rv7e"]
+atlas = ExtResource("1_x32ec")
+region = Rect2(118.427, 919.764, 25.961, 25.5754)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exsb4"]
+atlas = ExtResource("1_x32ec")
+region = Rect2(145.601, 919.883, 25.7668, 24.9531)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63m6f"]
+atlas = ExtResource("1_x32ec")
+region = Rect2(172.434, 919.777, 25.8957, 26.1534)
+
+[resource]
+frames = 6
+frame_0/texture = SubResource("AtlasTexture_xmxb6")
+frame_1/texture = SubResource("AtlasTexture_06ged")
+frame_1/duration = 1.0
+frame_2/texture = SubResource("AtlasTexture_7a481")
+frame_2/duration = 1.0
+frame_3/texture = SubResource("AtlasTexture_0rv7e")
+frame_3/duration = 1.0
+frame_4/texture = SubResource("AtlasTexture_exsb4")
+frame_4/duration = 1.0
+frame_5/texture = SubResource("AtlasTexture_63m6f")
+frame_5/duration = 1.0

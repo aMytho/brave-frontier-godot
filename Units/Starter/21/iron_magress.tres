@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://cih3slrsdk1y5"]
+
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_8k5d3"]
+[ext_resource type="Texture2D" uid="uid://cnidsukf76pfx" path="res://Units/Starter/21/unit_ills_battle_60011.png" id="1_bt55p"]
+[ext_resource type="Texture2D" uid="uid://cbeu0al0c5ugr" path="res://Units/Starter/21/unit_ills_full_60011.png" id="2_m7ceq"]
+[ext_resource type="Texture2D" uid="uid://bo1ygxhhtdsl2" path="res://Units/Starter/21/unit_ills_thum_60011.png" id="4_ph35h"]
+
+[resource]
+script = ExtResource("1_8k5d3")
+unit_number = 21
+data_id = 60011
+name = "Iron Magress"
+element = "Dark"
+gender = "Male"
+rarity = 2
+cost = 2
+arena_type = 2
+level = 0
+max_level = 30
+HP = 1500
+ATK = 430
+DEF = 530
+REC = 120
+skills = null
+thumbnail = ExtResource("4_ph35h")
+battle_thumbnail = ExtResource("1_bt55p")
+full_sprite = ExtResource("2_m7ceq")
+unit_lore = "A knight from the utterly devastated Bariura Empire, he later became one of the Six Heroes. As a cavalry leader's son, from childhood he knew of the empire's wish of unifying the continent. He joined the cavalry at 16 intent on gaining the skills necessary to defeat anything that stood in his way. His talent grew quickly and he was soon considered for promotion."

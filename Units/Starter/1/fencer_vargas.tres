@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://bm8fnsc5i603j"]
+
+[ext_resource type="Texture2D" uid="uid://dq1ki4lshcx1e" path="res://Units/Starter/1/unit_ills_full_10011.png" id="1_kiq5b"]
+[ext_resource type="Texture2D" uid="uid://cahc3s563ddg5" path="res://Units/Starter/1/unit_ills_battle_10011.png" id="1_u40pv"]
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="2_cwhko"]
+[ext_resource type="Texture2D" uid="uid://bwqmqpt7rcwwh" path="res://Units/Starter/1/unit_ills_thum_10011.png" id="4_08g4v"]
+
+[resource]
+script = ExtResource("2_cwhko")
+unit_number = 1
+data_id = 10011
+name = "Fencer Vargas"
+element = "String"
+gender = "Male"
+rarity = 2
+cost = 2
+arena_type = 0
+level = 1
+max_level = 12
+HP = 1030
+ATK = 500
+DEF = 410
+REC = 320
+skills = []
+thumbnail = ExtResource("4_08g4v")
+battle_thumbnail = ExtResource("1_u40pv")
+full_sprite = ExtResource("1_kiq5b")
+unit_lore = "A swordsman from the ruined Agni Empire, he later became one of the Six Heroes. Proud of his late father, a Knight in the Order of Agni, he trained in the long sword, becoming a formidable knight. Although he is well-known for his countless victories over other warriors, he still considers himself inexperienced and continues to train with great zeal."
