@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bji6fifkfyo5a"
+path="res://.godot/imported/1-04 The Shining Sun and Greenery.mp3-15d9a2442c18f7c33fa918fcff9d3480.mp3str"
+
+[deps]
+
+source_file="res://Music/1-04 The Shining Sun and Greenery.mp3"
+dest_files=["res://.godot/imported/1-04 The Shining Sun and Greenery.mp3-15d9a2442c18f7c33fa918fcff9d3480.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

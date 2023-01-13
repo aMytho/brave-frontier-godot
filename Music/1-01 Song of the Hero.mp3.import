@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c01y1ia7wy3ly"
+path="res://.godot/imported/1-01 Song of the Hero.mp3-cd799170449ffd82e6830915442cb0bc.mp3str"
+
+[deps]
+
+source_file="res://Music/1-01 Song of the Hero.mp3"
+dest_files=["res://.godot/imported/1-01 Song of the Hero.mp3-cd799170449ffd82e6830915442cb0bc.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
