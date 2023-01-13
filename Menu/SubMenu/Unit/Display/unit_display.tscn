@@ -1,0 +1,224 @@
+[gd_scene load_steps=11 format=3 uid="uid://45f871efb2ur"]
+
+[ext_resource type="PackedScene" uid="uid://xhjlg8cryvhc" path="res://Menu/SubMenu/Unit/StatusFrame/status_frame.tscn" id="1_3eneo"]
+[ext_resource type="Script" path="res://Menu/SubMenu/Unit/Display/unit_display.gd" id="1_u13lf"]
+[ext_resource type="Resource" uid="uid://bm8fnsc5i603j" path="res://Units/Starter/1/fencer_vargas.tres" id="2_owl5q"]
+[ext_resource type="Texture2D" uid="uid://cdo0jtv2xinjb" path="res://Menu/SubMenu/Unit/Display/leader_burst_label.png" id="4_xr3k8"]
+[ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="5_lo3ah"]
+[ext_resource type="FontFile" uid="uid://dsk2n5ffuertq" path="res://Common/Arial.ttf" id="6_co6qm"]
+[ext_resource type="Texture2D" uid="uid://b0n0pwb7kady0" path="res://Menu/SubMenu/Unit/Display/item_frame_3.png" id="7_jg8yi"]
+[ext_resource type="Texture2D" uid="uid://ctxkmxvv54cod" path="res://Menu/SubMenu/Unit/Display/dl_bar_frame.png" id="8_o0l6u"]
+[ext_resource type="Texture2D" uid="uid://dk328fi2aetu" path="res://Menu/SubMenu/Unit/Display/dl_bar.png" id="9_v57w4"]
+[ext_resource type="PackedScene" uid="uid://ba64usl71qkx8" path="res://Common/UI/back_section.tscn" id="10_06unq"]
+
+[node name="UnitDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u13lf")
+unit = ExtResource("2_owl5q")
+
+[node name="Character" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 176.0
+offset_right = 40.0
+offset_bottom = 216.0
+
+[node name="Type" parent="." instance=ExtResource("1_3eneo")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 131.0
+offset_right = 165.0
+offset_bottom = 195.0
+value = "Guardian"
+
+[node name="Lv" parent="." instance=ExtResource("1_3eneo")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 181.0
+offset_right = 165.0
+offset_bottom = 245.0
+description = 2
+
+[node name="NextLv" parent="." instance=ExtResource("1_3eneo")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 231.0
+offset_right = 165.0
+offset_bottom = 295.0
+description = 3
+
+[node name="Hp" parent="." instance=ExtResource("1_3eneo")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 341.0
+offset_right = 165.0
+offset_bottom = 405.0
+description = 4
+value = "14378"
+
+[node name="Atk" parent="." instance=ExtResource("1_3eneo")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 392.0
+offset_right = 165.0
+offset_bottom = 456.0
+description = 5
+value = "5694"
+
+[node name="Def" parent="." instance=ExtResource("1_3eneo")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 443.0
+offset_right = 165.0
+offset_bottom = 507.0
+description = 6
+value = "5746"
+
+[node name="Rec" parent="." instance=ExtResource("1_3eneo")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 494.0
+offset_right = 165.0
+offset_bottom = 558.0
+description = 7
+value = "4811"
+
+[node name="Cost" parent="." instance=ExtResource("1_3eneo")]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 580.0
+offset_right = 632.0
+offset_bottom = 644.0
+description = 2
+
+[node name="Sp" parent="." instance=ExtResource("1_3eneo")]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 636.0
+offset_right = 632.0
+offset_bottom = 700.0
+description = 10
+value = "100"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_top = 836.0
+offset_right = 643.0
+offset_bottom = 1026.0
+texture = ExtResource("4_xr3k8")
+
+[node name="LeaderSkill" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 8.0
+offset_right = 429.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.901961, 0.588235, 0.0431373, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("5_lo3ah")
+theme_override_font_sizes/font_size = 21
+text = "Blazing Feat of Glory"
+
+[node name="Brave Burst" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 104.0
+offset_right = 429.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(0.901961, 0.588235, 0.0431373, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("5_lo3ah")
+theme_override_font_sizes/font_size = 21
+text = "Blazing Feat of Glory"
+
+[node name="LeaderSkillDescription" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 56.0
+offset_right = 677.0
+offset_bottom = 84.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("6_co6qm")
+theme_override_font_sizes/font_size = 22
+text = "25% spark damage, damage taken fills BB gauge and 50% HP boost."
+
+[node name="BraveBurstDescription" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 152.0
+offset_right = 677.0
+offset_bottom = 180.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("6_co6qm")
+theme_override_font_sizes/font_size = 22
+text = "25% spark damage, damage taken fills BB gauge and 50% HP boost."
+
+[node name="Item1Frame" parent="." instance=ExtResource("1_3eneo")]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 677.0
+offset_right = 230.0
+offset_bottom = 741.0
+description = 0
+value = "Empty"
+
+[node name="Item1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 677.0
+offset_right = 91.0
+offset_bottom = 739.0
+texture = ExtResource("7_jg8yi")
+ignore_texture_size = true
+
+[node name="Item2Frame" parent="." instance=ExtResource("1_3eneo")]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 750.0
+offset_right = 229.0
+offset_bottom = 814.0
+description = 0
+value = "Empty"
+
+[node name="Item2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 750.0
+offset_right = 90.0
+offset_bottom = 812.0
+texture = ExtResource("7_jg8yi")
+ignore_texture_size = true
+
+[node name="ExpContainer" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 301.0
+offset_right = 397.0
+offset_bottom = 326.0
+scale = Vector2(0.5, 1)
+texture = ExtResource("8_o0l6u")
+ignore_texture_size = true
+
+[node name="ExpBar" type="TextureProgressBar" parent="ExpContainer"]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 361.0
+offset_bottom = 25.0
+value = 100.0
+texture_progress = ExtResource("9_v57w4")
+
+[node name="BackSection" parent="." instance=ExtResource("10_06unq")]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 419.0
+offset_bottom = 112.0
+heading = "Unit No.8376"
