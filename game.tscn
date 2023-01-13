@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvintu8hyr1oq"]
+
+[ext_resource type="PackedScene" uid="uid://befbdkxgyv5qk" path="res://Title and Load/titleScreen.tscn" id="1_8433n"]
+[ext_resource type="Script" path="res://BackgroundMusic.gd" id="1_m7u6l"]
+[ext_resource type="Script" path="res://GameContent.gd" id="2_7aou3"]
+
+[sub_resource type="Animation" id="Animation_ud8ox"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_bkl6i"]
+resource_name = "Start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, -16.0]
+}
+
+[sub_resource type="Animation" id="Animation_dqcvl"]
+resource_name = "Stop"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-16.0, -80.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_841bc"]
+_data = {
+"RESET": SubResource("Animation_ud8ox"),
+"Start": SubResource("Animation_bkl6i"),
+"Stop": SubResource("Animation_dqcvl")
+}
+
+[node name="Game" type="Node2D"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_m7u6l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundMusic"]
+libraries = {
+"": SubResource("AnimationLibrary_841bc")
+}
+
+[node name="GameContent" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_7aou3")
+
+[node name="Title" parent="GameContent" instance=ExtResource("1_8433n")]
+
+[connection signal="startPlaying" from="BackgroundMusic" to="BackgroundMusic" method="_on_start_playing"]
+[connection signal="animation_finished" from="BackgroundMusic/AnimationPlayer" to="BackgroundMusic" method="_on_animation_player_animation_finished"]
