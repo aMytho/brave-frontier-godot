@@ -1,0 +1,117 @@
+[gd_scene load_steps=12 format=3 uid="uid://cfjusbq63v5kd"]
+
+[ext_resource type="Texture2D" uid="uid://5kke0gl38upw" path="res://Title and Load/Loading_56x64.png" id="1_3sw3a"]
+[ext_resource type="Script" path="res://Title and Load/load.gd" id="1_rde3m"]
+[ext_resource type="Texture2D" uid="uid://bblx0xxk1hveg" path="res://Title and Load/Loading_64x64.png" id="2_8j4j5"]
+[ext_resource type="Texture2D" uid="uid://0rb6bhg8bjes" path="res://Title and Load/Loading_72x64.png" id="3_qtpou"]
+[ext_resource type="Texture2D" uid="uid://rjthu48ukmhk" path="res://Title and Load/Loading_20x20.png" id="4_uag7d"]
+
+[sub_resource type="Gradient" id="Gradient_72y07"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_57a7o"]
+gradient = SubResource("Gradient_72y07")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2vi81"]
+animations = [{
+"frames": [ExtResource("1_3sw3a"), ExtResource("2_8j4j5"), ExtResource("3_qtpou")],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_kkidi"]
+resource_name = "Dust"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.321, 0.321), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(355, 540), Vector2(370, 540)]
+}
+
+[sub_resource type="Animation" id="Animation_uehln"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(360, 536)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.321, 0.321)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nvjog"]
+_data = {
+"Dust": SubResource("Animation_kkidi"),
+"RESET": SubResource("Animation_uehln")
+}
+
+[node name="Load" type="Node2D"]
+script = ExtResource("1_rde3m")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 643.0
+offset_bottom = 1080.0
+texture = SubResource("GradientTexture1D_57a7o")
+metadata/_edit_use_anchors_ = true
+
+[node name="Character" type="AnimatedSprite2D" parent="."]
+position = Vector2(320, 520)
+frames = SubResource("SpriteFrames_2vi81")
+playing = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 292.0
+offset_top = 552.0
+offset_right = 367.0
+offset_bottom = 578.0
+text = "Loading..."
+metadata/_edit_use_anchors_ = true
+
+[node name="Dust" type="Sprite2D" parent="."]
+position = Vector2(360, 536)
+scale = Vector2(0.321, 0.321)
+texture = ExtResource("4_uag7d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dust"]
+autoplay = "Dust"
+libraries = {
+"": SubResource("AnimationLibrary_nvjog")
+}

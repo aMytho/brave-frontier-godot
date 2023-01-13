@@ -1,0 +1,208 @@
+[gd_scene load_steps=22 format=3 uid="uid://befbdkxgyv5qk"]
+
+[ext_resource type="Script" path="res://startGame.gd" id="1_u5emr"]
+[ext_resource type="Texture2D" uid="uid://cino0hqryo7ae" path="res://Title and Load/title_logo2.jpg" id="2_hxqcl"]
+[ext_resource type="Texture2D" uid="uid://dfwjiybx0k3h1" path="res://Title and Load/spotlight_8.png" id="4_f5806"]
+[ext_resource type="Texture2D" uid="uid://b7lwy5xccju6l" path="res://Title and Load/title_msg.png" id="4_y81k8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yh7iv"]
+light_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_2ro35"]
+offsets = PackedFloat32Array(0, 0.539033, 1)
+colors = PackedColorArray(0.6, 0.423529, 0.176471, 1, 1, 0.945098, 0.564706, 1, 0.6, 0.423529, 0.176471, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m13m3"]
+gradient = SubResource("Gradient_2ro35")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p7msp"]
+lifetime_randomness = 0.13
+particle_flag_disable_z = true
+direction = Vector3(1, -2, 0)
+spread = 90.0
+gravity = Vector3(0, -90, 0)
+initial_velocity_max = 471.83
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -223.1
+angle_max = 273.8
+color = Color(1, 0.811765, 0.0823529, 1)
+
+[sub_resource type="Gradient" id="Gradient_mev65"]
+colors = PackedColorArray(0, 0, 0, 0.490196, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_v166e"]
+noise_type = 2
+seed = 2
+frequency = 0.037
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_n0fns"]
+width = 6
+height = 10
+color_ramp = SubResource("Gradient_mev65")
+noise = SubResource("FastNoiseLite_v166e")
+
+[sub_resource type="Curve" id="Curve_aoar1"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, -183.273), 0.0, 0.0, 0, 0, Vector2(0.976923, -170.182), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_q1xjr"]
+curve = SubResource("Curve_aoar1")
+
+[sub_resource type="Curve" id="Curve_3tweb"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, -0.490909), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_mufp2"]
+curve = SubResource("Curve_3tweb")
+
+[sub_resource type="Curve" id="Curve_a08oe"]
+_data = [Vector2(0.0269231, 0.527273), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_qbprm"]
+curve = SubResource("Curve_a08oe")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_am24w"]
+emission_shape = 1
+emission_sphere_radius = 9.11
+particle_flag_disable_z = true
+direction = Vector3(0, -90, 0)
+spread = 50.0
+gravity = Vector3(0, -20, 0)
+initial_velocity_min = 54.34
+initial_velocity_max = 108.69
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = 2.0
+linear_accel_max = 2.0
+damping_min = 0.88
+damping_max = 1.54
+angle_min = 40.6
+angle_max = 40.6
+angle_curve = SubResource("CurveTexture_q1xjr")
+scale_min = 1.36
+scale_max = 2.72
+scale_curve = SubResource("CurveTexture_qbprm")
+color = Color(0.980392, 0.988235, 0, 1)
+hue_variation_min = -0.24
+hue_variation_max = 0.07
+hue_variation_curve = SubResource("CurveTexture_mufp2")
+
+[sub_resource type="Animation" id="Animation_sptuq"]
+resource_name = "FadeInOut"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ujkyu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.945098, 0.564706, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h0eup"]
+_data = {
+"FadeInOut": SubResource("Animation_sptuq"),
+"RESET": SubResource("Animation_ujkyu")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_u5emr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+offset_right = 643.0
+offset_bottom = 1136.0
+texture = ExtResource("2_hxqcl")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+material = SubResource("CanvasItemMaterial_yh7iv")
+position = Vector2(316, 991)
+scale = Vector2(6.375, 0.500001)
+texture = SubResource("GradientTexture2D_m13m3")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(302, 1165)
+amount = 13
+process_material = SubResource("ParticleProcessMaterial_p7msp")
+texture = SubResource("NoiseTexture2D_n0fns")
+lifetime = 4.0
+randomness = 0.27
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(302, 1165)
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_am24w")
+texture = ExtResource("4_f5806")
+lifetime = 6.0
+explosiveness = 0.2
+randomness = 0.27
+
+[node name="Touch Screen" type="TextureRect" parent="."]
+offset_left = -2.0
+offset_top = 899.0
+offset_right = 638.0
+offset_bottom = 1011.0
+texture = ExtResource("4_y81k8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Touch Screen"]
+autoplay = "FadeInOut"
+libraries = {
+"": SubResource("AnimationLibrary_h0eup")
+}
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0
+
+[connection signal="gui_input" from="Touch Screen" to="." method="_on_touch_screen_gui_input"]
