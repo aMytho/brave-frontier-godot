@@ -1,0 +1,152 @@
+[gd_scene load_steps=10 format=3 uid="uid://deju04gojis2b"]
+
+[ext_resource type="Texture2D" uid="uid://brik7s8hrmic8" path="res://Menu/SubMenu/Home/Characters/background.png" id="1_v8bqk"]
+[ext_resource type="Script" path="res://Menu/SubMenu/Home/character_frame.gd" id="2_v1sb0"]
+[ext_resource type="Texture2D" uid="uid://5asncioitkyg" path="res://Menu/SubMenu/Home/Characters/Glows/fire_1.png" id="3_j5aw7"]
+[ext_resource type="Texture2D" uid="uid://c08i88n1k3pc0" path="res://Menu/SubMenu/Home/Characters/Glows/fire_2.png" id="4_dii10"]
+[ext_resource type="Texture2D" uid="uid://xpejquqq0cjy" path="res://Menu/SubMenu/Home/Characters/Glows/fire_4.png" id="5_55ts2"]
+[ext_resource type="Texture2D" uid="uid://esl0q3v4bx7r" path="res://Menu/SubMenu/Home/Characters/Glows/fire_3.png" id="6_5anuk"]
+
+[sub_resource type="Animation" id="Animation_606h6"]
+resource_name = "Cat"
+length = 13.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("anim1:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.74902), Color(1, 1, 1, 0.498039), Color(1, 1, 1, 0.247059), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim2:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3, 4, 5, 6.1, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.74902), Color(1, 1, 1, 0.498039), Color(1, 1, 1, 0.247059), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("anim4:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(6, 7, 8, 9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.74902), Color(1, 1, 1, 0.498039), Color(1, 1, 1, 0.247059), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("anim3:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(9, 10, 11, 12, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.74902), Color(1, 1, 1, 0.498039), Color(1, 1, 1, 0.247059), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ijoya"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("anim1:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim2:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("anim4:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("anim3:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m77jj"]
+_data = {
+"Cat": SubResource("Animation_606h6"),
+"RESET": SubResource("Animation_ijoya")
+}
+
+[node name="character_frame" type="TextureRect"]
+offset_right = 130.0
+offset_bottom = 330.0
+texture = ExtResource("1_v8bqk")
+script = ExtResource("2_v1sb0")
+
+[node name="anim1" type="TextureRect" parent="."]
+offset_right = 130.0
+offset_bottom = 330.0
+texture = ExtResource("3_j5aw7")
+
+[node name="anim2" type="TextureRect" parent="."]
+offset_right = 130.0
+offset_bottom = 330.0
+texture = ExtResource("4_dii10")
+
+[node name="anim3" type="TextureRect" parent="."]
+offset_right = 130.0
+offset_bottom = 330.0
+texture = ExtResource("5_55ts2")
+
+[node name="anim4" type="TextureRect" parent="."]
+offset_right = 130.0
+offset_bottom = 330.0
+texture = ExtResource("6_5anuk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Cat"
+playback_speed = -3.0
+libraries = {
+"": SubResource("AnimationLibrary_m77jj")
+}

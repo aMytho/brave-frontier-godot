@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b08d1lxgq7d4s"]
+
+[ext_resource type="Script" path="res://Menu/Footer/footer_button.gd" id="2_80ss1"]
+
+[node name="FooterButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+flat = true
+script = ExtResource("2_80ss1")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

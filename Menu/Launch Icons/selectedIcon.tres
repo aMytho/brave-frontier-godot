@@ -1,0 +1,10 @@
+[gd_resource type="AnimatedTexture" load_steps=3 format=3 uid="uid://bbpkpiowg5cdj"]
+
+[ext_resource type="Texture2D" uid="uid://d1ebi5j4wftln" path="res://Menu/Launch Icons/inactiveIcon.png" id="1_aeqbr"]
+[ext_resource type="Texture2D" uid="uid://d38vj141texe6" path="res://Menu/Launch Icons/activeIcon.png" id="2_i8xvr"]
+
+[resource]
+frames = 2
+frame_0/texture = ExtResource("1_aeqbr")
+frame_1/texture = ExtResource("2_i8xvr")
+frame_1/duration = 1.0

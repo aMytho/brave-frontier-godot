@@ -1,0 +1,163 @@
+[gd_scene load_steps=15 format=3 uid="uid://c5dlinvyudexr"]
+
+[ext_resource type="Texture2D" uid="uid://c56voygrsqxuf" path="res://Menu/Footer/footer_base.png" id="1_e2y2r"]
+[ext_resource type="Script" path="res://Menu/Footer/footer.gd" id="1_gk5ed"]
+[ext_resource type="PackedScene" uid="uid://b08d1lxgq7d4s" path="res://Menu/Footer/footer_button.tscn" id="2_xiryr"]
+[ext_resource type="Texture2D" uid="uid://duio133n0tlde" path="res://Menu/Footer/unit.png" id="3_7a3tw"]
+[ext_resource type="Texture2D" uid="uid://cl72f6srcd1s" path="res://Menu/Footer/home.png" id="3_7vtx8"]
+[ext_resource type="Texture2D" uid="uid://bvmcybgupww6c" path="res://Menu/Footer/town.png" id="4_mp4ih"]
+[ext_resource type="Texture2D" uid="uid://c0b3j0osy18i7" path="res://Menu/Footer/shop.png" id="5_b22u2"]
+[ext_resource type="Texture2D" uid="uid://gys8rbxpdaqh" path="res://Menu/Footer/summon.png" id="6_fl517"]
+[ext_resource type="Texture2D" uid="uid://bd5a5r21mhwxa" path="res://Menu/Footer/social.png" id="7_nfr07"]
+
+[sub_resource type="Animation" id="Animation_86fue"]
+resource_name = "MovingText"
+length = 5.0
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-200, 950), Vector2(800, 950)]
+}
+
+[sub_resource type="Animation" id="Animation_l4ule"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(303, 573)]
+}
+
+[sub_resource type="Animation" id="Animation_yktx2"]
+resource_name = "SETUP"
+length = 0.001
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(303, 573)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_anhmh"]
+_data = {
+"MovingText": SubResource("Animation_86fue"),
+"RESET": SubResource("Animation_l4ule"),
+"SETUP": SubResource("Animation_yktx2")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnuy2"]
+atlas = ExtResource("1_e2y2r")
+region = Rect2(1, 0, 156, 645)
+
+[node name="Footer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_gk5ed")
+
+[node name="Label" type="Label" parent="."]
+show_behind_parent = true
+offset_left = 303.0
+offset_top = 573.0
+offset_right = 967.019
+offset_bottom = 599.0
+text = "ooooooo, pretty icons!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Label")
+autoplay = "MovingText"
+playback_speed = -1.0
+libraries = {
+"": SubResource("AnimationLibrary_anhmh")
+}
+
+[node name="FooterBG" type="TextureRect" parent="."]
+editor_description = "Can someone please tell me why this is so long?"
+z_index = -1
+offset_top = 1081.0
+offset_right = 137.0
+offset_bottom = 1723.0
+rotation = -1.57079
+texture = SubResource("AtlasTexture_xnuy2")
+ignore_texture_size = true
+
+[node name="FooterContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FooterButton1" parent="FooterContainer" instance=ExtResource("2_xiryr")]
+offset_left = -4.0
+offset_top = 979.0
+offset_right = 114.0
+offset_bottom = 1097.0
+icon = ExtResource("3_7vtx8")
+button = ExtResource("3_7vtx8")
+id = 1
+
+[node name="FooterButton2" parent="FooterContainer" instance=ExtResource("2_xiryr")]
+offset_left = 103.0
+offset_top = 978.0
+offset_right = 221.0
+offset_bottom = 1096.0
+icon = ExtResource("3_7a3tw")
+button = ExtResource("3_7a3tw")
+id = 2
+
+[node name="FooterButton3" parent="FooterContainer" instance=ExtResource("2_xiryr")]
+offset_left = 208.0
+offset_top = 978.0
+offset_right = 326.0
+offset_bottom = 1096.0
+icon = ExtResource("4_mp4ih")
+button = ExtResource("4_mp4ih")
+id = 3
+
+[node name="FooterButton4" parent="FooterContainer" instance=ExtResource("2_xiryr")]
+offset_left = 314.0
+offset_top = 978.0
+offset_right = 432.0
+offset_bottom = 1096.0
+icon = ExtResource("5_b22u2")
+button = ExtResource("5_b22u2")
+id = 4
+
+[node name="FooterButton5" parent="FooterContainer" instance=ExtResource("2_xiryr")]
+offset_left = 420.0
+offset_top = 979.0
+offset_right = 538.0
+offset_bottom = 1097.0
+icon = ExtResource("6_fl517")
+button = ExtResource("6_fl517")
+id = 5
+
+[node name="FooterButton6" parent="FooterContainer" instance=ExtResource("2_xiryr")]
+offset_left = 528.0
+offset_top = 979.0
+offset_right = 646.0
+offset_bottom = 1097.0
+icon = ExtResource("7_nfr07")
+button = ExtResource("7_nfr07")
+id = 6
