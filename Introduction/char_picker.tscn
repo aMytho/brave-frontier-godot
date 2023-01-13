@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://b0ml6talx8agr"]
+
+[ext_resource type="Texture2D" uid="uid://bdrkulj7v5s5m" path="res://Introduction/Summon.png" id="1_5b6wm"]
+[ext_resource type="Script" path="res://Introduction/char_picker.gd" id="1_ou334"]
+[ext_resource type="Shader" path="res://Introduction/char_picker.gdshader" id="1_y1qms"]
+[ext_resource type="PackedScene" uid="uid://drwq23rlohss0" path="res://Common/UI/Buttons/Directional.tscn" id="3_ufr18"]
+[ext_resource type="Texture2D" uid="uid://dcmx86738cdsa" path="res://Common/UI/Buttons/Textures/left.tres" id="4_21ey6"]
+[ext_resource type="Texture2D" uid="uid://bly3ctegc7ako" path="res://Common/UI/Buttons/Textures/right.tres" id="5_esp5r"]
+[ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="6_3tngc"]
+[ext_resource type="Script" path="res://Introduction/Lore.gd" id="8_xng4u"]
+[ext_resource type="PackedScene" uid="uid://cnhuvcugf1glt" path="res://Common/UI/Buttons/large_button.tscn" id="9_7lrrp"]
+[ext_resource type="Texture2D" uid="uid://cvvnk3cmx0u2c" path="res://Introduction/LeaderMark4_118x32.png" id="10_lakrn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gsccm"]
+shader = ExtResource("1_y1qms")
+shader_parameter/fov = 90.0
+shader_parameter/cull_back = false
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 60.0
+shader_parameter/inset = 0.104
+
+[node name="CharPicker" type="ColorRect"]
+offset_right = 646.0
+offset_bottom = 1081.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_ou334")
+
+[node name="SummonCircle" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_gsccm")
+offset_left = 16.0
+offset_top = 264.0
+offset_right = 619.0
+offset_bottom = 866.0
+texture = ExtResource("1_5b6wm")
+ignore_texture_size = true
+
+[node name="Left" parent="." instance=ExtResource("3_ufr18")]
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 123.0
+offset_bottom = 95.0
+icon = ExtResource("4_21ey6")
+
+[node name="Right" parent="." instance=ExtResource("3_ufr18")]
+offset_left = 512.0
+offset_top = 33.0
+offset_right = 571.0
+offset_bottom = 96.0
+icon = ExtResource("5_esp5r")
+direction = "Right"
+
+[node name="Lore" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 832.0
+offset_right = 632.0
+offset_bottom = 968.0
+theme_override_fonts/font = ExtResource("6_3tngc")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+autowrap_mode = 3
+script = ExtResource("8_xng4u")
+
+[node name="Unit" type="TextureRect" parent="."]
+offset_top = 96.0
+offset_right = 40.0
+offset_bottom = 136.0
+
+[node name="Button" parent="." instance=ExtResource("9_7lrrp")]
+offset_left = 224.0
+offset_top = 16.0
+offset_right = 484.0
+offset_bottom = 172.0
+scale = Vector2(0.7, 0.7)
+button_content = ExtResource("10_lakrn")
+
+[connection signal="Clicked" from="Left" to="." method="_on_left_clicked"]
+[connection signal="Clicked" from="Right" to="." method="_on_right_clicked"]
+[connection signal="Clicked" from="Button" to="." method="_on_button_clicked"]

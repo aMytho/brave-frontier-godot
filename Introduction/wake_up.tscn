@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6eqg18sa7lvs"]
+
+[ext_resource type="Script" path="res://Introduction/wake_up.gd" id="1_57r32"]
+[ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="2_gd7m6"]
+
+[node name="wake_up" type="ColorRect"]
+custom_minimum_size = Vector2(400, 200)
+offset_right = 643.0
+offset_bottom = 1080.0
+script = ExtResource("1_57r32")
+content = "Summmoner "
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 144.0
+offset_right = 576.0
+offset_bottom = 360.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_gd7m6")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "Summoner?"
+visible_characters = 0
+visible_ratio = 0.0

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtvukfwcfrj1w"]
+
+[ext_resource type="Script" path="res://Introduction/introduction.gd" id="1_feotu"]
+[ext_resource type="AudioStream" uid="uid://crynvy8da7524" path="res://Introduction/bf251_se_whiteout.mp3" id="2_dd0rg"]
+
+[node name="Introduction" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_feotu")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_dd0rg")
+volume_db = -5.0
