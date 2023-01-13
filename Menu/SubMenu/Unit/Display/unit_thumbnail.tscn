@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl6vyn6hs57of"]
+
+[ext_resource type="Script" path="res://Menu/SubMenu/Unit/Display/unit_thumbnail.gd" id="1_wv8fx"]
+
+[node name="UnitThumbnail" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+flat = true
+script = ExtResource("1_wv8fx")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

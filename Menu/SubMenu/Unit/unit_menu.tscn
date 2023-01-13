@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3wkfbdkll4ig"]
+
+[ext_resource type="Script" path="res://Menu/SubMenu/Unit/unit_menu.gd" id="1_bp6xs"]
+[ext_resource type="PackedScene" uid="uid://ba64usl71qkx8" path="res://Common/UI/back_section.tscn" id="1_immeq"]
+[ext_resource type="PackedScene" uid="uid://cnhuvcugf1glt" path="res://Common/UI/Buttons/large_button.tscn" id="2_gawrm"]
+[ext_resource type="Texture2D" uid="uid://3os8ll5q4rtg" path="res://Menu/SubMenu/Unit/unit_top_edit_btn1.png" id="3_4hcr8"]
+[ext_resource type="Texture2D" uid="uid://btvdubl5nhof3" path="res://Menu/SubMenu/Unit/unit_top_mix_btn1.png" id="4_58txg"]
+[ext_resource type="Texture2D" uid="uid://bn50xdq755rsl" path="res://Menu/SubMenu/Unit/unit_top_evo_btn1.png" id="5_1l4gn"]
+[ext_resource type="Texture2D" uid="uid://bx0wsjfhf1lfh" path="res://Menu/SubMenu/Unit/unit_top_sell_btn1.png" id="6_nybw0"]
+
+[node name="UnitMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bp6xs")
+
+[node name="BackSection" parent="." instance=ExtResource("1_immeq")]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 419.0
+offset_bottom = 112.0
+
+[node name="Button1" parent="." instance=ExtResource("2_gawrm")]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 165.0
+offset_right = 300.0
+offset_bottom = 321.0
+id = 1
+
+[node name="Button2" parent="." instance=ExtResource("2_gawrm")]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 165.0
+offset_right = 604.0
+offset_bottom = 321.0
+button_content = ExtResource("3_4hcr8")
+id = 2
+
+[node name="Button3" parent="." instance=ExtResource("2_gawrm")]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 338.0
+offset_right = 300.0
+offset_bottom = 494.0
+button_content = ExtResource("4_58txg")
+id = 3
+
+[node name="Button4" parent="." instance=ExtResource("2_gawrm")]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 338.0
+offset_right = 604.0
+offset_bottom = 494.0
+button_content = ExtResource("5_1l4gn")
+id = 4
+
+[node name="Button5" parent="." instance=ExtResource("2_gawrm")]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 518.0
+offset_right = 300.0
+offset_bottom = 674.0
+id = 5
+
+[node name="Button6" parent="." instance=ExtResource("2_gawrm")]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 518.0
+offset_right = 604.0
+offset_bottom = 674.0
+button_content = ExtResource("6_nybw0")
+id = 6
