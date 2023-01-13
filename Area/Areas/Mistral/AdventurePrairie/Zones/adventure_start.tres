@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://drs5urtfcxnxy"]
+
+[ext_resource type="Script" path="res://Area/Zones/zone_base.gd" id="1_77xvr"]
+
+[resource]
+script = ExtResource("1_77xvr")
+id = 2
+name = "Start of Adventure"
+description = ""
+stages = 5
+energy = 5
+Stage = null
+is_visible = true
+difficulty = 1
+xp = 1.0
+karma = 1
+zel = 1
+beginning_cutscene = null
+ending_cutscene = null

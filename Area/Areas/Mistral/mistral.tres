@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://8vq0qar848h5"]
+
+[ext_resource type="Script" path="res://Area/area_base.gd" id="1_lbq3x"]
+
+[resource]
+script = ExtResource("1_lbq3x")
+id = 0
+name = "Mistral"
+description = "The first land you arrive at passing through Lucius’ Gate. Ruled over by Maxwell, mighty God of Creation and one of the Four Fallen Gods."
+visible = true
+completed = false
+dungeons = null

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://63nosake3b0h"]
+
+[ext_resource type="Texture2D" uid="uid://djbh1wxmdewjh" path="res://Area/World/area_0001_iph5.jpg" id="1_1il4c"]
+[ext_resource type="Script" path="res://Area/Dungeons/dungeon_base.gd" id="1_v0fqd"]
+
+[resource]
+script = ExtResource("1_v0fqd")
+id = 0
+name = "Adventurer's Prairie"
+zones = null
+bg = ExtResource("1_1il4c")
+is_visible = true

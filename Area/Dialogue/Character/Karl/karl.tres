@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=8 format=3 uid="uid://dm2mvq5jid28c"]
+
+[ext_resource type="Texture2D" uid="uid://bvhu8n7f3yakc" path="res://Area/Dialogue/Character/Karl/navi_chara2_0.png" id="1_k02cw"]
+[ext_resource type="Script" path="res://Area/Dialogue/Character/character_base.gd" id="1_ya74d"]
+[ext_resource type="Texture2D" uid="uid://iyu7qvb2p8we" path="res://Area/Dialogue/Character/Karl/navi_chara2_1.png" id="2_htrsf"]
+[ext_resource type="Texture2D" uid="uid://b43sjt6wy5wb3" path="res://Area/Dialogue/Character/Karl/navi_chara2_2.png" id="3_0lasg"]
+[ext_resource type="Texture2D" uid="uid://dxre6qtp20q5j" path="res://Area/Dialogue/Character/Karl/navi_chara2_3.png" id="4_lunas"]
+[ext_resource type="Texture2D" uid="uid://qn0n2fqoc3hp" path="res://Area/Dialogue/Character/Karl/navi_chara2_5.png" id="5_vmn3s"]
+[ext_resource type="Texture2D" uid="uid://bkril253ccjo8" path="res://Area/Dialogue/Character/Karl/navi_chara2_6.png" id="6_e5e1q"]
+
+[resource]
+script = ExtResource("1_ya74d")
+id = 2
+name = "Karl"
+frames = [ExtResource("1_k02cw"), ExtResource("2_htrsf"), ExtResource("3_0lasg"), ExtResource("4_lunas"), ExtResource("5_vmn3s"), ExtResource("6_e5e1q")]

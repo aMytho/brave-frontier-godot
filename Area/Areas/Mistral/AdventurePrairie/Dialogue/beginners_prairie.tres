@@ -1,0 +1,83 @@
+[gd_resource type="Resource" load_steps=13 format=3 uid="uid://b4ul5u41htvtq"]
+
+[ext_resource type="Script" path="res://Area/Dialogue/dialogue_base.gd" id="1_ctyiu"]
+[ext_resource type="Resource" uid="uid://df3y4snmapt1w" path="res://Area/Dialogue/Character/Tilith/tilith.tres" id="1_pn4ig"]
+[ext_resource type="Script" path="res://Area/Dialogue/Content/dialogue_content.gd" id="2_vr55d"]
+
+[sub_resource type="Resource" id="Resource_v0vfc"]
+script = ExtResource("2_vr55d")
+message = "Come on... <wait=20>WAKE UP ALREADY!!!"
+character = 0
+frame = 2
+wait_before = 0
+wait_after = 0
+
+[sub_resource type="Resource" id="Resource_4alm8"]
+script = ExtResource("2_vr55d")
+message = "...Hmm?<wait=30> Me?<wait=40><br>I'm your guide, can't you tell?!<br>Didn't you hear from Lord Lucius?<wait=40><br>Hmph…"
+character = 0
+frame = 6
+wait_before = 0
+wait_after = 0
+
+[sub_resource type="Resource" id="Resource_ckvjn"]
+script = ExtResource("2_vr55d")
+message = "I'm the goddess, Tilith. <wait=40><br>I've been assigned as your guide to help you"
+character = 0
+frame = 0
+wait_before = 0
+wait_after = 0
+
+[sub_resource type="Resource" id="Resource_yu8kw"]
+script = ExtResource("2_vr55d")
+message = "Huh?<wait=20> Guide you where?<wait=20> Through Grand Gaia, of course!<wait=20><br>My my, for someone who has the power to enter the Gate, you're pretty clueless, aren't you?"
+character = 0
+frame = 4
+wait_before = 0
+wait_after = 0
+
+[sub_resource type="Resource" id="Resource_yhf12"]
+script = ExtResource("2_vr55d")
+message = "At any rate, we first need to get across this field<wait=40><br>We can talk more later."
+character = 0
+frame = 5
+wait_before = 0
+wait_after = 0
+
+[sub_resource type="Resource" id="Resource_xntv3"]
+script = ExtResource("2_vr55d")
+message = "Wh-<wait=20>What's that?!"
+character = 0
+frame = 3
+wait_before = 0
+wait_after = 0
+
+[sub_resource type="Resource" id="Resource_frjl0"]
+script = ExtResource("2_vr55d")
+message = "<size=24>Look out!!<wait=20><br>I-It's a monster!!<br><size=20>Quick, do something, summon your Units!"
+character = 0
+frame = 4
+wait_before = 0
+wait_after = 0
+
+[sub_resource type="Resource" id="Resource_1ilf0"]
+script = ExtResource("2_vr55d")
+message = "...What? <wait=20>You don't know how?"
+character = 0
+frame = 4
+wait_before = 0
+wait_after = 0
+
+[sub_resource type="Resource" id="Resource_s30jd"]
+script = ExtResource("2_vr55d")
+message = "You're a summoner, aren't you?!<br>Just concentrate!!"
+character = 0
+frame = 2
+wait_before = 0
+wait_after = 0
+
+[resource]
+script = ExtResource("1_ctyiu")
+id = 1
+characters = [ExtResource("1_pn4ig")]
+content = [SubResource("Resource_v0vfc"), SubResource("Resource_4alm8"), SubResource("Resource_ckvjn"), SubResource("Resource_yu8kw"), SubResource("Resource_yhf12"), SubResource("Resource_xntv3"), SubResource("Resource_frjl0"), SubResource("Resource_1ilf0"), SubResource("Resource_s30jd")]

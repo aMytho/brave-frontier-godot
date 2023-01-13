@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=10 format=3 uid="uid://df3y4snmapt1w"]
+
+[ext_resource type="Texture2D" uid="uid://d0tiej5satyk4" path="res://Area/Dialogue/Character/Tilith/navi_chara1_0.png" id="1_j27hk"]
+[ext_resource type="Script" path="res://Area/Dialogue/Character/character_base.gd" id="1_upvaw"]
+[ext_resource type="Texture2D" uid="uid://be7ogru7wlgj0" path="res://Area/Dialogue/Character/Tilith/navi_chara1_1.png" id="2_ntyo8"]
+[ext_resource type="Texture2D" uid="uid://d1kg2fv0ygtnu" path="res://Area/Dialogue/Character/Tilith/navi_chara1_2.png" id="3_u6ef6"]
+[ext_resource type="Texture2D" uid="uid://k0nn0rfj6s8f" path="res://Area/Dialogue/Character/Tilith/navi_chara1_3.png" id="4_kbaxp"]
+[ext_resource type="Texture2D" uid="uid://d1qotf1xq0ww" path="res://Area/Dialogue/Character/Tilith/navi_chara1_4.png" id="5_h2scf"]
+[ext_resource type="Texture2D" uid="uid://bkt0knsdhewyb" path="res://Area/Dialogue/Character/Tilith/navi_chara1_6.png" id="6_r5ltd"]
+[ext_resource type="Texture2D" uid="uid://byoskxthq21ay" path="res://Area/Dialogue/Character/Tilith/navi_chara1_7.png" id="7_8i5ws"]
+[ext_resource type="Texture2D" uid="uid://b3a6tqetlon2d" path="res://Area/Dialogue/Character/Tilith/navi_chara1_8.png" id="8_ypmgv"]
+
+[resource]
+script = ExtResource("1_upvaw")
+id = 1
+name = "Tilith"
+frames = [ExtResource("1_j27hk"), ExtResource("2_ntyo8"), ExtResource("3_u6ef6"), ExtResource("4_kbaxp"), ExtResource("5_h2scf"), ExtResource("6_r5ltd"), ExtResource("7_8i5ws"), ExtResource("8_ypmgv")]

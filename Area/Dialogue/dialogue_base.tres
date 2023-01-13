@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://l3j6ab7otucm"]
+
+[ext_resource type="Script" path="res://Area/Dialogue/dialogue_base.gd" id="1_gt6er"]
+
+[resource]
+script = ExtResource("1_gt6er")
+id = 0
+characters = null
+content = null
