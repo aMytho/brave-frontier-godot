@@ -8,64 +8,6 @@
 
 config_version=5
 
-_global_script_classes=[{
-"base": "Resource",
-"class": &"Area",
-"language": &"GDScript",
-"path": "res://Area/area_base.gd"
-}, {
-"base": "Resource",
-"class": &"Character",
-"language": &"GDScript",
-"path": "res://Area/Dialogue/Character/character_base.gd"
-}, {
-"base": "Resource",
-"class": &"Dialogue",
-"language": &"GDScript",
-"path": "res://Area/Dialogue/dialogue_base.gd"
-}, {
-"base": "Resource",
-"class": &"DialogueContent",
-"language": &"GDScript",
-"path": "res://Area/Dialogue/Content/dialogue_content.gd"
-}, {
-"base": "Resource",
-"class": &"Dungeon",
-"language": &"GDScript",
-"path": "res://Area/Dungeons/dungeon_base.gd"
-}, {
-"base": "Resource",
-"class": &"Stage",
-"language": &"GDScript",
-"path": "res://Area/Stages/stage_base.gd"
-}, {
-"base": "Resource",
-"class": &"Unit",
-"language": &"GDScript",
-"path": "res://Units/unit_base.gd"
-}, {
-"base": "Resource",
-"class": &"Zone",
-"language": &"GDScript",
-"path": "res://Area/Zones/zone_base.gd"
-}, {
-"base": "TextureRect",
-"class": &"iconID",
-"language": &"GDScript",
-"path": "res://Menu/Launch Icons/iconID.gd"
-}]
-_global_script_class_icons={
-"Area": "",
-"Character": "",
-"Dialogue": "",
-"DialogueContent": "",
-"Dungeon": "",
-"Stage": "",
-"Unit": "",
-"Zone": "",
-"iconID": ""
-}
-
 [application]
 
 config/name="braveFontier"
@@ -87,11 +29,9 @@ window/size/window_height_override=1000
 window/handheld/orientation=1
 window/stretch/mode="viewport"
 
-[editor]
+[input]
 
-version_control/plugin_name="GitPlugin"
-version_control/autoload_on_startup=true
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
+Account={
+"deadzone": 0.5,
+"events": []
+}
