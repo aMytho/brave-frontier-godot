@@ -1,6 +1,6 @@
 extends ColorRect
 
-@export var messages: Array[String] = []
+@export var messages: Array = []
 @onready var text_to_animate = $AnimatedText
 @export var speed: float = 0.1
 

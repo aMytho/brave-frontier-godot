@@ -91,7 +91,6 @@ offset_right = 643.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 script = ExtResource("1_40s10")
-messages = []
 
 [node name="Particles" type="GPUParticles2D" parent="."]
 position = Vector2(328, 232)

@@ -15,7 +15,16 @@ gradient = SubResource("Gradient_72y07")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2vi81"]
 animations = [{
-"frames": [ExtResource("1_3sw3a"), ExtResource("2_8j4j5"), ExtResource("3_qtpou")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3sw3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8j4j5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qtpou")
+}],
 "loop": true,
 "name": &"default",
 "speed": 5.0
@@ -94,8 +103,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Character" type="AnimatedSprite2D" parent="."]
 position = Vector2(320, 520)
-frames = SubResource("SpriteFrames_2vi81")
-playing = true
+sprite_frames = SubResource("SpriteFrames_2vi81")
+autoplay = "default"
+frame_progress = 0.400102
 
 [node name="Label" type="Label" parent="."]
 offset_left = 292.0
