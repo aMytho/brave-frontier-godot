@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/activeIcon.png-e788ad17cfae96493ad63192c7fb71
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

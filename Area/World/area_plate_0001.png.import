@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/area_plate_0001.png-48f451d7307ed3e0d5927cc46
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

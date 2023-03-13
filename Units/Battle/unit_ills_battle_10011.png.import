@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/unit_ills_battle_10011.png-6174c0c549e8a15764
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

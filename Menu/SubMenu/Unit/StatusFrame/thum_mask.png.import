@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/thum_mask.png-8c0300bba1da4e7e3fa3c62cc7a0adb
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
