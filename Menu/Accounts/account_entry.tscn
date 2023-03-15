@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqcry55ki1wb4"]
+
+[ext_resource type="PackedScene" uid="uid://cnhuvcugf1glt" path="res://Common/UI/Buttons/large_button.tscn" id="1_jlqtg"]
+[ext_resource type="Texture2D" uid="uid://bqnthovfshwy4" path="res://Menu/SubMenu/Unit/StatusFrame/status_frame_b_c.png" id="1_uieac"]
+[ext_resource type="Script" path="res://Menu/Accounts/account_entry.gd" id="1_y5mud"]
+[ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="2_ndkdy"]
+[ext_resource type="Texture2D" uid="uid://dh74087tv6qdo" path="res://Menu/SubMenu/Unit/StatusFrame/status_frame_b_l.png" id="4_rljs6"]
+[ext_resource type="Texture2D" uid="uid://cfwj506ceatkt" path="res://Menu/SubMenu/Unit/StatusFrame/status_frame_b_r.png" id="5_e3e4x"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0wwcb"]
+
+[node name="AccountEntry" type="Control"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 584.0
+offset_bottom = 190.0
+script = ExtResource("1_y5mud")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 1.0
+offset_right = 35.0
+offset_bottom = 190.0
+texture = ExtResource("4_rljs6")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 1.0
+offset_right = 590.0
+offset_bottom = 190.0
+texture = ExtResource("5_e3e4x")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 1.0
+offset_right = 550.0
+offset_bottom = 190.0
+texture = ExtResource("1_uieac")
+
+[node name="Load" parent="." instance=ExtResource("1_jlqtg")]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 19.0
+offset_right = 553.0
+offset_bottom = 175.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_ndkdy")
+theme_override_font_sizes/font_size = 43
+text = "Load"
+icon = null
+button_content = SubResource("CompressedTexture2D_0wwcb")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 20.0
+offset_right = 261.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("2_ndkdy")
+theme_override_font_sizes/font_size = 28
+text = "Account Name"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 56.0
+offset_right = 207.0
+offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("2_ndkdy")
+theme_override_font_sizes/font_size = 28
+text = "Default"

@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://befbdkxgyv5qk"]
+[gd_scene load_steps=23 format=3 uid="uid://befbdkxgyv5qk"]
 
 [ext_resource type="Script" path="res://startGame.gd" id="1_u5emr"]
 [ext_resource type="Texture2D" uid="uid://cino0hqryo7ae" path="res://Title and Load/title_logo2.jpg" id="2_hxqcl"]
 [ext_resource type="Texture2D" uid="uid://dfwjiybx0k3h1" path="res://Title and Load/spotlight_8.png" id="4_f5806"]
 [ext_resource type="Texture2D" uid="uid://b7lwy5xccju6l" path="res://Title and Load/title_msg.png" id="4_y81k8"]
+[ext_resource type="PackedScene" uid="uid://cnhuvcugf1glt" path="res://Common/UI/Buttons/large_button.tscn" id="5_aymor"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yh7iv"]
 light_mode = 2
@@ -204,5 +205,13 @@ libraries = {
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 volume_db = -5.0
+
+[node name="AccountBtn" parent="." instance=ExtResource("5_aymor")]
+offset_left = 529.0
+offset_top = 1010.0
+offset_right = 634.0
+offset_bottom = 1073.0
+text = "Account"
+icon = null
 
 [connection signal="gui_input" from="Touch Screen" to="." method="_on_touch_screen_gui_input"]

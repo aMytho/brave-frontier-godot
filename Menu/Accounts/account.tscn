@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgnty3g6ucoj"]
+
+[ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="1_fivyt"]
+[ext_resource type="Script" path="res://Menu/Accounts/account.gd" id="1_uf0e4"]
+[ext_resource type="PackedScene" uid="uid://cnhuvcugf1glt" path="res://Common/UI/Buttons/large_button.tscn" id="3_fp151"]
+
+[node name="account" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uf0e4")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 10.0
+offset_right = 629.0
+offset_bottom = 1051.0
+color = Color(0.329412, 0.313726, 0.352941, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 596.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("1_fivyt")
+theme_override_font_sizes/font_size = 30
+text = "Select your account from the below list."
+
+[node name="Close" parent="." instance=ExtResource("3_fp151")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 184.0
+offset_top = 808.0
+offset_right = 444.0
+offset_bottom = 964.0
+theme_override_fonts/font = ExtResource("1_fivyt")
+theme_override_font_sizes/font_size = 43
+text = "Close"
+icon = null
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 128.0
+offset_right = 624.0
+offset_bottom = 768.0
+
+[node name="BoxContainer" type="BoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 100
+vertical = true
