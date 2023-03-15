@@ -18,6 +18,8 @@ Unlike the original game, this is a purely offline implementation. I have no pla
 
 This is in an alpha state. It contains some bugs and many features are not implemented. Some dialogue and other data differs from the game since records of certain events (lucius cutscene) could not be found. While this project can be ran, you may need to modify `GameContent.gd` to get the scene you want. When I am finished I will include an executable file for ease of access.
 
+By default, the game will load the Lucius cutscene and start the main character quest. Go through this once. After that, reload the project and press the accounts button on the bottom right of the start screen (or press A). Select your account and you will be sent to the main menu.
+
 ## Copyright Notice
 
 I do not own any of the assets. They are owned by Gumi / Alim and the Brave Frontier team. This project earns no revenue and is purely for educational purposes.
