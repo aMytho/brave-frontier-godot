@@ -79,6 +79,7 @@ size_flags_vertical = 3
 script = ExtResource("1_r46r0")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 153.0
 offset_right = 639.0
@@ -88,15 +89,18 @@ vertical_scroll_mode = 2
 
 [node name="Levels" type="VBoxContainer" parent="ScrollContainer"]
 unique_name_in_owner = true
+layout_mode = 2
 theme_override_constants/separation = 43
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_top = 36.0
 offset_right = 419.0
 offset_bottom = 124.0
 texture = ExtResource("2_3ka7g")
 
 [node name="AreaName" type="Label" parent="TextureRect"]
+layout_mode = 0
 offset_left = 111.0
 offset_top = 22.0
 offset_right = 306.0
@@ -105,6 +109,7 @@ theme_override_font_sizes/font_size = 29
 text = "The Great Plains"
 
 [node name="Button" type="Button" parent="TextureRect"]
+layout_mode = 0
 offset_left = -3.0
 offset_top = 6.0
 offset_right = 104.0
@@ -114,6 +119,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_sd0rd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_5wvwe")
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 445.0
 offset_top = 46.0
 offset_right = 585.0
@@ -123,6 +129,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_8triy")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_anxsq")
 
 [node name="TextureRect" type="TextureRect" parent="Button"]
+layout_mode = 0
 offset_left = -22.0
 offset_top = 2.0
 offset_right = 166.0
@@ -131,6 +138,7 @@ texture = ExtResource("7_kgys4")
 
 [node name="Message" type="Label" parent="."]
 z_index = 1
+layout_mode = 0
 offset_left = -236.0
 offset_top = 1051.0
 offset_right = -25.0
@@ -139,13 +147,14 @@ text = "Choose a good map please!"
 
 [node name="MessageBackground" type="TextureRect" parent="."]
 editor_description = "Can someone please tell me why this is so long?"
+layout_mode = 0
 offset_left = -0.109375
 offset_top = 1012.0
 offset_right = 232.891
 offset_bottom = 2040.0
 rotation = -1.57079
 texture = ExtResource("8_6qtp6")
-ignore_texture_size = true
+expand_mode = 1
 
 [node name="MessageAnimate" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Message")

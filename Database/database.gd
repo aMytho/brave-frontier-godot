@@ -51,3 +51,7 @@ func migrate(count):
 	#Update to the next version
 	var new_version = str("PRAGMA user_version = ", count + 1, ";")
 	db.query(new_version)
+
+func query(query_str: String) -> Array:
+	db.query(query_str)
+	return db.query_result

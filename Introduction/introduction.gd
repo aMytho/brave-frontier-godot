@@ -9,6 +9,7 @@ func _ready():
 	$Music.stream = load("res://Music/3-01 World of God.mp3")
 	$Music.play()
 	var intro = load("res://Area/Creation/creator.tscn").instantiate()
+	print(intro.messages)
 	intro.messages = [
 		"I am Lucius, the god who controls this gate..",
 		"I have been waiting for the day you would come..",
@@ -60,6 +61,8 @@ func _on_char_chosen(character: Unit):
 	]
 	add_child(intro)
 	intro.connect("FlashComplete", _on_flash_complete)
+	#Save the changes
+	Database.query("INSERT INTO player_state ( arena_orbs, karma, zel, gems, energy, max_exp, exp, level, player_name ) VALUES ( 3, 100, 100, 5, 5, 1, 0, 1, '%s' );" % player_name)
 
 func _on_wake_up():
 	print("Summoner is awake, start tutorial 1")
