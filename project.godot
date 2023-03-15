@@ -19,6 +19,7 @@ config/icon="res://Units/Battle/unit_ills_battle_10011.png"
 [autoload]
 
 Database="*res://Database/database.gd"
+ActiveAccount="*res://Database/account.gd"
 
 [display]
 
