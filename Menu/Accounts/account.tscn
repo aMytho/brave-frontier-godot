@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgnty3g6ucoj"]
+[gd_scene load_steps=5 format=3 uid="uid://bgnty3g6ucoj"]
 
 [ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="1_fivyt"]
 [ext_resource type="Script" path="res://Menu/Accounts/account.gd" id="1_uf0e4"]
+[ext_resource type="Texture2D" uid="uid://ku4h8un7lqso" path="res://Menu/base.jpg" id="2_tb6ec"]
 [ext_resource type="PackedScene" uid="uid://cnhuvcugf1glt" path="res://Common/UI/Buttons/large_button.tscn" id="3_fp151"]
 
 [node name="account" type="Control"]
@@ -13,7 +14,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uf0e4")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.494118, 0.494118, 0.494118, 1)
+layout_mode = 0
+offset_right = 648.0
+offset_bottom = 1136.0
+texture = ExtResource("2_tb6ec")
+
 [node name="BG" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 9.0
 offset_top = 10.0
@@ -34,10 +43,10 @@ text = "Select your account from the below list."
 [node name="Close" parent="." instance=ExtResource("3_fp151")]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 184.0
-offset_top = 808.0
-offset_right = 444.0
-offset_bottom = 964.0
+offset_left = 240.0
+offset_top = 864.0
+offset_right = 400.0
+offset_bottom = 960.0
 theme_override_fonts/font = ExtResource("1_fivyt")
 theme_override_font_sizes/font_size = 43
 text = "Close"

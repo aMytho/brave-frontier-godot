@@ -22,12 +22,13 @@ script = ExtResource("1_rk2ft")
 
 [node name="Background" type="TextureRect" parent="."]
 z_index = -10
+layout_mode = 0
 offset_left = 3.0
 offset_top = 6.0
 offset_right = 643.0
 offset_bottom = 1080.0
 texture = ExtResource("19_6bdlw")
-ignore_texture_size = true
+expand_mode = 1
 
 [node name="Header" parent="." instance=ExtResource("14_e2vs6")]
 
@@ -43,6 +44,7 @@ script = ExtResource("5_u6iju")
 
 [node name="Home" parent="MenuContent" instance=ExtResource("5_2t0h2")]
 z_index = -1
+layout_mode = 1
 offset_left = -4.0
 offset_top = 163.0
 offset_right = -4.0

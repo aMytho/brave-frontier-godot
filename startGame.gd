@@ -29,7 +29,7 @@ func _input(event):
 func close_accounts(accounts: Node):
 	accounts.queue_free()
 
-func close_by_selection(acc: Node, name: String, id: int ):
+func close_by_selection(acc: Node, _new_name: String, _id: int ):
 	acc.queue_free()
 
 func show_accounts(_id: int):

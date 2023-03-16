@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfku18he8vhad"]
+[gd_scene load_steps=8 format=3 uid="uid://bfku18he8vhad"]
 
+[ext_resource type="Script" path="res://Menu/Header/header.gd" id="1_cvy25"]
 [ext_resource type="Texture2D" uid="uid://dnms50sv4dopw" path="res://Menu/Header/header.png" id="1_x24ba"]
 [ext_resource type="Script" path="res://Menu/Header/Refill.gd" id="2_4dyew"]
 [ext_resource type="Texture2D" uid="uid://b2w12ch8fsvky" path="res://Menu/Header/header_arena_light_01.png" id="3_vxyyu"]
@@ -16,6 +17,7 @@ region = Rect2(145.809, 180.108, 140.304, 24.6906)
 [node name="Header" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_cvy25")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = 3
@@ -43,9 +45,9 @@ text = "7"
 
 [node name="Zel" type="Label" parent="TextureRect"]
 layout_mode = 0
-offset_left = 465.0
+offset_left = 472.0
 offset_top = 72.0
-offset_right = 621.0
+offset_right = 628.0
 offset_bottom = 98.0
 text = "3787893789237"
 horizontal_alignment = 2

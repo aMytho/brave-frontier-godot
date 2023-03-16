@@ -14,7 +14,7 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 584.0
-offset_bottom = 190.0
+offset_bottom = 160.0
 script = ExtResource("1_y5mud")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -22,7 +22,7 @@ layout_mode = 0
 offset_left = -5.0
 offset_top = 1.0
 offset_right = 35.0
-offset_bottom = 190.0
+offset_bottom = 160.0
 texture = ExtResource("4_rljs6")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
@@ -30,7 +30,7 @@ layout_mode = 0
 offset_left = 550.0
 offset_top = 1.0
 offset_right = 590.0
-offset_bottom = 190.0
+offset_bottom = 160.0
 texture = ExtResource("5_e3e4x")
 
 [node name="TextureRect3" type="TextureRect" parent="."]
@@ -38,15 +38,15 @@ layout_mode = 0
 offset_left = 35.0
 offset_top = 1.0
 offset_right = 550.0
-offset_bottom = 190.0
+offset_bottom = 160.0
 texture = ExtResource("1_uieac")
 
 [node name="Load" parent="." instance=ExtResource("1_jlqtg")]
 layout_mode = 0
-offset_left = 293.0
-offset_top = 19.0
-offset_right = 553.0
-offset_bottom = 175.0
+offset_left = 344.0
+offset_top = 24.0
+offset_right = 539.0
+offset_bottom = 141.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_ndkdy")
@@ -58,9 +58,9 @@ button_content = SubResource("CompressedTexture2D_0wwcb")
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 64.0
-offset_top = 20.0
+offset_top = 48.0
 offset_right = 261.0
-offset_bottom = 55.0
+offset_bottom = 83.0
 theme_override_fonts/font = ExtResource("2_ndkdy")
 theme_override_font_sizes/font_size = 28
 text = "Account Name"
@@ -68,9 +68,9 @@ text = "Account Name"
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
 offset_left = 112.0
-offset_top = 56.0
+offset_top = 80.0
 offset_right = 207.0
-offset_bottom = 91.0
+offset_bottom = 115.0
 theme_override_fonts/font = ExtResource("2_ndkdy")
 theme_override_font_sizes/font_size = 28
 text = "Default"
