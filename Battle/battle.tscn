@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://b532tqkq87p26"]
+[gd_scene load_steps=17 format=3 uid="uid://b532tqkq87p26"]
 
 [ext_resource type="PackedScene" uid="uid://cyfml6jsu4fn8" path="res://Battle/UI/battle_ui.tscn" id="1_3sce7"]
 [ext_resource type="Script" path="res://Battle/battle.gd" id="1_qlwco"]
 [ext_resource type="PackedScene" uid="uid://b4vk7tm5thel5" path="res://Battle/UI/battle_potential_rewards.tscn" id="3_hj1dv"]
 [ext_resource type="Texture2D" uid="uid://ctfc4iwsqiwes" path="res://Units/Battle/unit_anime_30030.png" id="4_oweeh"]
+[ext_resource type="PackedScene" uid="uid://ft0wxa2yswmp" path="res://Battle/Field/Friendlies.tscn" id="5_4t2pk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hlgnm"]
 atlas = ExtResource("4_oweeh")
@@ -93,13 +94,13 @@ animations = [{
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_qlwco")
+units = Array[Resource("res://Units/unit_base.gd")]([null, null, null, null, null, null])
 
 [node name="BattleUI" parent="." instance=ExtResource("1_3sce7")]
 offset_top = 453.0
 offset_bottom = 453.0
 
 [node name="BattlePotentialRewards" parent="." instance=ExtResource("3_hj1dv")]
-anchors_preset = 0
 offset_right = 642.0
 offset_bottom = 95.0
 
@@ -107,9 +108,12 @@ offset_bottom = 95.0
 visible = false
 position = Vector2(469, 379)
 scale = Vector2(1.47619, 1.47619)
-frames = SubResource("SpriteFrames_plfdq")
+sprite_frames = SubResource("SpriteFrames_plfdq")
 animation = &"Attack"
-playing = true
+frame = 4
+frame_progress = 0.266513
+
+[node name="Friendlies" parent="." instance=ExtResource("5_4t2pk")]
 
 [node name="BG" type="TextureRect" parent="."]
 z_index = -4

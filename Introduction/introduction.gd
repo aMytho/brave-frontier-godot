@@ -69,7 +69,7 @@ func _on_wake_up():
 	
 	var zone = ResourceLoader.load("res://Area/Areas/Mistral/AdventurePrairie/Zones/basics_of_battle.tres")
 	var arg1 = ["zone", "units"]
-	var subArg: Array[Unit] = [null, null, main_character, null, null, null]
+	var subArg: Array[Unit] = [null, main_character, null, null, null, null]
 	var arg2 = [zone, subArg]
 	get_tree().get_root().get_node("Game/GameContent").loadSceneWithProps("res://Area/Zones/zone.tscn", arg1, arg2)
 	

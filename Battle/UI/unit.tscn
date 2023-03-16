@@ -172,3 +172,5 @@ autoplay = "Idle"
 libraries = {
 "": SubResource("AnimationLibrary_dqfs5")
 }
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

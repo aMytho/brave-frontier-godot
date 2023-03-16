@@ -10,18 +10,14 @@ func _ready():
 	print("Its ready")
 	setCharacter()
 
-
 func setCharacter():
 	var count = 1
 	for unit in units:
 		print(unit)
-		
 		var charPath = str("Unit", count)
-		print(get_node(charPath))
 		if unit == null:
+			print(null, " sadly")
 			get_node(charPath).reset_placeholder()
-			continue
-		
-		get_node(charPath).create_unit(unit.battle_thumbnail, unit.name, unit.element, unit.HP)
+		else:
+			get_node(charPath).create_unit(unit.battle_thumbnail, unit.name, unit.element, unit.HP)
 		count = count + 1
-	
