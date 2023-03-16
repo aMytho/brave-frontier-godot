@@ -11,7 +11,7 @@ func _on_level_select_button_pressed():
 	emit_signal("Clicked")
 
 
-func setProperties(level: String, energy:int, battles:int,status:String, description:String):
+func setProperties(level: String, energy:int, battles:int, _status:String, description:String):
 	%LevelSelectButton/Label.text = description
 	%LevelSelectButton/BattleCount.text = str(battles)
 	%LevelSelectButton/EnergyAmount.text = str(energy)

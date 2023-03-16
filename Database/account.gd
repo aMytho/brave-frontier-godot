@@ -6,7 +6,7 @@ class_name Account
 @export var player_name: String
 @export var level: int
 @export var exp: float
-@export var max_exp: int
+@export var max_exp: float
 @export var energy: int
 @export var gems: int
 @export var zel: int
@@ -31,7 +31,7 @@ energy: int, gems: int, zel: int, karma: int, arena_orbs: int):
 	self.karma = karma
 	self.arena_orbs = arena_orbs
 	
-func get_account_info():
+func get_account_info() -> Array:
 	return [id, player_name, level, exp, max_exp, energy, gems, zel, karma, arena_orbs]
 
 func account_is_active() -> bool:

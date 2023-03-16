@@ -32,8 +32,8 @@ func on_levels_selector_closed():
 	print("It was closed")
 	toggleUI(false)
 
-func toggleUI(hide = false):
-	if hide:
+func toggleUI(should_hide = false):
+	if should_hide:
 		#Darken Background
 		get_child(0).self_modulate = Color(0.23, 0.23, 0.23, 1.0)
 		#Hide children buttons
