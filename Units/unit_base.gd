@@ -23,7 +23,7 @@ class_name Unit
 @export var thumbnail: Texture2D = null
 @export var battle_thumbnail: Texture2D = null
 @export var full_sprite: Texture2D = null
-@export var sprite_sheet: AnimatedTexture = null
+@export var sprite_sheet: SpriteFrames = null
 
 @export var quotes: Resource = null
 @export var unit_lore: String = ""
