@@ -1,5 +1,6 @@
 extends Control
 
+@export var speed: float = 1.0
 @export var area: CompressedTexture2D:
 	set(new_area):
 		$BG.texture = new_area
@@ -19,7 +20,7 @@ func _ready():
 		$Person1.texture = dialogue.characters[interaction.character].frames[interaction.frame]
 		
 		var tween = create_tween()
-		tween.tween_property($ColorRect/Message, "visible_ratio", 1, 4.0)
+		tween.tween_property($ColorRect/Message, "visible_ratio", 1, 4.0 * speed)
 		tween.set_trans(Tween.TRANS_CUBIC)
 		tween.tween_callback(hide_text)
 		

@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://b4ul5u41htvtq" path="res://Area/Areas/Mistral/AdventurePrairie/Dialogue/beginners_prairie.tres" id="2_8iagv"]
 [ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="2_qywh1"]
 [ext_resource type="Texture2D" uid="uid://bpkkrre4c1o2m" path="res://Area/World/Mistral/Plains/dungeon_battle_10100.jpg" id="3_ow0oi"]
-[ext_resource type="Texture2D" uid="uid://bsujrlf1finb6" path="res://Area/Dialogue/message_window.png" id="4_txult"]
+[ext_resource type="Texture2D" uid="uid://3v4yskn8yn82" path="res://Area/Dialogue/message_window.png" id="4_txult"]
 
 [node name="Dialogue" type="Control"]
 layout_mode = 3

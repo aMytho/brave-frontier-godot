@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=13 format=3 uid="uid://b4ul5u41htvtq"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=13 format=3 uid="uid://b4ul5u41htvtq"]
 
 [ext_resource type="Script" path="res://Area/Dialogue/dialogue_base.gd" id="1_ctyiu"]
 [ext_resource type="Resource" uid="uid://df3y4snmapt1w" path="res://Area/Dialogue/Character/Tilith/tilith.tres" id="1_pn4ig"]
@@ -79,5 +79,5 @@ wait_after = 0
 [resource]
 script = ExtResource("1_ctyiu")
 id = 1
-characters = [ExtResource("1_pn4ig")]
-content = [SubResource("Resource_v0vfc"), SubResource("Resource_4alm8"), SubResource("Resource_ckvjn"), SubResource("Resource_yu8kw"), SubResource("Resource_yhf12"), SubResource("Resource_xntv3"), SubResource("Resource_frjl0"), SubResource("Resource_1ilf0"), SubResource("Resource_s30jd")]
+characters = Array[Resource]([ExtResource("1_pn4ig")])
+content = Array[Resource]([SubResource("Resource_v0vfc"), SubResource("Resource_4alm8"), SubResource("Resource_ckvjn"), SubResource("Resource_yu8kw"), SubResource("Resource_yhf12"), SubResource("Resource_xntv3"), SubResource("Resource_frjl0"), SubResource("Resource_1ilf0"), SubResource("Resource_s30jd")])
