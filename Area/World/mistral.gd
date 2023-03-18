@@ -14,6 +14,9 @@ func _on_button_pressed():
 	#TODO - Load header in level loader :)
 	header = ResourceLoader.load("res://Menu/Header/header.tscn").instantiate()
 	var levelLoader = ResourceLoader.load("res://Area/UI/level_select.tscn").instantiate()
+	var res = load("res://Area/Areas/Mistral/AdventurePrairie/adventure_prairie.tres")
+	print("Level is: ", res)
+	levelLoader.dungeon = res
 	
 	#Display next scene
 	add_child(header)
