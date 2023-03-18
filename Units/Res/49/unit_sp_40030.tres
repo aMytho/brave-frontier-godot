@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3]
+
+[ext_resource type="Texture2D" path="res://Units/Res/49/SpriteFrames/A1.tres" id="1_x6iax"]
+[ext_resource type="Texture2D" path="res://Units/Res/49/SpriteFrames/A2.tres" id="2_sjm8b"]
+[ext_resource type="Texture2D" path="res://Units/Res/49/SpriteFrames/A3.tres" id="3_jikor"]
+[ext_resource type="Texture2D" path="res://Units/Res/49/SpriteFrames/I1.tres" id="4_ykofc"]
+[ext_resource type="Texture2D" path="res://Units/Res/49/SpriteFrames/I2.tres" id="5_gwyfe"]
+[ext_resource type="Texture2D" path="res://Units/Res/49/SpriteFrames/I3.tres" id="6_bdn21"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_x6iax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sjm8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jikor")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ykofc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gwyfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bdn21")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}]

@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_mlrel"]
+[ext_resource type="Texture2D" uid="uid://bxr60tvlmtkv8" path="res://Units/Res/43/unit_ills_battle_10030.png" id="1_suyf5"]
+[ext_resource type="Texture2D" uid="uid://8b30ohikfwxa" path="res://Units/Res/43/unit_ills_full_10030.png" id="2_b6ddt"]
+[ext_resource type="SpriteFrames" uid="uid://be4sgja34dti" path="res://Units/Res/43/unit_sp_10030.tres" id="4_vn78b"]
+[ext_resource type="Texture2D" uid="uid://memknqi5f174" path="res://Units/Res/43/unit_ills_thum_10030.png" id="4_x815e"]
+
+[resource]
+script = ExtResource("1_mlrel")
+id = 0
+unit_number = 43
+data_id = 10030
+name = "Burny"
+element = "fire"
+gender = "Genderless"
+rarity = 1
+cost = 1
+arena_type = 2
+level = 1
+max_level = 10
+HP = 830
+ATK = 320
+DEF = 280
+REC = 210
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_x815e")
+battle_thumbnail = ExtResource("1_suyf5")
+full_sprite = ExtResource("2_b6ddt")
+sprite_sheet = ExtResource("4_vn78b")
+unit_lore = "Allegedly born from lava, this liquid-type demon radiates heat from its body. The lowest ranked of the demons, it is said to be the perfect sparring partner for new summoners. It prefers fiery places, but lacks a specific habitat. It causes fire when it appears, troubling those who come across it. Many Summoners choose it due to its cute appearance."

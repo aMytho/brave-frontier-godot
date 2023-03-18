@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_jdlfv"]
+[ext_resource type="Texture2D" uid="uid://nmavhqxfvj00" path="res://Units/Res/13/unit_ills_battle_40011.png" id="1_w5sfb"]
+[ext_resource type="Texture2D" uid="uid://dpf40iftc01xj" path="res://Units/Res/13/unit_ills_full_40011.png" id="2_ta4d0"]
+[ext_resource type="Texture2D" uid="uid://cgp51unbjpt82" path="res://Units/Res/13/unit_ills_thum_40011.png" id="4_2pi8e"]
+
+[resource]
+script = ExtResource("1_jdlfv")
+unit_number = 13
+data_id = 4011
+name = "Warrior Eze"
+element = "Lightning"
+gender = "Male"
+rarity = 2
+cost = 2
+arena_type = 4
+level = 1
+max_level = 12
+HP = 1180
+ATK = 580
+DEF = 320
+REC = 120
+skills = null
+thumbnail = ExtResource("4_2pi8e")
+battle_thumbnail = ExtResource("1_w5sfb")
+full_sprite = ExtResource("2_ta4d0")
+unit_lore = "A warrior from the ruined Atharva Republic, he later became one of the Six Heroes. Raised in an old mine, he worked from the time he was a child. At one point he grew tired and left to become a demon bounty hunter. His swordsmanship was tempered through his mine work, and he could obliterate a normal demon in one blow. He spoke rough, but was polite to women."

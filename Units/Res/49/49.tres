@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=6 format=3]
+
+[ext_resource type="Texture2D" uid="uid://y5v7e1rc6mxo" path="res://Units/Res/49/unit_ills_battle_40030.png" id="1_xaox0"]
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_xyrvh"]
+[ext_resource type="Texture2D" uid="uid://fw61udsblgkb" path="res://Units/Res/49/unit_ills_full_40030.png" id="2_w2fi2"]
+[ext_resource type="Texture2D" uid="uid://b1ihhw8bugqhn" path="res://Units/Res/49/unit_ills_thum_40030.png" id="4_msopp"]
+[ext_resource type="SpriteFrames" uid="uid://cqk75h1itfsxd" path="res://Units/Res/49/unit_sp_40030.tres" id="4_ns7k2"]
+
+[resource]
+script = ExtResource("1_xyrvh")
+unit_number = 49
+data_id = 40030
+name = "Sparky"
+element = "thunder"
+gender = "Genderless"
+rarity = 1
+cost = 1
+arena_type = 2
+level = 0
+max_level = 10
+HP = 830
+ATK = 320
+DEF = 280
+REC = 210
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_msopp")
+battle_thumbnail = ExtResource("1_xaox0")
+full_sprite = ExtResource("2_w2fi2")
+sprite_sheet = ExtResource("4_ns7k2")
+unit_lore = "A liquid-type demon wrapped in electricity, thought to appear when lightning strikes. It has a horn on its head and a black pattern on its body. It is mischievous and laughs with its friends as it electrically shocks humans. They are still weak and very low level, but like so many other slimes they are perfect sparring partners for new Summoners."

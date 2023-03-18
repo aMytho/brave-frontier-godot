@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=5 format=3]
+
+[ext_resource type="Texture2D" uid="uid://cvrjfm158gbv1" path="res://Units/Res/17/unit_ills_battle_50011.png" id="1_tgp3m"]
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_uxr78"]
+[ext_resource type="Texture2D" uid="uid://c5gx5cp2nsb4k" path="res://Units/Res/17/unit_ills_full_50011.png" id="2_polhi"]
+[ext_resource type="Texture2D" uid="uid://n51x2is7p3sx" path="res://Units/Res/17/unit_ills_thum_50011.png" id="4_5i33p"]
+
+[resource]
+script = ExtResource("1_uxr78")
+unit_number = 17
+data_id = 50011
+name = "Squire Atro"
+element = "Light"
+gender = "Male"
+rarity = 2
+cost = 2
+arena_type = 2
+level = 1
+max_level = 30
+HP = 970
+ATK = 500
+DEF = 500
+REC = 500
+skills = null
+thumbnail = ExtResource("4_5i33p")
+battle_thumbnail = ExtResource("1_tgp3m")
+full_sprite = ExtResource("2_polhi")
+unit_lore = "A swordsman from the ruined La Veda Republic, he later became one of the Six Heroes. Raised as an orphan in a monastery, he originally wanted to become a monk. However one day, bandits attacked the monastery. After Atro repelled them with just a tree branch, the Friar recommended he seek a Vedan fencing expert. Atro followed the Friar's words and began his journey."
