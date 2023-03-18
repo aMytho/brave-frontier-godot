@@ -27,7 +27,6 @@ func set_path() -> String:
 	else:
 		return "user://main.db" 
 
-
 func migration_check():
 	#get version
 	db.query("PRAGMA user_version;")
@@ -54,4 +53,11 @@ func migrate(count):
 
 func query(query_str: String) -> Array:
 	db.query(query_str)
-	return db.query_result
+	print(db.query_result, 1234567, db.error_message)
+	
+	#handle errors
+	if db.error_message == "" or db.error_message == "not an error":
+		return db.query_result
+	else:
+		print("SQL Error")
+		return ["Error", db.error_message]
