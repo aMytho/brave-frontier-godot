@@ -9,12 +9,12 @@ signal CharSelected(unit: Unit)
 
 
 var units: Array[Unit] = [
-	preload("res://Units/Starter/1/fencer_vargas.tres"),
-	preload("res://Units/Starter/5/selena.tres"),
-	preload("res://Units/Starter/9/pikeman_lance.tres"),
-	preload("res://Units/Starter/13/warrior_eze.tres"),
-	preload("res://Units/Starter/17/squire_atro.tres"),
-	preload("res://Units/Starter/21/iron_magress.tres"),
+	preload("res://Units/Res/1/1.tres"), # Vargas
+	preload("res://Units/Res/5/5.tres"), # Selena
+	preload("res://Units/Res/9/9.tres"), # Lance
+	preload("res://Units/Res/13/13.tres"), # Eze
+	preload("res://Units/Res/17/17.tres"), # Atro
+	preload("res://Units/Res/21/21.tres") # Magress
 ]
 
 # Called when the node enters the scene tree for the first time.

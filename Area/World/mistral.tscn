@@ -29,17 +29,19 @@ offset_bottom = 40.0
 texture = ExtResource("1_fk1dn")
 
 [node name="Button" type="Button" parent="Background"]
-offset_left = 214.0
-offset_top = 1033.0
-offset_right = 407.0
-offset_bottom = 1063.0
+layout_mode = 0
+offset_left = 394.0
+offset_top = 982.0
+offset_right = 636.0
+offset_bottom = 1012.0
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxTexture_v0dp3")
 theme_override_styles/hover = SubResource("StyleBoxTexture_na8ss")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_afenm")
-text = "Greenery Area"
+text = "Adventurer's Prairie"
 
 [node name="Button2" type="Button" parent="Background"]
+layout_mode = 0
 offset_left = 22.0
 offset_top = 739.0
 offset_right = 215.0
@@ -51,6 +53,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_afenm")
 text = "Burny Cave"
 
 [node name="Button3" type="Button" parent="Background"]
+layout_mode = 0
 offset_left = 315.0
 offset_top = 699.0
 offset_right = 508.0
@@ -62,6 +65,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_afenm")
 text = "Cold Boi"
 
 [node name="Button4" type="Button" parent="Background"]
+layout_mode = 0
 offset_left = 221.0
 offset_top = 512.0
 offset_right = 414.0
@@ -73,6 +77,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_afenm")
 text = "IDK, swamps?"
 
 [node name="Button5" type="Button" parent="Background"]
+layout_mode = 0
 offset_left = 41.0
 offset_top = 285.0
 offset_right = 234.0
@@ -84,6 +89,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_afenm")
 text = "Cold Mansion"
 
 [node name="Button6" type="Button" parent="Background"]
+layout_mode = 0
 offset_left = 318.0
 offset_top = 36.0
 offset_right = 511.0

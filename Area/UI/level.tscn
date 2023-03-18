@@ -85,5 +85,6 @@ offset_right = 612.0
 offset_bottom = 161.0
 text = "This is a long amount of text for all sorts of lorem ipsum and more t
 this is event more text hmmmmmm aaaa bbb ccc ddd eee ff gg h.. !"
+autowrap_mode = 3
 
 [connection signal="pressed" from="LevelSelectButton" to="." method="_on_level_select_button_pressed"]

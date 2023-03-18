@@ -5,8 +5,8 @@ extends Control
 		units = new_units
 
 var thumbnail = preload("res://Menu/SubMenu/Unit/Display/unit_thumbnail.tscn").instantiate()
-var vargas: Unit = preload("res://Units/Starter/1/fencer_vargas.tres")
-var selena: Unit = preload("res://Units/Starter/5/selena.tres")
+var vargas: Unit = preload("res://Units/Res/1/1.tres")
+var selena: Unit = preload("res://Units/Res/5/5.tres")
 
 
 # Called when the node enters the scene tree for the first time.

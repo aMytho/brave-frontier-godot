@@ -94,7 +94,6 @@ animations = [{
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_qlwco")
-units = Array[Resource("res://Units/unit_base.gd")]([null, null, null, null, null, null])
 
 [node name="BattleUI" parent="." instance=ExtResource("1_3sce7")]
 offset_top = 453.0

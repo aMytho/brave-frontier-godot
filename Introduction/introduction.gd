@@ -77,8 +77,8 @@ func _on_wake_up():
 	print("Summoner is awake, start tutorial 1")
 	
 	# Load other starter units
-	var sparky:Unit = load("res://Units/General/49/sparky.tres")
-	var burny:Unit = load("res://Units/General/43/burny.tres")
+	var sparky:Unit = load("res://Units/Res/49/49.tres")
+	var burny:Unit = load("res://Units/Res/43/43.tres")
 	
 	# Add units to unit table
 	Database.query(
@@ -95,7 +95,7 @@ func _on_wake_up():
 	# Add to team
 	Database.query(
 		"INSERT INTO team (name, unit1, unit2, unit3) VALUES ('Default', %s, %s, %s)"
-		% [units_ids[0].id, units_ids[1].id, units_ids[2].id,]
+		% [units_ids[1].id, units_ids[0].id, units_ids[2].id,]
 	)
 	
 	#Load the battle scene, insert units. The journey begins!

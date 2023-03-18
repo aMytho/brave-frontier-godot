@@ -1,10 +1,13 @@
 extends Resource
 class_name Unit
 
-@export var unit_number:int = 0
+@export_category("Identification")
+var id: int = 0
+@export var unit_number: int = 0
 @export var data_id: int = 0
 @export var name: String = ""
 
+@export_category("Stats")
 @export var element: String = ""
 @export var gender: String = ""
 @export var rarity: int = 1
@@ -20,10 +23,12 @@ class_name Unit
 
 @export var skills: Array[Resource] = []
 
+@export_category("Assets")
 @export var thumbnail: Texture2D = null
 @export var battle_thumbnail: Texture2D = null
 @export var full_sprite: Texture2D = null
 @export var sprite_sheet: SpriteFrames = null
 
+@export_category("Info")
 @export var quotes: Resource = null
 @export var unit_lore: String = ""
