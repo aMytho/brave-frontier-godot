@@ -1,18 +1,17 @@
-[gd_resource type="Resource" script_class="Unit" load_steps=6 format=3]
+[gd_resource type="Resource" script_class="Unit" load_steps=6 format=3 uid="uid://dxw6lt5q6e42l"]
 
 [ext_resource type="Script" path="res://Units/unit_base.gd" id="1_mlrel"]
 [ext_resource type="Texture2D" uid="uid://bxr60tvlmtkv8" path="res://Units/Res/43/unit_ills_battle_10030.png" id="1_suyf5"]
 [ext_resource type="Texture2D" uid="uid://8b30ohikfwxa" path="res://Units/Res/43/unit_ills_full_10030.png" id="2_b6ddt"]
-[ext_resource type="SpriteFrames" uid="uid://be4sgja34dti" path="res://Units/Res/43/unit_sp_10030.tres" id="4_vn78b"]
+[ext_resource type="SpriteFrames" path="res://Units/Res/43/unit_sp_10030.tres" id="4_vn78b"]
 [ext_resource type="Texture2D" uid="uid://memknqi5f174" path="res://Units/Res/43/unit_ills_thum_10030.png" id="4_x815e"]
 
 [resource]
 script = ExtResource("1_mlrel")
-id = 0
 unit_number = 43
 data_id = 10030
 name = "Burny"
-element = "fire"
+element = "Fire"
 gender = "Genderless"
 rarity = 1
 cost = 1

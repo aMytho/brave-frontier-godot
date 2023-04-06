@@ -1,17 +1,17 @@
-[gd_resource type="Resource" script_class="Unit" load_steps=6 format=3]
+[gd_resource type="Resource" script_class="Unit" load_steps=6 format=3 uid="uid://cn5kw3bfjc7ep"]
 
 [ext_resource type="Texture2D" uid="uid://y5v7e1rc6mxo" path="res://Units/Res/49/unit_ills_battle_40030.png" id="1_xaox0"]
 [ext_resource type="Script" path="res://Units/unit_base.gd" id="1_xyrvh"]
 [ext_resource type="Texture2D" uid="uid://fw61udsblgkb" path="res://Units/Res/49/unit_ills_full_40030.png" id="2_w2fi2"]
 [ext_resource type="Texture2D" uid="uid://b1ihhw8bugqhn" path="res://Units/Res/49/unit_ills_thum_40030.png" id="4_msopp"]
-[ext_resource type="SpriteFrames" uid="uid://cqk75h1itfsxd" path="res://Units/Res/49/unit_sp_40030.tres" id="4_ns7k2"]
+[ext_resource type="SpriteFrames" path="res://Units/Res/49/unit_sp_40030.tres" id="4_ns7k2"]
 
 [resource]
 script = ExtResource("1_xyrvh")
 unit_number = 49
 data_id = 40030
 name = "Sparky"
-element = "thunder"
+element = "Thunder"
 gender = "Genderless"
 rarity = 1
 cost = 1
