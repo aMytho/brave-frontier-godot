@@ -8,7 +8,7 @@ var id: int = 0
 @export var name: String = ""
 
 @export_category("Stats")
-@export var element: String = ""
+@export_enum("Fire", "Water", "Earth", "Thunder", "Light", "Dark") var element: String = ""
 @export var gender: String = ""
 @export var rarity: int = 1
 @export var cost = 1
