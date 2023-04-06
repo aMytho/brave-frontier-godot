@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=6 format=3 uid="uid://bx3jgtlb4xh8n"]
+
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_45ohe"]
+[ext_resource type="Texture2D" uid="uid://c71dtvg3i1gwr" path="res://Units/Res/50/unit_ills_battle_40031.png" id="1_icu3p"]
+[ext_resource type="Texture2D" uid="uid://cqho0sf2ymrhr" path="res://Units/Res/50/unit_ills_full_40031.png" id="2_67rp7"]
+[ext_resource type="SpriteFrames" uid="uid://cx6k0lcki67is" path="res://Units/Res/50/unit_sp_40031.tres" id="4_tynjw"]
+[ext_resource type="Texture2D" uid="uid://brln80vg0pw7n" path="res://Units/Res/50/unit_ills_thum_40031.png" id="5_5ig6t"]
+
+[resource]
+script = ExtResource("1_45ohe")
+unit_number = 50
+data_id = 40031
+name = "King sSparky"
+element = "Thunder"
+gender = "Genderless"
+rarity = 2
+cost = 3
+arena_type = 2
+level = 0
+max_level = 30
+HP = 1200
+ATK = 390
+DEF = 330
+REC = 250
+skills = Array[Resource]([])
+thumbnail = ExtResource("5_5ig6t")
+battle_thumbnail = ExtResource("1_icu3p")
+full_sprite = ExtResource("2_67rp7")
+sprite_sheet = ExtResource("4_tynjw")
+unit_lore = "When Sparky charges up, it evolves into King Sparky. Its new electric shock power far exceeds that of Sparky, and it can quickly put new Summoners in a bind. It has a very warlike nature, forcing Summoners into battle once it spots them. Thus, many Summoners immediately hide after spotting King Sparky."

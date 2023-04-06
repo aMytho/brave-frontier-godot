@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://chcp7f762hndr"]
+
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_4lii2"]
+[ext_resource type="Texture2D" uid="uid://ca4x0ldvs2r31" path="res://Units/Res/73/unit_ills_battle_40050.png" id="1_dexko"]
+[ext_resource type="Texture2D" uid="uid://cqfuggpki73b4" path="res://Units/Res/73/unit_ills_full_40050.png" id="2_35aa5"]
+[ext_resource type="Texture2D" uid="uid://dp1tuaymc6jos" path="res://Units/Res/73/unit_ills_thum_40050.png" id="4_5jdjd"]
+
+[resource]
+script = ExtResource("1_4lii2")
+unit_number = 73
+data_id = 40050
+name = "Harpy"
+element = "Thunder"
+gender = "genderless"
+rarity = 1
+cost = 2
+arena_type = 1
+level = 0
+max_level = 12
+HP = 1200
+ATK = 330
+DEF = 280
+REC = 120
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_5jdjd")
+battle_thumbnail = ExtResource("1_dexko")
+full_sprite = ExtResource("2_35aa5")
+unit_lore = "A half-human, half-bird female monster from the birdman tribe. With her lusty nature, she seduces young men on sight. Men who take her invitation, tempted by her lascivious looks, are taken to the harpy nest, and fed to harpy children. However, there is no safe choice. Someone who refuses is immediately charged and ripped to shreds by her sharp claws."

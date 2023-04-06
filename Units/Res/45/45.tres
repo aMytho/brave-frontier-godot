@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=6 format=3 uid="uid://c8b4ts54e4r00"]
+
+[ext_resource type="Texture2D" uid="uid://b15eobri4vy4t" path="res://Units/Res/45/unit_ills_battle_20030.png" id="1_575p4"]
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_ir8yp"]
+[ext_resource type="Texture2D" uid="uid://djgv4t222q3lv" path="res://Units/Res/45/unit_ills_full_20030.png" id="2_3qb6j"]
+[ext_resource type="SpriteFrames" uid="uid://bvgk4scwi8g2o" path="res://Units/Res/45/unit_sp_20030.tres" id="4_1yj0w"]
+[ext_resource type="Texture2D" uid="uid://c6k0v68gxe0i1" path="res://Units/Res/45/unit_ills_thum_20030.png" id="4_s32pc"]
+
+[resource]
+script = ExtResource("1_ir8yp")
+unit_number = 45
+data_id = 20030
+name = "Squirty"
+element = "Water"
+gender = "Genderless"
+rarity = 1
+cost = 1
+arena_type = 2
+level = 0
+max_level = 10
+HP = 800
+ATK = 300
+DEF = 280
+REC = 250
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_s32pc")
+battle_thumbnail = ExtResource("1_575p4")
+full_sprite = ExtResource("2_3qb6j")
+sprite_sheet = ExtResource("4_1yj0w")
+unit_lore = "A demon born from drops at the bottom of a giant waterfall. They are weak and the lowest ranked of all monsters. They exhibit pack behavior and like watery places, but are cowardly and usually run from humans. However, some of them are violent and attack by attaching themselves to an enemy's head. Rumor is they're not suitable for drinking, but no one has ever tested this theory."
