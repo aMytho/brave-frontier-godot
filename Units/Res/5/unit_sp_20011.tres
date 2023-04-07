@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=12 format=3]
+[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://cinwu2wu2wyqh"]
 
 [ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/A1.tres" id="1_1lvic"]
 [ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/I1.tres" id="1_sdvtv"]

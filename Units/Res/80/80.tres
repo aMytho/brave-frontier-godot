@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=2 format=3 uid="uid://darssws14613l"]
+
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_sha1v"]
+
+[resource]
+script = ExtResource("1_sha1v")
+unit_number = 0
+data_id = 0
+name = ""
+element = ""
+gender = ""
+rarity = 1
+cost = 1
+arena_type = 0
+level = 0
+max_level = 0
+HP = 0
+ATK = 0
+DEF = 0
+REC = 0
+skills = Array[Resource]([])
+unit_lore = ""

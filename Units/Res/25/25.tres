@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://b0my4dcxvqulx"]
+
+[ext_resource type="Texture2D" uid="uid://bhu08wecm836r" path="res://Units/Res/25/unit_ills_battle_10021.png" id="1_06lns"]
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_s0aut"]
+[ext_resource type="Texture2D" uid="uid://c44pkuh2pap3n" path="res://Units/Res/25/unit_ills_full_10021.png" id="2_ut6x0"]
+[ext_resource type="Texture2D" uid="uid://buti21fsunxvo" path="res://Units/Res/25/unit_ills_thum_10021.png" id="4_mptjs"]
+
+[resource]
+script = ExtResource("1_s0aut")
+unit_number = 25
+data_id = 10021
+name = "Beast Zegar"
+element = "Fire"
+gender = "Male"
+rarity = 2
+cost = 3
+arena_type = 2
+level = 0
+max_level = 30
+HP = 145
+ATK = 550
+DEF = 280
+REC = 210
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_mptjs")
+battle_thumbnail = ExtResource("1_06lns")
+full_sprite = ExtResource("2_ut6x0")
+unit_lore = "A boy found in a huge jungle in the territory of the devastated Agni Empire. Completely feral, he could not even understand human language. However, his physical abilities were so strong that when attacked by a knight the boy held him off without injury. Mystery surrounds Zegar, as even growing up in the jungle cannot explain his claws."
