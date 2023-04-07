@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://bn722k0o3pwja"]
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://b8gx7nxgv187b"]
 
 [ext_resource type="Script" path="res://Units/unit_base.gd" id="1_jdlfv"]
 [ext_resource type="Texture2D" uid="uid://nmavhqxfvj00" path="res://Units/Res/13/unit_ills_battle_40011.png" id="1_w5sfb"]
