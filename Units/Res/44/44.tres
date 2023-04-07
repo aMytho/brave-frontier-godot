@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://bmvgqxuqyqyys"]
+
+[ext_resource type="Texture2D" uid="uid://dgv710ga5b0uf" path="res://Units/Res/44/unit_ills_battle_10031.png" id="1_dplx5"]
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_u2s8t"]
+[ext_resource type="Texture2D" uid="uid://drr510mdl6ta1" path="res://Units/Res/44/unit_ills_full_10031.png" id="2_nlaj4"]
+[ext_resource type="Texture2D" uid="uid://bgxc2be6ghk1h" path="res://Units/Res/44/unit_ills_thum_10031.png" id="4_qv6de"]
+
+[resource]
+script = ExtResource("1_u2s8t")
+unit_number = 44
+data_id = 10031
+name = "King Burny"
+element = "Fire"
+gender = "genderless"
+rarity = 2
+cost = 3
+arena_type = 2
+level = 0
+max_level = 30
+HP = 1200
+ATK = 390
+DEF = 330
+REC = 250
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_qv6de")
+battle_thumbnail = ExtResource("1_dplx5")
+full_sprite = ExtResource("2_nlaj4")
+unit_lore = "Only when Burny grows by consuming premium flames can it evolve into King Burny. By opening its mouth wide it can swallow a full-grown human in one bite. An intensely hot liquid is always wriggling around in its body, and sometimes pours out, causing fires. Extremely more powerful than Burny, it is probably the first formidable enemy a Summoner will face."

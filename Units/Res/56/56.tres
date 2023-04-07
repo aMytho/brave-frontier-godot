@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://umhhcpm7fr0p"]
+
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_e3hhc"]
+[ext_resource type="Texture2D" uid="uid://ccs8qcf7470pp" path="res://Units/Res/56/unit_ills_battle_10041.png" id="1_o140y"]
+[ext_resource type="Texture2D" uid="uid://bw2fwufepj1me" path="res://Units/Res/56/unit_ills_full_10041.png" id="2_fm8p4"]
+[ext_resource type="Texture2D" uid="uid://cqp4e4hsf0i5q" path="res://Units/Res/56/unit_ills_thum_10041.png" id="4_rndvr"]
+
+[resource]
+script = ExtResource("1_e3hhc")
+unit_number = 56
+data_id = 10041
+name = "Warlock Liza"
+element = "Fire"
+gender = "Female"
+rarity = 2
+cost = 4
+arena_type = 5
+level = 0
+max_level = 30
+HP = 1260
+ATK = 405
+DEF = 405
+REC = 445
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_rndvr")
+battle_thumbnail = ExtResource("1_o140y")
+full_sprite = ExtResource("2_fm8p4")
+unit_lore = "A magician from the ruined Agni Empire, her primary task in the imperial army was suppressing demons. Her fire magic was extremely potent against opposing elements, but she was never able to go beyond what she learned in books. Her struggle is recorded in her diary which also holds all of her magical knowledge, making it valuable for research even today."

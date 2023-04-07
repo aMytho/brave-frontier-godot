@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://b5737h8h1452g"]
+
+[ext_resource type="Texture2D" uid="uid://c0klwdxrkr573" path="res://Units/Res/80/unit_ills_battle_10062.png" id="1_6vybc"]
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_sha1v"]
+[ext_resource type="Texture2D" uid="uid://ce2j1yqx37lx0" path="res://Units/Res/80/unit_ills_full_10062.png" id="2_pt3pm"]
+[ext_resource type="Texture2D" uid="uid://dto63w7304o8j" path="res://Units/Res/80/unit_ills_thum_10062.png" id="4_eat7b"]
+
+[resource]
+script = ExtResource("1_sha1v")
+unit_number = 80
+data_id = 10062
+name = "Head Thief Leon"
+element = "Fire"
+gender = "Male"
+rarity = 3
+cost = 6
+arena_type = 3
+level = 0
+max_level = 40
+HP = 1728
+ATK = 572
+DEF = 572
+REC = 567
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_eat7b")
+battle_thumbnail = ExtResource("1_6vybc")
+full_sprite = ExtResource("2_pt3pm")
+unit_lore = "With a simple credo of \"help the weak, crush the strong\", he came to lead a large band of thieves around the ruined Agni Empire. Trading his knives for swords as the war with the gods began, he fought for the masses. Alas, the officials he hurt before interfered, leaving him with enemies among the gods and the empire, but he was still able to meet a heroic end."

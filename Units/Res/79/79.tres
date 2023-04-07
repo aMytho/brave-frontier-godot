@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://byesa2d2igkj5"]
+
+[ext_resource type="Texture2D" uid="uid://ccc1y6sxwkuy8" path="res://Units/Res/79/unit_ills_battle_10061.png" id="1_0yi3q"]
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_2b5bo"]
+[ext_resource type="Texture2D" uid="uid://cy63cx5m3t0ka" path="res://Units/Res/79/unit_ills_full_10061.png" id="2_oyvga"]
+[ext_resource type="Texture2D" uid="uid://botdfgnaa3eqd" path="res://Units/Res/79/unit_ills_thum_10061.png" id="4_gdixu"]
+
+[resource]
+script = ExtResource("1_2b5bo")
+unit_number = 79
+data_id = 10061
+name = "Thief Leon"
+element = "Fire"
+gender = "Male"
+rarity = 2
+cost = 3
+arena_type = 3
+level = 0
+max_level = 30
+HP = 1200
+ATK = 460
+DEF = 460
+REC = 350
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_gdixu")
+battle_thumbnail = ExtResource("1_0yi3q")
+full_sprite = ExtResource("2_oyvga")
+unit_lore = "A bandit ruling the territories around the ruined Agni Empire. Raised in an orphanage, he left in a rage knowing that Imperial subsidies were being embezzled by a vicious official. He then made his name as a bandit, targeting detestable government officials, soldiers and merchants. Wielding dual-knives, he's known to hurt, but never kill his targets."

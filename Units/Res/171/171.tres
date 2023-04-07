@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://e81adrvfufg8"]
+
+[ext_resource type="Texture2D" uid="uid://dretaugsiemsi" path="res://Units/Res/171/unit_ills_battle_10130.png" id="1_2shmj"]
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_475yk"]
+[ext_resource type="Texture2D" uid="uid://2devae3e5bnn" path="res://Units/Res/171/unit_ills_full_10130.png" id="2_ap863"]
+[ext_resource type="Texture2D" uid="uid://crmgwsc4pjteg" path="res://Units/Res/171/unit_ills_thum_10130.png" id="4_lqb7o"]
+
+[resource]
+script = ExtResource("1_475yk")
+unit_number = 171
+data_id = 10130
+name = "Fire Nymph"
+element = "Fire"
+gender = "Genderless"
+rarity = 1
+cost = 2
+arena_type = 3
+level = 0
+max_level = 1
+HP = 1100
+ATK = 300
+DEF = 300
+REC = 300
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_lqb7o")
+battle_thumbnail = ExtResource("1_2shmj")
+full_sprite = ExtResource("2_ap863")
+unit_lore = "A small nymph thought to be born from fire, one of the six elements created by the gods. Lively and erratic, it is always scheming while floating around. It often appears before people, but since it is unpredictable and may suddenly attack, it's perceived as an nuisance by most. Yet as it can grant special powers to others, many Summoners search for this fairy."

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://ifax4xw7se5m"]
+
+[ext_resource type="Texture2D" uid="uid://tr2ccf5lyiox" path="res://Units/Res/55/unit_ills_battle_10040.png" id="1_l0ccf"]
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_wq8kx"]
+[ext_resource type="Texture2D" uid="uid://3wri2xf8uuoh" path="res://Units/Res/55/unit_ills_full_10040.png" id="2_vgfe5"]
+[ext_resource type="Texture2D" uid="uid://b1idji3s303bm" path="res://Units/Res/55/unit_ills_thum_10040.png" id="4_lif04"]
+
+[resource]
+script = ExtResource("1_wq8kx")
+unit_number = 55
+data_id = 10040
+name = "Witch Liza"
+element = "Fire"
+gender = "Female"
+rarity = 1
+cost = 2
+arena_type = 5
+level = 0
+max_level = 15
+HP = 1000
+ATK = 300
+DEF = 300
+REC = 380
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_lif04")
+battle_thumbnail = ExtResource("1_l0ccf")
+full_sprite = ExtResource("2_vgfe5")
+unit_lore = "A magician from the ruined Agni Empire, she went to a seminary to become a priestess as her family wished, but ran away in pursuit of magic. Then she studied fire magic on her own. She began to work as a magician in the imperial capital outskirts. At first, she was little more than a handywoman, but her reputation soon awarded her the rank of imperial scout."
