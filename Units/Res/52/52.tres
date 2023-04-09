@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://djuoxudl6i4ea"]
+
+[ext_resource type="Texture2D" uid="uid://du1nia4r3ba0" path="res://Units/Res/52/unit_ills_battle_50031.png" id="1_05nxr"]
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_53lj5"]
+[ext_resource type="Texture2D" uid="uid://b64hypm387rhp" path="res://Units/Res/52/unit_ills_full_50031.png" id="2_lc46k"]
+[ext_resource type="Texture2D" uid="uid://3thju22aarup" path="res://Units/Res/52/unit_ills_thum_50031.png" id="4_03oqj"]
+
+[resource]
+script = ExtResource("1_53lj5")
+unit_number = 52
+data_id = 50031
+name = "King Glowy"
+element = "Light"
+gender = "Genderless"
+rarity = 2
+cost = 3
+arena_type = 2
+level = 0
+max_level = 30
+HP = 1160
+ATK = 350
+DEF = 520
+REC = 350
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_03oqj")
+battle_thumbnail = ExtResource("1_05nxr")
+full_sprite = ExtResource("2_lc46k")
+unit_lore = ""

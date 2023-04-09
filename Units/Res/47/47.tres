@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=6 format=3 uid="uid://d14xftlgldw1c"]
+
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_8pwwi"]
+[ext_resource type="Texture2D" uid="uid://cehfmqvbbfs3q" path="res://Units/Res/47/unit_ills_battle_30030.png" id="1_61qvs"]
+[ext_resource type="Texture2D" uid="uid://brjvdv3losse4" path="res://Units/Res/47/unit_ills_full_30030.png" id="2_r0p6k"]
+[ext_resource type="SpriteFrames" uid="uid://djvmprip5vca5" path="res://Units/Res/47/unit_sp_30030.tres" id="4_as4ii"]
+[ext_resource type="Texture2D" uid="uid://ck0xhmeqfo1iw" path="res://Units/Res/47/unit_ills_thum_30030.png" id="5_0rhx7"]
+
+[resource]
+script = ExtResource("1_8pwwi")
+unit_number = 47
+data_id = 30030
+name = "Mossy"
+element = "Earth"
+gender = "genderless"
+rarity = 1
+cost = 1
+arena_type = 2
+level = 0
+max_level = 10
+HP = 850
+ATK = 260
+DEF = 350
+REC = 220
+skills = Array[Resource]([])
+thumbnail = ExtResource("5_0rhx7")
+battle_thumbnail = ExtResource("1_61qvs")
+full_sprite = ExtResource("2_r0p6k")
+sprite_sheet = ExtResource("4_as4ii")
+unit_lore = "A liquid type demon with leaves sprouting from its head, born from the sap of a massive tree. It is curious and always hungry. There are many tales of Mossy suddenly joining those who walk through the forest. However, it should be driven away quickly since it is always after food. The lowest ranked of the demons, it is a perfect sparring partner for new Summoners."
