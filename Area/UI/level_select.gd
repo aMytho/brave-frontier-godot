@@ -22,7 +22,7 @@ func loadLevel(zn: Zone):
 	print("Loading level")
 	# Get the first team and its corresponding units. TO DO - Let user select/make teams
 	var units: Array = Database.query(
-		"SELECT units.* FROM units JOIN team ON units.id = team.unit1 OR units.id = team.unit2 OR units.id = team.unit3 OR units.id = team.unit4 OR units.id = team.unit5 WHERE team.id = 2 ORDER BY CASE units.id WHEN team.unit1 THEN 1 WHEN team.unit2 THEN 2 WHEN team.unit3 THEN 3 WHEN team.unit4 THEN 4 WHEN team.unit5 THEN 5 END;"
+		"SELECT units.* FROM units JOIN team ON units.id = team.unit1 OR units.id = team.unit2 OR units.id = team.unit3 OR units.id = team.unit4 OR units.id = team.unit5 WHERE team.id = 1 ORDER BY CASE units.id WHEN team.unit1 THEN 1 WHEN team.unit2 THEN 2 WHEN team.unit3 THEN 3 WHEN team.unit4 THEN 4 WHEN team.unit5 THEN 5 END;"
 		)
 
 	# Add units to the list
