@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://7bidt0bmkos7"]
+
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_7alt3"]
+[ext_resource type="Texture2D" uid="uid://b7igjbvainr31" path="res://Units/Res/69/unit_ills_battle_20050.png" id="1_kxam7"]
+[ext_resource type="Texture2D" uid="uid://dvmhjoe6mk3j1" path="res://Units/Res/69/unit_ills_full_20050.png" id="2_sfyp7"]
+[ext_resource type="Texture2D" uid="uid://cki1a3eqsffjf" path="res://Units/Res/69/unit_ills_thum_20050.png" id="4_d32di"]
+
+[resource]
+script = ExtResource("1_7alt3")
+unit_number = 69
+data_id = 20050
+name = "Merman"
+element = "Water"
+gender = "genderless"
+rarity = 1
+cost = 2
+arena_type = 4
+level = 0
+max_level = 12
+HP = 950
+ATK = 380
+DEF = 350
+REC = 200
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_d32di")
+battle_thumbnail = ExtResource("1_kxam7")
+full_sprite = ExtResource("2_sfyp7")
+unit_lore = "A magical aquatic being that lives in the oceans of Grand Gaia. They are often found in the tales of humans. They usually live in the sea or on the shore, but they are found anywhere where there is water, including rivers and lakes. A human can easily run into one. They move in groups and are observed to be very dangerous when hunting larger beasts."

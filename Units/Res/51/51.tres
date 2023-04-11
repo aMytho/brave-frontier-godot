@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://bs8suegyk8m10"]
+
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_1m55p"]
+[ext_resource type="Texture2D" uid="uid://dodeg5l4jggnl" path="res://Units/Res/51/unit_ills_battle_50030.png" id="1_el3ib"]
+[ext_resource type="Texture2D" uid="uid://uiflrwk2xhfb" path="res://Units/Res/51/unit_ills_full_50030.png" id="2_itw0d"]
+[ext_resource type="Texture2D" uid="uid://vdm8e5e1ftls" path="res://Units/Res/51/unit_ills_thum_50030.png" id="4_xobu5"]
+
+[resource]
+script = ExtResource("1_1m55p")
+unit_number = 51
+data_id = 50030
+name = "Glowy"
+element = "Light"
+gender = ""
+rarity = 1
+cost = 1
+arena_type = 2
+level = 0
+max_level = 10
+HP = 830
+ATK = 300
+DEF = 400
+REC = 300
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_xobu5")
+battle_thumbnail = ExtResource("1_el3ib")
+full_sprite = ExtResource("2_itw0d")
+unit_lore = "A type of slime with a sparkling body. They are a very common creature, although their origin is unknown. Some think they were made at the time of creation, and have since increased in number. Most are basically kind. When they find a person walking at night, they offer themselves as lamps. However, since there are so many, some have become violent and will attack humans."
