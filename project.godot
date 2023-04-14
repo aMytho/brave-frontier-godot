@@ -20,6 +20,7 @@ config/icon="res://Units/Battle/unit_ills_battle_10011.png"
 
 Database="*res://Database/database.gd"
 ActiveAccount="*res://Database/account.gd"
+Lookups="*res://Database/resource_lookups.gd"
 
 [display]
 
