@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bntu4pet8um37"]
+[gd_scene load_steps=19 format=3 uid="uid://bntu4pet8um37"]
 
 [ext_resource type="Script" path="res://Area/UI/level_select.gd" id="1_r46r0"]
 [ext_resource type="Texture2D" uid="uid://dr3kfgmlfmaph" path="res://Area/UI/header_title_base1.png" id="2_3ka7g"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bblmm7emq2ctj" path="res://Area/UI/info_btn2.png" id="6_0ui82"]
 [ext_resource type="Texture2D" uid="uid://dqmfs8lpdy2n2" path="res://Area/UI/home_btn_label1.png" id="7_kgys4"]
 [ext_resource type="Texture2D" uid="uid://c56voygrsqxuf" path="res://Menu/Footer/footer_base.png" id="8_6qtp6"]
+[ext_resource type="PackedScene" uid="uid://b72w1jubrvjht" path="res://Common/UI/ContentSwitcher/content_switcher.tscn" id="9_rchly"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3kjm7"]
 texture = ExtResource("3_8g4wu")
@@ -47,7 +48,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-236, 875), Vector2(700, 875)]
+"values": [Vector2(-236, 887), Vector2(700, 887)]
 }
 
 [sub_resource type="Animation" id="Animation_phpcm"]
@@ -77,20 +78,6 @@ anchors_preset = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_r46r0")
-
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 153.0
-offset_right = 639.0
-offset_bottom = 791.0
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
-
-[node name="Levels" type="VBoxContainer" parent="ScrollContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_constants/separation = 43
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -148,10 +135,9 @@ text = "Choose a good map please!"
 [node name="MessageBackground" type="TextureRect" parent="."]
 editor_description = "Can someone please tell me why this is so long?"
 layout_mode = 0
-offset_left = -0.109375
-offset_top = 1012.0
-offset_right = 232.891
-offset_bottom = 2040.0
+offset_top = 1025.0
+offset_right = 233.0
+offset_bottom = 2053.0
 rotation = -1.57079
 texture = ExtResource("8_6qtp6")
 expand_mode = 1
@@ -162,6 +148,13 @@ autoplay = "MovingText"
 libraries = {
 "": SubResource("AnimationLibrary_83b73")
 }
+
+[node name="content_switcher" parent="." instance=ExtResource("9_rchly")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+offset_top = 127.0
+offset_right = 640.0
+offset_bottom = 880.0
 
 [connection signal="pressed" from="TextureRect/Button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_home_button_pressed"]

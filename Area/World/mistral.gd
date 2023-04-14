@@ -11,24 +11,24 @@ func _on_button_pressed():
 	print("Loading green biome")
 	#Load the header scene
 	
-	#TODO - Load header in level loader :)
 	header = ResourceLoader.load("res://Menu/Header/header.tscn").instantiate()
-	var levelLoader = ResourceLoader.load("res://Area/UI/level_select.tscn").instantiate()
+	var level_loader = ResourceLoader.load("res://Area/UI/level_select.tscn").instantiate()
 	var res = load("res://Area/Areas/Mistral/AdventurePrairie/adventure_prairie.tres")
 	print("Level is: ", res)
-	levelLoader.dungeon = res
 	
-	#Display next scene
+	#Display next scene, set its position
 	add_child(header)
-	add_child(levelLoader)
-	levelLoader.position.y = 175
+	add_child(level_loader)
+	level_loader.position.y = 163
+	#Load the dungeon's zones
+	level_loader.dungeon = res
 	
 	#Toggle it
 	toggleUI(true)
 	
 	#Handle scene deletion
 	var callable = Callable(self, "on_levels_selector_closed")
-	levelLoader.connect("Closed", callable)
+	level_loader.connect("Closed", callable)
 
 func on_levels_selector_closed():
 	#Close the header
