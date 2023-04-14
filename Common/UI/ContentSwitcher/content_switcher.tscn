@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b72w1jubrvjht"]
+
+[ext_resource type="Script" path="res://Common/UI/ContentSwitcher/content_switcher.gd" id="1_t5rsq"]
+
+[node name="content_switcher" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t5rsq")
+
+[node name="Header" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
