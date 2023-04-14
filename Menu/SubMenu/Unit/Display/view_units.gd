@@ -11,7 +11,7 @@ var selena: Unit = preload("res://Units/Res/5/5.tres")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(units)
+	print(units, selena, vargas)
 	#Add units to tree
 	var count = 0
 	while count < 10:

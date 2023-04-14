@@ -23,9 +23,9 @@ func _ready():
 
 func set_path() -> String:
 	if OS.is_debug_build():
-		return "user://dev3.db"
+		return "user://dev.db"
 	else:
-		return "user://main3.db" 
+		return "user://main.db" 
 
 func migration_check():
 	#get version

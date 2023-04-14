@@ -12,14 +12,18 @@ CREATE TABLE units (
     rec        INTEGER NOT NULL
 );
 
---make team table. Each row is 1 team
-CREATE TABLE team (
-    id    INTEGER PRIMARY KEY AUTOINCREMENT
-                  UNIQUE,
-    name  TEXT,
-    unit1 INTEGER REFERENCES units (id) ON DELETE SET NULL,
-    unit2 INTEGER REFERENCES units (id) ON DELETE SET NULL,
-    unit3 INTEGER REFERENCES units (id) ON DELETE SET NULL,
-    unit4 INTEGER REFERENCES units (id) ON DELETE SET NULL,
-    unit5 INTEGER REFERENCES units (id) ON DELETE SET NULL
+--make teams table. Each row is 1 team
+CREATE TABLE teams (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT
+                       UNIQUE,
+    name       TEXT,
+    unit1      INTEGER REFERENCES units (id) ON DELETE SET NULL,
+    unit2      INTEGER REFERENCES units (id) ON DELETE SET NULL,
+    unit3      INTEGER REFERENCES units (id) ON DELETE SET NULL,
+    unit4      INTEGER REFERENCES units (id) ON DELETE SET NULL,
+    unit5      INTEGER REFERENCES units (id) ON DELETE SET NULL,
+    account_id         REFERENCES player_state (id) 
+                       NOT NULL
 );
+
+
