@@ -87,7 +87,7 @@ offset_top = 6.0
 offset_right = 230.0
 offset_bottom = 330.0
 texture = ExtResource("3_sna0l")
-ignore_texture_size = true
+expand_mode = 1
 
 [node name="CharElement" type="Sprite2D" parent="Character/TextureRect/Char1"]
 position = Vector2(100, 297)
@@ -118,7 +118,7 @@ offset_top = -28.0
 offset_right = 283.0
 offset_bottom = 332.0
 texture = ExtResource("8_p2uhy")
-ignore_texture_size = true
+expand_mode = 1
 
 [node name="CharElement" type="Sprite2D" parent="Character/TextureRect/Char2"]
 position = Vector2(108, 303)
@@ -153,7 +153,7 @@ offset_top = -64.0
 offset_right = 236.0
 offset_bottom = 310.0
 texture = ExtResource("9_kib8c")
-ignore_texture_size = true
+expand_mode = 1
 stretch_mode = 5
 
 [node name="CharElement" type="Sprite2D" parent="Character/TextureRect/Char5"]
@@ -187,7 +187,7 @@ offset_top = 6.0
 offset_right = 265.0
 offset_bottom = 315.0
 texture = ExtResource("10_7vmnq")
-ignore_texture_size = true
+expand_mode = 1
 
 [node name="CharElement" type="Sprite2D" parent="Character/TextureRect/Char3"]
 position = Vector2(99, 299)
@@ -296,7 +296,7 @@ offset_top = 616.0
 offset_right = 626.0
 offset_bottom = 704.0
 texture = ExtResource("19_gw8gm")
-ignore_texture_size = true
+expand_mode = 1
 
 [node name="Launch" type="Control" parent="."]
 layout_mode = 1
@@ -320,7 +320,7 @@ offset_top = -1.0
 offset_right = 448.0
 offset_bottom = 207.0
 texture = SubResource("AnimatedTexture_4vnxq")
-ignore_texture_size = true
+expand_mode = 1
 script = ExtResource("26_r7m41")
 buttonPath = NodePath("../HBoxContainer")
 
@@ -335,7 +335,6 @@ offset_bottom = 225.0
 layout_mode = 2
 texture = ExtResource("27_morit")
 script = ExtResource("28_cvqux")
-id = 0
 
 [node name="I2" type="TextureRect" parent="Launch/Control/HBoxContainer"]
 layout_mode = 2

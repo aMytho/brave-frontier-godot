@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp3e5ox8cqlel"]
+
+[ext_resource type="Script" path="res://Common/UI/Toggles/content_toggle_button.gd" id="1_se6uw"]
+[ext_resource type="Texture2D" uid="uid://d1ebi5j4wftln" path="res://Menu/Launch Icons/inactiveIcon.png" id="1_tc6o6"]
+
+[node name="content_toggle_button" type="TextureRect"]
+texture = ExtResource("1_tc6o6")
+script = ExtResource("1_se6uw")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1eigleo5mcjw"]
+
+[ext_resource type="Script" path="res://Area/UI/LevelPrep/level_scrollable.gd" id="1_vvur1"]
+
+[node name="ScrollContainer" type="ScrollContainer"]
+offset_left = 16.0
+offset_right = 624.0
+offset_bottom = 400.0
+horizontal_scroll_mode = 0
+script = ExtResource("1_vvur1")
+
+[node name="Levels" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 43

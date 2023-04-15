@@ -11,7 +11,7 @@ func loadScene(scene:String, showLoadScreen: bool = false):
 	if showLoadScreen:
 		#display loading screen
 		add_child(loadWindow.instantiate())
-		await get_tree().create_timer(4.0).timeout
+		await get_tree().create_timer(1.0).timeout
 	#Load the next scene
 	var nextScene = ResourceLoader.load(scene).instantiate()
 	#Display next scene
@@ -26,7 +26,7 @@ func loadSceneWithProps(scene: String, names, props, showLoadScreen: bool = fals
 	if showLoadScreen:
 		#display loading screen
 		add_child(loadWindow.instantiate())
-		await get_tree().create_timer(4.0).timeout
+		await get_tree().create_timer(1.0).timeout
 	#Load the next scene
 	var nextScene = ResourceLoader.load(scene).instantiate()
 	

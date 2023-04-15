@@ -19,7 +19,7 @@ script = ExtResource("1_fn0st")
 [node name="LevelSelectButton" type="Button" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_right = 640.0
+offset_right = 608.0
 offset_bottom = 163.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_gww5b")
 theme_override_styles/hover = SubResource("StyleBoxTexture_gww5b")
@@ -68,10 +68,10 @@ text = "5"
 [node name="LevelName" type="Label" parent="LevelSelectButton"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 69.0
-offset_top = 15.0
-offset_right = 338.0
-offset_bottom = 53.0
+offset_left = 48.0
+offset_top = 16.0
+offset_right = 317.0
+offset_bottom = 54.0
 theme_override_fonts/font = SubResource("SystemFont_h1l3l")
 theme_override_font_sizes/font_size = 25
 text = "A Basic Prarie"
@@ -79,9 +79,9 @@ text = "A Basic Prarie"
 [node name="Label" type="Label" parent="LevelSelectButton"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 68.0
+offset_left = 31.0
 offset_top = 101.0
-offset_right = 612.0
+offset_right = 560.0
 offset_bottom = 161.0
 text = "This is a long amount of text for all sorts of lorem ipsum and more t
 this is event more text hmmmmmm aaaa bbb ccc ddd eee ff gg h.. !"

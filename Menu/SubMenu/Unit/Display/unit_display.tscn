@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene load_steps=10 format=3 uid="uid://xicsog7af660"]
 
 [ext_resource type="PackedScene" uid="uid://xhjlg8cryvhc" path="res://Menu/SubMenu/Unit/StatusFrame/status_frame.tscn" id="1_3eneo"]
 [ext_resource type="Script" path="res://Menu/SubMenu/Unit/Display/unit_display.gd" id="1_u13lf"]
-[ext_resource type="Resource" uid="uid://bm8fnsc5i603j" path="res://Units/Res/1/fencer_vargas.tres" id="2_owl5q"]
 [ext_resource type="Texture2D" uid="uid://cdo0jtv2xinjb" path="res://Menu/SubMenu/Unit/Display/leader_burst_label.png" id="4_xr3k8"]
 [ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="5_lo3ah"]
 [ext_resource type="FontFile" uid="uid://dsk2n5ffuertq" path="res://Common/Arial.ttf" id="6_co6qm"]
@@ -19,7 +18,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u13lf")
-unit = ExtResource("2_owl5q")
 
 [node name="Character" type="TextureRect" parent="."]
 layout_mode = 0
@@ -178,7 +176,7 @@ offset_top = 677.0
 offset_right = 91.0
 offset_bottom = 739.0
 texture = ExtResource("7_jg8yi")
-ignore_texture_size = true
+expand_mode = 1
 
 [node name="Item2Frame" parent="." instance=ExtResource("1_3eneo")]
 layout_mode = 0
@@ -196,7 +194,7 @@ offset_top = 750.0
 offset_right = 90.0
 offset_bottom = 812.0
 texture = ExtResource("7_jg8yi")
-ignore_texture_size = true
+expand_mode = 1
 
 [node name="ExpContainer" type="TextureRect" parent="."]
 layout_mode = 0
@@ -206,7 +204,7 @@ offset_right = 397.0
 offset_bottom = 326.0
 scale = Vector2(0.5, 1)
 texture = ExtResource("8_o0l6u")
-ignore_texture_size = true
+expand_mode = 1
 
 [node name="ExpBar" type="TextureProgressBar" parent="ExpContainer"]
 layout_mode = 0
