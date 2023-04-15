@@ -4,6 +4,7 @@ extends Control
 signal PlayerReady(team)
 
 @export var teams: Array = []
+@export var team_id: int = 0
 @export var units: Array[Unit] = [
 	null, null, null, null, null, null
 ]
@@ -15,7 +16,7 @@ func _ready():
 func set_team_info(new_teams: Array):
 	teams = new_teams
 	for team in teams:
-		print(team)
+		print("Loading team: ", team)
 		# Add icon for each team
 		var icn = ResourceLoader.load("res://Common/UI/Toggles/content_toggle_button.tscn").instantiate()
 		$ScrollContainer/HBoxContainer.add_child(icn)
@@ -63,6 +64,7 @@ func set_active_team(id: int):
 	# to do - work on switch controls, list leader/friend skills
 	# let there be light!
 	$ScrollContainer/HBoxContainer.get_child(id).turn_on()
+	team_id = id
 
 func display_unit(unit: Unit, place: int):
 	print(unit)
@@ -80,7 +82,22 @@ func display_unit(unit: Unit, place: int):
 			$UnitThumbnail5.icon = unit.thumbnail
 		# to do - friend stuff
 
-
 func _on_begin_clicked(id):
 	#send the signal with the active units
 	emit_signal("PlayerReady", units)
+
+func _on_directional_left_clicked():
+	# Switch to the last team
+	if team_id - 1 >= 0 and team_id - 1 < teams.size():
+		# Deactivate old btn
+		$ScrollContainer/HBoxContainer.get_child(team_id).turn_off()
+		# Switch team
+		set_active_team(team_id - 1)
+
+func _on_directional_right_clicked():
+	# Switch to the next team
+	if team_id + 1 < teams.size():
+		# Deactivate old btn
+		$ScrollContainer/HBoxContainer.get_child(team_id).turn_off()
+		# Switch team
+		set_active_team(team_id + 1)

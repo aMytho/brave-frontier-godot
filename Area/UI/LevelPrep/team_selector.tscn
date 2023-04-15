@@ -256,4 +256,6 @@ theme_override_font_sizes/font_size = 40
 text = "Begin Quest"
 icon = null
 
+[connection signal="Clicked" from="Directional" to="." method="_on_directional_left_clicked"]
+[connection signal="Clicked" from="Directional2" to="." method="_on_directional_right_clicked"]
 [connection signal="Clicked" from="Begin" to="." method="_on_begin_clicked"]
