@@ -48,18 +48,28 @@ func set_active_team(id: int):
 	if unit_1.valid:
 		display_unit(unit_1.unit, 1)
 		units[0] = unit_1.unit
+	else:
+		reset_unit(1)
 	if unit_2.valid:
 		display_unit(unit_2.unit, 2)
 		units[1] = unit_2.unit
+	else:
+		reset_unit(2)
 	if unit_3.valid:
 		display_unit(unit_3.unit, 3)
 		units[2] = unit_3.unit
+	else:
+		reset_unit(3)
 	if unit_4.valid:
 		display_unit(unit_4.unit, 4)
 		units[3] = unit_4.unit
+	else:
+		reset_unit(4)
 	if unit_5.valid:
 		display_unit(unit_5.unit, 5)
 		units[4] = unit_5.unit
+	else:
+		reset_unit(5)
 	
 	# to do - work on switch controls, list leader/friend skills
 	# let there be light!
@@ -81,6 +91,19 @@ func display_unit(unit: Unit, place: int):
 		5:
 			$UnitThumbnail5.icon = unit.thumbnail
 		# to do - friend stuff
+
+func reset_unit(place: int):
+	match place:
+		1:
+			$UnitThumbnail.icon = null
+		2:
+			$UnitThumbnail2.icon = null
+		3:
+			$UnitThumbnail3.icon = null
+		4:
+			$UnitThumbnail4.icon = null
+		5:
+			$UnitThumbnail5.icon = null
 
 func _on_begin_clicked(id):
 	#send the signal with the active units
