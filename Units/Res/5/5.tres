@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="Unit" load_steps=6 format=3]
+[gd_resource type="Resource" script_class="Unit" load_steps=6 format=3 uid="uid://nd2gkoc4x5q3"]
 
 [ext_resource type="Script" path="res://Units/unit_base.gd" id="1_1b221"]
 [ext_resource type="Texture2D" uid="uid://cs0d1s1rbujg3" path="res://Units/Res/5/unit_ills_battle_20011.png" id="1_t445t"]
 [ext_resource type="Texture2D" uid="uid://cx40evgatevxl" path="res://Units/Res/5/unit_ills_full_20011.png" id="2_kilmk"]
 [ext_resource type="Texture2D" uid="uid://bswtxbn7xsvrt" path="res://Units/Res/5/unit_ills_thum_20011.png" id="3_yyuad"]
-[ext_resource type="SpriteFrames" uid="uid://dpgygl7xn4ukr" path="res://Units/Res/5/unit_sp_20011.tres" id="4_6pfmr"]
+[ext_resource type="SpriteFrames" uid="uid://b6bus0ti7qprp" path="res://Units/Res/5/unit_sp_20011.tres" id="4_6pfmr"]
 
 [resource]
 script = ExtResource("1_1b221")
@@ -15,7 +15,7 @@ element = "Water"
 gender = "Female"
 rarity = 2
 cost = 2
-arena_type = 0
+arena_type = 3
 level = 1
 max_level = 12
 HP = 1000
