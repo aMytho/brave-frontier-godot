@@ -12,3 +12,4 @@ func _ready():
 	$TextureRect/Gems.text = str(account[6])
 	$TextureRect/EnergyCounter.text = str(account[4], "/", 5)
 	$TextureRect/Account.text = account[1]
+	$TextureRect/Clan.text = account[1]
