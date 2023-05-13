@@ -5,19 +5,14 @@ extends Control
 		units = new_units
 
 var thumbnail = preload("res://Menu/SubMenu/Unit/Display/unit_thumbnail.tscn").instantiate()
-var vargas: Unit = preload("res://Units/Res/1/1.tres")
-var selena: Unit = preload("res://Units/Res/5/5.tres")
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(units, selena, vargas)
-	#Add units to tree
-	var count = 0
-	while count < 10:
-		$UnitList.add_child(create_thumbnail(vargas))
-		$UnitList.add_child(create_thumbnail(selena))
-		count += 1
+	var activeAccountId = ActiveAccount.id
+	var unitDataResources = load("res://Database/resource_lookups.gd").new();
+	var unitsOfCurrentUser = unitDataResources.get_units_by_account_id(activeAccountId)
+	for unit in unitsOfCurrentUser:
+		$UnitList.add_child(create_thumbnail(unitDataResources.get_unit_by_ID(unit["id"])["unit"]))
 	
 	#Handle each unit click event
 	for child in $UnitList.get_children():
