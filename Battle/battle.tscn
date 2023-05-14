@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://b532tqkq87p26"]
+[gd_scene load_steps=18 format=3 uid="uid://b532tqkq87p26"]
 
 [ext_resource type="PackedScene" uid="uid://cyfml6jsu4fn8" path="res://Battle/UI/battle_ui.tscn" id="1_3sce7"]
 [ext_resource type="Script" path="res://Battle/battle.gd" id="1_qlwco"]
 [ext_resource type="PackedScene" uid="uid://b4vk7tm5thel5" path="res://Battle/UI/battle_potential_rewards.tscn" id="3_hj1dv"]
 [ext_resource type="Texture2D" uid="uid://ctfc4iwsqiwes" path="res://Units/Battle/unit_anime_30030.png" id="4_oweeh"]
 [ext_resource type="PackedScene" uid="uid://ft0wxa2yswmp" path="res://Battle/Field/Friendlies.tscn" id="5_4t2pk"]
+[ext_resource type="PackedScene" uid="uid://dwg2vjtcl5mmk" path="res://Battle/Field/Enemies.tscn" id="6_6sqgt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hlgnm"]
 atlas = ExtResource("4_oweeh")
@@ -114,8 +115,13 @@ frame_progress = 0.266513
 
 [node name="Friendlies" parent="." instance=ExtResource("5_4t2pk")]
 
+[node name="Enemies" parent="." instance=ExtResource("6_6sqgt")]
+
 [node name="BG" type="TextureRect" parent="."]
 z_index = -4
 offset_top = 89.0
 offset_right = 643.0
 offset_bottom = 543.0
+
+[node name="BattleOST" type="AudioStreamPlayer" parent="."]
+volume_db = -10.306
