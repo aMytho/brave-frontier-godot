@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://plqgei1a5k1d"
-path="res://.godot/imported/lightning_1.png-02581fc2cd50c6d53f11391f93600295.ctex"
+uid="uid://bwdd7shrnkfcm"
+path="res://.godot/imported/home_character_frame_bg.png-e2123fcf1da2b89b80fd34b9f8970e31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu/SubMenu/Home/Characters/Glows/lightning_1.png"
-dest_files=["res://.godot/imported/lightning_1.png-02581fc2cd50c6d53f11391f93600295.ctex"]
+source_file="res://Menu/SubMenu/Home/home_character_frame_bg.png"
+dest_files=["res://.godot/imported/home_character_frame_bg.png-e2123fcf1da2b89b80fd34b9f8970e31.ctex"]
 
 [params]
 
