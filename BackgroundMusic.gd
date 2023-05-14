@@ -1,6 +1,7 @@
 extends AudioStreamPlayer
 
 signal startPlaying(song: String)
+signal stopPlaying
 
 var nextSong: String = ""
 
@@ -40,3 +41,9 @@ func _on_animation_player_animation_finished(anim_name):
 		#See if another song is needed to start
 		if nextSong != "":
 			_on_start_playing(nextSong)
+
+
+func _on_stop_playing():
+	var fadeController:AnimationPlayer = get_child(0)
+	fadeController.play("Stop")
+	nextSong = ""
