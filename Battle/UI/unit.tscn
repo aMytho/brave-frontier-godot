@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bsv37n2mfi26x" path="res://Units/Battle/unit_ills_battle_10011.png" id="2_o6xfs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2iv17"]
+resource_local_to_scene = true
 atlas = ExtResource("1_lidtk")
 region = Rect2(2, 2, 320, 117)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cyfml6jsu4fn8"]
+[gd_scene load_steps=28 format=3 uid="uid://cyfml6jsu4fn8"]
 
 [ext_resource type="Texture2D" uid="uid://bkyewhpihrr81" path="res://Battle/UI/battle_ui.png" id="1_0qsqw"]
 [ext_resource type="Script" path="res://Battle/UI/battle_ui.gd" id="1_23wcj"]
@@ -23,6 +23,36 @@ gradient = SubResource("Gradient_l8yft")
 [sub_resource type="AtlasTexture" id="AtlasTexture_h1fir"]
 atlas = ExtResource("1_0qsqw")
 region = Rect2(1, 526, 597, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcqtv"]
+resource_local_to_scene = true
+atlas = ExtResource("1_0qsqw")
+region = Rect2(2, 2, 320, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6j3t"]
+resource_local_to_scene = true
+atlas = ExtResource("1_0qsqw")
+region = Rect2(2, 2, 320, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu3fn"]
+resource_local_to_scene = true
+atlas = ExtResource("1_0qsqw")
+region = Rect2(2, 2, 320, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdscb"]
+resource_local_to_scene = true
+atlas = ExtResource("1_0qsqw")
+region = Rect2(2, 2, 320, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptx76"]
+resource_local_to_scene = true
+atlas = ExtResource("1_0qsqw")
+region = Rect2(2, 2, 320, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykm41"]
+resource_local_to_scene = true
+atlas = ExtResource("1_0qsqw")
+region = Rect2(2, 2, 320, 117)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pr7uk"]
 atlas = ExtResource("1_0qsqw")
@@ -129,7 +159,8 @@ offset_left = 1.0
 offset_top = 115.0
 offset_right = 321.0
 offset_bottom = 232.0
-placeID = 1
+texture = SubResource("AtlasTexture_dcqtv")
+place_ID = 1
 
 [node name="Unit2" parent="." instance=ExtResource("2_nec6n")]
 layout_mode = 0
@@ -137,7 +168,8 @@ offset_left = 1.0
 offset_top = 229.0
 offset_right = 321.0
 offset_bottom = 346.0
-placeID = 2
+texture = SubResource("AtlasTexture_d6j3t")
+place_ID = 2
 
 [node name="Unit3" parent="." instance=ExtResource("2_nec6n")]
 layout_mode = 0
@@ -145,7 +177,8 @@ offset_left = 1.0
 offset_top = 346.0
 offset_right = 321.0
 offset_bottom = 463.0
-placeID = 3
+texture = SubResource("AtlasTexture_hu3fn")
+place_ID = 3
 
 [node name="Unit4" parent="." instance=ExtResource("2_nec6n")]
 layout_mode = 0
@@ -153,7 +186,8 @@ offset_left = 321.0
 offset_top = 115.0
 offset_right = 641.0
 offset_bottom = 232.0
-placeID = 4
+texture = SubResource("AtlasTexture_jdscb")
+place_ID = 4
 
 [node name="Unit5" parent="." instance=ExtResource("2_nec6n")]
 layout_mode = 0
@@ -161,7 +195,8 @@ offset_left = 321.0
 offset_top = 229.0
 offset_right = 641.0
 offset_bottom = 346.0
-placeID = 5
+texture = SubResource("AtlasTexture_ptx76")
+place_ID = 5
 
 [node name="Unit6" parent="." instance=ExtResource("2_nec6n")]
 layout_mode = 0
@@ -169,7 +204,8 @@ offset_left = 321.0
 offset_top = 346.0
 offset_right = 641.0
 offset_bottom = 463.0
-placeID = 6
+texture = SubResource("AtlasTexture_ykm41")
+place_ID = 6
 
 [node name="Overdrive" type="TextureRect" parent="."]
 layout_mode = 0

@@ -21,3 +21,12 @@ func setCharacter():
 		else:
 			get_node(charPath).create_unit(unit.battle_thumbnail, unit.name, unit.element, unit.HP)
 		count = count + 1
+
+func release_attack_lockout():
+	# allow each unit to attack again
+	$Unit1.allow_attacks()
+	$Unit2.allow_attacks()
+	$Unit3.allow_attacks()
+	$Unit4.allow_attacks()
+	$Unit5.allow_attacks()
+	$Unit6.allow_attacks()
