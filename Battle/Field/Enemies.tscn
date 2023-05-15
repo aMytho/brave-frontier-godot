@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwg2vjtcl5mmk"]
+[gd_scene load_steps=3 format=3 uid="uid://dwg2vjtcl5mmk"]
 
-[ext_resource type="PackedScene" uid="uid://d0q3argwydul5" path="res://Battle/Field/active_unit.tscn" id="1_6xkdu"]
+[ext_resource type="Script" path="res://Battle/Field/Enemies.gd" id="1_c42di"]
+[ext_resource type="PackedScene" uid="uid://cbgjgftdlg3tf" path="res://Battle/Field/field_unit.tscn" id="1_q35mc"]
 
 [node name="Enemies" type="Control"]
 layout_mode = 3
@@ -9,27 +10,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_c42di")
 
-[node name="Unit1" parent="." instance=ExtResource("1_6xkdu")]
-position = Vector2(205, 236)
+[node name="Unit1" parent="." instance=ExtResource("1_q35mc")]
+position = Vector2(173, 238)
 place_ID = 1
 
-[node name="Unit2" parent="." instance=ExtResource("1_6xkdu")]
-position = Vector2(191, 343)
+[node name="Unit2" parent="." instance=ExtResource("1_q35mc")]
+position = Vector2(170, 323)
 place_ID = 2
 
-[node name="Unit3" parent="." instance=ExtResource("1_6xkdu")]
-position = Vector2(195, 468)
+[node name="Unit3" parent="." instance=ExtResource("1_q35mc")]
+position = Vector2(173, 421)
 place_ID = 3
 
-[node name="Unit4" parent="." instance=ExtResource("1_6xkdu")]
-position = Vector2(61, 219)
+[node name="Unit4" parent="." instance=ExtResource("1_q35mc")]
+position = Vector2(46, 212)
 place_ID = 4
 
-[node name="Unit5" parent="." instance=ExtResource("1_6xkdu")]
-position = Vector2(54, 341)
+[node name="Unit5" parent="." instance=ExtResource("1_q35mc")]
+position = Vector2(44, 331)
 place_ID = 5
 
-[node name="Unit6" parent="." instance=ExtResource("1_6xkdu")]
-position = Vector2(57, 464)
+[node name="Unit6" parent="." instance=ExtResource("1_q35mc")]
+position = Vector2(45, 431)
 place_ID = 6
+
+[connection signal="TargetSelected" from="Unit1" to="." method="_on_target_selected"]
+[connection signal="TargetSelected" from="Unit2" to="." method="_on_target_selected"]
+[connection signal="TargetSelected" from="Unit3" to="." method="_on_target_selected"]
+[connection signal="TargetSelected" from="Unit4" to="." method="_on_target_selected"]
+[connection signal="TargetSelected" from="Unit5" to="." method="_on_target_selected"]
+[connection signal="TargetSelected" from="Unit6" to="." method="_on_target_selected"]
