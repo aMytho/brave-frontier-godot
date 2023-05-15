@@ -38,8 +38,7 @@ func _ready():
 		# Ensure the unit exists
 		if i < units.size() and units[i] != null:
 			var child_node = freindly_units.get_child(i)
-			child_node.sprite_frames = units[i].sprite_sheet
-			child_node.play("Idle")
+			child_node.set_properties(units[i].sprite_sheet, false)
 	# Setup the environment
 	load_next_stage(0)
 
@@ -93,12 +92,8 @@ func load_next_stage(stage: int):
 		total_enemies = total_enemies + 1
 		# Add enemy to field, start idle animation
 		var child_node = enemy_units.get_child(counter)
-		child_node.sprite_frames = unit.sprite_sheet
-		# Let this scene know that a unit is in this spot
-		child_node.is_unit = true
-		# Face the friendlies
-		child_node.flip_h = true
-		child_node.play("Idle")
+		child_node.set_properties(unit.sprite_sheet, true)
+		
 		counter = counter + 1
 
 func get_unit_count():
