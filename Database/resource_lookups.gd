@@ -32,3 +32,12 @@ func get_units_by_account_id(account_id: int):
 	if units == null or len(units) == 0:
 		print("No units found for account %s !" % account_id)
 	return units
+	
+func get_first_team_by_account_id(account_id: int):
+	if account_id == -1:
+		return {"team": null}
+		
+	var team = Database.query("SELECT * from teams where account_id = %s limit 1" % account_id)
+	if null == team or 0 == len(team):
+		print("No team found for user %s . . ." % account_id)
+	return team
