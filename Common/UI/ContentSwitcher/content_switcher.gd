@@ -2,15 +2,17 @@ extends Control
 
 signal Switched(scn: Node)
 
-@export var current_scene: Node
+@onready var current_scene = $Home
+#@export var current_scene: Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-func load_scene(scene: String, animation: int):
+func load_scene(scene: String, animation: int, new_scene: Control = null):
 	print("Switching to:", scene)
-	var new_scene = ResourceLoader.load(scene).instantiate()
+	if null == new_scene :
+		new_scene = ResourceLoader.load(scene).instantiate()
 
 	#Swap scenes
 	animate_swap(new_scene, animation)
@@ -21,6 +23,10 @@ func load_scene(scene: String, animation: int):
 	#Let any listeners know we switched a scene. Usually, they will get the scene and set data
 	emit_signal("Switched", current_scene)
 
+func load_scene_home(scene: String, animation: int = 0):
+	var new_scene = ResourceLoader.load(scene).instantiate()
+	new_scene.position.y = 163
+	load_scene(scene, animation, new_scene)
 
 func load_scene_with_props(scene: String, animation: int, keys, vals):
 	print("Switching to:", scene)

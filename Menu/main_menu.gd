@@ -7,5 +7,5 @@ func _ready():
 
 func _on_footer_btn_clicked(id:int):
 	match id:
-		1: $MenuContent.load_scene("res://Menu/SubMenu/Home/home.tscn", 1)
-		2: $MenuContent.load_scene("res://Menu/SubMenu/Unit/unit_menu.tscn", 1)
+		1: $content_switcher.load_scene_home("res://Menu/SubMenu/Home/home.tscn", 1)
+		2: $content_switcher.load_scene_home("res://Menu/SubMenu/Unit/unit_menu.tscn", 1)
