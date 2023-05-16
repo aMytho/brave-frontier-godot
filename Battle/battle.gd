@@ -44,7 +44,7 @@ func _ready():
 
 func _unit_attack(unit_place: int):
 	# Play attack animation, listen for anim end
-	get_node(str("./Friendlies/Unit", unit_place)).attack()
+	get_node(str("./Friendlies/Unit", unit_place)).attack($Enemies.get_target_position())
 	get_node(str("./Friendlies/Unit", unit_place)).connect("AttackFinished", _unit_attack_finished)
 
 func _unit_attack_finished(unit_place: int):
@@ -68,7 +68,7 @@ func run_enemy_turn():
 	for enemy in $Enemies.get_children():
 		# Only play animation for units that exist
 		if enemy.is_unit:
-			enemy.attack()
+			enemy.attack($Friendlies.get_random_target())
 			enemy.connect("AttackFinished", _enemy_attack_finished)
 
 func _enemy_attack_finished(unit_place: int):
