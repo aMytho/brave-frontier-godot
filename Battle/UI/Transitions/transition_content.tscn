@@ -1,0 +1,135 @@
+[gd_scene load_steps=12 format=3 uid="uid://ckqgm3fa3wyug"]
+
+[ext_resource type="Script" path="res://Battle/UI/Transitions/transition_content.gd" id="1_e6hqp"]
+[ext_resource type="Texture2D" uid="uid://dy3hnyqu4j13h" path="res://Battle/UI/Transitions/battle_dungeon_name_deco.png" id="1_kgqnm"]
+[ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="2_qu1xu"]
+[ext_resource type="Texture2D" uid="uid://b5bv6l0y1grnx" path="res://Battle/UI/Transitions/battle_meter_start.png" id="3_q88sd"]
+[ext_resource type="Texture2D" uid="uid://bxxu6sk4yfll5" path="res://Battle/UI/Transitions/battle_meter_end.png" id="4_lq7vx"]
+[ext_resource type="Texture2D" uid="uid://b0uy4h3sgv464" path="res://Battle/UI/Transitions/battle_meter_caption.png" id="5_ynph4"]
+[ext_resource type="Texture2D" uid="uid://wld8om75yb6b" path="res://Battle/UI/Transitions/battle_meter_base.png" id="6_bekhw"]
+[ext_resource type="Texture2D" uid="uid://bbhojoajn7npv" path="res://Battle/UI/Transitions/battle_meter_gauge.png" id="7_k5wvx"]
+[ext_resource type="Texture2D" uid="uid://djdqivnaybt83" path="res://Battle/UI/Transitions/battle_meter_current.png" id="8_3hovi"]
+[ext_resource type="Texture2D" uid="uid://bgx5stsm7s31l" path="res://Battle/UI/Transitions/battle_meter_current2.png" id="9_iu188"]
+[ext_resource type="Texture2D" uid="uid://cgdwe2cpc2exj" path="res://Battle/UI/Transitions/campaign_time_number_slash.png" id="10_va5e8"]
+
+[node name="TransitionContent" type="ColorRect"]
+z_index = 1
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_e6hqp")
+
+[node name="Name" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 15.0
+offset_right = 640.0
+offset_bottom = 169.0
+texture = ExtResource("1_kgqnm")
+
+[node name="Dungeon" type="Label" parent="Name"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 41.0
+offset_right = 384.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("2_qu1xu")
+text = "Some Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stage" type="Label" parent="Name"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 73.0
+offset_right = 580.0
+offset_bottom = 113.0
+theme_override_fonts/font = ExtResource("2_qu1xu")
+theme_override_font_sizes/font_size = 30
+text = "Some stage name "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 232.0
+offset_right = 576.0
+offset_bottom = 323.0
+texture = ExtResource("3_q88sd")
+
+[node name="Boss" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 200.0
+offset_right = 221.0
+offset_bottom = 322.0
+texture = ExtResource("4_lq7vx")
+
+[node name="Battle" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 296.0
+offset_right = 335.0
+offset_bottom = 318.0
+texture = ExtResource("5_ynph4")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 325.0
+offset_right = 563.0
+offset_bottom = 365.0
+value = 1.0
+allow_greater = true
+fill_mode = 1
+texture_under = ExtResource("6_bekhw")
+texture_progress = ExtResource("7_k5wvx")
+texture_progress_offset = Vector2(22, 8)
+
+[node name="CurrentProgressSword" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 296.0
+offset_top = 360.0
+offset_right = 337.0
+offset_bottom = 427.0
+texture = ExtResource("8_3hovi")
+
+[node name="SwordGlow" type="TextureRect" parent="CurrentProgressSword"]
+z_index = -1
+layout_mode = 0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 49.0
+offset_bottom = 74.0
+texture = ExtResource("9_iu188")
+
+[node name="Slash" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 296.0
+offset_right = 370.0
+offset_bottom = 320.0
+texture = ExtResource("10_va5e8")
+
+[node name="CurrentProgressLbl" type="Label" parent="."]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 295.0
+offset_right = 356.0
+offset_bottom = 323.0
+theme_override_colors/font_color = Color(0.905882, 0.862745, 0.74902, 1)
+theme_override_fonts/font = ExtResource("2_qu1xu")
+theme_override_font_sizes/font_size = 21
+text = "1"
+
+[node name="TotalProgressLbl" type="Label" parent="."]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 295.0
+offset_right = 393.0
+offset_bottom = 323.0
+theme_override_colors/font_color = Color(0.905882, 0.862745, 0.74902, 1)
+theme_override_fonts/font = ExtResource("2_qu1xu")
+theme_override_font_sizes/font_size = 21
+text = "1"

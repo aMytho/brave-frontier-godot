@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbgjgftdlg3tf"]
+
+[ext_resource type="Script" path="res://Battle/Field/field_unit.gd" id="1_uyh4s"]
+[ext_resource type="Texture2D" uid="uid://byvq6x8wedfsh" path="res://Battle/UI/battle_target_mark.png" id="2_qsoj3"]
+
+[sub_resource type="Animation" id="Animation_fshg0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ovp0k"]
+resource_name = "Spin"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a086f"]
+_data = {
+"RESET": SubResource("Animation_fshg0"),
+"Spin": SubResource("Animation_ovp0k")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jgt8k"]
+radius = 24.0
+
+[node name="Field Unit" type="Area2D"]
+script = ExtResource("1_uyh4s")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="Target" type="TextureRect" parent="."]
+visible = false
+offset_left = -32.5
+offset_top = -34.0
+offset_right = 33.5
+offset_bottom = 32.0
+pivot_offset = Vector2(33, 33)
+texture = ExtResource("2_qsoj3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Target"]
+autoplay = "Spin"
+libraries = {
+"": SubResource("AnimationLibrary_a086f")
+}
+
+[node name="Clickable" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jgt8k")
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_animation_finished"]

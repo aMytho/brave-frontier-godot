@@ -47,7 +47,8 @@ func _on_back_button_pressed():
 	self.queue_free()
 
 func _on_player_ready(units):
-	print(units)
+	# Stop the music
+	get_tree().root.get_node("Game").get_child(0).emit_signal("stopPlaying")
 	# Get the stage and load the battle!
 	var arg_names = ["units", "zone"]
 	var arg_props = [units, zone]

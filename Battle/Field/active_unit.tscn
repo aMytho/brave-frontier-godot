@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0q3argwydul5"]
-
-[ext_resource type="Script" path="res://Battle/Field/active_unit.gd" id="1_12qpi"]
-
-[node name="active_unit" type="AnimatedSprite2D"]
-scale = Vector2(2, 2)
-script = ExtResource("1_12qpi")
-
-[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

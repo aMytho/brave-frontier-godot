@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6vrwun6gri4j"]
+
+[ext_resource type="Script" path="res://Battle/UI/Transitions/transition.gd" id="1_e4egx"]
+[ext_resource type="Texture2D" uid="uid://v3klbrsgv6dr" path="res://Battle/UI/Transitions/battle_wipe.png" id="1_yngb2"]
+[ext_resource type="PackedScene" uid="uid://ckqgm3fa3wyug" path="res://Battle/UI/Transitions/transition_content.tscn" id="2_lafh6"]
+
+[node name="Transition" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e4egx")
+
+[node name="TransitionContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 88.0
+offset_right = 1536.0
+offset_bottom = 568.0
+theme_override_constants/separation = 0
+
+[node name="JaggedBackground" type="TextureRect" parent="TransitionContainer"]
+layout_mode = 2
+texture = ExtResource("1_yngb2")
+
+[node name="TransitionContent" parent="TransitionContainer" instance=ExtResource("2_lafh6")]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2

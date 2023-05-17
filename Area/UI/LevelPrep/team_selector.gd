@@ -36,6 +36,9 @@ func set_team_info(new_teams: Array):
 	set_active_team(0)
 
 func set_active_team(id: int):
+	# Remove any units from the last selection
+	units = [null, null, null, null, null, null]
+	
 	$SquadNameBG/SquadName.text = teams[id].name
 	# Get each unit in the team
 	var unit_1 = Lookups.get_unit_by_ID(teams[id].unit1)

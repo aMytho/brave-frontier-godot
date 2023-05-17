@@ -9,6 +9,9 @@ func _ready():
 	
 	#Listen to account btn press
 	$AccountBtn.Clicked.connect(show_accounts)
+	
+	# Allow randomization across the project
+	randomize()
 
 func _on_touch_screen_gui_input(event):
 	if event.get("pressed") == true:
