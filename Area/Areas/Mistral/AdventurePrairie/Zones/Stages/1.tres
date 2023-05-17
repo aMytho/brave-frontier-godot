@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Stage" load_steps=3 format=3 uid="uid://cxidahkr1edv0"]
 
-[ext_resource type="Resource" path="res://Units/Res/5/5.tres" id="1_0mw21"]
+[ext_resource type="Resource" uid="uid://nd2gkoc4x5q3" path="res://Units/Res/5/5.tres" id="1_0mw21"]
 [ext_resource type="Script" path="res://Area/Stages/stage_base.gd" id="1_tt8am"]
 
 [resource]

@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Zone" load_steps=5 format=3 uid="uid://drs5urtfcxnxy"]
+[gd_resource type="Resource" script_class="Zone" load_steps=6 format=3 uid="uid://drs5urtfcxnxy"]
 
 [ext_resource type="Script" path="res://Area/Zones/zone_base.gd" id="1_77xvr"]
 [ext_resource type="Texture2D" uid="uid://dxmjf1igdb02i" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/dungeon_battle_10100.jpg" id="1_87njc"]
 [ext_resource type="Resource" uid="uid://cxidahkr1edv0" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/1.tres" id="2_tmix2"]
 [ext_resource type="AudioStream" uid="uid://kmn3bs6klkkb" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/bf006_btl_boss.mp3" id="3_8pgl2"]
+[ext_resource type="Resource" uid="uid://bmd4i3pjrpnsy" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/2.tres" id="3_xnxdk"]
 
 [resource]
 script = ExtResource("1_77xvr")
@@ -12,7 +13,7 @@ name = "Start of Adventure"
 description = "Your journey as a SUmmoner traveling across Grand Gia has begun! Go forth, and don't forget what Tilith taught you!"
 stages = 5
 energy = 5
-Stage = Array[Resource("res://Area/Stages/stage_base.gd")]([ExtResource("2_tmix2")])
+Stage = Array[Resource("res://Area/Stages/stage_base.gd")]([ExtResource("2_tmix2"), ExtResource("3_xnxdk"), ExtResource("3_xnxdk"), ExtResource("2_tmix2")])
 is_visible = true
 BG = ExtResource("1_87njc")
 music = ExtResource("3_8pgl2")
