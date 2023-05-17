@@ -125,28 +125,31 @@ texture = ExtResource("1_v8bqk")
 script = ExtResource("2_v1sb0")
 
 [node name="anim1" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 130.0
 offset_bottom = 330.0
 texture = ExtResource("3_j5aw7")
 
 [node name="anim2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 130.0
 offset_bottom = 330.0
 texture = ExtResource("4_dii10")
 
 [node name="anim3" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 130.0
 offset_bottom = 330.0
 texture = ExtResource("5_55ts2")
 
 [node name="anim4" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 130.0
 offset_bottom = 330.0
 texture = ExtResource("6_5anuk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Cat"
-playback_speed = -3.0
 libraries = {
 "": SubResource("AnimationLibrary_m77jj")
 }

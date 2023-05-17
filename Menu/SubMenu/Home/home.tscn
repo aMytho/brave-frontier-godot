@@ -135,40 +135,6 @@ offset_top = 5.0
 offset_right = 129.0
 offset_bottom = 335.0
 
-[node name="Char5" type="Control" parent="Character/TextureRect"]
-clip_contents = true
-layout_mode = 1
-anchors_preset = 0
-offset_left = 515.0
-offset_top = 16.0
-offset_right = 638.0
-offset_bottom = 351.0
-metadata/_edit_group_ = true
-
-[node name="Char3" type="TextureRect" parent="Character/TextureRect/Char5"]
-z_index = -1
-layout_mode = 0
-offset_left = -255.0
-offset_top = -64.0
-offset_right = 236.0
-offset_bottom = 310.0
-texture = ExtResource("9_kib8c")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="CharElement" type="Sprite2D" parent="Character/TextureRect/Char5"]
-position = Vector2(104, 301)
-scale = Vector2(1.54, 1.54)
-texture = ExtResource("4_y8gov")
-region_enabled = true
-region_rect = Rect2(-0.700361, -0.593624, 26.1655, 26.3699)
-
-[node name="BG" parent="Character/TextureRect/Char5" instance=ExtResource("5_3qui3")]
-z_index = -2
-layout_mode = 0
-offset_left = -3.0
-offset_right = 127.0
-
 [node name="Char3" type="Control" parent="Character/TextureRect"]
 clip_contents = true
 layout_mode = 1
@@ -179,7 +145,7 @@ offset_right = 382.0
 offset_bottom = 337.0
 metadata/_edit_group_ = true
 
-[node name="Char5" type="TextureRect" parent="Character/TextureRect/Char3"]
+[node name="Char3" type="TextureRect" parent="Character/TextureRect/Char3"]
 z_index = -1
 layout_mode = 0
 offset_left = -88.0
@@ -194,7 +160,7 @@ position = Vector2(99, 299)
 scale = Vector2(1.54, 1.54)
 texture = ExtResource("4_y8gov")
 region_enabled = true
-region_rect = Rect2(129.105, -0.593624, 26.5743, 25.9611)
+region_rect = Rect2(217, 27.3333, 0, 0.666656)
 
 [node name="BG" parent="Character/TextureRect/Char3" instance=ExtResource("5_3qui3")]
 z_index = -2
@@ -221,6 +187,7 @@ offset_right = 345.0
 offset_bottom = 350.0
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("12_gj2e7")
+expand_mode = 1
 
 [node name="CharElement" type="Sprite2D" parent="Character/TextureRect/Char4"]
 position = Vector2(106, 300)
@@ -234,6 +201,39 @@ z_index = -2
 layout_mode = 0
 offset_left = -5.0
 offset_right = 125.0
+
+[node name="Char5" type="Control" parent="Character/TextureRect"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 0
+offset_left = 515.0
+offset_top = 16.0
+offset_right = 638.0
+offset_bottom = 351.0
+metadata/_edit_group_ = true
+
+[node name="Char5" type="TextureRect" parent="Character/TextureRect/Char5"]
+z_index = -1
+layout_mode = 0
+offset_left = -255.0
+offset_top = -64.0
+offset_right = 236.0
+offset_bottom = 310.0
+texture = ExtResource("9_kib8c")
+expand_mode = 1
+
+[node name="CharElement" type="Sprite2D" parent="Character/TextureRect/Char5"]
+position = Vector2(104, 301)
+scale = Vector2(1.54, 1.54)
+texture = ExtResource("4_y8gov")
+region_enabled = true
+region_rect = Rect2(51.5439, 0.339046, 26.2629, 25.8767)
+
+[node name="BG" parent="Character/TextureRect/Char5" instance=ExtResource("5_3qui3")]
+z_index = -2
+layout_mode = 0
+offset_left = -3.0
+offset_right = 127.0
 
 [node name="Buttons and Banner" type="Control" parent="."]
 layout_mode = 1
