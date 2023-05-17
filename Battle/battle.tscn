@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b532tqkq87p26"]
+[gd_scene load_steps=19 format=3 uid="uid://b532tqkq87p26"]
 
 [ext_resource type="PackedScene" uid="uid://cyfml6jsu4fn8" path="res://Battle/UI/battle_ui.tscn" id="1_3sce7"]
 [ext_resource type="Script" path="res://Battle/battle.gd" id="1_qlwco"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ctfc4iwsqiwes" path="res://Units/Battle/unit_anime_30030.png" id="4_oweeh"]
 [ext_resource type="PackedScene" uid="uid://ft0wxa2yswmp" path="res://Battle/Field/Friendlies.tscn" id="5_4t2pk"]
 [ext_resource type="PackedScene" uid="uid://dwg2vjtcl5mmk" path="res://Battle/Field/Enemies.tscn" id="6_6sqgt"]
+[ext_resource type="PackedScene" uid="uid://c6vrwun6gri4j" path="res://Battle/UI/Transitions/transition.tscn" id="7_dgs5e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hlgnm"]
 atlas = ExtResource("4_oweeh")
@@ -125,3 +126,8 @@ offset_bottom = 543.0
 
 [node name="BattleOST" type="AudioStreamPlayer" parent="."]
 volume_db = -10.306
+
+[node name="Transition" parent="." instance=ExtResource("7_dgs5e")]
+
+[connection signal="TransitionHide" from="Transition" to="." method="_on_transition_hide"]
+[connection signal="TransitionShow" from="Transition" to="." method="_on_transition_show"]

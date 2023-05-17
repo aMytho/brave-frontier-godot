@@ -5,6 +5,16 @@ extends Node2D
 		zone = new_zone
 		$BG.texture = zone.BG
 
+@export_category("Dev Info")
+@export var current_stage: int = 0
+# A mock value for progressing turns. DEV ONLY -- replace once battle system is done
+@export var temp_counter: int = 0
+@export_range(0.1, 1.0)
+var speed: float = 1.0:
+	set(new_speed):
+		speed = new_speed
+		$Friendlies.set_speed(new_speed)
+		$Enemies.set_speed(new_speed)
 @export var units: Array[Unit] = [null, null, null, null, null, null]
 
 @export_category("Turn Logic")
@@ -19,6 +29,9 @@ func _ready():
 	# Load the music
 	$BattleOST.stream = zone.music
 	$BattleOST.play()
+	
+	# Set the transition values
+	$Transition.set_properties(1, zone.Stage.size(), "Stylish Placeholder", zone.name)
 	
 	# Pass in the friendly units
 	$BattleUI.units = units
@@ -61,7 +74,15 @@ func check_if_player_turn_complete():
 		player_turn = false
 		enemy_turn = true
 		units_attacked = 0
-		run_enemy_turn()
+		
+		# Dev only. This allows us to progress after 3 attacks
+		# When the battle system is done, this will need to be changed
+		if temp_counter == 3:
+			move_to_next_stage()
+			temp_counter = 0
+		else:
+			temp_counter = temp_counter + 1
+			run_enemy_turn()
 
 func run_enemy_turn():
 	print("Enemy turn!")
@@ -86,7 +107,9 @@ func _enemy_attack_finished(unit_place: int):
 func load_next_stage(stage: int):
 	print("Next stage")
 	var counter = 0
+	total_enemies = 0
 	var enemy_units = $Enemies
+	enemy_units.clear_units()
 	for unit in zone.Stage[stage].monsters:
 		print(unit)
 		total_enemies = total_enemies + 1
@@ -95,6 +118,7 @@ func load_next_stage(stage: int):
 		child_node.set_properties(unit.sprite_sheet, true)
 		
 		counter = counter + 1
+	current_stage = current_stage + 1
 
 func get_unit_count():
 	# returns how many non null units exist (down or active)
@@ -103,3 +127,26 @@ func get_unit_count():
 		if unit != null:
 			counter = counter + 1
 	return counter
+
+func move_to_next_stage():
+	# Check for next stage
+	if current_stage < zone.Stage.size():
+		print("Moving to next stage")
+		$Transition.show_transition()
+		load_next_stage(current_stage)
+	else:
+		print("Battle Complete!!!")
+
+
+func _on_transition_hide():
+	# Now that they can see, allow the player to attack.
+	# All enemy units have now spawned in
+	$BattleUI.release_attack_lockout()
+
+
+func _on_transition_show():
+	# Show the stage in the transition
+	$Transition.update_properties(current_stage)
+	# Wait a few seconds, then return to combat
+	await get_tree().create_timer(3.0).timeout
+	$Transition.hide_transition()

@@ -15,6 +15,8 @@ signal TargetSelected(id: int)
 # Used to allow the unit to return to their initial spot
 var initial_position = Vector2(0,0)
 
+var speed: float = 1.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Connect the target selection
@@ -38,12 +40,15 @@ func set_properties(frames, flip):
 	# Play the idle animation
 	sprite.play("Idle")
 
+func reset_spritesheet():
+	sprite.sprite_frames = null
+
 func attack(enemy_position: Vector2):
 	print("Attack animation")
 	
 	# Move towards enemy
 	var tween = create_tween()
-	tween.tween_property(self, "position", enemy_position, 1.0)
+	tween.tween_property(self, "position", enemy_position, 1.0 * speed)
 	tween.tween_callback(_on_move_finished.bind(true))
 
 func _on_move_finished(play_atk_animation: bool):
@@ -52,7 +57,7 @@ func _on_move_finished(play_atk_animation: bool):
 		sprite.play("Attack")
 	else:
 		var tween = create_tween()
-		tween.tween_property(self, "position", initial_position, 1.0)
+		tween.tween_property(self, "position", initial_position, 1.0 * speed)
 		tween.tween_callback(_on_attack_finished)
 
 func _on_attack_finished():

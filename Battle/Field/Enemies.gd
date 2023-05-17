@@ -39,3 +39,13 @@ func get_random_target():
 
 	# Pick a random unit
 	return children[randi() % children.size()].position
+
+func clear_units():
+	for child in get_children():
+		child.is_unit = false
+		child.reset_spritesheet()
+
+func set_speed(new_speed: float):
+	# Loop through each unit and set its speed
+	for child in get_children():
+		child.speed = new_speed
