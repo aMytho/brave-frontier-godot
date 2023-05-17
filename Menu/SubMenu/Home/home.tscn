@@ -243,58 +243,59 @@ offset_bottom = -164.0
 
 [node name="TextureRect" type="TextureRect" parent="Buttons and Banner"]
 layout_mode = 0
-offset_left = 24.0
+offset_left = 8.0
 offset_top = 522.0
-offset_right = 124.0
+offset_right = 108.0
 offset_bottom = 602.0
 texture = ExtResource("13_o2tak")
 
 [node name="TextureRect2" type="TextureRect" parent="Buttons and Banner"]
 layout_mode = 0
-offset_left = 104.0
+offset_left = 80.0
 offset_top = 522.0
-offset_right = 204.0
+offset_right = 180.0
 offset_bottom = 602.0
 texture = ExtResource("14_055s7")
 
 [node name="TextureRect3" type="TextureRect" parent="Buttons and Banner"]
 layout_mode = 0
-offset_left = 184.0
+offset_left = 160.0
 offset_top = 522.0
-offset_right = 284.0
+offset_right = 260.0
 offset_bottom = 602.0
 texture = ExtResource("15_eybrk")
 
 [node name="TextureRect4" type="TextureRect" parent="Buttons and Banner"]
 layout_mode = 0
-offset_left = 360.0
+offset_left = 385.0
 offset_top = 522.0
-offset_right = 460.0
+offset_right = 485.0
 offset_bottom = 602.0
 texture = ExtResource("16_neff8")
 
 [node name="TextureRect5" type="TextureRect" parent="Buttons and Banner"]
 layout_mode = 0
-offset_left = 440.0
+offset_left = 462.0
 offset_top = 522.0
-offset_right = 540.0
+offset_right = 562.0
 offset_bottom = 602.0
 texture = ExtResource("17_dvakf")
 
 [node name="TextureRect6" type="TextureRect" parent="Buttons and Banner"]
 layout_mode = 0
-offset_left = 520.0
+offset_left = 540.0
 offset_top = 522.0
-offset_right = 620.0
+offset_right = 640.0
 offset_bottom = 602.0
 texture = ExtResource("18_222t3")
 
 [node name="TextureRect7" type="TextureRect" parent="Buttons and Banner"]
+visible = false
 layout_mode = 0
-offset_left = 387.0
-offset_top = 616.0
-offset_right = 626.0
-offset_bottom = 704.0
+offset_left = 400.0
+offset_top = 604.0
+offset_right = 639.0
+offset_bottom = 692.0
 texture = ExtResource("19_gw8gm")
 expand_mode = 1
 
@@ -308,28 +309,27 @@ offset_bottom = -164.0
 clip_contents = true
 layout_mode = 1
 anchors_preset = 0
-offset_left = 24.0
-offset_top = 715.0
-offset_right = 615.0
-offset_bottom = 939.0
+offset_top = 602.0
+offset_right = 635.0
+offset_bottom = 941.0
 
 [node name="TextureRect" type="TextureRect" parent="Launch/Control"]
 layout_mode = 0
-offset_left = 152.0
-offset_top = -1.0
-offset_right = 448.0
-offset_bottom = 207.0
+offset_left = 93.0
+offset_top = -8.0
+offset_right = 543.0
+offset_bottom = 308.0
 texture = SubResource("AnimatedTexture_4vnxq")
-expand_mode = 1
+stretch_mode = 3
 script = ExtResource("26_r7m41")
 buttonPath = NodePath("../HBoxContainer")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Launch/Control"]
 layout_mode = 0
-offset_left = 167.0
-offset_top = 192.0
-offset_right = 445.0
-offset_bottom = 225.0
+offset_left = 188.0
+offset_top = 291.0
+offset_right = 466.0
+offset_bottom = 331.0
 
 [node name="I1" type="TextureRect" parent="Launch/Control/HBoxContainer"]
 layout_mode = 2
