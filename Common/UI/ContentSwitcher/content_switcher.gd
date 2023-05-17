@@ -2,8 +2,7 @@ extends Control
 
 signal Switched(scn: Node)
 
-@onready var current_scene = $Home
-#@export var current_scene: Node
+@export var current_scene: Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
