@@ -29,7 +29,7 @@ func create_thumbnail(unit: Unit):
 
 func _on_unit_pressed(unit: Unit):
 	print(unit)
-	get_parent().load_scene("res://Menu/SubMenu/Unit/Display/unit_display.tscn")
+	get_parent().load_scene_home("res://Menu/SubMenu/Unit/Display/unit_display.tscn")
 
 func _on_back_pressed():
-	get_parent().load_scene("res://Menu/SubMenu/Unit/unit_menu.tscn")
+	get_parent().load_scene_home("res://Menu/SubMenu/Unit/unit_menu.tscn")

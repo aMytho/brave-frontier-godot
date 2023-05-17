@@ -15,7 +15,7 @@ func _on_button_pressed(button: int):
 	#Load the related submenu
 	match button:
 		1:
-			get_parent().load_scene("res://Menu/SubMenu/Unit/Display/view_units.tscn")
+			get_parent().load_scene_home("res://Menu/SubMenu/Unit/Display/view_units.tscn")
 
 func _on_back_pressed():
-	get_parent().load_scene("res://Menu/SubMenu/Home/home.tscn")
+	get_parent().load_scene_home("res://Menu/SubMenu/Home/home.tscn")
