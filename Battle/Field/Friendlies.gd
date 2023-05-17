@@ -2,6 +2,8 @@ extends Control
 # This file is very similar to enemies.gd.
 # They should probably be merged at some point!
 
+@export var current_target: int = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -18,8 +20,9 @@ func get_random_target():
 			# Only increment if a unit is found, otherwise it isn't accurate (children.size() updates when removed)
 			counter += 1
 
+	current_target = randi() % children.size()
 	# Pick a random unit
-	return children[randi() % children.size()].position
+	return children[current_target].position
 
 func set_speed(new_speed: float):
 	# loop through each unit and set its speed 

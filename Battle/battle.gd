@@ -57,7 +57,7 @@ func _ready():
 
 func _unit_attack(unit_place: int):
 	# Play attack animation, listen for anim end
-	get_node(str("./Friendlies/Unit", unit_place)).attack($Enemies.get_target_position())
+	get_node(str("./Friendlies/Unit", unit_place)).attack($Enemies.get_target_position(), units[unit_place-1], zone.Stage[current_stage-1].monsters[$Enemies.current_target-1])
 	get_node(str("./Friendlies/Unit", unit_place)).connect("AttackFinished", _unit_attack_finished)
 
 func _unit_attack_finished(unit_place: int):
@@ -86,11 +86,13 @@ func check_if_player_turn_complete():
 
 func run_enemy_turn():
 	print("Enemy turn!")
+	var enemy_count = 0
 	for enemy in $Enemies.get_children():
 		# Only play animation for units that exist
 		if enemy.is_unit:
-			enemy.attack($Friendlies.get_random_target())
+			enemy.attack($Friendlies.get_random_target(), zone.Stage[current_stage-1].monsters[enemy_count], units[$Friendlies.current_target])
 			enemy.connect("AttackFinished", _enemy_attack_finished)
+		enemy_count = enemy_count + 1
 
 func _enemy_attack_finished(unit_place: int):
 	# Disconnect the signal
@@ -111,7 +113,6 @@ func load_next_stage(stage: int):
 	var enemy_units = $Enemies
 	enemy_units.clear_units()
 	for unit in zone.Stage[stage].monsters:
-		print(unit)
 		total_enemies = total_enemies + 1
 		# Add enemy to field, start idle animation
 		var child_node = enemy_units.get_child(counter)
