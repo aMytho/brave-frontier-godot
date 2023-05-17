@@ -7,6 +7,7 @@
 [ext_resource type="SpriteFrames" uid="uid://b6bus0ti7qprp" path="res://Units/Res/5/unit_sp_20011.tres" id="4_6pfmr"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_1b221")
 unit_number = 5
 data_id = 20011

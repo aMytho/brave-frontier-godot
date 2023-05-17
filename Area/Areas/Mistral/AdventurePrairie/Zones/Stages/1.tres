@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://xhx2vl3wbp0f" path="res://Units/Res/49/49.tres" id="2_bqqnl"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_tt8am")
 id = 1
 is_boss = false

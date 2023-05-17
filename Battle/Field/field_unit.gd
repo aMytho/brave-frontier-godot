@@ -44,9 +44,15 @@ func reset_spritesheet():
 	sprite.sprite_frames = null
 
 func attack(enemy_position: Vector2, atkUnit: Resource, defUnit: Resource):
-	print("Attack animation")
-	defUnit.HP = defUnit.HP - atkUnit.ATK
-	print(defUnit.HP)
+	### Damage dealth has to move to another script
+	### Maybe this script could be called here (central place with data about
+	### the unit that are engaged in the fight
+	#print("Attack animation")
+	#print("-------------------")
+	#defUnit.HP = defUnit.HP - atkUnit.ATK
+	#print(defUnit)
+	#print(defUnit.HP)
+	#print("-------------------")
 	# Move towards enemy
 	var tween = create_tween()
 	tween.tween_property(self, "position", enemy_position, 1.0 * speed)
