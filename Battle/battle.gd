@@ -63,8 +63,6 @@ func _unit_attack(unit_place: int):
 	# Play attack animation, listen for anim end
 	if null != units[unit_place-1] and !units[unit_place-1].is_dead:
 		var target = $Enemies.get_target()
-		#var targetPosition = target.position
-		#var unitTargetted = $Enemies.current_target if -1 != $Enemies.current_target else $Enemies.random_target
 		get_node(str("./Friendlies/Unit", unit_place)).attack(target.position)
 		$stats_checking.unitTakingDamage(units[unit_place-1], zone.Stage[current_stage-1].monsters[target.place_ID - 1])
 		
@@ -84,9 +82,7 @@ func check_if_player_turn_complete():
 		player_turn = false
 		enemy_turn = true
 		units_attacked = 0
-		
 		total_enemies = $stats_checking.areUnitsDead(zone.Stage[current_stage-1].monsters)
-		
 		# Dev only. This allows us to progress after 3 attacks
 		# When the battle system is done, this will need to be changed
 		if 0 == total_enemies:
@@ -115,14 +111,14 @@ func _enemy_attack_finished(unit_place: int):
 	get_node(str("./Enemies/Unit", unit_place)).disconnect("AttackFinished", _enemy_attack_finished)
 	# Check if the turn is over
 	enemies_attacked = enemies_attacked + 1
-	print(total_enemies)
 	if (enemies_attacked == total_enemies):
 		print("Enemy turn over")
 		enemy_turn = false
 		player_turn = true
 		enemies_attacked = 0
-		total_allies = $stats_checking.areUnitsDead(units)
+		total_allies = $stats_checking.areUnitsDead(units, true)
 		if 0 == total_allies:
+			print("Battle lost . . .")
 			_when_battle_end()
 		else:
 			$BattleUI.release_attack_lockout()
@@ -180,13 +176,21 @@ func _on_transition_show():
 func resetUnitsStats():
 	total_allies = 0
 	for unit in units:
-		if unit != null:
+		if unit != null and !unit.is_dead:
 			total_allies = total_allies + 1
-			unit.HP = 1000
+			#unit.HP = 1000
 			
-func _when_unit_has_died(place_ID: int):
+func _when_unit_has_died(place_ID: int, isAlly: bool = false):
 	print("signal the Unit %s it has died" % place_ID)
-	get_node(str("./BattleUI/Unit", place_ID)).unitHasDied()
+	var teamUnit = "Enemies" if !isAlly else "Friendlies"
+	var deadUnit = get_node(str("./", teamUnit, "/Unit", place_ID))
+	if isAlly:
+		var deadUnitUI = get_node(str("./BattleUI/Unit", place_ID))
+		deadUnitUI.unitHasDied()
+	else:
+		if place_ID == $Enemies.current_target:
+			$Enemies.current_target = -1
+	deadUnit.hide()
 
 func _when_battle_end():
 	print(get_parent())

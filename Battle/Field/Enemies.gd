@@ -2,7 +2,6 @@ extends Control
 
 # The current unit under attack. Will be used by parent nodes
 @export var current_target: int = -1
-#@export var random_target: int = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,7 +26,7 @@ func get_target():
 	# Returns the target unit or a random unit if none is selected
 	if current_target == -1:
 		return get_random_target()
-	return get_child(current_target - 1).position
+	return get_child(current_target - 1)
 
 func get_random_target():
 	var children = get_children()
@@ -56,6 +55,8 @@ func clear_units():
 	for child in get_children():
 		child.is_unit = false
 		child.reset_spritesheet()
+		child.show()
+		child.remove_target()
 
 func set_speed(new_speed: float):
 	# Loop through each unit and set its speed
