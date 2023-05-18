@@ -28,8 +28,7 @@ func create_thumbnail(unit: Unit):
 	return new_thumbnail
 
 func _on_unit_pressed(unit: Unit):
-	print(unit)
-	get_parent().load_scene_home("res://Menu/SubMenu/Unit/Display/unit_display.tscn")
+	get_parent().load_scene_home_with_props("res://Menu/SubMenu/Unit/Display/unit_display.tscn", 1, ["unit"], [unit])
 
 func _on_back_pressed():
 	get_parent().load_scene_home("res://Menu/SubMenu/Unit/unit_menu.tscn")

@@ -27,6 +27,19 @@ func load_scene_home(scene: String, animation: int = 0):
 	new_scene.position.y = 163
 	load_scene(scene, animation, new_scene)
 
+func load_scene_home_with_props(scene: String, animation: int, keys, vals):
+	print("Switching home scene with props to:", scene)
+	var new_scene = ResourceLoader.load(scene).instantiate()
+	new_scene.position.y = 163
+	
+	#Set props
+	var count = 0
+	for key in keys:
+		new_scene[key] = vals[count]
+		count = count + 1
+	
+	load_scene(scene, animation, new_scene)
+
 func load_scene_with_props(scene: String, animation: int, keys, vals):
 	print("Switching to:", scene)
 	var new_scene = ResourceLoader.load(scene).instantiate()
