@@ -57,7 +57,7 @@ func _on_player_ready(units):
 		for unit in stage.monsters:
 			enemiesList.append(Lookups.get_unit_by_unit_number(unit.unit_number)["unit"])
 		stage.monsters = enemiesList
-	print(zone)
+	
 	var arg_props = [units, zone]
 	emit_signal("Closed")
 	get_tree().get_root().get_node("Game/GameContent").loadSceneWithProps("res://Battle/battle.tscn", arg_names, arg_props, true )

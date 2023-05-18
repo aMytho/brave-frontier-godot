@@ -43,16 +43,8 @@ func set_properties(frames, flip):
 func reset_spritesheet():
 	sprite.sprite_frames = null
 
-func attack(enemy_position: Vector2, atkUnit: Resource, defUnit: Resource):
-	### Damage dealth has to move to another script
-	### Maybe this script could be called here (central place with data about
-	### the unit that are engaged in the fight
-	#print("Attack animation")
-	#print("-------------------")
-	#defUnit.HP = defUnit.HP - atkUnit.ATK
-	#print(defUnit)
-	#print(defUnit.HP)
-	#print("-------------------")
+func attack(enemy_position: Vector2):
+	print("Attack animation")
 	# Move towards enemy
 	var tween = create_tween()
 	tween.tween_property(self, "position", enemy_position, 1.0 * speed)
@@ -83,7 +75,8 @@ func remove_target():
 func _on_input_event(viewport: Viewport, event: InputEvent, shape_idx):
 	# Listen for clicks or taps
 	# to do - allow number pad for unit target (1 targets unit1, 2 targets unit2, etc)
-	if ((event is InputEventMouseButton and event.is_pressed()) or event is InputEventScreenTouch) and !is_friendly:
+	var battleNode = get_parent().get_parent()
+	if ((event is InputEventMouseButton and event.is_pressed()) or event is InputEventScreenTouch) and !is_friendly and battleNode.zone.Stage[battleNode.current_stage-1].monsters[place_ID-1]:
 		is_targeted = true
 		$Target.visible = true
 		emit_signal("TargetSelected", place_ID)

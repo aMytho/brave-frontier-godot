@@ -15,6 +15,7 @@ var id: int = 0
 @export var arena_type: int = 0
 @export var level: int = 0
 @export var max_level:int = 0
+@export var is_dead:bool = false
 
 @export var HP: int = 0
 @export var ATK: int = 0

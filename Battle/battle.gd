@@ -23,6 +23,7 @@ var speed: float = 1.0:
 @export var units_attacked: int = 0
 @export var enemies_attacked: int = 0
 @export var total_enemies: int = 0
+@export var total_allies: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -57,8 +58,12 @@ func _ready():
 
 func _unit_attack(unit_place: int):
 	# Play attack animation, listen for anim end
-	if null != units[unit_place-1]:
-		get_node(str("./Friendlies/Unit", unit_place)).attack($Enemies.get_target_position(), units[unit_place-1], zone.Stage[current_stage-1].monsters[$Enemies.current_target-1])
+	if null != units[unit_place-1] and !units[unit_place-1].is_dead:
+		var targetPosition = $Enemies.get_target_position()
+		var unitTargetted = $Enemies.current_target -1 if -1 != $Enemies.current_target else $Enemies.random_target
+		get_node(str("./Friendlies/Unit", unit_place)).attack(targetPosition)
+		$stats_checking.unitTakingDamage(units[unit_place-1], zone.Stage[current_stage-1].monsters[unitTargetted])
+		
 		get_node(str("./Friendlies/Unit", unit_place)).connect("AttackFinished", _unit_attack_finished)
 
 func _unit_attack_finished(unit_place: int):
@@ -70,11 +75,13 @@ func _unit_attack_finished(unit_place: int):
 
 func check_if_player_turn_complete():
 	# If the player has had all units attack, end turn
-	if units_attacked == get_unit_count():
+	if units_attacked == total_allies:
 		print("Ready for enemy turn")
 		player_turn = false
 		enemy_turn = true
 		units_attacked = 0
+		
+		total_enemies = $stats_checking.areUnitsDead(zone.Stage[current_stage-1].monsters)
 		
 		# Dev only. This allows us to progress after 3 attacks
 		# When the battle system is done, this will need to be changed
@@ -90,8 +97,10 @@ func run_enemy_turn():
 	var enemy_count = 0
 	for enemy in $Enemies.get_children():
 		# Only play animation for units that exist
-		if enemy.is_unit:
-			enemy.attack($Friendlies.get_random_target(), zone.Stage[current_stage-1].monsters[enemy_count], units[$Friendlies.current_target])
+		var monstersArray = zone.Stage[current_stage-1].monsters
+		if enemy.is_unit and !monstersArray[enemy_count].is_dead:
+			enemy.attack($Friendlies.get_random_target())
+			$stats_checking.unitTakingDamage(monstersArray[enemy_count-1], units[$Friendlies.current_target])
 			enemy.connect("AttackFinished", _enemy_attack_finished)
 		enemy_count = enemy_count + 1
 
@@ -105,6 +114,7 @@ func _enemy_attack_finished(unit_place: int):
 		enemy_turn = false
 		player_turn = true
 		enemies_attacked = 0
+		total_allies = $stats_checking.areUnitsDead(units)
 		$BattleUI.release_attack_lockout()
 
 func load_next_stage(stage: int):
@@ -114,6 +124,7 @@ func load_next_stage(stage: int):
 	var enemy_units = $Enemies
 	enemy_units.clear_units()
 	var enemiesList = []
+	resetUnitsStats()
 	for unit in zone.Stage[stage].monsters:
 		total_enemies = total_enemies + 1
 		# Add enemy to field, start idle animation
@@ -153,3 +164,8 @@ func _on_transition_show():
 	# Wait a few seconds, then return to combat
 	await get_tree().create_timer(3.0).timeout
 	$Transition.hide_transition()
+	
+func resetUnitsStats():
+	for unit in units:
+		if unit != null:
+			total_allies = total_allies + 1
