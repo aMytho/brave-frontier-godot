@@ -37,13 +37,8 @@ func _ready():
 	# Pass in the friendly units
 	$BattleUI.units = units
 	
-	# Connect attack buttons
-	$BattleUI/Unit1.Attack.connect(_unit_attack)
-	$BattleUI/Unit2.Attack.connect(_unit_attack)
-	$BattleUI/Unit3.Attack.connect(_unit_attack)
-	$BattleUI/Unit4.Attack.connect(_unit_attack)
-	$BattleUI/Unit5.Attack.connect(_unit_attack)
-	$BattleUI/Unit6.Attack.connect(_unit_attack)
+	battleUIUnitAttackConnect()
+	$stats_checking.unitHasDied.connect(_when_unit_has_died)
 	
 	# Get the friendly node
 	var freindly_units = $Friendlies
@@ -55,6 +50,14 @@ func _ready():
 			child_node.set_properties(units[i].sprite_sheet, false)
 	# Setup the environment
 	load_next_stage(0)
+
+func battleUIUnitAttackConnect():
+	$BattleUI/Unit1.Attack.connect(_unit_attack)
+	$BattleUI/Unit2.Attack.connect(_unit_attack)
+	$BattleUI/Unit3.Attack.connect(_unit_attack)
+	$BattleUI/Unit4.Attack.connect(_unit_attack)
+	$BattleUI/Unit5.Attack.connect(_unit_attack)
+	$BattleUI/Unit6.Attack.connect(_unit_attack)
 
 func _unit_attack(unit_place: int):
 	# Play attack animation, listen for anim end
@@ -169,3 +172,7 @@ func resetUnitsStats():
 	for unit in units:
 		if unit != null:
 			total_allies = total_allies + 1
+			
+func _when_unit_has_died(place_ID: int):
+	print("signal the Unit %s it has died" % place_ID)
+	get_node(str("./BattleUI/Unit", place_ID)).unitHasDied()

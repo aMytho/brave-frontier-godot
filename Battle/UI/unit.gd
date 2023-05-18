@@ -22,6 +22,7 @@ signal Die
 @export var unit_name:String = ""
 @export var unit_element:String = "Fire"
 @export var unit_HP: int = 500
+@export var is_dead: bool = false
 
 @export_category("Unit Dev Info")
 @export var place_ID: int = 0
@@ -47,6 +48,7 @@ func reset_placeholder():
 	unit_name = ""
 	unit_element = "Fire"
 	unit_HP = 500
+	is_dead = false
 	#Reset viewable stats
 	self.modulate = Color(0.29, 0.29, 0.29)
 	get_node("Element").texture.region = Rect2(0,0,0,0)
@@ -75,7 +77,7 @@ func setElement(element):
 
 func _on_gui_input(event: InputEvent):
 	#If clicked, attack if possible
-	if event.is_pressed() and has_attacked == false:
+	if event.is_pressed() and has_attacked == false and false == is_dead:
 		print("Attack!")
 		has_attacked = true
 		# Dim the border
@@ -84,5 +86,14 @@ func _on_gui_input(event: InputEvent):
 		emit_signal("Attack", place_ID)
 
 func allow_attacks():
-	texture.region = normal_border
-	has_attacked = false
+	if false == is_dead:
+		texture.region = normal_border
+		has_attacked = false
+		
+# This function could be used to update all the data about the unit when it dies
+# For example : 
+## Remember the unit is dead
+## Fade the sprite out
+## make the unit button darker, meaning it has died, or something similar
+func unitHasDied():
+	is_dead = true
