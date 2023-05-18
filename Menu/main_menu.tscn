@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://fchfdi1cto6s"]
+[gd_scene load_steps=8 format=3 uid="uid://fchfdi1cto6s"]
 
 [ext_resource type="Script" path="res://Menu/main_menu.gd" id="1_rk2ft"]
-[ext_resource type="PackedScene" uid="uid://pcg0jhi8nlpx" path="res://Menu/SubMenu/Home/home.tscn" id="5_2t0h2"]
-[ext_resource type="Script" path="res://Menu/MenuContent.gd" id="5_u6iju"]
+[ext_resource type="Script" path="res://Common/UI/ContentSwitcher/content_switcher.gd" id="7_0g887"]
 [ext_resource type="PackedScene" uid="uid://bfku18he8vhad" path="res://Menu/Header/header.tscn" id="14_e2vs6"]
 [ext_resource type="PackedScene" uid="uid://c5dlinvyudexr" path="res://Menu/Footer/footer.tscn" id="15_dceir"]
 [ext_resource type="Texture2D" uid="uid://ku4h8un7lqso" path="res://Menu/base.jpg" id="19_6bdlw"]
@@ -35,22 +34,14 @@ expand_mode = 1
 [node name="Footer" parent="." instance=ExtResource("15_dceir")]
 footer_message = "Welcome to Brave Frontier!"
 
-[node name="MenuContent" type="Control" parent="."]
+[node name="content_switcher" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("5_u6iju")
+script = ExtResource("7_0g887")
 
-[node name="Home" parent="MenuContent" instance=ExtResource("5_2t0h2")]
-z_index = -1
-layout_mode = 1
-offset_left = -4.0
-offset_top = 163.0
-offset_right = -4.0
-offset_bottom = 163.0
-
-[node name="MenuSlideAndFade" type="AnimationPlayer" parent="MenuContent"]
+[node name="MenuSlideAndFade" type="AnimationPlayer" parent="content_switcher"]
 libraries = {
 "": SubResource("AnimationLibrary_ry27w")
 }
