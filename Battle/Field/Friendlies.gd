@@ -2,7 +2,7 @@ extends Control
 # This file is very similar to enemies.gd.
 # They should probably be merged at some point!
 
-@export var current_target: int = 0
+#@export var current_target: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,8 +29,8 @@ func get_random_target():
 			counter += 1
 		unitCounter += 1
 		
-	var randomIndex = randi() % children.size()
-	current_target = randomIndex
+	var randomIndex = randi_range(1, children.size()) -1
+	#current_target = randomIndex
 
 	# Pick a random unit
-	return children[randomIndex].position
+	return children[randomIndex]

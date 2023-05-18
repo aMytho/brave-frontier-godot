@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ck0xhmeqfo1iw" path="res://Units/Res/47/unit_ills_thum_30030.png" id="5_0rhx7"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_8pwwi")
 unit_number = 47
 data_id = 30030
@@ -18,6 +19,7 @@ cost = 1
 arena_type = 2
 level = 1
 max_level = 10
+is_dead = false
 HP = 850
 ATK = 260
 DEF = 350

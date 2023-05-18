@@ -2,7 +2,7 @@ extends Control
 
 # The current unit under attack. Will be used by parent nodes
 @export var current_target: int = -1
-@export var random_target: int = -1
+#@export var random_target: int = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,8 +23,8 @@ func _on_target_selected(id: int):
 			# Set the current target
 			current_target = id
 
-func get_target_position():
-	# Returns the target unit's position or a random unit if none is selected
+func get_target():
+	# Returns the target unit or a random unit if none is selected
 	if current_target == -1:
 		return get_random_target()
 	return get_child(current_target - 1).position
@@ -44,12 +44,12 @@ func get_random_target():
 			# Only increment if a unit is found, otherwise it isn't accurate (children.size() updates when removed)
 			counter += 1
 		unitCounter += 1
-
-	var randomIndex = randi() % children.size()
-	random_target = randomIndex
+		
+	var randomIndex = randi_range(1, children.size()) -1
+	#random_target = randomIndex
 
 	# Pick a random unit
-	return children[randomIndex].position
+	return children[randomIndex]
 
 func clear_units():
 	print(get_children())

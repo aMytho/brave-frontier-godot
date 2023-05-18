@@ -18,6 +18,7 @@ signal BraveBurst
 signal Die
 
 @export_category("Unit Stats")
+@export var has_unit:bool = false
 @export var unit_icon:CompressedTexture2D
 @export var unit_name:String = ""
 @export var unit_element:String = "Fire"
@@ -36,6 +37,7 @@ func create_unit(icon, uName, element, HP):
 	unit_name = uName
 	unit_element = element
 	unit_HP = HP
+	has_unit = true
 	#Get their actual values
 	get_node("Element").texture.region = setElement(unit_element)
 	get_node("Name").text = unit_name
@@ -77,7 +79,7 @@ func setElement(element):
 
 func _on_gui_input(event: InputEvent):
 	#If clicked, attack if possible
-	if event.is_pressed() and has_attacked == false and false == is_dead:
+	if event.is_pressed() and has_unit and has_attacked == false and false == is_dead:
 		print("Attack!")
 		has_attacked = true
 		# Dim the border
@@ -86,7 +88,7 @@ func _on_gui_input(event: InputEvent):
 		emit_signal("Attack", place_ID)
 
 func allow_attacks():
-	if false == is_dead:
+	if false == is_dead and has_unit:
 		texture.region = normal_border
 		has_attacked = false
 		

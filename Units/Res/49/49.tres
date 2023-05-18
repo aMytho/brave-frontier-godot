@@ -19,6 +19,7 @@ cost = 1
 arena_type = 2
 level = 1
 max_level = 10
+is_dead = false
 HP = 830
 ATK = 320
 DEF = 280
