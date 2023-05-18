@@ -108,7 +108,7 @@ func reset_unit(place: int):
 		5:
 			$UnitThumbnail5.icon = null
 
-func _on_begin_clicked(id):
+func _on_begin_clicked(_id):
 	#send the signal with the active units
 	emit_signal("PlayerReady", units)
 

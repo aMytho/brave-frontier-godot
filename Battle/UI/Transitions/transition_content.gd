@@ -22,8 +22,8 @@ func set_properties(new_stage, max_stages, dungeon_name: String, zone_name: Stri
 	$Name/Dungeon.text = dungeon_name
 	$Name/Stage.text = zone_name
 
-func update_progress(stage: int):
-	print("Setting transition value to ", stage)
-	$CurrentProgressLbl.text = str(stage)
+func update_progress(new_stage: int):
+	print("Setting transition value to ", new_stage)
+	$CurrentProgressLbl.text = str(new_stage)
 	# To-do: Animate the bar
-	$ProgressBar.value = stage
+	$ProgressBar.value = new_stage

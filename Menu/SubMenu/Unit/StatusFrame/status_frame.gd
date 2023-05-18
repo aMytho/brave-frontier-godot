@@ -33,3 +33,4 @@ func get_region(region: int):
 		13: return Rect2(0, 361, 90, 25)
 		14: return Rect2(0, 390, 92, 30)
 		15: return Rect2(0, 421, 59, 25)
+		# To-do: add cost to list
