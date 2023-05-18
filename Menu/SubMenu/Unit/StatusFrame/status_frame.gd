@@ -2,8 +2,9 @@ extends HBoxContainer
 
 @export var description: int = 1
 @export var value: String = "":
-	set(value):
-		$Center/HBoxContainer/Value.text = value
+	set(new_value):
+		$Center/HBoxContainer/Value.text = new_value
+		value = new_value
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

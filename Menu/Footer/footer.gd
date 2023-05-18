@@ -15,4 +15,4 @@ func _ready():
 
 func _footer_button_clicked(id: int):
 	emit_signal("BtnClicked", id)
-	print(id)
+	print("Footer button with id", id, " was clicked")

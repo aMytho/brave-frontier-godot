@@ -9,7 +9,7 @@ func _ready():
 	pass # Replace with function body.
 
 func load_scene(scene: String, animation: int, new_scene: Control = null):
-	print("Switching to:", scene)
+	print("Switching current scene to: ", scene)
 	if null == new_scene :
 		new_scene = ResourceLoader.load(scene).instantiate()
 
@@ -28,7 +28,7 @@ func load_scene_home(scene: String, animation: int = 0):
 	load_scene(scene, animation, new_scene)
 
 func load_scene_home_with_props(scene: String, animation: int, keys, vals):
-	print("Switching home scene with props to:", scene)
+	print("Switching home scene with properties to: ", scene)
 	var new_scene = ResourceLoader.load(scene).instantiate()
 	new_scene.position.y = 163
 	
@@ -41,7 +41,7 @@ func load_scene_home_with_props(scene: String, animation: int, keys, vals):
 	load_scene(scene, animation, new_scene)
 
 func load_scene_with_props(scene: String, animation: int, keys, vals):
-	print("Switching to:", scene)
+	print("Switching to the following scene with properties: ", scene)
 	var new_scene = ResourceLoader.load(scene).instantiate()
 	
 	#Set props

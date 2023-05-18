@@ -15,7 +15,7 @@ func _ready():
 
 func _on_touch_screen_gui_input(event):
 	if event.get("pressed") == true:
-		print("startGame")
+		print("Starting the Game!")
 		if !ActiveAccount.account_is_active():
 			get_node("%GameContent").loadScene("res://Introduction/introduction.tscn", true)
 		else:
@@ -36,7 +36,7 @@ func close_by_selection(acc: Node, _new_name: String, _id: int ):
 	acc.queue_free()
 
 func show_accounts(_id: int):
-	print("Showing account screen")
+	print("Showing account selection screen")
 	var accounts: Node = ResourceLoader.load("res://Menu/Accounts/account.tscn").instantiate()
 	add_child(accounts)
 	accounts.connect("NoSelection", close_accounts)

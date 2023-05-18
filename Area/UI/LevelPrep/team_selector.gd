@@ -80,7 +80,7 @@ func set_active_team(id: int):
 	team_id = id
 
 func display_unit(unit: Unit, place: int):
-	print(unit)
+	print("Displaying unit: ", unit)
 	match place:
 		1:
 			$UnitThumbnail.icon = unit.thumbnail

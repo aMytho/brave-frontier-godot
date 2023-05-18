@@ -10,12 +10,12 @@ func _ready():
 	$Music.stream = load("res://Music/3-01 World of God.mp3")
 	$Music.play()
 	var intro = load("res://Area/Creation/creator.tscn").instantiate()
-	print(intro.messages)
 	intro.messages = [
 		"I am Lucius, the god who controls this gate..",
 		"I have been waiting for the day you would come..",
 		"O Chosen One. What is your name?"
 	]
+	print("Intro scene messages:", intro.messages)
 	add_child(intro)
 	intro.connect("FlashComplete", _on_flash_complete)
 
@@ -52,7 +52,7 @@ func _on_name_chosen(nm: String):
 	intro.connect("FlashComplete", _on_flash_complete)
 
 func _on_char_chosen(character: Unit):
-	print(character)
+	print("The summoner picked the starter unit:", character)
 	main_character = character
 	remove_child($Creator)
 	
