@@ -4,8 +4,7 @@ const noCharBackground = preload("res://Menu/SubMenu/Home/home_character_frame_b
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#TODO --- Get character data
-	
+	# Load the required elements
 	var charTextureList = [
 		$Character/TextureRect/Char1/Char1,
 		$Character/TextureRect/Char2/Char2,
@@ -32,16 +31,14 @@ func _ready():
 	
 	var accountFirstTeam = Lookups.get_first_team_by_account_id(ActiveAccount.id)
 	var unitNumber = 1
-	var unitList = []
 	
 	while unitNumber <= 5:
-		var variable = "unit%s"% unitNumber
 		var unitId = accountFirstTeam[0].get("unit%s" % unitNumber)
 		var currentCharTextute = charTextureList[unitNumber-1]
 		var currentCharBG = charBGList[unitNumber-1]
 		var currentCharElement = charElementList[unitNumber-1]
 		
-		if null == unitId:
+		if unitId == null:
 			symbolEnum.set_symbol_pos("default", currentCharElement)
 			currentCharBG.element = "none"
 			currentCharBG.texture = noCharBackground
@@ -56,5 +53,5 @@ func _ready():
 		currentCharBG.element = unit.unit.element.to_lower()
 		currentCharBG.texture = load("res://Menu/SubMenu/Home/Characters/background.png")
 		symbolEnum.set_symbol_pos(unit.unit.element.to_lower(), currentCharElement)
-		unitNumber = unitNumber + 1		
+		unitNumber = unitNumber + 1
 		

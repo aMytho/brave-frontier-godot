@@ -21,7 +21,7 @@ func _close_button_clicked():
 func _on_account_selected(id: int, new_name: String):
 	print("Loading account with id:", id)
 	var account = Database.query("SELECT * FROM player_state WHERE id==" + str(id))[0]
-	ActiveAccount.set_account_info(account.id, account.player_name, account.level, account.exp,
+	ActiveAccount.set_account_info(account.id, account.player_name, account.level, account.current_exp,
 	account.max_exp, account.energy, account.gems, account.zel, account.karma, account.arena_orbs)
 
 	emit_signal("AccountSelected", self, new_name, id)

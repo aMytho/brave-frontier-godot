@@ -16,3 +16,8 @@ func _ready():
 	$Item1Frame.value = "Empty"
 	$Item2Frame.value = "Empty"
 	$Character.texture = unit.full_sprite
+
+func _on_back_section_clicked():
+	# This needs to be a fade effect because the footer buttons are still visible.
+	# It looks really weird if its a slide transition
+	get_parent().load_scene_home("res://Menu/SubMenu/Unit/Display/view_units.tscn", 1)

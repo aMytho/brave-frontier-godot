@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://pcg0jhi8nlpx"]
+[gd_scene load_steps=28 format=3 uid="uid://bksg3opbg0hw7"]
 
 [ext_resource type="Texture2D" uid="uid://c30pnaf3btmbn" path="res://Menu/SubMenu/Home/Characters/character_frame.png" id="1_1vqha"]
 [ext_resource type="Script" path="res://Menu/SubMenu/Home/home.gd" id="1_kfcaq"]
@@ -19,10 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://tj7fq07uc6vd" path="res://Menu/Launch Icons/home_win_gate.png" id="20_qxcnh"]
 [ext_resource type="Texture2D" uid="uid://dqps0x6h8j7sk" path="res://Menu/Launch Icons/home_win_quest.png" id="21_qqtso"]
 [ext_resource type="Texture2D" uid="uid://mj3uhfmipv6f" path="res://Menu/Launch Icons/home_win_randall.png" id="22_xdo8p"]
+[ext_resource type="Script" path="res://Menu/SubMenu/Home/home_menu.gd" id="23_7pg25"]
 [ext_resource type="Texture2D" uid="uid://cpurh2u53xqrx" path="res://Menu/Launch Icons/home_win_coopraid.png" id="23_k8yr7"]
 [ext_resource type="Texture2D" uid="uid://ciayuqdr56scy" path="res://Menu/Launch Icons/guild_home_icon.png" id="24_31v3y"]
 [ext_resource type="Texture2D" uid="uid://db8xwrjdh4c0p" path="res://Menu/Launch Icons/home_win_arena.png" id="25_sxafc"]
-[ext_resource type="Script" path="res://Menu/TextureRect.gd" id="26_r7m41"]
 [ext_resource type="Texture2D" uid="uid://d38vj141texe6" path="res://Menu/Launch Icons/activeIcon.png" id="27_morit"]
 [ext_resource type="Script" path="res://Menu/Launch Icons/iconID.gd" id="28_cvqux"]
 [ext_resource type="Texture2D" uid="uid://d1ebi5j4wftln" path="res://Menu/Launch Icons/inactiveIcon.png" id="29_85bl0"]
@@ -313,15 +313,15 @@ offset_top = 602.0
 offset_right = 635.0
 offset_bottom = 941.0
 
-[node name="TextureRect" type="TextureRect" parent="Launch/Control"]
+[node name="HomeMenu" type="TextureRect" parent="Launch/Control"]
 layout_mode = 0
 offset_left = 93.0
 offset_top = -8.0
 offset_right = 543.0
 offset_bottom = 308.0
 texture = SubResource("AnimatedTexture_4vnxq")
+script = ExtResource("23_7pg25")
 stretch_mode = 3
-script = ExtResource("26_r7m41")
 buttonPath = NodePath("../HBoxContainer")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Launch/Control"]
@@ -366,4 +366,4 @@ texture = ExtResource("29_85bl0")
 script = ExtResource("28_cvqux")
 id = 5
 
-[connection signal="gui_input" from="Launch/Control/TextureRect" to="Launch/Control/TextureRect" method="_on_gui_input"]
+[connection signal="gui_input" from="Launch/Control/HomeMenu" to="Launch/Control/HomeMenu" method="_on_gui_input"]

@@ -32,7 +32,7 @@ enum dark {
 
 # Allow the game to print the good symbol at the user (see home.tscn > Character > TextureRect > Char1 > CharElement for visual
 static func set_symbol_pos(element: String, charElement: Sprite2D):
-	var symbolPos = {"x": null, "y": null, "w": null, "h": null}
+	var _symbolPos = {"x": null, "y": null, "w": null, "h": null}
 	
 	match element:
 		"fire":

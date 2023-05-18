@@ -36,7 +36,7 @@ func _on_gui_input(event: Object):
 	elif event.get("pressed") == true:
 		print("Loading sub menu")
 		if selectedItem == 0:
-			print("Loding vortex")
+			print("Loading vortex")
 			get_tree().get_root().get_node("Game/GameContent").loadScene("res://Area/World/mistral.tscn")
 		elif selectedItem == 1:
 			print("Loading Quest")

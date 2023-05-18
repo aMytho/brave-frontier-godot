@@ -4,9 +4,9 @@ var db: SQLite
 #The path to the DB file
 var path: String = ""
 #Current DB version
-var current_version = 1
+var current_version = 2
 #Latest db version
-var latest_version = 2
+var latest_version = 3
 
 func _ready():
 	#Creates a new DB instance
@@ -19,7 +19,7 @@ func _ready():
 	
 	#Check for migrations
 	migration_check()
-	print("All Done!")
+	print("Database setup complete!")
 
 func set_path() -> String:
 	if OS.is_debug_build():
@@ -39,7 +39,7 @@ func migration_check():
 		migration_check()
 
 func migrate(count):
-	print("Migrating")
+	print("The database needs a migration. Migrating...")
 	#Gets the migration file
 	var migration_path = str("res://Database/Migrations/", count, ".sql")
 	var migration = FileAccess.open(migration_path, FileAccess.READ).get_as_text()
@@ -53,7 +53,7 @@ func migrate(count):
 
 func query(query_str: String) -> Array:
 	db.query(query_str)
-	print(db.query_result, 1234567, db.error_message)
+	print("Query result: ", db.query_result, " Errors?: ", db.error_message)
 	
 	#handle errors
 	if db.error_message == "" or db.error_message == "not an error":
