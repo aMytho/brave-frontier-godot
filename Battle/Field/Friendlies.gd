@@ -15,22 +15,15 @@ func set_speed(new_speed: float):
 		
 func get_random_target():
 	var children = get_children()
-	var battleNode = get_parent()
-	var unitArray = battleNode.units
 	
 	# Remove any child that isn't a unit (empty slot)
 	var counter = 0
-	var unitCounter = 0
 	while counter < children.size():
-		if children[counter].is_unit == false or unitArray[unitCounter].is_dead:
+		if children[counter].is_unit == false or children[counter].is_dead:
 			children.remove_at(counter)
 		else :
 			# Only increment if a unit is found, otherwise it isn't accurate (children.size() updates when removed)
 			counter += 1
-		unitCounter += 1
-		
-	var randomIndex = randi_range(1, children.size()) -1
-	#current_target = randomIndex
 
 	# Pick a random unit
-	return children[randomIndex]
+	return children[randi_range(1, children.size()) -1]

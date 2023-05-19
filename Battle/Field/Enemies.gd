@@ -7,6 +7,7 @@ extends Control
 func _ready():
 	pass # Replace with function body.
 
+# Function triggered when the user select an enemy unit
 func _on_target_selected(id: int):
 	# A target was made!
 	print("Targeting enemy unit: ", id)
@@ -22,33 +23,30 @@ func _on_target_selected(id: int):
 			# Set the current target
 			current_target = id
 
+# Get the target in the enemy team
+### If no target, then we choose a random target
 func get_target():
 	# Returns the target unit or a random unit if none is selected
 	if current_target == -1:
 		return get_random_target()
 	return get_child(current_target - 1)
 
+# Get a random target in the enemies list depending if they are alive or not
+# In the end, we take a random unit in the Children list that has been purge
 func get_random_target():
 	var children = get_children()
-	var battleNode = get_parent()
-	var unitArray = battleNode.zone.Stage[battleNode.current_stage-1].monsters
 	
 	# Remove any child that isn't a unit (empty slot)
 	var counter = 0
-	var unitCounter = 0
 	while counter < children.size():
-		if children[counter].is_unit == false or unitArray[unitCounter].is_dead:
+		if children[counter].is_unit == false or children[counter].is_dead:
 			children.remove_at(counter)
 		else :
 			# Only increment if a unit is found, otherwise it isn't accurate (children.size() updates when removed)
 			counter += 1
-		unitCounter += 1
-		
-	var randomIndex = randi_range(1, children.size()) -1
-	#random_target = randomIndex
 
 	# Pick a random unit
-	return children[randomIndex]
+	return children[randi_range(1, children.size()) -1]
 
 func clear_units():
 	print(get_children())

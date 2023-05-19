@@ -53,13 +53,13 @@ func _on_player_ready(units):
 	var arg_names = ["units", "zone"]
 	
 	for stage in zone.Stage:
-		var enemiesList : Array[Unit]
+		var enemies_list : Array[Unit]
 		for unit in stage.monsters:
 			if null != unit:
-				enemiesList.append(Lookups.get_unit_by_unit_number(unit.unit_number)["unit"])
+				enemies_list.append(Lookups.get_unit_by_unit_number(unit.unit_number)["unit"])
 			else:
-				enemiesList.append(null)
-		stage.monsters = enemiesList
+				enemies_list.append(null)
+		stage.monsters = enemies_list
 	
 	var arg_props = [units, zone]
 	emit_signal("Closed")
