@@ -1,0 +1,178 @@
+[gd_scene load_steps=12 format=3 uid="uid://bs0e5wlmu1i1o"]
+
+[ext_resource type="Script" path="res://Menu/SubMenu/Unit/Squad/manage_squad.gd" id="1_alx2r"]
+[ext_resource type="PackedScene" path="res://Common/UI/back_section.tscn" id="2_132uf"]
+[ext_resource type="PackedScene" uid="uid://drwq23rlohss0" path="res://Common/UI/Buttons/Directional.tscn" id="3_5rlxn"]
+[ext_resource type="Texture2D" uid="uid://dcmx86738cdsa" path="res://Common/UI/Buttons/Textures/left.tres" id="4_nnlnb"]
+[ext_resource type="Texture2D" uid="uid://bly3ctegc7ako" path="res://Common/UI/Buttons/Textures/right.tres" id="5_rjham"]
+[ext_resource type="Texture2D" uid="uid://cdo0jtv2xinjb" path="res://Menu/SubMenu/Unit/Display/leader_burst_label.png" id="5_wqgkn"]
+[ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="6_sbaf7"]
+[ext_resource type="FontFile" uid="uid://dsk2n5ffuertq" path="res://Common/Arial.ttf" id="7_8yobi"]
+[ext_resource type="PackedScene" uid="uid://dcw33maqu4xpa" path="res://Menu/SubMenu/Unit/Squad/unit_table.tscn" id="8_pamr2"]
+[ext_resource type="Texture2D" uid="uid://cbt02jlr7yuga" path="res://Menu/SubMenu/Unit/Squad/plate_total_cost.png" id="10_bci3m"]
+[ext_resource type="Texture2D" uid="uid://bkdwd2ucuf3gq" path="res://Menu/SubMenu/Unit/Squad/deck_name_label.png" id="11_essau"]
+
+[node name="ManageSquad" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_alx2r")
+
+[node name="BackSection" parent="." instance=ExtResource("2_132uf")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 427.0
+offset_bottom = 128.0
+heading = "Manage Squad"
+
+[node name="SelectLastTeam" parent="." instance=ExtResource("3_5rlxn")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 360.0
+offset_right = 68.0
+offset_bottom = 421.0
+icon = ExtResource("4_nnlnb")
+
+[node name="SelectNextTeam" parent="." instance=ExtResource("3_5rlxn")]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 360.0
+offset_right = 628.0
+offset_bottom = 422.0
+icon = ExtResource("5_rjham")
+direction = "Right"
+
+[node name="Crop" type="Control" parent="."]
+clip_contents = true
+anchors_preset = 0
+offset_top = 692.0
+offset_right = 643.0
+offset_bottom = 780.0
+
+[node name="TextureRect" type="TextureRect" parent="Crop"]
+clip_contents = true
+layout_mode = 0
+offset_right = 643.0
+offset_bottom = 190.0
+texture = ExtResource("5_wqgkn")
+expand_mode = 1
+
+[node name="LeaderSkill" type="Label" parent="Crop/TextureRect"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 8.0
+offset_right = 429.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.901961, 0.588235, 0.0431373, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("6_sbaf7")
+theme_override_font_sizes/font_size = 21
+text = "Blazing Feat of Glory"
+
+[node name="LeaderSkillDescription" type="Label" parent="Crop/TextureRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 56.0
+offset_right = 677.0
+offset_bottom = 84.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("7_8yobi")
+theme_override_font_sizes/font_size = 22
+text = "25% spark damage, damage taken fills BB gauge and 50% HP boost."
+
+[node name="UnitTable1" parent="." instance=ExtResource("8_pamr2")]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 374.0
+offset_right = 406.0
+offset_bottom = 478.0
+is_leader = true
+
+[node name="UnitTable2" parent="." instance=ExtResource("8_pamr2")]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 240.0
+offset_right = 230.0
+offset_bottom = 344.0
+
+[node name="UnitTable3" parent="." instance=ExtResource("8_pamr2")]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 240.0
+offset_right = 578.0
+offset_bottom = 344.0
+
+[node name="UnitTable4" parent="." instance=ExtResource("8_pamr2")]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 512.0
+offset_right = 234.0
+offset_bottom = 616.0
+
+[node name="UnitTable5" parent="." instance=ExtResource("8_pamr2")]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 512.0
+offset_right = 579.0
+offset_bottom = 616.0
+
+[node name="Cost" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 136.0
+offset_right = 408.0
+offset_bottom = 183.0
+texture = ExtResource("10_bci3m")
+
+[node name="Label" type="Label" parent="Cost"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 8.0
+offset_right = 196.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("6_sbaf7")
+theme_override_font_sizes/font_size = 29
+text = "20 / 40"
+vertical_alignment = 1
+clip_text = true
+
+[node name="SquadContainer" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 486.0
+offset_top = 652.0
+offset_right = 644.0
+offset_bottom = 695.0
+texture = ExtResource("11_essau")
+
+[node name="SquadName" type="Label" parent="SquadContainer"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 5.0
+offset_right = 143.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("6_sbaf7")
+theme_override_font_sizes/font_size = 25
+text = "Squad 1"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_top = 652.0
+offset_right = 486.0
+offset_bottom = 692.0
+
+[node name="TeamSelctionContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[connection signal="Clicked" from="BackSection" to="." method="_on_back_section_clicked"]
+[connection signal="Clicked" from="SelectLastTeam" to="." method="_on_select_last_team_clicked"]
+[connection signal="Clicked" from="SelectNextTeam" to="." method="_on_select_next_team_clicked"]
