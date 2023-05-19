@@ -320,8 +320,8 @@ offset_top = -8.0
 offset_right = 543.0
 offset_bottom = 308.0
 texture = SubResource("AnimatedTexture_4vnxq")
-script = ExtResource("23_7pg25")
 stretch_mode = 3
+script = ExtResource("23_7pg25")
 buttonPath = NodePath("../HBoxContainer")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Launch/Control"]

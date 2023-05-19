@@ -1,8 +1,6 @@
 extends Control
 
-@export var units: Array[Unit] = []:
-	set(new_units):
-		units = new_units
+@export var units: Array[Unit] = []
 
 var thumbnail = preload("res://Menu/SubMenu/Unit/Display/unit_thumbnail.tscn").instantiate()
 
