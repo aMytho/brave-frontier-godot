@@ -29,7 +29,19 @@ func set_properties(unit: Unit):
 	$PanelInfo/Hplbl.text = str(unit.HP)
 	$PanelInfo/LvLbl.text = str(unit.level)
 	$PanelInfo/RecLbl.text = str(unit.REC)
-
-func _on_gui_input(event):
 	
-	emit_signal("Selected", place_id)
+	# Make visible
+	$PanelInfo.visible = true
+	$Element.visible = true
+
+func reset_properties():
+	# Display sprite sheet
+	$Unit.sprite_frames = null
+	
+	# Hide nodes
+	$PanelInfo.visible = false
+	$Element.visible = false
+
+func _on_gui_input(event: InputEvent):
+	if event is InputEventMouseButton and event.is_pressed():
+		emit_signal("Selected", place_id)

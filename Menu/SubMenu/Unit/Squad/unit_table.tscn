@@ -38,6 +38,7 @@ region = Rect2(2, 183, 48, 25)
 [node name="UnitTable" type="TextureRect"]
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture = ExtResource("1_70emg")
 script = ExtResource("2_d4v6s")
 

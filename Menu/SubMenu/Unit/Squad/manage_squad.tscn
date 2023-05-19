@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bs0e5wlmu1i1o"]
+[gd_scene load_steps=15 format=3 uid="uid://bs0e5wlmu1i1o"]
 
 [ext_resource type="Script" path="res://Menu/SubMenu/Unit/Squad/manage_squad.gd" id="1_alx2r"]
-[ext_resource type="PackedScene" path="res://Common/UI/back_section.tscn" id="2_132uf"]
+[ext_resource type="PackedScene" uid="uid://cath12l63t3sv" path="res://Common/UI/back_section.tscn" id="2_132uf"]
 [ext_resource type="PackedScene" uid="uid://drwq23rlohss0" path="res://Common/UI/Buttons/Directional.tscn" id="3_5rlxn"]
-[ext_resource type="Texture2D" uid="uid://dcmx86738cdsa" path="res://Common/UI/Buttons/Textures/left.tres" id="4_nnlnb"]
 [ext_resource type="Texture2D" uid="uid://bly3ctegc7ako" path="res://Common/UI/Buttons/Textures/right.tres" id="5_rjham"]
 [ext_resource type="Texture2D" uid="uid://cdo0jtv2xinjb" path="res://Menu/SubMenu/Unit/Display/leader_burst_label.png" id="5_wqgkn"]
 [ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="6_sbaf7"]
@@ -11,6 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://dcw33maqu4xpa" path="res://Menu/SubMenu/Unit/Squad/unit_table.tscn" id="8_pamr2"]
 [ext_resource type="Texture2D" uid="uid://cbt02jlr7yuga" path="res://Menu/SubMenu/Unit/Squad/plate_total_cost.png" id="10_bci3m"]
 [ext_resource type="Texture2D" uid="uid://bkdwd2ucuf3gq" path="res://Menu/SubMenu/Unit/Squad/deck_name_label.png" id="11_essau"]
+[ext_resource type="PackedScene" uid="uid://c77at5003ad30" path="res://Common/UI/Buttons/small_button.tscn" id="12_h1ve7"]
+[ext_resource type="Texture2D" uid="uid://dl7jr0beivpa4" path="res://Menu/SubMenu/Unit/Squad/leader_change_btn_label1.png" id="13_7bt8l"]
+[ext_resource type="Texture2D" uid="uid://ge5us1jkqpiv" path="res://Menu/SubMenu/Unit/Squad/layout_change_btn_label1.png" id="14_vp8am"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_f0ybc"]
 
 [node name="ManageSquad" type="Control"]
 layout_mode = 3
@@ -22,10 +26,11 @@ grow_vertical = 2
 script = ExtResource("1_alx2r")
 
 [node name="BackSection" parent="." instance=ExtResource("2_132uf")]
+z_index = 1
 layout_mode = 0
-offset_left = 8.0
+offset_left = 1.0
 offset_top = 40.0
-offset_right = 427.0
+offset_right = 420.0
 offset_bottom = 128.0
 heading = "Manage Squad"
 
@@ -35,7 +40,6 @@ offset_left = 8.0
 offset_top = 360.0
 offset_right = 68.0
 offset_bottom = 421.0
-icon = ExtResource("4_nnlnb")
 
 [node name="SelectNextTeam" parent="." instance=ExtResource("3_5rlxn")]
 layout_mode = 0
@@ -87,40 +91,50 @@ theme_override_font_sizes/font_size = 22
 text = "25% spark damage, damage taken fills BB gauge and 50% HP boost."
 
 [node name="UnitTable1" parent="." instance=ExtResource("8_pamr2")]
+z_index = 1
 layout_mode = 0
 offset_left = 212.0
 offset_top = 374.0
 offset_right = 406.0
 offset_bottom = 478.0
+place_id = 1
 is_leader = true
 
 [node name="UnitTable2" parent="." instance=ExtResource("8_pamr2")]
+z_index = 1
 layout_mode = 0
 offset_left = 36.0
 offset_top = 240.0
 offset_right = 230.0
 offset_bottom = 344.0
+place_id = 2
 
 [node name="UnitTable3" parent="." instance=ExtResource("8_pamr2")]
+z_index = 1
 layout_mode = 0
 offset_left = 384.0
 offset_top = 240.0
 offset_right = 578.0
 offset_bottom = 344.0
+place_id = 3
 
 [node name="UnitTable4" parent="." instance=ExtResource("8_pamr2")]
+z_index = 1
 layout_mode = 0
 offset_left = 40.0
 offset_top = 512.0
 offset_right = 234.0
 offset_bottom = 616.0
+place_id = 4
 
 [node name="UnitTable5" parent="." instance=ExtResource("8_pamr2")]
+z_index = 1
 layout_mode = 0
 offset_left = 385.0
 offset_top = 512.0
 offset_right = 579.0
 offset_bottom = 616.0
+place_id = 5
 
 [node name="Cost" type="TextureRect" parent="."]
 layout_mode = 0
@@ -173,6 +187,40 @@ layout_mode = 2
 size_flags_horizontal = 3
 alignment = 2
 
+[node name="ChangeLeader" parent="." instance=ExtResource("12_h1ve7")]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 42.0
+offset_right = 525.0
+offset_bottom = 125.0
+icon = ExtResource("13_7bt8l")
+id = 1
+
+[node name="ChangePosition" parent="." instance=ExtResource("12_h1ve7")]
+layout_mode = 0
+offset_left = 532.0
+offset_top = 42.0
+offset_right = 637.0
+offset_bottom = 125.0
+icon = ExtResource("14_vp8am")
+id = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource("CanvasItemMaterial_f0ybc")
+layout_mode = 0
+offset_right = 643.0
+offset_bottom = 780.0
+mouse_filter = 2
+color = Color(0.403922, 0.403922, 0.403922, 1)
+
 [connection signal="Clicked" from="BackSection" to="." method="_on_back_section_clicked"]
 [connection signal="Clicked" from="SelectLastTeam" to="." method="_on_select_last_team_clicked"]
 [connection signal="Clicked" from="SelectNextTeam" to="." method="_on_select_next_team_clicked"]
+[connection signal="Selected" from="UnitTable1" to="." method="_on_unit_table_selected"]
+[connection signal="Selected" from="UnitTable2" to="." method="_on_unit_table_selected"]
+[connection signal="Selected" from="UnitTable3" to="." method="_on_unit_table_selected"]
+[connection signal="Selected" from="UnitTable4" to="." method="_on_unit_table_selected"]
+[connection signal="Selected" from="UnitTable5" to="." method="_on_unit_table_selected"]
+[connection signal="Clicked" from="ChangeLeader" to="." method="_on_change_clicked"]
+[connection signal="Clicked" from="ChangePosition" to="." method="_on_change_clicked"]

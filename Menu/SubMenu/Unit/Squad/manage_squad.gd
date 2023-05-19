@@ -1,9 +1,17 @@
 extends Control
 
 # Array of units that are on display. It is the unit type, but the godot bug prevents it -___-
-@export var units: Array[Unit] = []
-@export var teams: Array = []
+@export var units: Array[Unit] = [null, null, null, null, null]
+@export var teams = []
 @export var current_team: int = 0
+# Flags for changing the leader or moving a unit
+@export var is_changing_leader: bool = false
+@export var is_changing_unit: bool = false
+# Holds positions of units for swapping positions
+@export var unit_position = {
+	"old": null,
+	"new": null
+}
 
 
 # Called when the node enters the scene tree for the first time.
@@ -16,29 +24,26 @@ func _ready():
 		var icn = ResourceLoader.load("res://Common/UI/Toggles/content_toggle_button.tscn").instantiate()
 		$ScrollContainer/TeamSelctionContainer.add_child(icn)
 	
+	# Load the first team
 	set_team_info(current_team)
 
 func set_team_info(team_id: int):
-	# Load the first team
+	# Set the name
 	$SquadContainer/SquadName.text = teams[team_id].name
 	
 	# Get each unit in the team based on their id, provided that the unit exists
-	var possible_units: Array = []
-	if teams[team_id].unit1 != null:
-		possible_units.append(Lookups.get_unit_by_ID(teams[team_id].unit1))
-	if teams[team_id].unit2 != null:
-		possible_units.append(Lookups.get_unit_by_ID(teams[team_id].unit2))
-	if teams[team_id].unit3 != null:
-		possible_units.append(Lookups.get_unit_by_ID(teams[team_id].unit3))
-	if teams[team_id].unit4 != null:
-		possible_units.append(Lookups.get_unit_by_ID(teams[team_id].unit4))
-	if teams[team_id].unit5 != null:
-		possible_units.append(Lookups.get_unit_by_ID(teams[team_id].unit5))
+	var possible_units: Array = [
+		Lookups.get_unit_by_ID(unit_not_null(teams[team_id].unit1)),
+		Lookups.get_unit_by_ID(unit_not_null(teams[team_id].unit2)),
+		Lookups.get_unit_by_ID(unit_not_null(teams[team_id].unit3)),
+		Lookups.get_unit_by_ID(unit_not_null(teams[team_id].unit4)),
+		Lookups.get_unit_by_ID(unit_not_null(teams[team_id].unit5))
+	]
 	
 	# Clear the current team and set the new units
 	units = []
 	var counter = 0
-	while counter < possible_units.size():
+	while counter < 5:
 		if possible_units[counter].valid == true:
 			# A unit exists in this slot
 			units.insert(counter, possible_units[counter].unit)
@@ -48,26 +53,34 @@ func set_team_info(team_id: int):
 	
 	# Display the units
 	counter = 0
-	while counter < units.size():
-		if units[counter] != null:
+	while counter < 5:
+		if counter < units.size() and units[counter] != null:
 			get_node("UnitTable%s" % str(counter + 1)).set_properties(units[counter])
+		else:
+			get_node("UnitTable%s" % str(counter + 1)).reset_properties()
 		counter = counter + 1
+	# Clear the past leader
+	get_node("UnitTable1").is_leader = false
+	get_node("UnitTable2").is_leader = false
+	get_node("UnitTable3").is_leader = false
+	get_node("UnitTable4").is_leader = false
+	get_node("UnitTable5").is_leader = false
+	# Set the new leader if one exists
+	if teams[team_id].leader != null:
+		get_node("UnitTable%s" % teams[team_id].leader).is_leader = true
 	
 	# Set the max cost (TO DO - lookup max cost per level)
 	$Cost/Label.text = str(get_squad_cost(), " / ", "40")
 	$ScrollContainer/TeamSelctionContainer.get_child(team_id).turn_on()
 	current_team = team_id
 
-
 func get_squad_cost():
+	# Returns the current cost of the squad
 	var total: int = 0
 	for unit in units:
 		if unit != null:
 			total = total + unit.cost
 	return total
-
-func _on_back_section_clicked():
-	get_parent().load_scene_home("res://Menu/SubMenu/Unit/unit_menu.tscn")
 
 
 func _on_select_last_team_clicked():
@@ -78,7 +91,6 @@ func _on_select_last_team_clicked():
 		# Switch team
 		set_team_info(current_team - 1)
 
-
 func _on_select_next_team_clicked():
 	# Switch to the next team
 	if current_team + 1 < teams.size():
@@ -86,3 +98,93 @@ func _on_select_next_team_clicked():
 		$ScrollContainer/TeamSelctionContainer.get_child(current_team).turn_off()
 		# Switch team
 		set_team_info(current_team + 1)
+
+
+func _on_unit_table_selected(place_id):
+	if is_changing_leader:
+		# Set a new leader
+		Database.query("UPDATE teams SET leader = %s WHERE id = %s" % [place_id, teams[current_team].id])
+		print("Set new leader")
+		# Prevent future changes
+		is_changing_leader = false
+		# Get new team from DB
+		var team_id = teams[current_team].id
+		teams.remove_at(current_team)
+		teams.insert(current_team, Database.query("SELECT * from TEAMS where id = %s" % team_id)[0])
+		set_team_info(current_team)
+		# End the selection
+		is_changing_leader = false
+		undim_ui()
+	elif is_changing_unit:
+		if unit_position.old == null:
+			# pick a unit to move
+			unit_position.old = place_id - 1
+		else:
+			unit_position.new = place_id - 1
+			# Move the unit
+			var is_switch = units[unit_position.new] == null
+
+			# Save the revelant positions and unit IDs. Move them in our local array
+			var old_unit_id = teams[current_team]["unit%s" % (unit_position.old + 1)]
+			var new_unit_id = teams[current_team]["unit%s" % (unit_position.new + 1)]
+			units[unit_position.new] = units[unit_position.old]
+			units[unit_position.old] = null
+
+			# Switch or move the unit in the DB
+			if is_switch:
+				Database.query(
+						"UPDATE teams SET unit%s = %s, unit%s = null WHERE id = %s"
+						% [place_id, old_unit_id, unit_position.old + 1, teams[current_team].id])
+			else:
+				Database.query(
+						"UPDATE teams SET unit%s = %s, unit%s = %s WHERE id = %s"
+						% [place_id, old_unit_id, unit_position.old + 1, new_unit_id, teams[current_team].id])
+
+			print("Moved/Switched a unit/s")
+			# Reload the UI
+			unit_position = {"new": null, "old": null}
+			is_changing_unit = false
+			undim_ui()
+			teams = Database.query("SELECT * FROM teams WHERE account_id = %s" % ActiveAccount.id)
+			set_team_info(current_team)
+	elif units[place_id-1] != null:
+		# Load the unit display for the unit
+		get_parent().load_scene_home_with_props("res://Menu/SubMenu/Unit/Display/unit_display.tscn", 0, ["unit"], [units[place_id-1]])
+
+
+func _on_change_clicked(id):
+	# Check if a button is already selected. If so, unfim the UI and cancel changes
+	if is_changing_leader or is_changing_unit:
+		is_changing_leader = false
+		is_changing_unit = false
+		undim_ui()
+		return
+	
+	if id == 1:
+		print("Player is changing their leader")
+		is_changing_leader = true
+		is_changing_unit = false
+		dim_ui()
+	else:
+		print("Player is changing their unit's positions")
+		is_changing_leader = false
+		is_changing_unit = true
+		dim_ui()
+	unit_position = {"new": null, "old": null}
+
+func dim_ui():
+	$ColorRect.material.blend_mode = CanvasItemMaterial.BLEND_MODE_MUL
+	$ColorRect.visible = true
+
+func undim_ui():
+	$ColorRect.material.blend_mode = CanvasItemMaterial.BLEND_MODE_MIX
+	$ColorRect.visible = false
+
+func unit_not_null(possible_unit):
+	if possible_unit == null:
+		return -1
+	else:
+		return possible_unit
+
+func _on_back_section_clicked():
+	get_parent().load_scene_home("res://Menu/SubMenu/Unit/unit_menu.tscn")
