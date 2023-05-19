@@ -77,9 +77,10 @@ func remove_target():
 	is_targeted = false
 	$Target.visible = false
 
+
 # This event is trigger when the user click on a unit.
 # If it's an enemy unit (!is_friendly), this will add a target on it, if the unit is not dead
-func _on_input_event(viewport: Viewport, event: InputEvent, shape_idx):
+func _on_input_event(_viewport: Viewport, event: InputEvent, _shape_idx):
 	# Listen for clicks or taps
 	# to do - allow number pad for unit target (1 targets unit1, 2 targets unit2, etc)
 	if ((event is InputEventMouseButton and event.is_pressed()) or event is InputEventScreenTouch) and !is_friendly and !is_dead:

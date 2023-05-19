@@ -10,12 +10,12 @@ func _ready():
 	$Music.stream = load("res://Music/3-01 World of God.mp3")
 	$Music.play()
 	var intro = load("res://Area/Creation/creator.tscn").instantiate()
-	print(intro.messages)
 	intro.messages = [
 		"I am Lucius, the god who controls this gate..",
 		"I have been waiting for the day you would come..",
 		"O Chosen One. What is your name?"
 	]
+	print("Intro scene messages:", intro.messages)
 	add_child(intro)
 	intro.connect("FlashComplete", _on_flash_complete)
 
@@ -52,7 +52,7 @@ func _on_name_chosen(nm: String):
 	intro.connect("FlashComplete", _on_flash_complete)
 
 func _on_char_chosen(character: Unit):
-	print(character)
+	print("The summoner picked the starter unit:", character)
 	main_character = character
 	remove_child($Creator)
 	
@@ -65,7 +65,7 @@ func _on_char_chosen(character: Unit):
 	
 	#Save the changes
 	# Add player, get unique ID
-	Database.query("INSERT INTO player_state ( arena_orbs, karma, zel, gems, energy, max_exp, exp, level, player_name ) VALUES ( 3, 100, 100, 5, 5, 1, 0, 1, '%s' );" % player_name)
+	Database.query("INSERT INTO player_state ( arena_orbs, karma, zel, gems, energy, max_exp, current_exp, level, player_name ) VALUES ( 3, 100, 100, 5, 5, 1, 0, 1, '%s' );" % player_name)
 	player_id = Database.query("SELECT id from player_state WHERE player_name == '%s'" % player_name)[0].id
 	
 	# Add starter units, get unit id

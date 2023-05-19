@@ -2,8 +2,9 @@ extends HBoxContainer
 
 @export var description: int = 1
 @export var value: String = "":
-	set(value):
-		$Center/HBoxContainer/Value.text = value
+	set(new_value):
+		$Center/HBoxContainer/Value.text = new_value
+		value = new_value
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,3 +34,4 @@ func get_region(region: int):
 		13: return Rect2(0, 361, 90, 25)
 		14: return Rect2(0, 390, 92, 30)
 		15: return Rect2(0, 421, 59, 25)
+		# To-do: add cost to list

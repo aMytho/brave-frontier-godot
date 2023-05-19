@@ -87,10 +87,10 @@ value = "4811"
 
 [node name="Cost" parent="." instance=ExtResource("1_3eneo")]
 layout_mode = 0
-offset_left = 491.0
-offset_top = 580.0
-offset_right = 632.0
-offset_bottom = 644.0
+offset_left = 488.0
+offset_top = 584.0
+offset_right = 629.0
+offset_bottom = 648.0
 description = 2
 
 [node name="Sp" parent="." instance=ExtResource("1_3eneo")]
@@ -105,9 +105,9 @@ value = "100"
 [node name="TextureRect" type="TextureRect" parent="."]
 clip_contents = true
 layout_mode = 0
-offset_top = 836.0
+offset_top = 727.0
 offset_right = 643.0
-offset_bottom = 1026.0
+offset_bottom = 917.0
 texture = ExtResource("4_xr3k8")
 
 [node name="LeaderSkill" type="Label" parent="TextureRect"]
@@ -163,36 +163,36 @@ text = "25% spark damage, damage taken fills BB gauge and 50% HP boost."
 [node name="Item1Frame" parent="." instance=ExtResource("1_3eneo")]
 layout_mode = 0
 offset_left = 89.0
-offset_top = 677.0
+offset_top = 568.0
 offset_right = 230.0
-offset_bottom = 741.0
+offset_bottom = 632.0
 description = 0
 value = "Empty"
 
 [node name="Item1" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 30.0
-offset_top = 677.0
+offset_top = 568.0
 offset_right = 91.0
-offset_bottom = 739.0
+offset_bottom = 630.0
 texture = ExtResource("7_jg8yi")
 expand_mode = 1
 
 [node name="Item2Frame" parent="." instance=ExtResource("1_3eneo")]
 layout_mode = 0
 offset_left = 88.0
-offset_top = 750.0
+offset_top = 641.0
 offset_right = 229.0
-offset_bottom = 814.0
+offset_bottom = 705.0
 description = 0
 value = "Empty"
 
 [node name="Item2" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 29.0
-offset_top = 750.0
+offset_top = 641.0
 offset_right = 90.0
-offset_bottom = 812.0
+offset_bottom = 703.0
 texture = ExtResource("7_jg8yi")
 expand_mode = 1
 
@@ -220,3 +220,5 @@ offset_top = 24.0
 offset_right = 419.0
 offset_bottom = 112.0
 heading = "Unit No.8376"
+
+[connection signal="Clicked" from="BackSection" to="." method="_on_back_section_clicked"]

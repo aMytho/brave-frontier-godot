@@ -80,7 +80,7 @@ func set_active_team(id: int):
 	team_id = id
 
 func display_unit(unit: Unit, place: int):
-	print(unit)
+	print("Displaying unit: ", unit)
 	match place:
 		1:
 			$UnitThumbnail.icon = unit.thumbnail
@@ -108,7 +108,7 @@ func reset_unit(place: int):
 		5:
 			$UnitThumbnail5.icon = null
 
-func _on_begin_clicked(id):
+func _on_begin_clicked(_id):
 	#send the signal with the active units
 	emit_signal("PlayerReady", units)
 

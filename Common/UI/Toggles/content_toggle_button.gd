@@ -16,8 +16,9 @@ func _ready():
 func turn_on():
 	texture = icon_on
 	active = true
-	print("on")
+	print("Content toggle on")
 
 func turn_off():
 	texture = icon_off
 	active = false
+	print("Content toggle off")

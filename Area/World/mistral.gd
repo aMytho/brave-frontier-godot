@@ -6,15 +6,13 @@ var header: Node
 func _ready():
 	get_tree().root.get_node("Game").get_child(0).emit_signal("startPlaying", "res://Music/1-03 Frontier.mp3")
 
-
 func _on_button_pressed():
-	print("Loading green biome")
+	print("Loading first zone of Mistral")
 	#Load the header scene
 	
 	header = ResourceLoader.load("res://Menu/Header/header.tscn").instantiate()
 	var level_loader = ResourceLoader.load("res://Area/UI/level_select.tscn").instantiate()
 	var res = load("res://Area/Areas/Mistral/AdventurePrairie/adventure_prairie.tres")
-	print("Level is: ", res)
 	
 	#Display next scene, set its position
 	add_child(header)
@@ -32,7 +30,7 @@ func _on_button_pressed():
 
 func on_levels_selector_closed():
 	#Close the header
-	print("It was closed")
+	print("Level selector closed")
 	toggleUI(false)
 
 func toggleUI(should_hide = false):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://pcg0jhi8nlpx"]
+[gd_scene load_steps=28 format=3 uid="uid://bksg3opbg0hw7"]
 
 [ext_resource type="Texture2D" uid="uid://c30pnaf3btmbn" path="res://Menu/SubMenu/Home/Characters/character_frame.png" id="1_1vqha"]
 [ext_resource type="Script" path="res://Menu/SubMenu/Home/home.gd" id="1_kfcaq"]
@@ -19,10 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://tj7fq07uc6vd" path="res://Menu/Launch Icons/home_win_gate.png" id="20_qxcnh"]
 [ext_resource type="Texture2D" uid="uid://dqps0x6h8j7sk" path="res://Menu/Launch Icons/home_win_quest.png" id="21_qqtso"]
 [ext_resource type="Texture2D" uid="uid://mj3uhfmipv6f" path="res://Menu/Launch Icons/home_win_randall.png" id="22_xdo8p"]
+[ext_resource type="Script" path="res://Menu/SubMenu/Home/home_menu.gd" id="23_7pg25"]
 [ext_resource type="Texture2D" uid="uid://cpurh2u53xqrx" path="res://Menu/Launch Icons/home_win_coopraid.png" id="23_k8yr7"]
 [ext_resource type="Texture2D" uid="uid://ciayuqdr56scy" path="res://Menu/Launch Icons/guild_home_icon.png" id="24_31v3y"]
 [ext_resource type="Texture2D" uid="uid://db8xwrjdh4c0p" path="res://Menu/Launch Icons/home_win_arena.png" id="25_sxafc"]
-[ext_resource type="Script" path="res://Menu/TextureRect.gd" id="26_r7m41"]
 [ext_resource type="Texture2D" uid="uid://d38vj141texe6" path="res://Menu/Launch Icons/activeIcon.png" id="27_morit"]
 [ext_resource type="Script" path="res://Menu/Launch Icons/iconID.gd" id="28_cvqux"]
 [ext_resource type="Texture2D" uid="uid://d1ebi5j4wftln" path="res://Menu/Launch Icons/inactiveIcon.png" id="29_85bl0"]
@@ -243,58 +243,59 @@ offset_bottom = -164.0
 
 [node name="TextureRect" type="TextureRect" parent="Buttons and Banner"]
 layout_mode = 0
-offset_left = 24.0
+offset_left = 8.0
 offset_top = 522.0
-offset_right = 124.0
+offset_right = 108.0
 offset_bottom = 602.0
 texture = ExtResource("13_o2tak")
 
 [node name="TextureRect2" type="TextureRect" parent="Buttons and Banner"]
 layout_mode = 0
-offset_left = 104.0
+offset_left = 80.0
 offset_top = 522.0
-offset_right = 204.0
+offset_right = 180.0
 offset_bottom = 602.0
 texture = ExtResource("14_055s7")
 
 [node name="TextureRect3" type="TextureRect" parent="Buttons and Banner"]
 layout_mode = 0
-offset_left = 184.0
+offset_left = 160.0
 offset_top = 522.0
-offset_right = 284.0
+offset_right = 260.0
 offset_bottom = 602.0
 texture = ExtResource("15_eybrk")
 
 [node name="TextureRect4" type="TextureRect" parent="Buttons and Banner"]
 layout_mode = 0
-offset_left = 360.0
+offset_left = 385.0
 offset_top = 522.0
-offset_right = 460.0
+offset_right = 485.0
 offset_bottom = 602.0
 texture = ExtResource("16_neff8")
 
 [node name="TextureRect5" type="TextureRect" parent="Buttons and Banner"]
 layout_mode = 0
-offset_left = 440.0
+offset_left = 462.0
 offset_top = 522.0
-offset_right = 540.0
+offset_right = 562.0
 offset_bottom = 602.0
 texture = ExtResource("17_dvakf")
 
 [node name="TextureRect6" type="TextureRect" parent="Buttons and Banner"]
 layout_mode = 0
-offset_left = 520.0
+offset_left = 540.0
 offset_top = 522.0
-offset_right = 620.0
+offset_right = 640.0
 offset_bottom = 602.0
 texture = ExtResource("18_222t3")
 
 [node name="TextureRect7" type="TextureRect" parent="Buttons and Banner"]
+visible = false
 layout_mode = 0
-offset_left = 387.0
-offset_top = 616.0
-offset_right = 626.0
-offset_bottom = 704.0
+offset_left = 400.0
+offset_top = 604.0
+offset_right = 639.0
+offset_bottom = 692.0
 texture = ExtResource("19_gw8gm")
 expand_mode = 1
 
@@ -308,28 +309,27 @@ offset_bottom = -164.0
 clip_contents = true
 layout_mode = 1
 anchors_preset = 0
-offset_left = 24.0
-offset_top = 715.0
-offset_right = 615.0
-offset_bottom = 939.0
+offset_top = 602.0
+offset_right = 635.0
+offset_bottom = 941.0
 
-[node name="TextureRect" type="TextureRect" parent="Launch/Control"]
+[node name="HomeMenu" type="TextureRect" parent="Launch/Control"]
 layout_mode = 0
-offset_left = 152.0
-offset_top = -1.0
-offset_right = 448.0
-offset_bottom = 207.0
+offset_left = 93.0
+offset_top = -8.0
+offset_right = 543.0
+offset_bottom = 308.0
 texture = SubResource("AnimatedTexture_4vnxq")
-expand_mode = 1
-script = ExtResource("26_r7m41")
+script = ExtResource("23_7pg25")
+stretch_mode = 3
 buttonPath = NodePath("../HBoxContainer")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Launch/Control"]
 layout_mode = 0
-offset_left = 167.0
-offset_top = 192.0
-offset_right = 445.0
-offset_bottom = 225.0
+offset_left = 188.0
+offset_top = 291.0
+offset_right = 466.0
+offset_bottom = 331.0
 
 [node name="I1" type="TextureRect" parent="Launch/Control/HBoxContainer"]
 layout_mode = 2
@@ -366,4 +366,4 @@ texture = ExtResource("29_85bl0")
 script = ExtResource("28_cvqux")
 id = 5
 
-[connection signal="gui_input" from="Launch/Control/TextureRect" to="Launch/Control/TextureRect" method="_on_gui_input"]
+[connection signal="gui_input" from="Launch/Control/HomeMenu" to="Launch/Control/HomeMenu" method="_on_gui_input"]
