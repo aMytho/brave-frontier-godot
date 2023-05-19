@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=9 format=3 uid="uid://cath12l63t3sv"]
 
 [ext_resource type="Texture2D" uid="uid://dr3kfgmlfmaph" path="res://Area/UI/header_title_base1.png" id="1_p0qym"]
 [ext_resource type="Script" path="res://Common/UI/BackSection.gd" id="2_eg57i"]
@@ -25,15 +25,18 @@ texture = ExtResource("1_p0qym")
 script = ExtResource("2_eg57i")
 
 [node name="Back" type="Button" parent="."]
+layout_mode = 0
 offset_top = 2.0
 offset_right = 96.0
 offset_bottom = 82.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_twduu")
 theme_override_styles/hover = SubResource("StyleBoxTexture_4so82")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q2hxx")
 
 [node name="SectionHeading" type="Label" parent="."]
+layout_mode = 0
 offset_left = 112.0
 offset_top = 24.0
 offset_right = 384.0

@@ -78,6 +78,7 @@ script = ExtResource("1_gk5ed")
 
 [node name="Label" type="Label" parent="."]
 show_behind_parent = true
+layout_mode = 0
 offset_left = 303.0
 offset_top = 573.0
 offset_right = 967.019
@@ -87,7 +88,6 @@ text = "ooooooo, pretty icons!"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Label")
 autoplay = "MovingText"
-playback_speed = -1.0
 libraries = {
 "": SubResource("AnimationLibrary_anhmh")
 }
@@ -95,12 +95,13 @@ libraries = {
 [node name="FooterBG" type="TextureRect" parent="."]
 editor_description = "Can someone please tell me why this is so long?"
 z_index = -1
+layout_mode = 0
 offset_top = 1081.0
 offset_right = 137.0
 offset_bottom = 1723.0
 rotation = -1.57079
 texture = SubResource("AtlasTexture_xnuy2")
-ignore_texture_size = true
+expand_mode = 1
 
 [node name="FooterContainer" type="Control" parent="."]
 layout_mode = 3
@@ -109,55 +110,67 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="FooterButton1" parent="FooterContainer" instance=ExtResource("2_xiryr")]
+layout_mode = 0
 offset_left = -4.0
 offset_top = 979.0
 offset_right = 114.0
 offset_bottom = 1097.0
+mouse_default_cursor_shape = 2
 icon = ExtResource("3_7vtx8")
 button = ExtResource("3_7vtx8")
 id = 1
 
 [node name="FooterButton2" parent="FooterContainer" instance=ExtResource("2_xiryr")]
+layout_mode = 0
 offset_left = 103.0
 offset_top = 978.0
 offset_right = 221.0
 offset_bottom = 1096.0
+mouse_default_cursor_shape = 2
 icon = ExtResource("3_7a3tw")
 button = ExtResource("3_7a3tw")
 id = 2
 
 [node name="FooterButton3" parent="FooterContainer" instance=ExtResource("2_xiryr")]
+layout_mode = 0
 offset_left = 208.0
 offset_top = 978.0
 offset_right = 326.0
 offset_bottom = 1096.0
+mouse_default_cursor_shape = 2
 icon = ExtResource("4_mp4ih")
 button = ExtResource("4_mp4ih")
 id = 3
 
 [node name="FooterButton4" parent="FooterContainer" instance=ExtResource("2_xiryr")]
+layout_mode = 0
 offset_left = 314.0
 offset_top = 978.0
 offset_right = 432.0
 offset_bottom = 1096.0
+mouse_default_cursor_shape = 2
 icon = ExtResource("5_b22u2")
 button = ExtResource("5_b22u2")
 id = 4
 
 [node name="FooterButton5" parent="FooterContainer" instance=ExtResource("2_xiryr")]
+layout_mode = 0
 offset_left = 420.0
 offset_top = 979.0
 offset_right = 538.0
 offset_bottom = 1097.0
+mouse_default_cursor_shape = 2
 icon = ExtResource("6_fl517")
 button = ExtResource("6_fl517")
 id = 5
 
 [node name="FooterButton6" parent="FooterContainer" instance=ExtResource("2_xiryr")]
+layout_mode = 0
 offset_left = 528.0
 offset_top = 979.0
 offset_right = 646.0
 offset_bottom = 1097.0
+mouse_default_cursor_shape = 2
 icon = ExtResource("7_nfr07")
 button = ExtResource("7_nfr07")
 id = 6

@@ -319,6 +319,7 @@ offset_left = 93.0
 offset_top = -8.0
 offset_right = 543.0
 offset_bottom = 308.0
+mouse_default_cursor_shape = 2
 texture = SubResource("AnimatedTexture_4vnxq")
 stretch_mode = 3
 script = ExtResource("23_7pg25")
