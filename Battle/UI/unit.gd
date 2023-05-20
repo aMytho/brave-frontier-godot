@@ -23,6 +23,7 @@ signal Die
 @export var unit_name:String = ""
 @export var unit_element:String = "Fire"
 @export var unit_HP: int = 500
+@export var live_unit_HP: int = 500
 @export var is_dead: bool = false
 
 @export_category("Unit Dev Info")
@@ -37,12 +38,32 @@ func create_unit(icon, uName, element, HP):
 	unit_name = uName
 	unit_element = element
 	unit_HP = HP
+	live_unit_HP = HP
 	has_unit = true
+	set_default_health_bar_data()
+	set_live_health_bar_data()
+	$HPContainer/HPNotFull.visible = false
+	$HPContainer/HPDanger.visible = false
+	
+	print($HPContainer/Bar.value)
+	print($HPContainer/Bar.value)
+	
 	#Get their actual values
 	get_node("Element").texture.region = setElement(unit_element)
 	get_node("Name").text = unit_name
-	get_node("HPContainer/Label").text = str(unit_HP, "/", unit_HP)
+	get_node("HPContainer/Label").text = str(live_unit_HP, "/", unit_HP)
 	get_node("PlayerFrame").texture = icon
+
+
+func set_default_health_bar_data():
+	$HPContainer/HPNotFull.max_value = unit_HP
+	$HPContainer/HPDanger.max_value = unit_HP
+	$HPContainer/Bar.max_value = unit_HP
+	
+func set_live_health_bar_data():
+	$HPContainer/HPNotFull.value = live_unit_HP
+	$HPContainer/HPDanger.value = live_unit_HP
+	$HPContainer/Bar.value = live_unit_HP
 
 func reset_placeholder():
 	# runs when a unit isn't in a slot. Reset all values
@@ -56,10 +77,33 @@ func reset_placeholder():
 	get_node("Element").texture.region = Rect2(0,0,0,0)
 	$Name.visible = false
 	$HPContainer.visible = false
+	$HPContainer/HPNotFull.visible = false
+	$HPContainer/HPDanger.visible = false
 	$BBAnimation.visible = false
 	$BBContainer.visible = false
 	$HPContainer.visible = false
 	$PlayerFrame.visible = false
+
+func update_HP_container(new_HP: int):
+	print("HP container updated")
+	live_unit_HP = new_HP if new_HP > 0 else 0
+	get_node("HPContainer/Label").text = str(live_unit_HP, "/", unit_HP)
+	set_live_health_bar_data()
+	if (unit_HP == live_unit_HP):
+		print("full HP")
+		$HPContainer/Bar.visible = true
+		$HPContainer/HPNotFull.visible = false
+		$HPContainer/HPDanger.visible = false
+	elif int(unit_HP/3) <= live_unit_HP:
+		$HPContainer/Bar.visible = false
+		$HPContainer/HPNotFull.visible = true
+		$HPContainer/HPDanger.visible = false
+		print("not full but no danger")
+	else:
+		$HPContainer/Bar.visible = false
+		$HPContainer/HPNotFull.visible = false
+		$HPContainer/HPDanger.visible = true
+		print("DANGER")
 
 func setElement(element):
 	match element:

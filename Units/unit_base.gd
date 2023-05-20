@@ -18,6 +18,7 @@ var id: int = 0
 @export var is_dead:bool = false
 
 @export var HP: int = 0
+@export var max_HP: int = 0
 @export var ATK: int = 0
 @export var DEF: int = 0
 @export var REC: int = 0

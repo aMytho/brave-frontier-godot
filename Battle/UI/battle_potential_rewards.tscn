@@ -26,12 +26,14 @@ grow_vertical = 2
 texture = ExtResource("1_3cd8r")
 
 [node name="Zel" type="TextureRect" parent="."]
+layout_mode = 0
 offset_top = 37.0
 offset_right = 148.0
 offset_bottom = 69.0
 texture = SubResource("AtlasTexture_xhjrh")
 
 [node name="Label" type="Label" parent="Zel"]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 4.0
 offset_right = 119.0
@@ -39,6 +41,7 @@ offset_bottom = 30.0
 text = "X00000000"
 
 [node name="Karma" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 274.0
 offset_top = 38.0
 offset_right = 427.0
@@ -46,6 +49,7 @@ offset_bottom = 70.0
 texture = SubResource("AtlasTexture_ylejr")
 
 [node name="Label" type="Label" parent="Karma"]
+layout_mode = 0
 offset_left = 37.0
 offset_top = 5.0
 offset_right = 130.0
@@ -53,6 +57,7 @@ offset_bottom = 31.0
 text = "X00000000"
 
 [node name="Units" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 456.0
 offset_top = 38.0
 offset_right = 555.0
@@ -60,6 +65,7 @@ offset_bottom = 70.0
 texture = SubResource("AtlasTexture_2kdm3")
 
 [node name="Label" type="Label" parent="Units"]
+layout_mode = 0
 offset_left = 33.0
 offset_top = 5.0
 offset_right = 73.0

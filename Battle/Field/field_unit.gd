@@ -2,6 +2,7 @@ extends Area2D
 
 signal AttackFinished(id: int)
 signal TargetSelected(id: int)
+
 # Flag to let parent scenes check if a unit is in this slot
 @export var is_unit = false
 # Corresponds to the unit placement in unit_display
@@ -76,7 +77,6 @@ func _on_animation_finished():
 func remove_target():
 	is_targeted = false
 	$Target.visible = false
-
 
 # This event is trigger when the user click on a unit.
 # If it's an enemy unit (!is_friendly), this will add a target on it, if the unit is not dead

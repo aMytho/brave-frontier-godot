@@ -1,5 +1,7 @@
 extends Control
 
+signal UpdateTarget(place_ID: int)
+
 # The current unit under attack. Will be used by parent nodes
 @export var current_target: int = -1
 
@@ -22,6 +24,7 @@ func _on_target_selected(id: int):
 		else:
 			# Set the current target
 			current_target = id
+			emit_signal("UpdateTarget", target.place_ID)
 
 # Get the target in the enemy team
 ### If no target, then we choose a random target
