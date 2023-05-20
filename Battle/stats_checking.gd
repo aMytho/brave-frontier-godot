@@ -8,9 +8,7 @@ signal FriendlyUnitHasTakenDamage(place_ID: int)
 # But in the future, we could use DEF and buff from unit
 func unit_taking_damage(atk_unit: Resource, def_unit: Resource, friend_is_hurt: bool = false):
 	def_unit.HP = def_unit.HP - atk_unit.ATK
-	print(atk_unit)
 	if friend_is_hurt:
-		print("friend is hurt")
 		emit_signal("FriendlyUnitHasTakenDamage", def_unit)
 
 # Function call at the end of each turn
@@ -28,8 +26,6 @@ func are_units_dead(units: Array[Unit], isAllyUnits: bool = false):
 		if 0 >= unit.HP:
 			unit.is_dead = true
 			emit_signal("UnitHasDied", unitCount, isAllyUnits)
-			print("The unit is dead")
 		else:
 			unitLeft = unitLeft + 1
-			print("The unit is NOT dead")
 	return unitLeft
