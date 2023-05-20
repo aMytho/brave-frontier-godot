@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ft0wxa2yswmp"]
 
 [ext_resource type="Script" path="res://Battle/Field/Friendlies.gd" id="1_35fjf"]
-[ext_resource type="PackedScene" uid="uid://cbgjgftdlg3tf" path="res://Battle/Field/field_unit.tscn" id="1_l2brf"]
+[ext_resource type="PackedScene" uid="uid://dspsfw6gjdhv5" path="res://Battle/Field/field_unit.tscn" id="1_l2brf"]
 
 [node name="Friendlies" type="Control"]
 layout_mode = 3

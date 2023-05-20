@@ -10,6 +10,8 @@ signal TargetSelected(id: int)
 @export var is_targeted: bool = false
 # Is this our unit, or an enemy?
 @export var is_friendly: bool = true
+#Let the game know if the unit is dead or not
+@export var is_dead: bool = false
 # The sprite for the unit
 @onready var sprite = $Sprite
 # Used to allow the unit to return to their initial spot
@@ -30,6 +32,7 @@ func set_properties(frames, flip):
 	
 	# A unit is here!
 	is_unit = true
+	is_dead = false
 	
 	# Face the correct direction
 	if flip:
@@ -43,9 +46,9 @@ func set_properties(frames, flip):
 func reset_spritesheet():
 	sprite.sprite_frames = null
 
+# This method move the attacking unit to the target unit (depending the position)
 func attack(enemy_position: Vector2):
 	print("Attack animation")
-	
 	# Move towards enemy
 	var tween = create_tween()
 	tween.tween_property(self, "position", enemy_position, 1.0 * speed)
@@ -69,14 +72,18 @@ func _on_animation_finished():
 	# Move away from enemy
 	_on_move_finished(false)
 
+# This method remove the target of the unit (because the user select it again or the unit has died)
 func remove_target():
 	is_targeted = false
 	$Target.visible = false
 
+
+# This event is trigger when the user click on a unit.
+# If it's an enemy unit (!is_friendly), this will add a target on it, if the unit is not dead
 func _on_input_event(_viewport: Viewport, event: InputEvent, _shape_idx):
 	# Listen for clicks or taps
 	# to do - allow number pad for unit target (1 targets unit1, 2 targets unit2, etc)
-	if ((event is InputEventMouseButton and event.is_pressed()) or event is InputEventScreenTouch) and !is_friendly:
+	if ((event is InputEventMouseButton and event.is_pressed()) or event is InputEventScreenTouch) and !is_friendly and !is_dead:
 		is_targeted = true
 		$Target.visible = true
 		emit_signal("TargetSelected", place_ID)

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Unit" load_steps=6 format=3 uid="uid://nd2gkoc4x5q3"]
+[gd_resource type="Resource" script_class="Unit" load_steps=6 format=3 uid="uid://ddjrp2iafbsjt"]
 
 [ext_resource type="Script" path="res://Units/unit_base.gd" id="1_1b221"]
 [ext_resource type="Texture2D" uid="uid://cs0d1s1rbujg3" path="res://Units/Res/5/unit_ills_battle_20011.png" id="1_t445t"]
@@ -7,6 +7,7 @@
 [ext_resource type="SpriteFrames" uid="uid://b6bus0ti7qprp" path="res://Units/Res/5/unit_sp_20011.tres" id="4_6pfmr"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_1b221")
 unit_number = 5
 data_id = 20011
