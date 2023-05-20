@@ -1,5 +1,7 @@
 extends Control
 
+# The currant table that is selected. Used for replacing units
+@export var current_table: int = 0
 # Array of units that are on display. It is the unit type, but the godot bug prevents it -___-
 @export var units: Array[Unit] = [null, null, null, null, null]
 @export var teams = []
@@ -26,6 +28,11 @@ func _ready():
 	
 	# Load the first team
 	set_team_info(current_team)
+	
+	# Load the unit selection scene and listen for events
+	$UnitSelectBG/content_switcher.load_scene_with_props("res://Menu/SubMenu/Unit/Display/view_units.tscn", 0, ["use_signals"], [true])
+	$UnitSelectBG/content_switcher.get_scene().connect("BackPressed", _on_unit_select_back_section)
+	$UnitSelectBG/content_switcher.get_scene().connect("UnitSelected", _on_unit_select_unit_selected)
 
 func set_team_info(team_id: int):
 	# Set the name
@@ -147,9 +154,10 @@ func _on_unit_table_selected(place_id):
 			undim_ui()
 			teams = Database.query("SELECT * FROM teams WHERE account_id = %s" % ActiveAccount.id)
 			set_team_info(current_team)
-	elif units[place_id-1] != null:
-		# Load the unit display for the unit
-		get_parent().load_scene_home_with_props("res://Menu/SubMenu/Unit/Display/unit_display.tscn", 0, ["unit"], [units[place_id-1]])
+	else:
+		# Load a new unit
+		$UnitSelectBG.visible = true
+		current_table = place_id
 
 
 func _on_change_clicked(id):
@@ -160,6 +168,7 @@ func _on_change_clicked(id):
 		undim_ui()
 		return
 	
+	# Based on the id, choose a new leader or move a unit
 	if id == 1:
 		print("Player is changing their leader")
 		is_changing_leader = true
@@ -170,13 +179,16 @@ func _on_change_clicked(id):
 		is_changing_leader = false
 		is_changing_unit = true
 		dim_ui()
+	# Reset the unit position
 	unit_position = {"new": null, "old": null}
 
 func dim_ui():
+	# Put the visual focus on the tables
 	$ColorRect.material.blend_mode = CanvasItemMaterial.BLEND_MODE_MUL
 	$ColorRect.visible = true
 
 func undim_ui():
+	# Return to normal focus
 	$ColorRect.material.blend_mode = CanvasItemMaterial.BLEND_MODE_MIX
 	$ColorRect.visible = false
 
@@ -188,3 +200,39 @@ func unit_not_null(possible_unit):
 
 func _on_back_section_clicked():
 	get_parent().load_scene_home("res://Menu/SubMenu/Unit/unit_menu.tscn")
+
+func _on_unit_select_back_section():
+	# Menu closed without choosing a unit, hide it
+	$UnitSelectBG.visible = false
+
+func _on_unit_select_unit_selected(id: int):
+	# A unit was chosen
+	$UnitSelectBG.visible = false
+	
+	# Check that the unit isn't already in the team
+	var is_duplicate = false
+	var counter: int = 0
+	var old_place: int = 0
+	for unit in units:
+		if unit != null and unit.id == id:
+			print("Unit is already in the party.")
+			is_duplicate = true
+			old_place = counter
+			break
+		counter = counter + 1
+	
+	# Load the new unit
+	if !is_duplicate:
+		# Modify the DB
+		Database.query(
+				"UPDATE teams SET unit%s = %s WHERE id = %s"
+				% [current_table, id, teams[current_team].id])
+	else:
+		# Swap the unit
+		Database.query(
+				"UPDATE teams SET unit%s = %s, unit%s = null WHERE id = %s"
+				% [current_table, id, old_place + 1, teams[current_team].id])
+	# Update the teams and units
+	teams = Database.query("SELECT * FROM teams WHERE account_id = %s" % ActiveAccount.id)
+	print("Unir swapped/added to the team")
+	set_team_info(current_team)

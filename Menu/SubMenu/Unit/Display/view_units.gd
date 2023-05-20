@@ -1,22 +1,24 @@
 extends Control
 
+signal UnitSelected(id: int)
+signal BackPressed()
+
 @export var units: Array[Unit] = []
+@export var use_signals: bool = false
 
 var thumbnail = preload("res://Menu/SubMenu/Unit/Display/unit_thumbnail.tscn").instantiate()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var activeAccountId = ActiveAccount.id
-	var unitDataResources = load("res://Database/resource_lookups.gd").new();
-	var unitsOfCurrentUser = unitDataResources.get_units_by_account_id(activeAccountId)
-	for unit in unitsOfCurrentUser:
-		$UnitList.add_child(create_thumbnail(unitDataResources.get_unit_by_ID(unit["id"])["unit"]))
+	var user_units = Lookups.get_units_by_account_id(ActiveAccount.id)
+	for unit in user_units:
+		$UnitList.add_child(create_thumbnail(Lookups.get_unit_by_ID(unit["id"])["unit"]))
 	
-	#Handle each unit click event
+	# Handle each unit click event
 	for child in $UnitList.get_children():
 		child.connect("Clicked", _on_unit_pressed)
 	
-	#Get back button click event
+	# Get back button click event
 	$BackSection.Clicked.connect(_on_back_pressed)
 
 func create_thumbnail(unit: Unit):
@@ -26,7 +28,13 @@ func create_thumbnail(unit: Unit):
 	return new_thumbnail
 
 func _on_unit_pressed(unit: Unit):
-	get_parent().load_scene_home_with_props("res://Menu/SubMenu/Unit/Display/unit_display.tscn", 1, ["unit"], [unit])
+	if use_signals:
+		emit_signal("UnitSelected", unit.id)
+	else:
+		get_parent().load_scene_home_with_props("res://Menu/SubMenu/Unit/Display/unit_display.tscn", 1, ["unit"], [unit])
 
 func _on_back_pressed():
-	get_parent().load_scene_home("res://Menu/SubMenu/Unit/unit_menu.tscn")
+	if use_signals:
+		emit_signal("BackPressed")
+	else:
+		get_parent().load_scene_home("res://Menu/SubMenu/Unit/unit_menu.tscn")
