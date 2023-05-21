@@ -7,7 +7,8 @@ func _ready():
 
 # Gets a unit by their unit number.
 func get_unit_by_unit_number(unit_id: int, db_id: int):
-	var res = ResourceLoader.load("res://Units/Res/%s/%s.tres" % [unit_id, unit_id])
+	var res = ResourceLoader.load("res://Units/Res/%s/%s.tres" % [unit_id, unit_id]).duplicate()
+
 	if res == null:
 		print("Unit %s not found!" % unit_id)
 	else:

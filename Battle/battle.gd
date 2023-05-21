@@ -23,6 +23,7 @@ var speed: float = 1.0:
 @export var units_attacked: int = 0
 @export var enemies_attacked: int = 0
 @export var total_enemies: int = 0
+@export var total_allies: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,13 +37,8 @@ func _ready():
 	# Pass in the friendly units
 	$BattleUI.units = units
 	
-	# Connect attack buttons
-	$BattleUI/Unit1.Attack.connect(_unit_attack)
-	$BattleUI/Unit2.Attack.connect(_unit_attack)
-	$BattleUI/Unit3.Attack.connect(_unit_attack)
-	$BattleUI/Unit4.Attack.connect(_unit_attack)
-	$BattleUI/Unit5.Attack.connect(_unit_attack)
-	$BattleUI/Unit6.Attack.connect(_unit_attack)
+	battleUIUnitAttackConnect()
+	$stats_checking.UnitHasDied.connect(_when_unit_has_died)
 	
 	# Get the friendly node
 	var freindly_units = $Friendlies
@@ -55,11 +51,26 @@ func _ready():
 	# Setup the environment
 	load_next_stage(0)
 
+func battleUIUnitAttackConnect():
+	$BattleUI/Unit1.Attack.connect(_unit_attack)
+	$BattleUI/Unit2.Attack.connect(_unit_attack)
+	$BattleUI/Unit3.Attack.connect(_unit_attack)
+	$BattleUI/Unit4.Attack.connect(_unit_attack)
+	$BattleUI/Unit5.Attack.connect(_unit_attack)
+	$BattleUI/Unit6.Attack.connect(_unit_attack)
+
+# Method trigger when the BattleUI of a friendly unit has been clicked (see res://Battle/UI/unit.gd for more
+# In this function, if a unit is not dead and exist, we would call the function attack to active the animation
+# We also call a function to lower the HP of the attacked unit
 func _unit_attack(unit_place: int):
 	# Play attack animation, listen for anim end
-	get_node(str("./Friendlies/Unit", unit_place)).attack($Enemies.get_target_position())
-	get_node(str("./Friendlies/Unit", unit_place)).connect("AttackFinished", _unit_attack_finished)
+	if null != units[unit_place-1] and !units[unit_place-1].is_dead:
+		var target = $Enemies.get_target()
+		get_node(str("./Friendlies/Unit", unit_place)).attack(target.position)
+		$stats_checking.unit_taking_damage(units[unit_place-1], zone.Stage[current_stage-1].monsters[target.place_ID - 1])
+		get_node(str("./Friendlies/Unit", unit_place)).connect("AttackFinished", _unit_attack_finished)
 
+# Each time a unit end their turn, we increment the number of units attacked
 func _unit_attack_finished(unit_place: int):
 	# Disconnect the signal
 	get_node(str("./Friendlies/Unit", unit_place)).disconnect("AttackFinished", _unit_attack_finished)
@@ -67,31 +78,43 @@ func _unit_attack_finished(unit_place: int):
 	units_attacked = units_attacked + 1
 	check_if_player_turn_complete()
 
+# If all the alive friendly unit has attacked, we end the friendly turn and do a check
+### Are all enemies dead ?
+### if yes, next stage
+### if not, enemy turn start
 func check_if_player_turn_complete():
 	# If the player has had all units attack, end turn
-	if units_attacked == get_unit_count():
+	if units_attacked == total_allies:
 		print("Ready for enemy turn")
 		player_turn = false
 		enemy_turn = true
 		units_attacked = 0
-		
+		total_enemies = $stats_checking.are_units_dead(zone.Stage[current_stage-1].monsters)
 		# Dev only. This allows us to progress after 3 attacks
 		# When the battle system is done, this will need to be changed
-		if temp_counter == 3:
+		if 0 == total_enemies:
 			move_to_next_stage()
 			temp_counter = 0
 		else:
 			temp_counter = temp_counter + 1
 			run_enemy_turn()
 
+# Allow the enemy's unit to do a turn
 func run_enemy_turn():
 	print("Enemy turn!")
+	var enemy_count = 0
 	for enemy in $Enemies.get_children():
 		# Only play animation for units that exist
-		if enemy.is_unit:
-			enemy.attack($Friendlies.get_random_target())
+		var monstersArray = zone.Stage[current_stage-1].monsters
+		if enemy.is_unit and !monstersArray[enemy_count].is_dead:
+			print(enemy)
+			var unitToHurt = $Friendlies.get_random_target()
+			enemy.attack(unitToHurt.position)
+			$stats_checking.unit_taking_damage(monstersArray[enemy_count], units[unitToHurt.place_ID-1])
 			enemy.connect("AttackFinished", _enemy_attack_finished)
+		enemy_count = enemy_count + 1
 
+# When trigger, see if all alive enemies have made a move and will trigger the next friendly unit round or end the level
 func _enemy_attack_finished(unit_place: int):
 	# Disconnect the signal
 	get_node(str("./Enemies/Unit", unit_place)).disconnect("AttackFinished", _enemy_attack_finished)
@@ -102,21 +125,28 @@ func _enemy_attack_finished(unit_place: int):
 		enemy_turn = false
 		player_turn = true
 		enemies_attacked = 0
-		$BattleUI.release_attack_lockout()
+		total_allies = $stats_checking.are_units_dead(units, true)
+		if 0 == total_allies:
+			print("Battle lost . . .")
+			_when_battle_end()
+		else:
+			$BattleUI.release_attack_lockout()
 
+# Set all props of the scene and reset some data (Enemies side in principal)
 func load_next_stage(stage: int):
 	print("Next stage")
 	var counter = 0
 	total_enemies = 0
 	var enemy_units = $Enemies
 	enemy_units.clear_units()
+	resetUnitsStats()
 	for unit in zone.Stage[stage].monsters:
-		print(unit)
-		total_enemies = total_enemies + 1
-		# Add enemy to field, start idle animation
-		var child_node = enemy_units.get_child(counter)
-		child_node.set_properties(unit.sprite_sheet, true)
-		
+		if null != unit:
+			total_enemies = total_enemies + 1
+			# Add enemy to field, start idle animation
+			var child_node = enemy_units.get_child(counter)
+			child_node.set_properties(unit.sprite_sheet, true)
+			
 		counter = counter + 1
 	current_stage = current_stage + 1
 
@@ -128,6 +158,7 @@ func get_unit_count():
 			counter = counter + 1
 	return counter
 
+# When triggered, we would move to the next stage of the level or make the end complete
 func move_to_next_stage():
 	# Check for next stage
 	if current_stage < zone.Stage.size():
@@ -136,6 +167,7 @@ func move_to_next_stage():
 		load_next_stage(current_stage)
 	else:
 		print("Battle Complete!!!")
+		_when_battle_end()
 
 
 func _on_transition_hide():
@@ -150,3 +182,35 @@ func _on_transition_show():
 	# Wait a few seconds, then return to combat
 	await get_tree().create_timer(3.0).timeout
 	$Transition.hide_transition()
+	
+# This function were added when in development.
+# It would allow the unit to revive and so we should have every unit each round
+### Maybe this is a useless function
+func resetUnitsStats():
+	total_allies = 0
+	for unit in units:
+		if unit != null and !unit.is_dead:
+			total_allies = total_allies + 1
+			
+# Function who's trigger when the signal "unitHasDied" has been emited
+# It will do some update like
+### Hide the sprite of a unit
+### Make the unit considered DEAD
+func _when_unit_has_died(place_ID: int, is_ally: bool = false):
+	print("signal the Unit %s has died" % place_ID)
+	var team_unit = "Enemies" if !is_ally else "Friendlies"
+	var dead_unit = get_node(str("./", team_unit, "/Unit", place_ID))
+	if is_ally:
+		var dead_unit_UI = get_node(str("./BattleUI/Unit", place_ID))
+		dead_unit_UI.unitHasDied()
+	else:
+		if place_ID == $Enemies.current_target:
+			$Enemies.current_target = -1
+	dead_unit.hide()
+	dead_unit.is_dead = true
+
+# Method call when the battle has ended
+# It can be a victory or a loose
+func _when_battle_end():
+	print(get_parent())
+	get_parent().loadScene("res://Menu/main_menu.tscn", true)
