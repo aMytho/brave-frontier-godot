@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc2f1qkkjp0uu"
-path="res://.godot/imported/main_l_btn1.png-22527d9b76cee1c2c06cf13d27cf8c99.ctex"
+uid="uid://bkdwd2ucuf3gq"
+path="res://.godot/imported/deck_name_label.png-a9b207fc98d25e0b42e5bef6f73dc4b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Common/UI/Buttons/main_l_btn1.png"
-dest_files=["res://.godot/imported/main_l_btn1.png-22527d9b76cee1c2c06cf13d27cf8c99.ctex"]
+source_file="res://Menu/SubMenu/Unit/Squad/deck_name_label.png"
+dest_files=["res://.godot/imported/deck_name_label.png-a9b207fc98d25e0b42e5bef6f73dc4b1.ctex"]
 
 [params]
 

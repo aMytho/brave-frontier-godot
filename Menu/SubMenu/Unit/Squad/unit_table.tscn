@@ -1,0 +1,206 @@
+[gd_scene load_steps=17 format=3 uid="uid://dcw33maqu4xpa"]
+
+[ext_resource type="Texture2D" uid="uid://c5m6p0m77cjyt" path="res://Menu/SubMenu/Unit/Squad/unit_table.png" id="1_70emg"]
+[ext_resource type="Script" path="res://Menu/SubMenu/Unit/Squad/unit_table.gd" id="2_d4v6s"]
+[ext_resource type="Texture2D" uid="uid://dh74087tv6qdo" path="res://Menu/SubMenu/Unit/StatusFrame/status_frame_b_l.png" id="3_4xot0"]
+[ext_resource type="Texture2D" uid="uid://cfwj506ceatkt" path="res://Menu/SubMenu/Unit/StatusFrame/status_frame_b_r.png" id="4_j678x"]
+[ext_resource type="Texture2D" uid="uid://bqnthovfshwy4" path="res://Menu/SubMenu/Unit/StatusFrame/status_frame_b_c.png" id="5_h7eca"]
+[ext_resource type="Texture2D" uid="uid://bh437ie8cy7g1" path="res://Menu/SubMenu/Unit/Squad/party_status_char.png" id="6_dy1go"]
+[ext_resource type="Texture2D" uid="uid://ya7tati7d0tp" path="res://Menu/SubMenu/Unit/Squad/party_status_char_short.png" id="7_glmil"]
+[ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="8_id28b"]
+[ext_resource type="Texture2D" uid="uid://bxeyxvsrqj5tt" path="res://Menu/SubMenu/Home/Characters/attribute_mark.png" id="9_248u2"]
+[ext_resource type="Texture2D" uid="uid://cvvnk3cmx0u2c" path="res://Introduction/LeaderMark4_118x32.png" id="10_ngxr7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdlph"]
+atlas = ExtResource("6_dy1go")
+region = Rect2(3, 34, 40, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81sxg"]
+atlas = ExtResource("6_dy1go")
+region = Rect2(0, 122, 51, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0xnp"]
+atlas = ExtResource("6_dy1go")
+region = Rect2(2, 94, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_es50p"]
+atlas = ExtResource("6_dy1go")
+region = Rect2(1, 153, 49, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ao8j2"]
+atlas = ExtResource("7_glmil")
+region = Rect2(2, 153, 54, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjsbm"]
+atlas = ExtResource("6_dy1go")
+region = Rect2(2, 183, 48, 25)
+
+[node name="UnitTable" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_default_cursor_shape = 2
+texture = ExtResource("1_70emg")
+script = ExtResource("2_d4v6s")
+
+[node name="Unit" type="AnimatedSprite2D" parent="."]
+position = Vector2(88, 16)
+scale = Vector2(2, 2)
+
+[node name="PanelInfo" type="Control" parent="."]
+clip_contents = true
+anchors_preset = 0
+offset_left = -24.0
+offset_top = 54.0
+offset_right = 352.0
+offset_bottom = 118.0
+scale = Vector2(0.7, 0.7)
+
+[node name="LeftPanel" type="TextureRect" parent="PanelInfo"]
+layout_mode = 0
+offset_right = 13.0
+offset_bottom = 64.0
+texture = ExtResource("3_4xot0")
+
+[node name="MidPanel" type="TextureRect" parent="PanelInfo"]
+layout_mode = 0
+offset_left = 13.0
+offset_right = 360.0
+offset_bottom = 64.0
+texture = ExtResource("5_h7eca")
+
+[node name="RightPanel" type="TextureRect" parent="PanelInfo"]
+layout_mode = 0
+offset_left = 360.0
+offset_right = 376.0
+offset_bottom = 64.0
+texture = ExtResource("4_j678x")
+
+[node name="Lv" type="TextureRect" parent="PanelInfo"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 65.0
+offset_bottom = 31.0
+texture = SubResource("AtlasTexture_jdlph")
+
+[node name="Atk" type="TextureRect" parent="PanelInfo"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 70.0
+offset_bottom = 56.0
+texture = SubResource("AtlasTexture_81sxg")
+
+[node name="Hp" type="TextureRect" parent="PanelInfo"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 8.0
+offset_right = 184.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_w0xnp")
+
+[node name="Def" type="TextureRect" parent="PanelInfo"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 33.0
+offset_right = 185.0
+offset_bottom = 57.0
+texture = SubResource("AtlasTexture_es50p")
+
+[node name="Cost" type="TextureRect" parent="PanelInfo"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 8.0
+offset_right = 326.0
+offset_bottom = 33.0
+texture = SubResource("AtlasTexture_ao8j2")
+
+[node name="Rec" type="TextureRect" parent="PanelInfo"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 33.0
+offset_right = 304.0
+offset_bottom = 58.0
+texture = SubResource("AtlasTexture_fjsbm")
+
+[node name="LvLbl" type="Label" parent="PanelInfo"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 2.0
+offset_right = 128.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("8_id28b")
+theme_override_font_sizes/font_size = 30
+text = "60"
+clip_text = true
+
+[node name="AtkLbl" type="Label" parent="PanelInfo"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 27.0
+offset_right = 128.0
+offset_bottom = 65.0
+theme_override_fonts/font = ExtResource("8_id28b")
+theme_override_font_sizes/font_size = 30
+text = "60"
+clip_text = true
+
+[node name="DefLbl" type="Label" parent="PanelInfo"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 27.0
+offset_right = 246.0
+offset_bottom = 65.0
+theme_override_fonts/font = ExtResource("8_id28b")
+theme_override_font_sizes/font_size = 30
+text = "60"
+clip_text = true
+
+[node name="RecLbl" type="Label" parent="PanelInfo"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 27.0
+offset_right = 368.0
+offset_bottom = 65.0
+theme_override_fonts/font = ExtResource("8_id28b")
+theme_override_font_sizes/font_size = 30
+text = "60"
+clip_text = true
+
+[node name="CostLbl" type="Label" parent="PanelInfo"]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 2.0
+offset_right = 384.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("8_id28b")
+theme_override_font_sizes/font_size = 30
+text = "60"
+clip_text = true
+
+[node name="Hplbl" type="Label" parent="PanelInfo"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 2.0
+offset_right = 256.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("8_id28b")
+theme_override_font_sizes/font_size = 30
+text = "60"
+clip_text = true
+
+[node name="Element" type="Sprite2D" parent="."]
+position = Vector2(-24, 54)
+texture = ExtResource("9_248u2")
+region_enabled = true
+
+[node name="Leader" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 97.0
+offset_top = 27.0
+offset_right = 215.0
+offset_bottom = 59.0
+texture = ExtResource("10_ngxr7")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

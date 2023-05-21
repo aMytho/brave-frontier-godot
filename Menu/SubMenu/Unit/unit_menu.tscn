@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c3wkfbdkll4ig"]
+[gd_scene load_steps=9 format=3 uid="uid://c3wkfbdkll4ig"]
 
 [ext_resource type="Script" path="res://Menu/SubMenu/Unit/unit_menu.gd" id="1_bp6xs"]
 [ext_resource type="PackedScene" path="res://Common/UI/back_section.tscn" id="1_immeq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://btvdubl5nhof3" path="res://Menu/SubMenu/Unit/unit_top_mix_btn1.png" id="4_58txg"]
 [ext_resource type="Texture2D" uid="uid://bn50xdq755rsl" path="res://Menu/SubMenu/Unit/unit_top_evo_btn1.png" id="5_1l4gn"]
 [ext_resource type="Texture2D" uid="uid://bx0wsjfhf1lfh" path="res://Menu/SubMenu/Unit/unit_top_sell_btn1.png" id="6_nybw0"]
+[ext_resource type="Texture2D" uid="uid://ckyyjry6iyims" path="res://Menu/SubMenu/Unit/sphere_eqp_btn1.png" id="7_vpteg"]
 
 [node name="UnitMenu" type="Control"]
 layout_mode = 3
@@ -64,6 +65,7 @@ offset_left = 40.0
 offset_top = 518.0
 offset_right = 300.0
 offset_bottom = 674.0
+button_content = ExtResource("7_vpteg")
 id = 5
 
 [node name="Button6" parent="." instance=ExtResource("2_gawrm")]

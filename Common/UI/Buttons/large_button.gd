@@ -1,3 +1,4 @@
+@tool
 extends Button
 
 signal Clicked(id: int)

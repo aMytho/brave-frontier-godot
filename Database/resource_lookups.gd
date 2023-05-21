@@ -6,10 +6,14 @@ func _ready():
 	pass # Replace with function body.
 
 # Gets a unit by their unit number.
-func get_unit_by_unit_number(id:int):
-	var res = ResourceLoader.load("res://Units/Res/%s/%s.tres" % [id,id]).duplicate()
+func get_unit_by_unit_number(unit_id: int, db_id: int):
+	var res = ResourceLoader.load("res://Units/Res/%s/%s.tres" % [unit_id, unit_id]).duplicate()
+
 	if res == null:
-		print("Unit %s not found!" % id)
+		print("Unit %s not found!" % unit_id)
+	else:
+		# Add the db id to the unit
+		res.id = db_id
 	return {"unit": res, "valid": res != null}
 
 # Gets a unit by their ID in the database.
@@ -21,7 +25,7 @@ func get_unit_by_ID(id: int):
 	var unit = Database.query("SELECT * FROM units WHERE id = %s" % id)
 	if unit == null or len(unit) == 0:
 		print("Unit %s not found!" % id)
-	return get_unit_by_unit_number(unit[0].unit_id)
+	return get_unit_by_unit_number(unit[0].unit_id, unit[0].id)
 	
 # Gets list of unit using the id of the current account
 func get_units_by_account_id(account_id: int):

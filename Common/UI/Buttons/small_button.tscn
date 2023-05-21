@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://c77at5003ad30"]
+
+[ext_resource type="Texture2D" uid="uid://cl06g6c3jnc51" path="res://Common/UI/Buttons/Textures/sub_square2_btn1.png" id="1_4l8ou"]
+[ext_resource type="Texture2D" uid="uid://6t6b4o1j8lf7" path="res://Common/UI/Buttons/Textures/sub_square2_btn2.png" id="2_wmhxo"]
+[ext_resource type="Script" path="res://Common/UI/Buttons/large_button.gd" id="3_m7vkl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8efe1"]
+texture = ExtResource("1_4l8ou")
+region_rect = Rect2(1.47398, 2.28765, 102.561, 80.4535)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3gw6y"]
+texture = ExtResource("1_4l8ou")
+region_rect = Rect2(1.47398, 2.28765, 102.561, 80.4535)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l2e3h"]
+texture = ExtResource("2_wmhxo")
+region_rect = Rect2(1.47398, 2.28765, 102.561, 80.4535)
+
+[node name="Button" type="Button"]
+offset_right = 413.418
+offset_bottom = 220.35
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_8efe1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3gw6y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_l2e3h")
+icon_alignment = 1
+script = ExtResource("3_m7vkl")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

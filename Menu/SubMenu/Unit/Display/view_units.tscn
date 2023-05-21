@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://hg2en8d7fx8a"]
+[gd_scene load_steps=4 format=3 uid="uid://hg2en8d7fx8a"]
 
 [ext_resource type="Script" path="res://Menu/SubMenu/Unit/Display/view_units.gd" id="1_h6wpa"]
-[ext_resource type="PackedScene" path="res://Common/UI/back_section.tscn" id="2_03jt2"]
+[ext_resource type="PackedScene" uid="uid://cath12l63t3sv" path="res://Common/UI/back_section.tscn" id="2_03jt2"]
+[ext_resource type="Texture2D" uid="uid://cdb3v63h3rpyj" path="res://Menu/SubMenu/Unit/Display/remove_frame1.png" id="3_v5f77"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -25,3 +26,12 @@ offset_top = 131.0
 offset_right = 608.0
 offset_bottom = 600.0
 columns = 5
+
+[node name="RemoveUnit" type="TextureRect" parent="UnitList"]
+visible = false
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("3_v5f77")
+metadata/is_remove = true
+
+[connection signal="gui_input" from="UnitList/RemoveUnit" to="." method="_on_remove_unit_gui_input"]

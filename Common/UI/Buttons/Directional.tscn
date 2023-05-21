@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://drwq23rlohss0"]
+[gd_scene load_steps=3 format=3 uid="uid://drwq23rlohss0"]
 
+[ext_resource type="Texture2D" uid="uid://dcmx86738cdsa" path="res://Common/UI/Buttons/Textures/left.tres" id="1_hhxx4"]
 [ext_resource type="Script" path="res://Common/UI/Buttons/Directional.gd" id="1_hkf75"]
 
 [node name="Directional" type="Button"]
+mouse_default_cursor_shape = 2
+icon = ExtResource("1_hhxx4")
 flat = true
 script = ExtResource("1_hkf75")
 

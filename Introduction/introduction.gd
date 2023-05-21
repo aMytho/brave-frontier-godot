@@ -94,7 +94,7 @@ func _on_wake_up():
 	
 	# Add to team
 	Database.query(
-		"INSERT INTO teams (name, unit1, unit2, unit3, account_id) VALUES ('Default', %s, %s, %s, %s)"
+		"INSERT INTO teams (name, unit1, unit2, unit3, account_id, leader) VALUES ('Default', %s, %s, %s, %s, 2)"
 		% [units_ids[1].id, units_ids[0].id, units_ids[2].id, player_id]
 	)
 	
