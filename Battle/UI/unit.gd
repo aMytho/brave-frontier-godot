@@ -51,7 +51,7 @@ func create_unit(icon, uName, element, HP):
 	#Get their actual values
 	get_node("Element").texture.region = setElement(unit_element)
 	get_node("Name").text = unit_name
-	get_node("HPContainer/Label").text = str(live_unit_HP, "/", unit_HP)
+	update_HP_container(live_unit_HP)
 	get_node("PlayerFrame").texture = icon
 
 
@@ -90,7 +90,6 @@ func update_HP_container(new_HP: int):
 	get_node("HPContainer/Label").text = str(live_unit_HP, "/", unit_HP)
 	set_live_health_bar_data()
 	if (unit_HP == live_unit_HP):
-		print("full HP")
 		$HPContainer/Bar.visible = true
 		$HPContainer/HPNotFull.visible = false
 		$HPContainer/HPDanger.visible = false
@@ -98,12 +97,10 @@ func update_HP_container(new_HP: int):
 		$HPContainer/Bar.visible = false
 		$HPContainer/HPNotFull.visible = true
 		$HPContainer/HPDanger.visible = false
-		print("not full but no danger")
 	else:
 		$HPContainer/Bar.visible = false
 		$HPContainer/HPNotFull.visible = false
 		$HPContainer/HPDanger.visible = true
-		print("DANGER")
 
 func setElement(element):
 	match element:
