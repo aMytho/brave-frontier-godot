@@ -30,9 +30,10 @@ func _ready():
 	set_team_info(current_team)
 	
 	# Load the unit selection scene and listen for events
-	$UnitSelectBG/content_switcher.load_scene_with_props("res://Menu/SubMenu/Unit/Display/view_units.tscn", 0, ["use_signals"], [true])
+	$UnitSelectBG/content_switcher.load_scene_with_props("res://Menu/SubMenu/Unit/Display/view_units.tscn", 0, ["use_signals", "remove_button"], [true, true])
 	$UnitSelectBG/content_switcher.get_scene().connect("BackPressed", _on_unit_select_back_section)
 	$UnitSelectBG/content_switcher.get_scene().connect("UnitSelected", _on_unit_select_unit_selected)
+	$UnitSelectBG/content_switcher.get_scene().connect("RemoveUnitPressed",_on_remove_unit)
 
 func set_team_info(team_id: int):
 	# Set the name
@@ -236,3 +237,14 @@ func _on_unit_select_unit_selected(id: int):
 	teams = Database.query("SELECT * FROM teams WHERE account_id = %s" % ActiveAccount.id)
 	print("Unir swapped/added to the team")
 	set_team_info(current_team)
+
+func _on_remove_unit():
+	# Remove the selected unit
+	print("Removing a unit")
+	Database.query(
+			"UPDATE teams SET unit%s = null WHERE id = %s"
+			% [current_table, teams[current_team].id])
+	# Update the teams and units
+	teams = Database.query("SELECT * FROM teams WHERE account_id = %s" % ActiveAccount.id)
+	set_team_info(current_team)
+	$UnitSelectBG.visible = false

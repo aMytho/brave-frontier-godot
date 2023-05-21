@@ -5,6 +5,7 @@
 [node name="UnitThumbnail" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
+mouse_default_cursor_shape = 2
 flat = true
 script = ExtResource("1_wv8fx")
 
