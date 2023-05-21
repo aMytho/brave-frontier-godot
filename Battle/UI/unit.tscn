@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bowmdjvwjl874"]
+[gd_scene load_steps=16 format=3 uid="uid://bowmdjvwjl874"]
 
 [ext_resource type="Texture2D" uid="uid://bkyewhpihrr81" path="res://Battle/UI/battle_ui.png" id="1_lidtk"]
 [ext_resource type="Script" path="res://Battle/UI/unit.gd" id="2_fo5lh"]
@@ -26,14 +26,6 @@ region = Rect2(439, 50, 185, 27)
 resource_local_to_scene = true
 atlas = ExtResource("1_lidtk")
 region = Rect2(2.08466, 545.292, 175.848, 10.4462)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rukc4"]
-atlas = ExtResource("1_lidtk")
-region = Rect2(1.90301, 560.008, 176.082, 11.0793)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5qcah"]
-atlas = ExtResource("1_lidtk")
-region = Rect2(1.92367, 574.926, 175.884, 12.108)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cln5v"]
 atlas = ExtResource("1_lidtk")
@@ -144,23 +136,6 @@ offset_top = -19.0
 offset_right = 101.0
 offset_bottom = 7.0
 text = "500 / 500"
-
-[node name="HPNotFull" type="TextureProgressBar" parent="HPContainer"]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 13.0
-offset_right = 181.0
-offset_bottom = 24.0
-value = 99.0
-texture_progress = SubResource("AtlasTexture_rukc4")
-
-[node name="HPDanger" type="TextureProgressBar" parent="HPContainer"]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 13.0
-offset_right = 181.0
-offset_bottom = 24.0
-texture_progress = SubResource("AtlasTexture_5qcah")
 
 [node name="BBContainer" type="TextureRect" parent="."]
 layout_mode = 0
