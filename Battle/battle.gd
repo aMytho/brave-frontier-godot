@@ -222,7 +222,13 @@ func _when_unit_has_died(place_ID: int, is_ally: bool = false):
 			$BattleUI.set_selected_enemy_health(new_UI_unit_update)
 		if place_ID == $Enemies.current_target:
 			$Enemies.current_target = -1
-	dead_unit.play_death_animation()
+	
+	if !dead_unit.is_dead:
+		# UnitHasDied was being emitted multiple times for the same unit.
+		# As a result, this function was being called whenever we check for dead units
+		# This check prevents it from playing for the same unit twice per turn
+		# When we re-work the systems, this check won't be needed
+		dead_unit.play_death_animation()
 	dead_unit.is_dead = true
 
 
