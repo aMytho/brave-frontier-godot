@@ -34,6 +34,9 @@ func set_properties(frames, flip):
 	sprite.sprite_frames = frames
 	# Ensure sprites are not shared across units
 	sprite.sprite_frames.resource_local_to_scene = true
+	# Reset the death animation if it is playing
+	# to-do: Ideally, we wait for the animations to end before moving to the next turn
+	$Sprite/AnimationPlayer.play("RESET")
 	
 	# A unit is here!
 	is_unit = true
