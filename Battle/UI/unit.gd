@@ -1,5 +1,9 @@
 extends TextureRect
 
+const green_bar = Rect2(2, 545, 176, 10)
+const yellow_bar = Rect2(2, 560, 176, 11)
+const red_bar = Rect2(2, 575, 176, 12)
+
 var ElementLocations = [
 	Rect2(37, 919, 27, 27), # Fire
 	Rect2(64, 919, 26, 26), # Water
@@ -23,6 +27,7 @@ signal Die
 @export var unit_name:String = ""
 @export var unit_element:String = "Fire"
 @export var unit_HP: int = 500
+@export var live_unit_HP: int = 500
 @export var is_dead: bool = false
 
 @export_category("Unit Dev Info")
@@ -37,11 +42,14 @@ func create_unit(icon, uName, element, HP):
 	unit_name = uName
 	unit_element = element
 	unit_HP = HP
+	live_unit_HP = HP
 	has_unit = true
+	$HPContainer/Bar.max_value = unit_HP
+	$HPContainer/Bar.value = live_unit_HP	
 	#Get their actual values
 	get_node("Element").texture.region = setElement(unit_element)
 	get_node("Name").text = unit_name
-	get_node("HPContainer/Label").text = str(unit_HP, "/", unit_HP)
+	update_HP_container(live_unit_HP)
 	get_node("PlayerFrame").texture = icon
 
 func reset_placeholder():
@@ -60,6 +68,20 @@ func reset_placeholder():
 	$BBContainer.visible = false
 	$HPContainer.visible = false
 	$PlayerFrame.visible = false
+
+# When called, update the live HP of a unit with the new HP send in parameters
+func update_HP_container(new_HP: int):
+	print("HP container updated")
+	var HP_bar = $HPContainer/Bar
+	live_unit_HP = new_HP if new_HP > 0 else 0
+	HP_bar.value = live_unit_HP
+	get_node("HPContainer/Label").text = str(live_unit_HP, "/", unit_HP)
+	if (unit_HP == live_unit_HP):
+		HP_bar.texture_progress.region = green_bar
+	elif int(unit_HP/3.0) <= live_unit_HP:
+		HP_bar.texture_progress.region = yellow_bar
+	else:
+		HP_bar.texture_progress.region = red_bar
 
 func setElement(element):
 	match element:

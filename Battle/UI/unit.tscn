@@ -23,8 +23,9 @@ atlas = ExtResource("1_lidtk")
 region = Rect2(439, 50, 185, 27)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjqh6"]
+resource_local_to_scene = true
 atlas = ExtResource("1_lidtk")
-region = Rect2(2, 545, 176, 11)
+region = Rect2(2.08466, 545.292, 175.848, 10.4462)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cln5v"]
 atlas = ExtResource("1_lidtk")
@@ -163,9 +164,9 @@ texture = SubResource("AtlasTexture_cd8qs")
 z_index = -2
 layout_mode = 0
 offset_left = -29.0
-offset_top = 4.0
+offset_top = 7.0
 offset_right = 278.0
-offset_bottom = 102.0
+offset_bottom = 105.0
 texture = SubResource("AtlasTexture_tn3ip")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BBAnimation"]
