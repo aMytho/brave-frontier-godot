@@ -222,12 +222,12 @@ func _when_unit_has_died(place_ID: int, is_ally: bool = false):
 			$BattleUI.set_selected_enemy_health(new_UI_unit_update)
 		if place_ID == $Enemies.current_target:
 			$Enemies.current_target = -1
-	dead_unit.hide()
+	dead_unit.play_death_animation()
 	dead_unit.is_dead = true
 
 
-func get_next_non_dead_unit(units: Array[Unit]):
-	for unit in units:
+func get_next_non_dead_unit(current_units: Array[Unit]):
+	for unit in current_units:
 		if null != unit and !unit.is_dead:
 			return unit
 	return null

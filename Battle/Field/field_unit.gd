@@ -3,6 +3,7 @@ extends Area2D
 signal AttackFinished(id: int)
 signal TargetSelected(id: int)
 
+
 # Flag to let parent scenes check if a unit is in this slot
 @export var is_unit = false
 # Corresponds to the unit placement in unit_display
@@ -24,12 +25,15 @@ var speed: float = 1.0
 func _ready():
 	# Connect the target selection
 	connect("input_event", _on_input_event)
+
 	# Always find a way back home...
 	initial_position = position
 
 func set_properties(frames, flip):
-	# Show the correct unit
+	# Show the units's spritesheet
 	sprite.sprite_frames = frames
+	# Ensure sprites are not shared across units
+	sprite.sprite_frames.resource_local_to_scene = true
 	
 	# A unit is here!
 	is_unit = true
@@ -73,10 +77,17 @@ func _on_animation_finished():
 	# Move away from enemy
 	_on_move_finished(false)
 
+func _on_death_animation_finished(anim_name: StringName):
+	print("Unit ", place_ID, " death animation finished.")
+	# To-do - Emit a signal so the parent battle.gd knows to continue the turn
+
 # This method remove the target of the unit (because the user select it again or the unit has died)
 func remove_target():
 	is_targeted = false
 	$Target.visible = false
+
+func play_death_animation():
+	$Sprite/AnimationPlayer.play("Death")
 
 # This event is trigger when the user click on a unit.
 # If it's an enemy unit (!is_friendly), this will add a target on it, if the unit is not dead
