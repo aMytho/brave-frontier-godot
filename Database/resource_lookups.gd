@@ -6,7 +6,7 @@ func _ready():
 	pass # Replace with function body.
 
 # Gets a unit by their unit number.
-func get_unit_by_unit_number(unit_id: int, db_id: int):
+func get_unit_by_unit_number(unit_id: int, db_id: int = -1):
 	var res = ResourceLoader.load("res://Units/Res/%s/%s.tres" % [unit_id, unit_id]).duplicate()
 
 	if res == null:
