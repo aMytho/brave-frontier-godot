@@ -23,7 +23,7 @@ func _ready():
 
 func set_path() -> String:
 	if OS.is_debug_build():
-		return "user://devnew.db"
+		return "user://dev.db"
 	else:
 		return "user://main.db" 
 
