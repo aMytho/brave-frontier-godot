@@ -1,0 +1,63 @@
+[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://h8aam8ugkpyr"]
+
+[ext_resource type="Texture2D" uid="uid://5pdxyg7mllgl" path="res://Units/Res/13/AtlasFrames/A1.tres" id="1_n82er"]
+[ext_resource type="Texture2D" uid="uid://cwxgyh64mlnuu" path="res://Units/Res/13/AtlasFrames/A2.tres" id="2_gnbi7"]
+[ext_resource type="Texture2D" uid="uid://bvf63b2nwt31p" path="res://Units/Res/13/AtlasFrames/A3.tres" id="3_2trrb"]
+[ext_resource type="Texture2D" uid="uid://hd00va7vmn6i" path="res://Units/Res/13/AtlasFrames/A4.tres" id="4_htts1"]
+[ext_resource type="Texture2D" uid="uid://sf378ejw5iim" path="res://Units/Res/13/AtlasFrames/A5.tres" id="5_nroho"]
+[ext_resource type="Texture2D" uid="uid://ba4o38jh82q7n" path="res://Units/Res/13/AtlasFrames/A6.tres" id="6_4fikq"]
+[ext_resource type="Texture2D" uid="uid://4vx3lsaurk71" path="res://Units/Res/13/AtlasFrames/A7.tres" id="7_wxcoo"]
+[ext_resource type="Texture2D" uid="uid://d3dtdt5kfmrm3" path="res://Units/Res/13/AtlasFrames/A8.tres" id="8_2f0ni"]
+[ext_resource type="Texture2D" uid="uid://brl326cq5ly0s" path="res://Units/Res/13/AtlasFrames/I1.tres" id="9_esk3r"]
+[ext_resource type="Texture2D" uid="uid://bqer1pqwdaekf" path="res://Units/Res/13/AtlasFrames/I2.tres" id="10_akt3m"]
+[ext_resource type="Texture2D" uid="uid://c3lbtjvtixxlu" path="res://Units/Res/13/AtlasFrames/I3.tres" id="11_4r1mv"]
+[ext_resource type="Texture2D" uid="uid://btci487ydbsik" path="res://Units/Res/13/AtlasFrames/I4.tres" id="12_dn6r3"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n82er")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gnbi7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2trrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_htts1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nroho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4fikq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wxcoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2f0ni")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_esk3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_akt3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4r1mv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dn6r3")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 4.0
+}]

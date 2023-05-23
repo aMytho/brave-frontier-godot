@@ -21,6 +21,7 @@ level = 1
 max_level = 10
 is_dead = false
 HP = 850
+max_HP = 0
 ATK = 260
 DEF = 350
 REC = 220

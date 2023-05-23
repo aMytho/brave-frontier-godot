@@ -1,10 +1,12 @@
-[gd_resource type="SpriteFrames" load_steps=7 format=3]
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://dwhpsl1xk5jvw"]
 
 [ext_resource type="Texture2D" path="res://Units/Res/49/SpriteFrames/A1.tres" id="1_x6iax"]
-[ext_resource type="Texture2D" path="res://Units/Res/49/SpriteFrames/A2.tres" id="2_sjm8b"]
+[ext_resource type="Texture2D" uid="uid://cr4s7e255u3o3" path="res://Units/Res/49/SpriteFrames/A2.tres" id="2_sjm8b"]
 [ext_resource type="Texture2D" path="res://Units/Res/49/SpriteFrames/A3.tres" id="3_jikor"]
+[ext_resource type="Texture2D" path="res://Units/Res/49/SpriteFrames/A4.tres" id="4_00ubp"]
 [ext_resource type="Texture2D" path="res://Units/Res/49/SpriteFrames/I1.tres" id="4_ykofc"]
 [ext_resource type="Texture2D" path="res://Units/Res/49/SpriteFrames/I2.tres" id="5_gwyfe"]
+[ext_resource type="Texture2D" uid="uid://de6jd2aejsh1g" path="res://Units/Res/49/SpriteFrames/A5.tres" id="5_m0vwm"]
 [ext_resource type="Texture2D" path="res://Units/Res/49/SpriteFrames/I3.tres" id="6_bdn21"]
 
 [resource]
@@ -18,10 +20,16 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_jikor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_00ubp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m0vwm")
 }],
 "loop": false,
 "name": &"Attack",
-"speed": 3.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
