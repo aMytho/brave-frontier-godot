@@ -93,6 +93,7 @@ _data = {
 }
 
 [node name="Load" type="Node2D"]
+z_index = 5
 script = ExtResource("1_rde3m")
 
 [node name="Background" type="TextureRect" parent="."]
