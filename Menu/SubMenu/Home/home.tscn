@@ -181,11 +181,9 @@ metadata/_edit_group_ = true
 [node name="Char4" type="TextureRect" parent="Character/TextureRect/Char4"]
 z_index = -1
 layout_mode = 0
-offset_left = -5.0
-offset_top = 88.0
-offset_right = 345.0
-offset_bottom = 350.0
-scale = Vector2(0.4, 0.4)
+offset_left = -94.0
+offset_right = 256.0
+offset_bottom = 312.0
 texture = ExtResource("12_gj2e7")
 expand_mode = 1
 
