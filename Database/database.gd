@@ -4,9 +4,9 @@ var db: SQLite
 #The path to the DB file
 var path: String = ""
 #Current DB version
-var current_version = 3
+var current_version = 4
 #Latest db version
-var latest_version = 4
+var latest_version = 5
 
 func _ready():
 	#Creates a new DB instance
@@ -23,7 +23,7 @@ func _ready():
 
 func set_path() -> String:
 	if OS.is_debug_build():
-		return "user://dev.db"
+		return "user://devnew.db"
 	else:
 		return "user://main.db" 
 
