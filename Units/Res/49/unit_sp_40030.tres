@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://dwhpsl1xk5jvw"]
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://dwhpsl1xk5jvw"]
 
 [ext_resource type="Texture2D" path="res://Units/Res/49/SpriteFrames/A1.tres" id="1_x6iax"]
 [ext_resource type="Texture2D" uid="uid://cr4s7e255u3o3" path="res://Units/Res/49/SpriteFrames/A2.tres" id="2_sjm8b"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" path="res://Units/Res/49/SpriteFrames/I2.tres" id="5_gwyfe"]
 [ext_resource type="Texture2D" uid="uid://de6jd2aejsh1g" path="res://Units/Res/49/SpriteFrames/A5.tres" id="5_m0vwm"]
 [ext_resource type="Texture2D" path="res://Units/Res/49/SpriteFrames/I3.tres" id="6_bdn21"]
+[ext_resource type="Texture2D" uid="uid://dmmbv81vshd6d" path="res://Units/Res/49/SpriteFrames/S1.tres" id="9_ocxyr"]
 
 [resource]
 animations = [{
@@ -44,4 +45,12 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ocxyr")
+}],
+"loop": true,
+"name": &"Shadow",
+"speed": 1.0
 }]

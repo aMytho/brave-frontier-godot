@@ -1,16 +1,22 @@
-[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://b6bus0ti7qprp"]
+[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://b6bus0ti7qprp"]
 
 [ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/A1.tres" id="1_1lvic"]
-[ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/I1.tres" id="1_sdvtv"]
-[ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/A2.tres" id="2_batdj"]
-[ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/I2.tres" id="2_cktrk"]
-[ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/A3.tres" id="3_5jgk1"]
-[ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/I3.tres" id="3_nbgm7"]
-[ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/I4.tres" id="4_atnx0"]
+[ext_resource type="Texture2D" uid="uid://dp1ikituhg26m" path="res://Units/Res/5/AtlasFrames/I1.tres" id="1_sdvtv"]
+[ext_resource type="Texture2D" uid="uid://2cf5v3h3t6lp" path="res://Units/Res/5/AtlasFrames/A2.tres" id="2_batdj"]
+[ext_resource type="Texture2D" uid="uid://dwabvielgvnho" path="res://Units/Res/5/AtlasFrames/I2.tres" id="2_cktrk"]
+[ext_resource type="Texture2D" uid="uid://c7y8l5tk6k62n" path="res://Units/Res/5/AtlasFrames/A3.tres" id="3_5jgk1"]
+[ext_resource type="Texture2D" uid="uid://cels5t4vk8wae" path="res://Units/Res/5/AtlasFrames/I3.tres" id="3_nbgm7"]
+[ext_resource type="Texture2D" uid="uid://b5stu86xmp4jq" path="res://Units/Res/5/AtlasFrames/I4.tres" id="4_atnx0"]
 [ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/A4.tres" id="4_jsn5m"]
-[ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/A5.tres" id="5_0so32"]
-[ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/A6.tres" id="6_7xtbv"]
+[ext_resource type="Texture2D" uid="uid://cpp4fde7h1uwh" path="res://Units/Res/5/AtlasFrames/A5.tres" id="5_0so32"]
+[ext_resource type="Texture2D" uid="uid://u02uktbc0h2p" path="res://Units/Res/5/AtlasFrames/A6.tres" id="6_7xtbv"]
 [ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/A7.tres" id="7_3pn4b"]
+[ext_resource type="Texture2D" uid="uid://b4vg4unc33f0g" path="res://Units/Res/5/AtlasFrames/EA1.tres" id="8_fhmyh"]
+[ext_resource type="Texture2D" uid="uid://32s6sh04rops" path="res://Units/Res/5/AtlasFrames/EA2.tres" id="9_k01t7"]
+[ext_resource type="Texture2D" uid="uid://bocc6amuvjhtq" path="res://Units/Res/5/AtlasFrames/EA3.tres" id="10_xyro7"]
+[ext_resource type="Texture2D" uid="uid://bq7b5hhfqgxq7" path="res://Units/Res/5/AtlasFrames/EA4.tres" id="11_tqjns"]
+[ext_resource type="Texture2D" uid="uid://b7by6nvlkhxb0" path="res://Units/Res/5/AtlasFrames/S1.tres" id="12_mgtm7"]
+[ext_resource type="Texture2D" uid="uid://pj131b5a821w" path="res://Units/Res/5/AtlasFrames/EA5.tres" id="12_vssm4"]
 
 [resource]
 animations = [{
@@ -19,13 +25,13 @@ animations = [{
 "texture": ExtResource("1_1lvic")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_batdj")
+"texture": ExtResource("4_jsn5m")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_5jgk1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_jsn5m")
+"texture": ExtResource("2_batdj")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_0so32")
@@ -39,11 +45,6 @@ animations = [{
 "loop": false,
 "name": &"Attack",
 "speed": 7.0
-}, {
-"frames": [],
-"loop": false,
-"name": &"Brave Burst",
-"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -61,4 +62,49 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_mgtm7")
+}],
+"loop": true,
+"name": &"Shadow",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fhmyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_k01t7")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xyro7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tqjns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vssm4")
+}, {
+"duration": 1.5,
+"texture": null
+}],
+"loop": false,
+"name": &"SwordEffects",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"Wait",
+"speed": 1.0
 }]

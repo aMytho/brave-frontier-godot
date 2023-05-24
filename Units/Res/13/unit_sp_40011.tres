@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://h8aam8ugkpyr"]
+[gd_resource type="SpriteFrames" load_steps=15 format=3 uid="uid://h8aam8ugkpyr"]
 
 [ext_resource type="Texture2D" uid="uid://5pdxyg7mllgl" path="res://Units/Res/13/AtlasFrames/A1.tres" id="1_n82er"]
 [ext_resource type="Texture2D" uid="uid://cwxgyh64mlnuu" path="res://Units/Res/13/AtlasFrames/A2.tres" id="2_gnbi7"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://bqer1pqwdaekf" path="res://Units/Res/13/AtlasFrames/I2.tres" id="10_akt3m"]
 [ext_resource type="Texture2D" uid="uid://c3lbtjvtixxlu" path="res://Units/Res/13/AtlasFrames/I3.tres" id="11_4r1mv"]
 [ext_resource type="Texture2D" uid="uid://btci487ydbsik" path="res://Units/Res/13/AtlasFrames/I4.tres" id="12_dn6r3"]
+[ext_resource type="Texture2D" uid="uid://spa71kynb2cd" path="res://Units/Res/13/AtlasFrames/S1.tres" id="13_tryu6"]
+[ext_resource type="Texture2D" uid="uid://d2q2hx61gij6i" path="res://Units/Res/13/AtlasFrames/S2.tres" id="14_kogre"]
 
 [resource]
 animations = [{
@@ -60,4 +62,41 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_tryu6")
+}],
+"loop": true,
+"name": &"Shadow",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_tryu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_tryu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_tryu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kogre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_tryu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_tryu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_tryu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_tryu6")
+}],
+"loop": false,
+"name": &"ShadowAttack",
+"speed": 8.0
 }]

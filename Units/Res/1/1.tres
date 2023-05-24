@@ -1,10 +1,16 @@
-[gd_resource type="Resource" script_class="Unit" load_steps=11 format=3 uid="uid://bor1337h0gevd"]
+[gd_resource type="Resource" script_class="Unit" load_steps=13 format=3 uid="uid://bor1337h0gevd"]
 
 [ext_resource type="Texture2D" uid="uid://dq1ki4lshcx1e" path="res://Units/Res/1/unit_ills_full_10011.png" id="1_kiq5b"]
 [ext_resource type="Texture2D" uid="uid://cahc3s563ddg5" path="res://Units/Res/1/unit_ills_battle_10011.png" id="1_u40pv"]
+[ext_resource type="Script" path="res://Units/char_equipment.gd" id="2_0vumk"]
 [ext_resource type="Script" path="res://Units/unit_base.gd" id="2_cwhko"]
 [ext_resource type="Texture2D" uid="uid://bwqmqpt7rcwwh" path="res://Units/Res/1/unit_ills_thum_10011.png" id="4_08g4v"]
 [ext_resource type="Texture2D" uid="uid://dcuqpkh0ivmoh" path="res://Units/Res/1/unit_anime_10011.png" id="4_cnx2h"]
+
+[sub_resource type="Resource" id="Resource_6nhdf"]
+script = ExtResource("2_0vumk")
+position = Vector2(0, 0)
+z_index = 0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bxhm6"]
 atlas = ExtResource("4_cnx2h")
@@ -54,7 +60,9 @@ cost = 2
 arena_type = 4
 level = 1
 max_level = 12
+is_dead = false
 HP = 1030
+max_HP = 0
 ATK = 500
 DEF = 410
 REC = 320
@@ -63,4 +71,6 @@ thumbnail = ExtResource("4_08g4v")
 battle_thumbnail = ExtResource("1_u40pv")
 full_sprite = ExtResource("1_kiq5b")
 sprite_sheet = SubResource("SpriteFrames_ubicg")
+has_weapon_effect = false
+char_equipment = Array[ExtResource("2_0vumk")]([SubResource("Resource_6nhdf")])
 unit_lore = "A swordsman from the ruined Agni Empire, he later became one of the Six Heroes. Proud of his late father, a Knight in the Order of Agni, he trained in the long sword, becoming a formidable knight. Although he is well-known for his countless victories over other warriors, he still considers himself inexperienced and continues to train with great zeal."

@@ -1,10 +1,65 @@
-[gd_resource type="Resource" script_class="Unit" load_steps=6 format=3 uid="uid://ddjrp2iafbsjt"]
+[gd_resource type="Resource" script_class="Unit" load_steps=17 format=3 uid="uid://ddjrp2iafbsjt"]
 
 [ext_resource type="Script" path="res://Units/unit_base.gd" id="1_1b221"]
+[ext_resource type="Script" path="res://Units/equipment_frame.gd" id="1_fju70"]
+[ext_resource type="Script" path="res://Units/char_equipment.gd" id="1_mbryc"]
 [ext_resource type="Texture2D" uid="uid://cs0d1s1rbujg3" path="res://Units/Res/5/unit_ills_battle_20011.png" id="1_t445t"]
 [ext_resource type="Texture2D" uid="uid://cx40evgatevxl" path="res://Units/Res/5/unit_ills_full_20011.png" id="2_kilmk"]
 [ext_resource type="Texture2D" uid="uid://bswtxbn7xsvrt" path="res://Units/Res/5/unit_ills_thum_20011.png" id="3_yyuad"]
 [ext_resource type="SpriteFrames" uid="uid://b6bus0ti7qprp" path="res://Units/Res/5/unit_sp_20011.tres" id="4_6pfmr"]
+
+[sub_resource type="Resource" id="Resource_5av1w"]
+script = ExtResource("1_fju70")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_0ma3o"]
+script = ExtResource("1_fju70")
+position = Vector2(21.4505, 22.98)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_pewdl"]
+script = ExtResource("1_fju70")
+position = Vector2(29.4505, 17.98)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_nrypo"]
+script = ExtResource("1_fju70")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_x204m"]
+script = ExtResource("1_fju70")
+position = Vector2(2.45052, 10.98)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_nyk6k"]
+script = ExtResource("1_fju70")
+position = Vector2(-9.54948, -17.02)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_a6r1r"]
+script = ExtResource("1_fju70")
+position = Vector2(-9.54948, -17.02)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_eekwc"]
+script = ExtResource("1_fju70")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_xnsbj"]
+script = ExtResource("1_mbryc")
+name = "SwordEffects"
+frames = Array[ExtResource("1_fju70")]([SubResource("Resource_5av1w"), SubResource("Resource_0ma3o"), SubResource("Resource_pewdl"), SubResource("Resource_nrypo"), SubResource("Resource_x204m"), SubResource("Resource_nyk6k"), SubResource("Resource_a6r1r"), SubResource("Resource_eekwc")])
 
 [resource]
 resource_local_to_scene = true
@@ -19,7 +74,9 @@ cost = 2
 arena_type = 3
 level = 1
 max_level = 12
+is_dead = false
 HP = 1000
+max_HP = 0
 ATK = 490
 DEF = 360
 REC = 420
@@ -28,4 +85,7 @@ thumbnail = ExtResource("3_yyuad")
 battle_thumbnail = ExtResource("1_t445t")
 full_sprite = ExtResource("2_kilmk")
 sprite_sheet = ExtResource("4_6pfmr")
+has_shadow = true
+char_equipment = Array[ExtResource("1_mbryc")]([])
+atk_equipment = Array[ExtResource("1_mbryc")]([SubResource("Resource_xnsbj")])
 unit_lore = "A swordswoman from the ruined Sama Kingdom, she later became one of the Six Heroes. Born from a line of chiefs of the wandering sea people of Savat, she was raised in traditional long sword techniques. She stood out so much that she was offered the treasured sword Lexida as proof of her chiefdom at age 14. She refused it at the time, claiming she was inexperienced."
