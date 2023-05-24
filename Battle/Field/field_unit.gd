@@ -15,6 +15,9 @@ signal TargetSelected(id: int)
 @export var is_dead: bool = false
 # The sprite for the unit
 @onready var sprite = $Sprite
+# Store the equipment for the unit
+@export var idle_equipment: Array[CharEquipment] = []
+@export var attack_equipment: Array[CharEquipment] = []
 # Used to allow the unit to return to their initial spot
 var initial_position = Vector2(0,0)
 
@@ -27,7 +30,7 @@ func _ready():
 	# Always find a way back home...
 	initial_position = position
 
-func set_properties(frames, flip):
+func set_properties(frames, flip: bool, use_shadow: bool, new_idle_equipment, new_attack_equipment):
 	# Show the correct unit
 	sprite.sprite_frames = frames
 	
@@ -41,11 +44,41 @@ func set_properties(frames, flip):
 		# Only enemies face this direction
 		is_friendly = false
 	
+	# Show the shadow
+	if use_shadow:
+		# Set the position based on the height of the unit
+		var shadow = $Sprite/Shadow
+		shadow.sprite_frames = frames
+		shadow.position.y = frames.get_frame_texture("Idle", 0).get_height() / 2
+		#shadow.position.x = frames.get_frame_texture("Idle", 0).get_width() / 2
+		shadow.play("Shadow")
+	
+	# For each piece of equipment, make a sprite and align it
+	for equipment_piece in new_idle_equipment:
+		print(equipment_piece)
+		idle_equipment.append(equipment_piece)
+		var new_sprite = AnimatedSprite2D.new()
+		
+		# Add to the tree
+		$Sprite/EquipmentContainer.add_child(new_sprite)
+		new_sprite.play("IdleEquipment")
+	
+	for equipment_piece in new_attack_equipment:
+		# Store the piece
+		attack_equipment.append(equipment_piece)
+		# Load the equipment scene and set its properties
+		var new_sprite = ResourceLoader.load("res://Battle/Field/equipment.tscn").instantiate()
+		new_sprite.set_properties(frames, equipment_piece)
+		new_sprite.play("Wait")
+		# Add to tree
+		$Sprite/AtkEquipmentContainer.add_child(new_sprite)
 	# Play the idle animation
 	sprite.play("Idle")
 
+
 func reset_spritesheet():
 	sprite.sprite_frames = null
+	$Sprite/Shadow.sprite_frames = null
 
 # This method move the attacking unit to the target unit (depending the position)
 func attack(enemy_position: Vector2):
@@ -59,6 +92,9 @@ func _on_move_finished(play_atk_animation: bool):
 	# Plays an attack animation or returns home
 	if play_atk_animation:
 		sprite.play("Attack")
+		var counter = 0
+		for equipment in attack_equipment:
+			$Sprite/AtkEquipmentContainer.get_child(counter).play(equipment.name)
 	else:
 		var tween = create_tween()
 		tween.tween_property(self, "position", initial_position, 1.0 * speed)

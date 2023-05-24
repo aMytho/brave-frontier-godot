@@ -50,6 +50,13 @@ script = ExtResource("1_uyh4s")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 
+[node name="Shadow" type="AnimatedSprite2D" parent="Sprite"]
+z_index = -1
+
+[node name="EquipmentContainer" type="Node2D" parent="Sprite"]
+
+[node name="AtkEquipmentContainer" type="Node2D" parent="Sprite"]
+
 [node name="Target" type="TextureRect" parent="."]
 visible = false
 offset_left = -32.5

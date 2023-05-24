@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b0n0pwb7kady0" path="res://Menu/SubMenu/Unit/Display/item_frame_3.png" id="7_jg8yi"]
 [ext_resource type="Texture2D" uid="uid://ctxkmxvv54cod" path="res://Menu/SubMenu/Unit/Display/dl_bar_frame.png" id="8_o0l6u"]
 [ext_resource type="Texture2D" uid="uid://dk328fi2aetu" path="res://Menu/SubMenu/Unit/Display/dl_bar.png" id="9_v57w4"]
-[ext_resource type="PackedScene" path="res://Common/UI/back_section.tscn" id="10_06unq"]
+[ext_resource type="PackedScene" uid="uid://cath12l63t3sv" path="res://Common/UI/back_section.tscn" id="10_06unq"]
 
 [node name="UnitDisplay" type="Control"]
 layout_mode = 3
