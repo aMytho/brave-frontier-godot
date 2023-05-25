@@ -1,7 +1,7 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bocc6amuvjhtq"]
+[gd_resource type="AtlasTexture" load_steps=2 format=3]
 
-[ext_resource type="Texture2D" uid="uid://b1wu7qbdfb78h" path="res://Units/Res/5/unit_anime_20011.png" id="1_52klm"]
+[ext_resource type="Texture2D" uid="uid://u6uu11t0al04" path="res://Units/Res/5/unit_anime_20011.png" id="1_pavoj"]
 
 [resource]
-atlas = ExtResource("1_52klm")
-region = Rect2(24, 384, 107, 63)
+atlas = ExtResource("1_pavoj")
+region = Rect2(5, 1132, 106, 65)

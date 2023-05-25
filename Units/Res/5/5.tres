@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Unit" load_steps=17 format=3 uid="uid://ddjrp2iafbsjt"]
+[gd_resource type="Resource" script_class="Unit" load_steps=26 format=3 uid="uid://ddjrp2iafbsjt"]
 
 [ext_resource type="Script" path="res://Units/unit_base.gd" id="1_1b221"]
 [ext_resource type="Script" path="res://Units/equipment_frame.gd" id="1_fju70"]
@@ -8,58 +8,110 @@
 [ext_resource type="Texture2D" uid="uid://bswtxbn7xsvrt" path="res://Units/Res/5/unit_ills_thum_20011.png" id="3_yyuad"]
 [ext_resource type="SpriteFrames" uid="uid://b6bus0ti7qprp" path="res://Units/Res/5/unit_sp_20011.tres" id="4_6pfmr"]
 
-[sub_resource type="Resource" id="Resource_5av1w"]
+[sub_resource type="Resource" id="Resource_waqmr"]
+script = ExtResource("1_fju70")
+position = Vector2(46.451, 32.98)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_jscf8"]
+script = ExtResource("1_fju70")
+position = Vector2(54.451, 27.98)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_34x4k"]
 script = ExtResource("1_fju70")
 position = Vector2(0, 0)
 rotation = 0
 z_index = 0
 
-[sub_resource type="Resource" id="Resource_0ma3o"]
+[sub_resource type="Resource" id="Resource_modpt"]
 script = ExtResource("1_fju70")
-position = Vector2(21.4505, 22.98)
+position = Vector2(-22.549, 5.98)
 rotation = 0
 z_index = 0
 
-[sub_resource type="Resource" id="Resource_pewdl"]
+[sub_resource type="Resource" id="Resource_iq6al"]
 script = ExtResource("1_fju70")
-position = Vector2(29.4505, 17.98)
+position = Vector2(-30.549, -20.02)
 rotation = 0
 z_index = 0
 
-[sub_resource type="Resource" id="Resource_nrypo"]
+[sub_resource type="Resource" id="Resource_q50vy"]
 script = ExtResource("1_fju70")
-position = Vector2(0, 0)
+position = Vector2(-18.549, -27.02)
 rotation = 0
 z_index = 0
 
-[sub_resource type="Resource" id="Resource_x204m"]
-script = ExtResource("1_fju70")
-position = Vector2(2.45052, 10.98)
-rotation = 0
-z_index = 0
-
-[sub_resource type="Resource" id="Resource_nyk6k"]
-script = ExtResource("1_fju70")
-position = Vector2(-9.54948, -17.02)
-rotation = 0
-z_index = 0
-
-[sub_resource type="Resource" id="Resource_a6r1r"]
-script = ExtResource("1_fju70")
-position = Vector2(-9.54948, -17.02)
-rotation = 0
-z_index = 0
-
-[sub_resource type="Resource" id="Resource_eekwc"]
+[sub_resource type="Resource" id="Resource_tcuxs"]
 script = ExtResource("1_fju70")
 position = Vector2(0, 0)
 rotation = 0
 z_index = 0
 
-[sub_resource type="Resource" id="Resource_xnsbj"]
+[sub_resource type="Resource" id="Resource_dss08"]
 script = ExtResource("1_mbryc")
 name = "SwordEffects"
-frames = Array[ExtResource("1_fju70")]([SubResource("Resource_5av1w"), SubResource("Resource_0ma3o"), SubResource("Resource_pewdl"), SubResource("Resource_nrypo"), SubResource("Resource_x204m"), SubResource("Resource_nyk6k"), SubResource("Resource_a6r1r"), SubResource("Resource_eekwc")])
+frames = Array[ExtResource("1_fju70")]([SubResource("Resource_waqmr"), SubResource("Resource_jscf8"), SubResource("Resource_34x4k"), SubResource("Resource_modpt"), SubResource("Resource_iq6al"), SubResource("Resource_q50vy"), SubResource("Resource_tcuxs")])
+
+[sub_resource type="Resource" id="Resource_lo8io"]
+script = ExtResource("1_fju70")
+position = Vector2(1.451, 22.98)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_ddxvx"]
+script = ExtResource("1_fju70")
+position = Vector2(1.451, 22.98)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_76h74"]
+script = ExtResource("1_fju70")
+position = Vector2(1.451, 22.98)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_jea1o"]
+script = ExtResource("1_fju70")
+position = Vector2(-15.549, 20.98)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_13c07"]
+script = ExtResource("1_fju70")
+position = Vector2(-15.549, 20.98)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_k0rlv"]
+script = ExtResource("1_fju70")
+position = Vector2(-15.549, 20.98)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_ycjht"]
+script = ExtResource("1_fju70")
+position = Vector2(-15.549, 20.98)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_07v35"]
+script = ExtResource("1_mbryc")
+name = "ShadowAttack"
+frames = Array[ExtResource("1_fju70")]([SubResource("Resource_lo8io"), SubResource("Resource_ddxvx"), SubResource("Resource_76h74"), SubResource("Resource_jea1o"), SubResource("Resource_13c07"), SubResource("Resource_k0rlv"), SubResource("Resource_ycjht")])
+
+[sub_resource type="Resource" id="Resource_hj151"]
+script = ExtResource("1_fju70")
+position = Vector2(14.451, 22.98)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_prv2q"]
+script = ExtResource("1_mbryc")
+name = "Shadow"
+frames = Array[ExtResource("1_fju70")]([SubResource("Resource_hj151")])
 
 [resource]
 resource_local_to_scene = true
@@ -80,12 +132,11 @@ max_HP = 0
 ATK = 490
 DEF = 360
 REC = 420
-skills = null
+skills = Array[Resource]([])
 thumbnail = ExtResource("3_yyuad")
 battle_thumbnail = ExtResource("1_t445t")
 full_sprite = ExtResource("2_kilmk")
 sprite_sheet = ExtResource("4_6pfmr")
-has_shadow = true
-char_equipment = Array[ExtResource("1_mbryc")]([])
-atk_equipment = Array[ExtResource("1_mbryc")]([SubResource("Resource_xnsbj")])
+char_equipment = Array[ExtResource("1_mbryc")]([SubResource("Resource_prv2q")])
+atk_equipment = Array[ExtResource("1_mbryc")]([SubResource("Resource_dss08"), SubResource("Resource_07v35")])
 unit_lore = "A swordswoman from the ruined Sama Kingdom, she later became one of the Six Heroes. Born from a line of chiefs of the wandering sea people of Savat, she was raised in traditional long sword techniques. She stood out so much that she was offered the treasured sword Lexida as proof of her chiefdom at age 14. She refused it at the time, claiming she was inexperienced."
