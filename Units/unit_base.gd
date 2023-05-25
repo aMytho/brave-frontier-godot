@@ -52,8 +52,6 @@ var id: int = 0
 @export var full_sprite: Texture2D = null
 # The unit's spritesheet with their animations. We do these manually
 @export var sprite_sheet: SpriteFrames = null
-# Show the shadow for the unit? (not all units have shadows)
-@export var has_shadow: bool = true
 # Add additional sprites to the unit. Weapons, effects, etc.
 @export var char_equipment: Array[CharEquipment] = []
 # Same as above but only shows during attacks

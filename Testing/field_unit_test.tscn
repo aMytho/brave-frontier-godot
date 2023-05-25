@@ -20,16 +20,15 @@ offset_bottom = -20.0
 text = "Attack!"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(-117.451, -54.98)
 sprite_frames = ExtResource("4_5ep7q")
 animation = &"Attack"
-frame = 6
+frame = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
-visible = false
-position = Vector2(-9.54948, -17.02)
+z_index = -1
+position = Vector2(-15.549, 20.98)
 sprite_frames = ExtResource("4_5ep7q")
-animation = &"SwordEffects"
+animation = &"ShadowAttack"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
