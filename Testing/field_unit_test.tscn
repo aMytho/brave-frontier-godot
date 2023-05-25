@@ -20,6 +20,7 @@ offset_bottom = -20.0
 text = "Attack!"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(-117.451, -54.98)
 sprite_frames = ExtResource("4_5ep7q")
 animation = &"Attack"

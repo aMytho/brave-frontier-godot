@@ -6,7 +6,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	sprite.set_properties(unit.sprite_sheet, false, true, unit.char_equipment, unit.atk_equipment)
+	sprite.set_properties(unit.sprite_sheet, false, unit.char_equipment, unit.atk_equipment)
 
 
 func _on_button_pressed():
