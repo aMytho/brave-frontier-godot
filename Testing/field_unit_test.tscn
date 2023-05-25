@@ -21,6 +21,7 @@ offset_bottom = -20.0
 text = "Attack!"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(-117.451, -54.98)
 sprite_frames = ExtResource("4_5ep7q")
 animation = &"Travel"
@@ -29,6 +30,6 @@ animation = &"Travel"
 z_index = -1
 position = Vector2(10.451, 3.98)
 sprite_frames = ExtResource("4_5ep7q")
-animation = &"Shadow"
+animation = &"Idle"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

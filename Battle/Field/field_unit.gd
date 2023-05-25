@@ -80,8 +80,14 @@ func set_properties(frames, flip: bool, new_idle_equipment, new_attack_equipment
 	sprite.play("Idle")
 	
 	# Set the target to be in the center of the unit
-	# TO-DO !
-
+	var center = sprite.sprite_frames.get_frame_texture("Idle", 0).region.size / 2
+	var reverse = -1 if flip == true else 1
+	# The target subtracts 24 its diameter is 24 = 12*2
+	$Clickable.position = center - Vector2(24,24)
+	# Reverse the value if enemy unit
+	$Clickable.position.x *= reverse
+	# Same as above, but subtracts 33 to mitigate the pivot offset
+	$Target.position = $Clickable.position - Vector2(33,33)
 
 func reset_spritesheet():
 	sprite.sprite_frames = null
