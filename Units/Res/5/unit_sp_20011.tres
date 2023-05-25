@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=17 format=3 uid="uid://b6bus0ti7qprp"]
+[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://b6bus0ti7qprp"]
 
 [ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/A1.tres" id="1_1lvic"]
 [ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/I1.tres" id="1_sdvtv"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/EA4.tres" id="11_tqjns"]
 [ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/S1.tres" id="12_mgtm7"]
 [ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/EA5.tres" id="12_vssm4"]
+[ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/T1.tres" id="17_fdfu6"]
 
 [resource]
 animations = [{
@@ -115,6 +116,14 @@ animations = [{
 "loop": false,
 "name": &"SwordEffects",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_fdfu6")
+}],
+"loop": false,
+"name": &"Travel",
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,

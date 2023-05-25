@@ -51,7 +51,8 @@ func _ready():
 			units[i].max_HP = units[i].HP
 			var child_node = freindly_units.get_child(i)
 			child_node.set_properties(
-				units[i].sprite_sheet, false, units[i].char_equipment, units[i].atk_equipment)
+				units[i].sprite_sheet, false, units[i].char_equipment,
+				units[i].atk_equipment, units[i].travel_equipment)
 	# Setup the environment
 	load_next_stage(0)
 
@@ -157,7 +158,8 @@ func load_next_stage(stage: int):
 				$BattleUI.set_selected_enemy_health(unit)
 			# Add enemy to field, start idle animation
 			var child_node = enemy_units.get_child(counter)
-			child_node.set_properties(unit.sprite_sheet, true, unit.char_equipment, unit.atk_equipment)
+			child_node.set_properties(unit.sprite_sheet, true,
+				unit.char_equipment, unit.atk_equipment, unit.travel_equipment)
 			total_enemies = total_enemies + 1
 			
 		counter = counter + 1

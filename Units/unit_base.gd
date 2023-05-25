@@ -52,10 +52,12 @@ var id: int = 0
 @export var full_sprite: Texture2D = null
 # The unit's spritesheet with their animations. We do these manually
 @export var sprite_sheet: SpriteFrames = null
-# Add additional sprites to the unit. Weapons, effects, etc.
+# Add additional sprites to the unit. Weapons, effects, etc. Only in IDLE state
 @export var char_equipment: Array[CharEquipment] = []
 # Same as above but only shows during attacks
 @export var atk_equipment: Array[CharEquipment] = []
+# Same as above but only shows during travel
+@export var travel_equipment: Array[CharEquipment] = []
 
 @export_category("Info")
 # Snazzy comment

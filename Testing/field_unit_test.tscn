@@ -11,6 +11,7 @@ script = ExtResource("1_vgal4")
 unit = ExtResource("2_ioue0")
 
 [node name="Field Unit" parent="." instance=ExtResource("1_nb3rg")]
+position = Vector2(299, 60)
 
 [node name="Button" type="Button" parent="."]
 offset_left = 279.0
@@ -20,16 +21,14 @@ offset_bottom = -20.0
 text = "Attack!"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(-117.451, -54.98)
 sprite_frames = ExtResource("4_5ep7q")
-animation = &"Attack"
-frame = 3
+animation = &"Travel"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
 z_index = -1
-position = Vector2(-15.549, 20.98)
+position = Vector2(10.451, 3.98)
 sprite_frames = ExtResource("4_5ep7q")
-animation = &"ShadowAttack"
+animation = &"Shadow"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
