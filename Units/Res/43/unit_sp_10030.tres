@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://cj2r00efbg5q5"]
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://cj2r00efbg5q5"]
 
 [ext_resource type="Texture2D" path="res://Units/Res/43/AtlasFrames/I1.tres" id="1_7esrc"]
 [ext_resource type="Texture2D" path="res://Units/Res/43/AtlasFrames/A1.tres" id="1_glsnr"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" path="res://Units/Res/43/AtlasFrames/A3.tres" id="3_vbwxm"]
 [ext_resource type="Texture2D" path="res://Units/Res/43/AtlasFrames/A4.tres" id="4_qenx7"]
 [ext_resource type="Texture2D" uid="uid://cteqxy54rj1rp" path="res://Units/Res/43/AtlasFrames/A5.tres" id="5_01f7w"]
+[ext_resource type="Texture2D" uid="uid://dogup4frwqyck" path="res://Units/Res/43/AtlasFrames/S1.tres" id="9_6easr"]
 
 [resource]
 animations = [{
@@ -44,4 +45,12 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_6easr")
+}],
+"loop": true,
+"name": &"Shadow",
+"speed": 1.0
 }]

@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://b6bus0ti7qprp"]
+[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://b6bus0ti7qprp"]
 
 [ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/A1.tres" id="1_1lvic"]
 [ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/I1.tres" id="1_sdvtv"]
@@ -10,7 +10,13 @@
 [ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/A4.tres" id="4_jsn5m"]
 [ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/A5.tres" id="5_0so32"]
 [ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/A6.tres" id="6_7xtbv"]
-[ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/A7.tres" id="7_3pn4b"]
+[ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/EA1.tres" id="8_fhmyh"]
+[ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/EA2.tres" id="9_k01t7"]
+[ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/EA3.tres" id="10_xyro7"]
+[ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/EA4.tres" id="11_tqjns"]
+[ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/S1.tres" id="12_mgtm7"]
+[ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/EA5.tres" id="12_vssm4"]
+[ext_resource type="Texture2D" path="res://Units/Res/5/AtlasFrames/T1.tres" id="17_fdfu6"]
 
 [resource]
 animations = [{
@@ -30,20 +36,12 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("5_0so32")
 }, {
-"duration": 1.0,
+"duration": 3.5,
 "texture": ExtResource("6_7xtbv")
-}, {
-"duration": 2.5,
-"texture": ExtResource("7_3pn4b")
 }],
 "loop": false,
 "name": &"Attack",
-"speed": 7.0
-}, {
-"frames": [],
-"loop": false,
-"name": &"Brave Burst",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -61,4 +59,77 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_mgtm7")
+}],
+"loop": true,
+"name": &"Shadow",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_mgtm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_mgtm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_mgtm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_mgtm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_mgtm7")
+}, {
+"duration": 3.5,
+"texture": ExtResource("12_mgtm7")
+}],
+"loop": false,
+"name": &"ShadowAttack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_fhmyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_k01t7")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xyro7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tqjns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vssm4")
+}, {
+"duration": 1.5,
+"texture": null
+}],
+"loop": false,
+"name": &"SwordEffects",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_fdfu6")
+}],
+"loop": false,
+"name": &"Travel",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"Wait",
+"speed": 1.0
 }]

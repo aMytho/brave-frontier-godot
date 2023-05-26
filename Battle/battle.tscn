@@ -99,6 +99,7 @@ animations = [{
 script = ExtResource("1_qlwco")
 
 [node name="BattleUI" parent="." instance=ExtResource("1_3sce7")]
+z_index = 2
 offset_top = 453.0
 offset_bottom = 453.0
 
@@ -129,6 +130,7 @@ offset_bottom = 543.0
 volume_db = -10.306
 
 [node name="Transition" parent="." instance=ExtResource("7_dgs5e")]
+z_index = 3
 
 [node name="stats_checking" type="Control" parent="."]
 layout_mode = 3

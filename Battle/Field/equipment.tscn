@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://rf4x8e364ow"]
+
+[ext_resource type="Script" path="res://Battle/Field/equipment.gd" id="1_2o2w3"]
+
+[node name="equipment" type="AnimatedSprite2D"]
+script = ExtResource("1_2o2w3")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
+[connection signal="frame_changed" from="." to="." method="_on_frame_changed"]

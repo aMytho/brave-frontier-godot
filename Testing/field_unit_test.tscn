@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckfn3euw86bcj"]
+
+[ext_resource type="PackedScene" uid="uid://dspsfw6gjdhv5" path="res://Battle/Field/field_unit.tscn" id="1_nb3rg"]
+[ext_resource type="Script" path="res://Testing/field_unit_test.gd" id="1_vgal4"]
+[ext_resource type="Resource" uid="uid://ddjrp2iafbsjt" path="res://Units/Res/5/5.tres" id="2_ioue0"]
+[ext_resource type="SpriteFrames" uid="uid://b6bus0ti7qprp" path="res://Units/Res/5/unit_sp_20011.tres" id="4_5ep7q"]
+
+[node name="Field Unit Test" type="Node2D"]
+position = Vector2(232, 200)
+script = ExtResource("1_vgal4")
+unit = ExtResource("2_ioue0")
+
+[node name="Field Unit" parent="." instance=ExtResource("1_nb3rg")]
+position = Vector2(299, 60)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 279.0
+offset_top = -51.0
+offset_right = 343.0
+offset_bottom = -20.0
+text = "Attack!"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-117.451, -54.98)
+sprite_frames = ExtResource("4_5ep7q")
+animation = &"Travel"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+z_index = -1
+position = Vector2(10.451, 3.98)
+sprite_frames = ExtResource("4_5ep7q")
+animation = &"Idle"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

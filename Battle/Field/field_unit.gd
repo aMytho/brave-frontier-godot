@@ -15,6 +15,10 @@ signal TargetSelected(id: int)
 @export var is_dead: bool = false
 # The sprite for the unit
 @onready var sprite = $Sprite
+# Store the equipment for the unit
+@export var idle_equipment: Array[CharEquipment] = []
+@export var attack_equipment: Array[CharEquipment] = []
+@export var travel_equipment: Array[CharEquipment] = []
 # Used to allow the unit to return to their initial spot
 var initial_position = Vector2(0,0)
 
@@ -27,7 +31,7 @@ func _ready():
 	# Always find a way back home...
 	initial_position = position
 
-func set_properties(frames, flip):
+func set_properties(frames, flip: bool, new_idle_equipment, new_attack_equipment, new_travel_equipment):
 	# Show the correct unit
 	sprite.sprite_frames = frames
 	
@@ -41,11 +45,53 @@ func set_properties(frames, flip):
 		# Only enemies face this direction
 		is_friendly = false
 	
+	# For each piece of equipment, make a sprite and align it
+	for equipment_piece in new_idle_equipment:
+		print(equipment_piece)
+		idle_equipment.append(equipment_piece)
+		var new_sprite = ResourceLoader.load("res://Battle/Field/equipment.tscn").instantiate()
+		
+		new_sprite.set_properties(frames, equipment_piece, flip)
+		new_sprite.play(equipment_piece.name)
+		# Add to tree
+		$Sprite/EquipmentContainer.add_child(new_sprite)
+
+	for equipment_piece in new_attack_equipment:
+		# Store the piece
+		attack_equipment.append(equipment_piece)
+		# Load the equipment scene and set its properties
+		var new_sprite = ResourceLoader.load("res://Battle/Field/equipment.tscn").instantiate()
+		new_sprite.set_properties(frames, equipment_piece, flip)
+		new_sprite.play("Wait")
+		# Add to tree
+		$Sprite/AtkEquipmentContainer.add_child(new_sprite)
+	
+	for equipment_piece in new_travel_equipment:
+		# Store the piece
+		travel_equipment.append(equipment_piece)
+		# Load the equipment scene and set its properties
+		var new_sprite = ResourceLoader.load("res://Battle/Field/equipment.tscn").instantiate()
+		new_sprite.set_properties(frames, equipment_piece, flip)
+		new_sprite.play("Wait")
+		# Add to tree
+		$Sprite/TravelEquipmentContainer.add_child(new_sprite)
+
 	# Play the idle animation
 	sprite.play("Idle")
+	
+	# Set the target to be in the center of the unit
+	var center = sprite.sprite_frames.get_frame_texture("Idle", 0).region.size / 2
+	var reverse = -1 if flip == true else 1
+	# The target subtracts 24 its diameter is 24 = 12*2
+	$Clickable.position = center - Vector2(24,24)
+	# Reverse the value if enemy unit
+	$Clickable.position.x *= reverse
+	# Same as above, but subtracts 33 to mitigate the pivot offset
+	$Target.position = $Clickable.position - Vector2(33,33)
 
 func reset_spritesheet():
 	sprite.sprite_frames = null
+	$Sprite/Shadow.sprite_frames = null
 
 # This method move the attacking unit to the target unit (depending the position)
 func attack(enemy_position: Vector2):
@@ -53,12 +99,37 @@ func attack(enemy_position: Vector2):
 	# Move towards enemy
 	var tween = create_tween()
 	tween.tween_property(self, "position", enemy_position, 1.0 * speed)
+	# Play the travel animation if it exists
+	if sprite.sprite_frames.has_animation("Travel"):
+		sprite.play("Travel")
+		# Play any travel equipment and stop any idle equipment
+		var counter = 0
+		for equipment in travel_equipment:
+			$Sprite/TravelEquipmentContainer.get_child(counter).play(equipment.name)
+			counter = counter + 1
+		counter = 0
+		for equipment in idle_equipment:
+			$Sprite/EquipmentContainer.get_child(counter).play("Wait")
+			counter = counter + 1
 	tween.tween_callback(_on_move_finished.bind(true))
 
 func _on_move_finished(play_atk_animation: bool):
 	# Plays an attack animation or returns home
 	if play_atk_animation:
 		sprite.play("Attack")
+		
+		var counter = 0
+		for equipment in attack_equipment:
+			$Sprite/AtkEquipmentContainer.get_child(counter).play(equipment.name)
+			counter = counter + 1
+		counter = 0
+		for equipment in idle_equipment:
+			$Sprite/EquipmentContainer.get_child(counter).play("Wait")
+			counter = counter + 1
+		counter = 0
+		for equipment in travel_equipment:
+			$Sprite/TravelEquipmentContainer.get_child(counter).play("Wait")
+			counter = counter + 1
 	else:
 		var tween = create_tween()
 		tween.tween_property(self, "position", initial_position, 1.0 * speed)
@@ -66,12 +137,21 @@ func _on_move_finished(play_atk_animation: bool):
 
 func _on_attack_finished():
 	emit_signal("AttackFinished", place_ID)
+	var counter = 0
+	for equipment in idle_equipment:
+		print("DOING SOMETHIGN IMPORTANT")
+		$Sprite/EquipmentContainer.get_child(counter).play(equipment.name)
+		counter = counter + 1
 
-func _on_animation_finished():
-	# Attack finished, switch to idle animatin
-	sprite.play("Idle")
-	# Move away from enemy
-	_on_move_finished(false)
+func _on_unit_animation_finished(anim_name):
+	# Switch to idle if attack is complete
+	print(anim_name, " is the anim name")
+	if anim_name == "Attack":
+		# Attack finished, switch to idle animatin
+		sprite.play("Idle")
+		# Move away from enemy
+		_on_move_finished(false)
+
 
 # This method remove the target of the unit (because the user select it again or the unit has died)
 func remove_target():
@@ -87,3 +167,5 @@ func _on_input_event(_viewport: Viewport, event: InputEvent, _shape_idx):
 		is_targeted = true
 		$Target.visible = true
 		emit_signal("TargetSelected", place_ID)
+
+

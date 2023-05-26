@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://defcspveq5r32"]
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://defcspveq5r32"]
 
 [ext_resource type="Texture2D" uid="uid://bk3gbq5lo4ush" path="res://Units/Res/45/AtlasFrames/A1.tres" id="1_a12mw"]
 [ext_resource type="Texture2D" uid="uid://dwwux5dntd0b5" path="res://Units/Res/45/AtlasFrames/A2.tres" id="2_ghcij"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bm0gjw1h17a5a" path="res://Units/Res/45/AtlasFrames/A5.tres" id="5_kx3id"]
 [ext_resource type="Texture2D" uid="uid://cop4pneqy5fyo" path="res://Units/Res/45/AtlasFrames/I2.tres" id="6_5cuu5"]
 [ext_resource type="Texture2D" uid="uid://bb6ecwkhpn8ow" path="res://Units/Res/45/AtlasFrames/I3.tres" id="7_fy2iw"]
+[ext_resource type="Texture2D" uid="uid://1tvsmoaab841" path="res://Units/Res/45/AtlasFrames/S1.tres" id="9_vgodq"]
 
 [resource]
 resource_local_to_scene = true
@@ -45,4 +46,12 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_vgodq")
+}],
+"loop": true,
+"name": &"Shadow",
+"speed": 1.0
 }]
