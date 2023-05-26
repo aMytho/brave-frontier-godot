@@ -46,7 +46,7 @@ func set_properties(unit: Unit, flip: bool, new_idle_equipment, new_attack_equip
 	# A unit is here!
 	is_unit = true
 	is_dead = false
-	var frame = unit.sprite_sheet
+	var frames = unit.sprite_sheet
 	
 	targeted_place_ID = 0
 	time_being_targeted = 0
