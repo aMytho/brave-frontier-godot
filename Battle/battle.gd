@@ -9,8 +9,6 @@ signal BattleFinished(is_victory: bool)
 
 @export_category("Dev Info")
 @export var current_stage: int = 0
-# A mock value for progressing turns. DEV ONLY -- replace once battle system is done
-@export var temp_counter: int = 0
 @export_range(0.1, 1.0)
 var speed: float = 1.0:
 	set(new_speed):
@@ -71,7 +69,7 @@ func battleUIUnitAttackConnect():
 # Called when the signal DamagingEnemy from field_unit is trigger
 # Will get all the data needed to do the damage calculation and update
 func _damaging_targeted_unit(damaging_unit_id: int, hurt_unit_id: int, quantity_of_damage: int):
-	var monsters_list = zone.Stage[current_stage - 1].monsters	
+	var monsters_list = zone.Stage[current_stage - 1].monsters
 	var damaging_field_unit
 	var damaging_unit
 	var hurt_field_unit
@@ -105,7 +103,6 @@ func _unit_attack(unit_place: int):
 	if null != units[unit_place-1] and !units[unit_place-1].is_dead:
 		var target = $Enemies.get_target()
 		var attaking_unit = get_node(str("./Friendlies/Unit", unit_place))
-		var target_monster = zone.Stage[current_stage-1].monsters[target.place_ID - 1]
 		target.time_being_targeted += 1
 		attaking_unit.targeted_place_ID = target.place_ID
 		attaking_unit.attack(target.position)
@@ -118,11 +115,12 @@ func _unit_attack_finished(unit_place: int):
 	friend_unit.disconnect("AttackFinished", _unit_attack_finished)
 	# Check if the turn is over
 	units_attacked = units_attacked + 1
-	check_if_unit_is_dead(friend_unit, true)
-	check_if_player_turn_complete()
+	if !check_if_unit_is_dead(friend_unit, true):
+		# A unit isn't dead, so we need to check if all friendly units have attacked
+		check_if_player_turn_complete()
 
 # Once the unit attack has ended, this method is called to see if the hurt unit is dead or not
-func check_if_unit_is_dead(unit, is_friendly_attacking: bool = false):
+func check_if_unit_is_dead(unit, is_friendly_attacking: bool):
 	print("Is the unit dead ?")
 	var hurted_unit_place_ID = unit.targeted_place_ID
 	var hurted_field_unit = get_node(str("./Enemies/Unit", hurted_unit_place_ID)) if is_friendly_attacking else get_node(str("./Friendlies/Unit", hurted_unit_place_ID))
@@ -132,6 +130,9 @@ func check_if_unit_is_dead(unit, is_friendly_attacking: bool = false):
 	hurted_field_unit.time_being_targeted -= 1
 	if 0 >= hurted_unit.HP and 0 >= hurted_field_unit.time_being_targeted:
 		when_unit_has_died(hurted_unit_place_ID, !is_friendly_attacking)
+		return true
+	# The unit is still alive
+	return false
 
 func _update_enemy_s_data(place_ID: int):
 	$BattleUI.set_selected_enemy_health(zone.Stage[current_stage-1].monsters[place_ID-1])
@@ -152,9 +153,7 @@ func check_if_player_turn_complete():
 		# When the battle system is done, this will need to be changed
 		if 0 == enemy_unit_left:
 			move_to_next_stage()
-			temp_counter = 0
 		else:
-			temp_counter = temp_counter + 1
 			run_enemy_turn()
 
 # Allow the enemy's unit to do a turn
@@ -180,7 +179,7 @@ func _enemy_attack_finished(unit_place: int):
 	# Disconnect the signal
 	var attacking_unit = get_node(str("./Enemies/Unit", unit_place))
 	attacking_unit.disconnect("AttackFinished", _enemy_attack_finished)
-	check_if_unit_is_dead(attacking_unit)
+	check_if_unit_is_dead(attacking_unit, false)
 	# Check if the turn is over
 	enemies_attacked = enemies_attacked + 1
 	print(total_enemies)
@@ -198,7 +197,7 @@ func _enemy_attack_finished(unit_place: int):
 
 # Set all props of the scene and reset some data (Enemies side in principal)
 func load_next_stage(stage: int):
-	print("Next stage")
+	print("Next stage is: ", stage)
 	var counter = 0
 	total_enemies = 0
 	var enemy_units = $Enemies
@@ -206,6 +205,8 @@ func load_next_stage(stage: int):
 	enemy_turn = false
 	enemy_units.clear_units()
 	resetUnitsStats()
+	
+	# Load next stage of monsters
 	for unit in zone.Stage[stage].monsters:
 		if null != unit:
 			unit.max_HP = unit.HP
@@ -230,11 +231,10 @@ func get_unit_count():
 
 # When triggered, we would move to the next stage of the level or make the end complete
 func move_to_next_stage():
-	# Check for next stage
+	# Check for next stage, if exists, the transition will load the next one
 	if current_stage < zone.Stage.size():
 		print("Moving to next stage")
 		$Transition.show_transition()
-		load_next_stage(current_stage)
 	else:
 		print("Battle Complete!!!")
 		_when_battle_end()
@@ -247,8 +247,11 @@ func _on_transition_hide():
 
 
 func _on_transition_show():
+	# Load the next stage while the field is hidden
+	load_next_stage(current_stage)
 	# Show the stage in the transition
 	$Transition.update_properties(current_stage)
+	
 	# Wait a few seconds, then return to combat
 	await get_tree().create_timer(3.0).timeout
 	$Transition.hide_transition()
@@ -284,13 +287,22 @@ func when_unit_has_died(place_ID: int, is_ally: bool = false):
 			$BattleUI.set_selected_enemy_health(new_UI_unit_update)
 		if place_ID == $Enemies.current_target:
 			$Enemies.current_target = -1
+			dead_unit.remove_target()
 		total_enemies -= 1
-	dead_unit.hide()
-	dead_unit.is_dead = true
+	# Play the death animation, listen for its completion
+	dead_unit.connect("DeathAnimationFinished", _on_death_animation_finished.bind(dead_unit))
+	dead_unit.play_death_animation()
 
+func _on_death_animation_finished(_place_id: int, is_friendly: bool, dead_unit):
+	if !is_friendly:
+		# If the player killed a monster, check if the turn is over after 1 second
+		await get_tree().create_timer(1.0).timeout
+		check_if_player_turn_complete()
+	# Disconnect the signal
+	dead_unit.disconnect("DeathAnimationFinished", _on_death_animation_finished)
 
-func get_next_non_dead_unit(new_units: Array[Unit]):
-	for unit in new_units:
+func get_next_non_dead_unit(current_units: Array[Unit]):
+	for unit in current_units:
 		if null != unit and !unit.is_dead:
 			return unit
 	return null

@@ -52,9 +52,9 @@ func get_random_target():
 	return children[randi_range(1, children.size()) -1]
 
 func clear_units():
-	print(get_children())
 	for child in get_children():
 		child.is_unit = false
+		child.is_dead = false
 		child.reset_spritesheet()
 		child.show()
 		child.remove_target()
