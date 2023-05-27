@@ -70,6 +70,8 @@ func battleUIUnitAttackConnect():
 	$BattleUI/Unit5.Attack.connect(_unit_attack)
 	$BattleUI/Unit6.Attack.connect(_unit_attack)
 
+# Called when the signal DamagingEnemy from field_unit is trigger
+# Will get all the data needed to do the damage calculation and update
 func _damaging_targeted_unit(damaging_unit_id: int, hurt_unit_id: int, quantity_of_damage: int):
 	var monsters_list = zone.Stage[current_stage - 1].monsters	
 	var damaging_field_unit
@@ -121,6 +123,7 @@ func _unit_attack_finished(unit_place: int):
 	check_if_unit_is_dead(friend_unit, true)
 	check_if_player_turn_complete()
 
+# Once the unit attack has ended, this method is called to see if the hurt unit is dead or not
 func check_if_unit_is_dead(unit, is_friendly_attacking: bool = false):
 	print("Is the unit dead ?")
 	var hurted_unit_place_ID = unit.targeted_place_ID
