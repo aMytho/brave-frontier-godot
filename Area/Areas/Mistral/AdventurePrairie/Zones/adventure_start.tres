@@ -1,19 +1,59 @@
-[gd_resource type="Resource" script_class="Zone" load_steps=6 format=3 uid="uid://drs5urtfcxnxy"]
+[gd_resource type="Resource" script_class="Zone" load_steps=12 format=3 uid="uid://drs5urtfcxnxy"]
 
 [ext_resource type="Script" path="res://Area/Zones/zone_base.gd" id="1_77xvr"]
 [ext_resource type="Texture2D" uid="uid://dxmjf1igdb02i" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/dungeon_battle_10100.jpg" id="1_87njc"]
-[ext_resource type="Resource" uid="uid://cxidahkr1edv0" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/1.tres" id="2_tmix2"]
+[ext_resource type="Resource" uid="uid://xhx2vl3wbp0f" path="res://Units/Res/49/49.tres" id="2_nnek0"]
 [ext_resource type="AudioStream" uid="uid://kmn3bs6klkkb" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/bf006_btl_boss.mp3" id="3_8pgl2"]
-[ext_resource type="Resource" uid="uid://bmd4i3pjrpnsy" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/2.tres" id="3_xnxdk"]
+[ext_resource type="Script" path="res://Area/Stages/stage_base.gd" id="3_ceoeb"]
+[ext_resource type="Resource" uid="uid://c7oo0nl02rohc" path="res://Units/Res/43/43.tres" id="4_bdtis"]
+[ext_resource type="Resource" uid="uid://ddjrp2iafbsjt" path="res://Units/Res/5/5.tres" id="5_6ymvg"]
+
+[sub_resource type="Resource" id="Resource_g6bu8"]
+resource_local_to_scene = true
+script = ExtResource("3_ceoeb")
+id = 1
+is_boss = false
+monsters = Array[Resource("res://Units/unit_base.gd")]([null, ExtResource("2_nnek0"), null, null, null, null])
+mimic_count = 0
+mimic_chance = 0.0
+minic_types = []
+
+[sub_resource type="Resource" id="Resource_ie4bj"]
+script = ExtResource("3_ceoeb")
+id = 2
+is_boss = false
+monsters = Array[Resource("res://Units/unit_base.gd")]([ExtResource("4_bdtis"), ExtResource("4_bdtis"), ExtResource("4_bdtis"), ExtResource("5_6ymvg"), ExtResource("5_6ymvg"), ExtResource("5_6ymvg")])
+mimic_count = 0
+mimic_chance = 0.0
+minic_types = []
+
+[sub_resource type="Resource" id="Resource_fa54l"]
+script = ExtResource("3_ceoeb")
+id = 2
+is_boss = false
+monsters = Array[Resource("res://Units/unit_base.gd")]([ExtResource("4_bdtis"), ExtResource("4_bdtis"), ExtResource("4_bdtis"), ExtResource("5_6ymvg"), ExtResource("5_6ymvg"), ExtResource("5_6ymvg")])
+mimic_count = 0
+mimic_chance = 0.0
+minic_types = []
+
+[sub_resource type="Resource" id="Resource_gtcgx"]
+resource_local_to_scene = true
+script = ExtResource("3_ceoeb")
+id = 1
+is_boss = false
+monsters = Array[Resource("res://Units/unit_base.gd")]([null, ExtResource("2_nnek0"), null, null, null, null])
+mimic_count = 0
+mimic_chance = 0.0
+minic_types = []
 
 [resource]
 script = ExtResource("1_77xvr")
 id = 2
 name = "Start of Adventure"
 description = "Your journey as a SUmmoner traveling across Grand Gia has begun! Go forth, and don't forget what Tilith taught you!"
-stages = 5
+stages = 4
 energy = 5
-Stage = Array[Resource("res://Area/Stages/stage_base.gd")]([ExtResource("2_tmix2"), ExtResource("3_xnxdk"), ExtResource("3_xnxdk"), ExtResource("2_tmix2")])
+Stage = Array[ExtResource("3_ceoeb")]([SubResource("Resource_g6bu8"), SubResource("Resource_ie4bj"), SubResource("Resource_fa54l"), SubResource("Resource_gtcgx")])
 is_visible = true
 BG = ExtResource("1_87njc")
 music = ExtResource("3_8pgl2")
