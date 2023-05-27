@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bksg3opbg0hw7"]
+[gd_scene load_steps=22 format=3 uid="uid://bksg3opbg0hw7"]
 
 [ext_resource type="Texture2D" uid="uid://c30pnaf3btmbn" path="res://Menu/SubMenu/Home/Characters/character_frame.png" id="1_1vqha"]
 [ext_resource type="Script" path="res://Menu/SubMenu/Home/home.gd" id="1_kfcaq"]
@@ -16,32 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://cctkqd5sdjw8j" path="res://Menu/Buttons and Banner/home_new_btn_info1.png" id="17_dvakf"]
 [ext_resource type="Texture2D" uid="uid://b03pvlwqfanwy" path="res://Menu/Buttons and Banner/home_new_btn_box1.png" id="18_222t3"]
 [ext_resource type="Texture2D" uid="uid://gqyo8sogf1pw" path="res://Menu/Buttons and Banner/banner_20180903_discount_282-92.png" id="19_gw8gm"]
-[ext_resource type="Texture2D" uid="uid://tj7fq07uc6vd" path="res://Menu/Launch Icons/home_win_gate.png" id="20_qxcnh"]
 [ext_resource type="Texture2D" uid="uid://dqps0x6h8j7sk" path="res://Menu/Launch Icons/home_win_quest.png" id="21_qqtso"]
-[ext_resource type="Texture2D" uid="uid://mj3uhfmipv6f" path="res://Menu/Launch Icons/home_win_randall.png" id="22_xdo8p"]
 [ext_resource type="Script" path="res://Menu/SubMenu/Home/home_menu.gd" id="23_7pg25"]
-[ext_resource type="Texture2D" uid="uid://cpurh2u53xqrx" path="res://Menu/Launch Icons/home_win_coopraid.png" id="23_k8yr7"]
-[ext_resource type="Texture2D" uid="uid://ciayuqdr56scy" path="res://Menu/Launch Icons/guild_home_icon.png" id="24_31v3y"]
-[ext_resource type="Texture2D" uid="uid://db8xwrjdh4c0p" path="res://Menu/Launch Icons/home_win_arena.png" id="25_sxafc"]
 [ext_resource type="Texture2D" uid="uid://d38vj141texe6" path="res://Menu/Launch Icons/activeIcon.png" id="27_morit"]
 [ext_resource type="Script" path="res://Menu/Launch Icons/iconID.gd" id="28_cvqux"]
 [ext_resource type="Texture2D" uid="uid://d1ebi5j4wftln" path="res://Menu/Launch Icons/inactiveIcon.png" id="29_85bl0"]
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_4vnxq"]
-frames = 6
-pause = true
-speed_scale = 0.5
-frame_0/texture = ExtResource("20_qxcnh")
-frame_1/texture = ExtResource("21_qqtso")
-frame_1/duration = 1.0
-frame_2/texture = ExtResource("22_xdo8p")
-frame_2/duration = 1.0
-frame_3/texture = ExtResource("23_k8yr7")
-frame_3/duration = 1.0
-frame_4/texture = ExtResource("24_31v3y")
-frame_4/duration = 1.0
-frame_5/texture = ExtResource("25_sxafc")
-frame_5/duration = 1.0
 
 [node name="Home" type="Control"]
 layout_mode = 3
@@ -181,11 +160,9 @@ metadata/_edit_group_ = true
 [node name="Char4" type="TextureRect" parent="Character/TextureRect/Char4"]
 z_index = -1
 layout_mode = 0
-offset_left = -5.0
-offset_top = 88.0
-offset_right = 345.0
-offset_bottom = 350.0
-scale = Vector2(0.4, 0.4)
+offset_left = -94.0
+offset_right = 256.0
+offset_bottom = 312.0
 texture = ExtResource("12_gj2e7")
 expand_mode = 1
 
@@ -320,7 +297,7 @@ offset_top = -8.0
 offset_right = 543.0
 offset_bottom = 308.0
 mouse_default_cursor_shape = 2
-texture = SubResource("AnimatedTexture_4vnxq")
+texture = ExtResource("21_qqtso")
 stretch_mode = 3
 script = ExtResource("23_7pg25")
 buttonPath = NodePath("../HBoxContainer")

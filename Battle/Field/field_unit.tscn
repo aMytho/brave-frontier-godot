@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dspsfw6gjdhv5"]
+[gd_scene load_steps=8 format=3 uid="uid://dspsfw6gjdhv5"]
 
 [ext_resource type="Script" path="res://Battle/Field/field_unit.gd" id="1_uyh4s"]
 [ext_resource type="Texture2D" uid="uid://byvq6x8wedfsh" path="res://Battle/UI/battle_target_mark.png" id="2_qsoj3"]
+[ext_resource type="Script" path="res://Battle/Field/unit_sprite.gd" id="2_sb1nl"]
 
 [sub_resource type="Animation" id="Animation_wng0f"]
 resource_name = "Death"
@@ -134,6 +135,16 @@ script = ExtResource("1_uyh4s")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
+script = ExtResource("2_sb1nl")
+
+[node name="Shadow" type="AnimatedSprite2D" parent="Sprite"]
+z_index = -1
+
+[node name="EquipmentContainer" type="Node2D" parent="Sprite"]
+
+[node name="AtkEquipmentContainer" type="Node2D" parent="Sprite"]
+
+[node name="TravelEquipmentContainer" type="Node2D" parent="Sprite"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 libraries = {
@@ -158,5 +169,5 @@ libraries = {
 [node name="Clickable" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jgt8k")
 
-[connection signal="animation_finished" from="Sprite" to="." method="_on_animation_finished"]
-[connection signal="animation_finished" from="Sprite/AnimationPlayer" to="." method="_on_death_animation_finished"]
+[connection signal="AnimationFinished" from="Sprite" to="." method="_on_unit_animation_finished"]
+[connection signal="animation_finished" from="Sprite" to="Sprite" method="_on_animation_finished"]

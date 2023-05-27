@@ -89,9 +89,9 @@ texture_progress_offset = Vector2(22, 8)
 [node name="CurrentProgressSword" type="TextureRect" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 296.0
+offset_left = 496.0
 offset_top = 360.0
-offset_right = 337.0
+offset_right = 537.0
 offset_bottom = 427.0
 texture = ExtResource("8_3hovi")
 

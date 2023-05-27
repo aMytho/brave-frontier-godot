@@ -13,11 +13,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
-
 func _on_gui_input(event: Object):
 	if event.get("double_click") == true:
 		if selectedItem == 5:
@@ -36,8 +31,8 @@ func _on_gui_input(event: Object):
 	elif event.get("pressed") == true:
 		print("Loading sub menu")
 		if selectedItem == 0:
-			print("Loading vortex")
+			print("Loading Quest")
 			get_tree().get_root().get_node("Game/GameContent").loadScene("res://Area/World/mistral.tscn")
 		elif selectedItem == 1:
-			print("Loading Quest")
-			get_tree().get_root().get_node("Game/GameContent").loadScene("res://Menu/SubMenu/vortex.tscn")
+			print("You selected the Vortex, but nothing happened since it doesn't exist!")
+			
