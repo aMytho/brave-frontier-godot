@@ -138,6 +138,7 @@ arena_type = 3
 level = 1
 max_level = 12
 is_dead = false
+number_of_hit = Array[int]([50, 50])
 HP = 1000
 max_HP = 0
 ATK = 490
