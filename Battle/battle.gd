@@ -233,11 +233,10 @@ func get_unit_count():
 
 # When triggered, we would move to the next stage of the level or make the end complete
 func move_to_next_stage():
-	# Check for next stage
+	# Check for next stage, if exists, the transition will load the next one
 	if current_stage < zone.Stage.size():
 		print("Moving to next stage")
 		$Transition.show_transition()
-		load_next_stage(current_stage)
 	else:
 		print("Battle Complete!!!")
 		_when_battle_end()
@@ -250,8 +249,11 @@ func _on_transition_hide():
 
 
 func _on_transition_show():
+	# Load the next stage while the field is hidden
+	load_next_stage(current_stage)
 	# Show the stage in the transition
 	$Transition.update_properties(current_stage)
+	
 	# Wait a few seconds, then return to combat
 	await get_tree().create_timer(3.0).timeout
 	$Transition.hide_transition()
@@ -295,7 +297,8 @@ func when_unit_has_died(place_ID: int, is_ally: bool = false):
 
 func _on_death_animation_finished(_place_id: int, is_friendly: bool, dead_unit):
 	if !is_friendly:
-		# If the player killed a monster, check if the turn is over
+		# If the player killed a monster, check if the turn is over after 1 second
+		await get_tree().create_timer(1.0).timeout
 		check_if_player_turn_complete()
 	# Disconnect the signal
 	dead_unit.disconnect("DeathAnimationFinished", _on_death_animation_finished)
