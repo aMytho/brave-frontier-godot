@@ -139,7 +139,6 @@ func _on_attack_finished():
 	emit_signal("AttackFinished", place_ID)
 	var counter = 0
 	for equipment in idle_equipment:
-		print("DOING SOMETHIGN IMPORTANT")
 		$Sprite/EquipmentContainer.get_child(counter).play(equipment.name)
 		counter = counter + 1
 
