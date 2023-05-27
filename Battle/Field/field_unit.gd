@@ -3,7 +3,7 @@ extends Area2D
 signal AttackFinished(id: int)
 signal TargetSelected(id: int)
 signal DamagingEnemy(actual_unit: int, targeted_unit: int)
-
+signal DeathAnimationFinished(id: int, is_ally: bool)
 
 # Flag to let parent scenes check if a unit is in this slot
 @export var is_unit = false
@@ -44,7 +44,8 @@ func _ready():
 func set_properties(unit: Unit, flip: bool, new_idle_equipment, new_attack_equipment, new_travel_equipment):
 	# Show the correct unit
 	sprite.sprite_frames = unit.sprite_sheet
-	sprite/AnimationPlayer.play("RESET")
+	# Rest any animations from units that previously had this place_id
+	$Sprite/AnimationPlayer.play("RESET")
 	hit_array = unit.number_of_hit
 	# A unit is here!
 	is_unit = true
@@ -162,9 +163,10 @@ func _on_attack_finished():
 
 func _on_unit_animation_finished(anim_name):
 	# Switch to idle if attack is complete
+	# This does NOT include the death animations, as they are handled by the animitationPlayer
 	print(anim_name, " is the anim name")
 	if anim_name == "Attack":
-		# Attack finished, switch to idle animatin
+		# Attack finished, switch to idle animation
 		sprite.play("Idle")
 		# Move away from enemy
 		_on_move_finished(false)
@@ -188,4 +190,5 @@ func _on_input_event(_viewport: Viewport, event: InputEvent, _shape_idx):
 		$Target.visible = true
 		emit_signal("TargetSelected", place_ID)
 
-
+func _on_death_animation_finished(_anim_name):
+	emit_signal("DeathAnimationFinished", place_ID, is_friendly)
