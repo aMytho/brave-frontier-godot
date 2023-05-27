@@ -53,7 +53,7 @@ func _on_player_ready(units):
 	var arg_names = ["units", "zone"]
 	
 	for stage in zone.Stage:
-		var enemies_list : Array[Unit]
+		var enemies_list: Array[Unit] = []
 		for unit in stage.monsters:
 			if null != unit:
 				enemies_list.append(Lookups.get_unit_by_unit_number(unit.unit_number)["unit"])
