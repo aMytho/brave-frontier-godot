@@ -29,6 +29,10 @@ var id: int = 0
 # Used to determine state in a battle
 @export var is_dead:bool = false
 
+@export_category("Hit")
+@export var number_of_hit:Array[int] = [100]
+
+@export_category("Fighting Stats")
 # Current health
 @export var HP: int = 0
 # Max health

@@ -2,6 +2,7 @@ extends Area2D
 
 signal AttackFinished(id: int)
 signal TargetSelected(id: int)
+signal DamagingEnemy(actual_unit: int, targeted_unit: int)
 
 # Flag to let parent scenes check if a unit is in this slot
 @export var is_unit = false
@@ -13,6 +14,12 @@ signal TargetSelected(id: int)
 @export var is_friendly: bool = true
 #Let the game know if the unit is dead or not
 @export var is_dead: bool = false
+# Remember the place ID of the unit being targeted by it's attack
+@export var targeted_place_ID:int = 0
+# Remember the number of unit currently attacking this unit
+@export var time_being_targeted:int = 0
+
+@export var hit_array:Array[int]
 # The sprite for the unit
 @onready var sprite = $Sprite
 # Store the equipment for the unit
@@ -31,13 +38,18 @@ func _ready():
 	# Always find a way back home...
 	initial_position = position
 
-func set_properties(frames, flip: bool, new_idle_equipment, new_attack_equipment, new_travel_equipment):
+
+func set_properties(unit: Unit, flip: bool, new_idle_equipment, new_attack_equipment, new_travel_equipment):
 	# Show the correct unit
-	sprite.sprite_frames = frames
-	
+	sprite.sprite_frames = unit.sprite_sheet
+	hit_array = unit.number_of_hit
 	# A unit is here!
 	is_unit = true
 	is_dead = false
+	var frames = unit.sprite_sheet
+	
+	targeted_place_ID = 0
+	time_being_targeted = 0
 	
 	# Face the correct direction
 	if flip:
@@ -117,7 +129,6 @@ func _on_move_finished(play_atk_animation: bool):
 	# Plays an attack animation or returns home
 	if play_atk_animation:
 		sprite.play("Attack")
-		
 		var counter = 0
 		for equipment in attack_equipment:
 			$Sprite/AtkEquipmentContainer.get_child(counter).play(equipment.name)
@@ -130,6 +141,8 @@ func _on_move_finished(play_atk_animation: bool):
 		for equipment in travel_equipment:
 			$Sprite/TravelEquipmentContainer.get_child(counter).play("Wait")
 			counter = counter + 1
+		for hit in hit_array:
+			emit_signal("DamagingEnemy", place_ID, targeted_place_ID, hit)
 	else:
 		var tween = create_tween()
 		tween.tween_property(self, "position", initial_position, 1.0 * speed)
@@ -152,7 +165,7 @@ func _on_unit_animation_finished(anim_name):
 		_on_move_finished(false)
 
 
-# This method remove the target of the unit (because the user select it again or the unit has died)
+# This method remove the target of the unit (because the user select it again or the unit has died) 
 func remove_target():
 	is_targeted = false
 	$Target.visible = false
