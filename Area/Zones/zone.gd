@@ -32,8 +32,33 @@ func _on_beginning_complete(dialogue:Node = null):
 	#Play music
 	battle.ready.connect(fade_control.bind(1, zone.music))
 	add_child(battle)
-
 	
+	# Listen for ending
+	battle.BattleFinished.connect(_on_battle_complete)
+
+
+func _on_battle_complete(is_victory: bool):
+	print(is_victory)
+	print(get_children())
+	get_node("Battle").queue_free()
+	if zone.ending_cutscene:
+		print("There is an ending cutscene")
+		var dialogue = ResourceLoader.load("res://Area/Dialogue/dialogue.tscn").instantiate()
+		add_child(dialogue)
+		dialogue.connect("Complete", _on_end_complete)
+	else:
+		print("Showing recap view")
+		# To-do: Move to content switcher?
+		var recap = ResourceLoader.load("res://Battle/Recap/recap.tscn").instantiate()
+		recap.zone = zone
+		recap.dungeon_name = "Stylish Placeholder"
+		add_child(recap)
+
+
+func _on_end_complete():
+	print("Dialogue is over")
+
+
 func fade_control(action: int, music_file  = null):
 	var tween = create_tween()
 	if action == 0:

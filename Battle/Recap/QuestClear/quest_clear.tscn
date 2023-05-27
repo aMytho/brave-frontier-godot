@@ -1,0 +1,130 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbfpnca2jhrrg"]
+
+[ext_resource type="Script" path="res://Battle/Recap/QuestClear/quest_clear.gd" id="1_j3vpv"]
+[ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="2_eg34b"]
+[ext_resource type="Texture2D" uid="uid://dxtla1aum7vt0" path="res://Battle/Recap/QuestClear/zell_thum.png" id="3_dtn5c"]
+[ext_resource type="Texture2D" uid="uid://bnu8s5xbwdddg" path="res://Battle/Recap/QuestClear/karma_thum.png" id="4_0u7tt"]
+[ext_resource type="Texture2D" uid="uid://ctxkmxvv54cod" path="res://Menu/SubMenu/Unit/Display/dl_bar_frame.png" id="5_hh2wa"]
+[ext_resource type="Texture2D" uid="uid://dk328fi2aetu" path="res://Menu/SubMenu/Unit/Display/dl_bar.png" id="6_vw7yg"]
+[ext_resource type="PackedScene" uid="uid://b72w1jubrvjht" path="res://Common/UI/ContentSwitcher/content_switcher.tscn" id="7_nb7j6"]
+
+[node name="QuestClear" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j3vpv")
+
+[node name="Zel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 27.0
+offset_right = 358.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("2_eg34b")
+theme_override_font_sizes/font_size = 35
+text = "Zel Obtained"
+
+[node name="ZelAmount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 27.0
+offset_right = 556.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("2_eg34b")
+theme_override_font_sizes/font_size = 35
+text = "777"
+
+[node name="Karma" type="Label" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 136.0
+offset_right = 412.0
+offset_bottom = 179.0
+theme_override_fonts/font = ExtResource("2_eg34b")
+theme_override_font_sizes/font_size = 35
+text = "Karma Obtained"
+
+[node name="KarmaAmount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 136.0
+offset_right = 553.0
+offset_bottom = 179.0
+theme_override_fonts/font = ExtResource("2_eg34b")
+theme_override_font_sizes/font_size = 35
+text = "777"
+
+[node name="XP" type="Label" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 216.0
+offset_right = 350.0
+offset_bottom = 259.0
+theme_override_fonts/font = ExtResource("2_eg34b")
+theme_override_font_sizes/font_size = 35
+text = "XP Obtained"
+
+[node name="NextLevel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 304.0
+offset_right = 368.0
+offset_bottom = 347.0
+theme_override_fonts/font = ExtResource("2_eg34b")
+theme_override_font_sizes/font_size = 35
+text = "XP to Next Level"
+
+[node name="XXCurrentAmount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 216.0
+offset_right = 545.0
+offset_bottom = 259.0
+theme_override_fonts/font = ExtResource("2_eg34b")
+theme_override_font_sizes/font_size = 35
+text = "91"
+
+[node name="XPNextAmount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 304.0
+offset_right = 545.0
+offset_bottom = 347.0
+theme_override_fonts/font = ExtResource("2_eg34b")
+theme_override_font_sizes/font_size = 35
+text = "00"
+
+[node name="ZelImg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 142.0
+offset_bottom = 102.0
+texture = ExtResource("3_dtn5c")
+
+[node name="KarmaImg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 96.0
+offset_right = 142.0
+offset_bottom = 198.0
+texture = ExtResource("4_0u7tt")
+
+[node name="XPBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 272.0
+offset_right = 496.0
+offset_bottom = 297.0
+max_value = 1000.0
+allow_greater = true
+texture_under = ExtResource("5_hh2wa")
+texture_progress = ExtResource("6_vw7yg")
+texture_progress_offset = Vector2(5, 0)
+
+[node name="content_switcher" parent="." instance=ExtResource("7_nb7j6")]
+layout_mode = 1
+offset_top = 376.0
+offset_bottom = 376.0

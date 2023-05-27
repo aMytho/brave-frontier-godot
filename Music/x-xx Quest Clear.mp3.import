@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bofqba4py08vl"
+path="res://.godot/imported/x-xx Quest Clear.mp3-3bc868ad10fb929f6baf7339ac0205a8.mp3str"
+
+[deps]
+
+source_file="res://Music/x-xx Quest Clear.mp3"
+dest_files=["res://.godot/imported/x-xx Quest Clear.mp3-3bc868ad10fb929f6baf7339ac0205a8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
