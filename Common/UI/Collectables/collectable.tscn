@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwbvsfv8xtyxb"]
+
+[ext_resource type="Texture2D" uid="uid://b1gnaidvvtsfe" path="res://Common/UI/Collectables/secret.png" id="1_f80nk"]
+[ext_resource type="Script" path="res://Common/UI/Collectables/collectable.gd" id="2_5q5ru"]
+[ext_resource type="Texture2D" uid="uid://de3ox3a2b08ih" path="res://Items/Frames/item_frame_bg.png" id="3_654db"]
+[ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="4_bxwtv"]
+
+[node name="collectable" type="Control"]
+custom_minimum_size = Vector2(102, 102)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 102.0
+offset_bottom = 102.0
+script = ExtResource("2_5q5ru")
+
+[node name="Frame" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_f80nk")
+script = ExtResource("2_5q5ru")
+
+[node name="Item" type="TextureRect" parent="Frame"]
+z_index = 1
+layout_mode = 0
+offset_right = 98.0
+offset_bottom = 98.0
+
+[node name="Amount" type="Label" parent="Frame"]
+visible = false
+z_index = 3
+layout_mode = 0
+offset_left = 40.0
+offset_top = 5.0
+offset_right = 80.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_bxwtv")
+theme_override_font_sizes/font_size = 23
+text = "x7"
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 102.0
+offset_bottom = 102.0
+texture = ExtResource("3_654db")
