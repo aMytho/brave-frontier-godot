@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd8h4m4e8xssc"]
+
+[ext_resource type="Texture2D" uid="uid://75hihhmym1j8" path="res://Battle/Recap/Rewards/mission_result_get_cap_frame.png" id="1_aalc6"]
+[ext_resource type="Script" path="res://Battle/Recap/Rewards/Units/units.gd" id="1_fok3q"]
+[ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="2_hh36c"]
+
+[node name="units" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fok3q")
+
+[node name="Rewardheader" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_aalc6")
+
+[node name="Label" type="Label" parent="Rewardheader"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 219.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("2_hh36c")
+theme_override_font_sizes/font_size = 30
+text = "Units Acquired"
+
+[node name="UnitsContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 72.0
+offset_right = 608.0
+offset_bottom = 384.0
+columns = 5
