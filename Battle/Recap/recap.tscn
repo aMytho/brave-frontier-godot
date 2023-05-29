@@ -39,10 +39,10 @@ texture = ExtResource("3_6g6fo")
 
 [node name="Label" type="Label" parent="RecapHeader"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 22.0
-offset_right = 338.0
-offset_bottom = 65.0
+offset_left = 7.0
+offset_top = 25.0
+offset_right = 337.0
+offset_bottom = 68.0
 theme_override_fonts/font = ExtResource("4_vxi52")
 theme_override_font_sizes/font_size = 35
 text = "Quest Clear Reward"
@@ -76,4 +76,5 @@ offset_bottom = 400.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_btsbi")
+volume_db = -15.928
 autoplay = true

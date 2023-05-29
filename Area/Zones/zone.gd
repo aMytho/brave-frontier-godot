@@ -38,8 +38,7 @@ func _on_beginning_complete(dialogue:Node = null):
 
 
 func _on_battle_complete(is_victory: bool):
-	print(is_victory)
-	print(get_children())
+	print("Victory: ", is_victory)
 	get_node("Battle").queue_free()
 	if zone.ending_cutscene:
 		print("There is an ending cutscene")
@@ -53,11 +52,23 @@ func _on_battle_complete(is_victory: bool):
 		recap.zone = zone
 		recap.dungeon_name = "Stylish Placeholder"
 		add_child(recap)
+		recap.connect("RecapComplete", _on_recap_complete)
 
 
 func _on_end_complete():
 	print("Dialogue is over")
+	print("Showing recap view")
+	# To-do: Move to content switcher?
+	var recap = ResourceLoader.load("res://Battle/Recap/recap.tscn").instantiate()
+	recap.zone = zone
+	recap.dungeon_name = "Stylish Placeholder"
+	add_child(recap)
+	recap.connect("RecapComplete", _on_recap_complete)
 
+func _on_recap_complete():
+	print("Recap is complete")
+	# Load the home page
+	get_tree().get_root().get_node("Game/GameContent").loadScene("res://Menu/main_menu.tscn", true)
 
 func fade_control(action: int, music_file  = null):
 	var tween = create_tween()

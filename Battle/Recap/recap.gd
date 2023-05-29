@@ -1,5 +1,7 @@
 extends Control
 
+signal RecapComplete
+
 @export var zone: Zone = null
 @export var dungeon_name: String = ""
 @export var rewards: Array = []
@@ -33,7 +35,6 @@ func _on_rewards_complete():
 	$content_switcher.get_scene().connect("MaterialsComplete", _on_materials_complete)
 
 func _on_materials_complete():
-	print("Unit time!")
 	var arg_names = ["units"]
 	var arg_vals = [[
 		Lookups.get_unit_by_unit_number(5), Lookups.get_unit_by_unit_number(49), Lookups.get_unit_by_unit_number(53)
@@ -42,4 +43,5 @@ func _on_materials_complete():
 	$content_switcher.get_scene().connect("UnitsComplete", _on_units_complete)
 
 func _on_units_complete():
-	print("Done?")
+	print("Recap Complete!")
+	emit_signal("RecapComplete")
