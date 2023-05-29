@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://busuubsmvmhmy"]
+
+[ext_resource type="Texture2D" uid="uid://tmfbwx7xlmpa" path="res://Units/Res/53/AtlasFrame/I1.tres" id="1_qs5cr"]
+[ext_resource type="Texture2D" uid="uid://c25rjgdptonmg" path="res://Units/Res/53/AtlasFrame/A1.tres" id="2_oi6ad"]
+[ext_resource type="Texture2D" uid="uid://cmcg62ijgaqkf" path="res://Units/Res/53/AtlasFrame/A2.tres" id="3_vqrcs"]
+[ext_resource type="Texture2D" uid="uid://ct8p7xr3r701m" path="res://Units/Res/53/AtlasFrame/A3.tres" id="4_evu26"]
+[ext_resource type="Texture2D" uid="uid://difo3nkrwiwcm" path="res://Units/Res/53/AtlasFrame/I2.tres" id="5_33odm"]
+[ext_resource type="Texture2D" uid="uid://c10bg8yog8qrr" path="res://Units/Res/53/AtlasFrame/I3.tres" id="6_7wcs3"]
+[ext_resource type="Texture2D" uid="uid://dykhuoquof2jm" path="res://Units/Res/53/AtlasFrame/S1.tres" id="7_28jfq"]
+[ext_resource type="Texture2D" uid="uid://p24i8ps4sbgn" path="res://Units/Res/53/AtlasFrame/T1.tres" id="8_lhb3b"]
+[ext_resource type="Texture2D" uid="uid://byuhriq6mhov6" path="res://Units/Res/53/AtlasFrame/T2.tres" id="9_vceow"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qs5cr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_oi6ad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vqrcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_evu26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_oi6ad")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qs5cr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_33odm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7wcs3")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_28jfq")
+}],
+"loop": true,
+"name": &"Shadow",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_lhb3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vceow")
+}],
+"loop": true,
+"name": &"Travel",
+"speed": 2.0
+}]

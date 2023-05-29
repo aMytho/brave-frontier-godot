@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://idi64w045uh1"]
+
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_1svts"]
+[ext_resource type="Texture2D" uid="uid://coph40k8ite4g" path="res://Units/Res/57/unit_ills_battle_20040.png" id="1_3m3eg"]
+[ext_resource type="Texture2D" uid="uid://n4dtejn7xbye" path="res://Units/Res/57/unit_ills_full_20040.png" id="2_uqayp"]
+[ext_resource type="Texture2D" uid="uid://bbexeyepciryo" path="res://Units/Res/57/unit_ills_thum_20040.png" id="4_qfgua"]
+
+[resource]
+script = ExtResource("1_1svts")
+unit_number = 57
+data_id = 20040
+name = "Priest Merith"
+element = "Water"
+gender = "Female"
+rarity = 1
+cost = 2
+arena_type = 7
+level = 1
+max_level = 15
+is_dead = false
+number_of_hit = Array[int]([100])
+HP = 1050
+max_HP = 1050
+ATK = 250
+DEF = 350
+REC = 430
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_qfgua")
+battle_thumbnail = ExtResource("1_3m3eg")
+full_sprite = ExtResource("2_uqayp")
+char_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+atk_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+travel_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+unit_lore = ""
