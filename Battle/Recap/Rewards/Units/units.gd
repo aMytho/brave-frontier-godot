@@ -9,9 +9,8 @@ signal UnitsComplete
 func _ready():
 	# Load the blank texture
 	for unit in units:
-		print(unit)
 		var new_unit = ResourceLoader.load("res://Common/UI/Collectables/collectable.tscn").instantiate()
-		new_unit.set_properties(unit.unit.name, unit.unit.thumbnail, 1)
+		new_unit.set_properties(unit.unit.name, unit.unit.thumbnail, 1, false)
 		$UnitsContainer.add_child(new_unit)
 	await get_tree().create_timer(2.0).timeout
 	show_units()

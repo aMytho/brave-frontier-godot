@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbfpnca2jhrrg"]
+[gd_scene load_steps=9 format=3 uid="uid://cbfpnca2jhrrg"]
 
 [ext_resource type="Script" path="res://Battle/Recap/QuestClear/quest_clear.gd" id="1_j3vpv"]
 [ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="2_eg34b"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ctxkmxvv54cod" path="res://Menu/SubMenu/Unit/Display/dl_bar_frame.png" id="5_hh2wa"]
 [ext_resource type="Texture2D" uid="uid://dk328fi2aetu" path="res://Menu/SubMenu/Unit/Display/dl_bar.png" id="6_vw7yg"]
 [ext_resource type="PackedScene" uid="uid://b72w1jubrvjht" path="res://Common/UI/ContentSwitcher/content_switcher.tscn" id="7_nb7j6"]
+[ext_resource type="PackedScene" uid="uid://edoy6mdie6n2" path="res://Battle/Recap/label_animator.tscn" id="8_0qrdc"]
 
 [node name="QuestClear" type="Control"]
 layout_mode = 3
@@ -19,30 +20,31 @@ script = ExtResource("1_j3vpv")
 
 [node name="Zel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 148.0
-offset_top = 27.0
-offset_right = 358.0
-offset_bottom = 70.0
+offset_left = 144.0
+offset_top = 40.0
+offset_right = 354.0
+offset_bottom = 83.0
 theme_override_fonts/font = ExtResource("2_eg34b")
 theme_override_font_sizes/font_size = 35
 text = "Zel Obtained"
 
 [node name="ZelAmount" type="Label" parent="."]
 layout_mode = 0
-offset_left = 499.0
-offset_top = 27.0
-offset_right = 556.0
-offset_bottom = 70.0
+offset_left = 496.0
+offset_top = 40.0
+offset_right = 553.0
+offset_bottom = 83.0
 theme_override_fonts/font = ExtResource("2_eg34b")
 theme_override_font_sizes/font_size = 35
-text = "777"
+text = "00"
+horizontal_alignment = 2
 
 [node name="Karma" type="Label" parent="."]
 layout_mode = 0
 offset_left = 144.0
-offset_top = 136.0
+offset_top = 120.0
 offset_right = 412.0
-offset_bottom = 179.0
+offset_bottom = 163.0
 theme_override_fonts/font = ExtResource("2_eg34b")
 theme_override_font_sizes/font_size = 35
 text = "Karma Obtained"
@@ -50,12 +52,13 @@ text = "Karma Obtained"
 [node name="KarmaAmount" type="Label" parent="."]
 layout_mode = 0
 offset_left = 496.0
-offset_top = 136.0
+offset_top = 120.0
 offset_right = 553.0
-offset_bottom = 179.0
+offset_bottom = 163.0
 theme_override_fonts/font = ExtResource("2_eg34b")
 theme_override_font_sizes/font_size = 35
-text = "777"
+text = "00"
+horizontal_alignment = 2
 
 [node name="XP" type="Label" parent="."]
 layout_mode = 0
@@ -77,39 +80,42 @@ theme_override_fonts/font = ExtResource("2_eg34b")
 theme_override_font_sizes/font_size = 35
 text = "XP to Next Level"
 
-[node name="XXCurrentAmount" type="Label" parent="."]
+[node name="XPCurrentAmount" type="Label" parent="."]
 layout_mode = 0
-offset_left = 505.0
+offset_left = 512.0
 offset_top = 216.0
-offset_right = 545.0
+offset_right = 552.0
 offset_bottom = 259.0
 theme_override_fonts/font = ExtResource("2_eg34b")
 theme_override_font_sizes/font_size = 35
-text = "91"
+text = "00"
+horizontal_alignment = 2
 
 [node name="XPNextAmount" type="Label" parent="."]
 layout_mode = 0
-offset_left = 505.0
+offset_left = 512.0
 offset_top = 304.0
-offset_right = 545.0
+offset_right = 552.0
 offset_bottom = 347.0
 theme_override_fonts/font = ExtResource("2_eg34b")
 theme_override_font_sizes/font_size = 35
 text = "00"
+horizontal_alignment = 2
 
 [node name="ZelImg" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 40.0
+offset_top = 8.0
 offset_right = 142.0
-offset_bottom = 102.0
+offset_bottom = 110.0
 texture = ExtResource("3_dtn5c")
 
 [node name="KarmaImg" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 40.0
-offset_top = 96.0
+offset_top = 88.0
 offset_right = 142.0
-offset_bottom = 198.0
+offset_bottom = 190.0
 texture = ExtResource("4_0u7tt")
 
 [node name="XPBar" type="TextureProgressBar" parent="."]
@@ -128,3 +134,7 @@ texture_progress_offset = Vector2(5, 0)
 layout_mode = 1
 offset_top = 376.0
 offset_bottom = 376.0
+
+[node name="LabelAnimator" parent="." instance=ExtResource("8_0qrdc")]
+
+[node name="LabelAnimator2" parent="." instance=ExtResource("8_0qrdc")]

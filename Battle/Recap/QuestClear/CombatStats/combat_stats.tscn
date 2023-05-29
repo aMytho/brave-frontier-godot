@@ -82,7 +82,7 @@ theme_override_fonts/font = ExtResource("1_4mn0b")
 theme_override_font_sizes/font_size = 45
 text = "HC Drop Count"
 
-[node name="Label8" type="Label" parent="."]
+[node name="HCDropCountAmount" type="Label" parent="."]
 layout_mode = 0
 offset_left = 536.0
 offset_top = 184.0

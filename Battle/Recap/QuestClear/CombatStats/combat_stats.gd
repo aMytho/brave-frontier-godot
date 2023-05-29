@@ -11,4 +11,4 @@ func _ready():
 	$SparkAmount.text = str(sparks)
 	$CritAmount.text = str(crits)
 	$BCDropAmount.text = str(bc)
-	$HCDropCount.text = str(hc)
+	$HCDropCountAmount.text = str(hc)
