@@ -23,26 +23,26 @@ func animate_karma():
 	$LabelAnimator.set_properties(0, karma, $KarmaAmount)
 	var karma_twen = create_tween()
 	karma_twen.tween_property($LabelAnimator, "current_val", karma, 2.0)
-	karma_twen.tween_callback(animate_bar)
+	karma_twen.tween_callback(animate_bar.bind(xp))
 
-func animate_bar():
+func animate_bar(exp_amount: int):
 	# Wait a few seconds
 	await get_tree().create_timer(1.5).timeout
 	# Animate the XP obtained label
-	$LabelAnimator.set_properties(0, xp, $XPCurrentAmount)
+	$LabelAnimator.set_properties(0, exp_amount, $XPCurrentAmount)
 	var tween_obtained = create_tween()
-	tween_obtained.tween_property($LabelAnimator, "current_val", xp, 2.0)
+	tween_obtained.tween_property($LabelAnimator, "current_val", exp_amount, 2.0)
 	
 	
 	# Animate the xp to next lvl label
 	
-	$LabelAnimator2.set_properties(xp, 0, $XPNextAmount)
+	$LabelAnimator2.set_properties(exp_amount, 0, $XPNextAmount)
 	var tween_next = create_tween()
 	tween_next.tween_property($LabelAnimator2, "current_val", 0, 2.0)
 	
 	# Animate the exp bar
 	var tween = create_tween()
-	tween.tween_property($XPBar, "value", xp, 2.0)
+	tween.tween_property($XPBar, "value", exp_amount, 2.0)
 	tween.tween_callback(_on_XP_awarded)
 	# To-do: Check for level up, max level, etc
 
