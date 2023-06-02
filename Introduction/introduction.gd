@@ -65,7 +65,7 @@ func _on_char_chosen(character: Unit):
 	
 	#Save the changes
 	# Add player, get unique ID
-	Database.query("INSERT INTO player_state ( arena_orbs, karma, zel, gems, energy, max_exp, current_exp, level, player_name ) VALUES ( 3, 100, 100, 5, 5, 1, 0, 1, '%s' );" % player_name)
+	Database.query("INSERT INTO player_state ( arena_orbs, karma, zel, gems, energy, current_exp, level, player_name ) VALUES ( 3, 100, 100, 5, 5, 0, 1, '%s' );" % player_name)
 	player_id = Database.query("SELECT id from player_state WHERE player_name == '%s'" % player_name)[0].id
 	
 	# Add starter units, get unit id
