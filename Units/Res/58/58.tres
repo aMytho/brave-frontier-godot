@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://bl2fguetfx0bc"]
+
+[ext_resource type="Texture2D" uid="uid://cc3fpyh8vimcq" path="res://Units/Res/58/unit_ills_battle_20041.png" id="1_5mcvw"]
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_vry4j"]
+[ext_resource type="Texture2D" uid="uid://lttrjkaqxype" path="res://Units/Res/58/unit_ills_full_20041.png" id="2_1wsx2"]
+[ext_resource type="Texture2D" uid="uid://cavhsx5n643el" path="res://Units/Res/58/unit_ills_thum_20041.png" id="4_w24va"]
+
+[resource]
+script = ExtResource("1_vry4j")
+unit_number = 58
+data_id = 20041
+name = "Healer Merith"
+element = "Water"
+gender = "Female"
+rarity = 2
+cost = 4
+arena_type = 7
+level = 1
+max_level = 30
+is_dead = false
+number_of_hit = Array[int]([100])
+HP = 1323
+max_HP = 1323
+ATK = 292
+DEF = 472
+REC = 541
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_w24va")
+battle_thumbnail = ExtResource("1_5mcvw")
+full_sprite = ExtResource("2_1wsx2")
+char_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+atk_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+travel_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+unit_lore = ""

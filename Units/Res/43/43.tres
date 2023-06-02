@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://memknqi5f174" path="res://Units/Res/43/unit_ills_thum_10030.png" id="4_x815e"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_mlrel")
 unit_number = 43
 data_id = 10030
@@ -19,6 +20,7 @@ arena_type = 2
 level = 1
 max_level = 10
 is_dead = false
+number_of_hit = Array[int]([100])
 HP = 830
 max_HP = 0
 ATK = 320
@@ -29,4 +31,7 @@ thumbnail = ExtResource("4_x815e")
 battle_thumbnail = ExtResource("1_suyf5")
 full_sprite = ExtResource("2_b6ddt")
 sprite_sheet = ExtResource("4_vn78b")
+char_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+atk_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+travel_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
 unit_lore = "Allegedly born from lava, this liquid-type demon radiates heat from its body. The lowest ranked of the demons, it is said to be the perfect sparring partner for new summoners. It prefers fiery places, but lacks a specific habitat. It causes fire when it appears, troubling those who come across it. Many Summoners choose it due to its cute appearance."

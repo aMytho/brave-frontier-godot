@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=6 format=3 uid="uid://dws75vsakw83d"]
+
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_ervtl"]
+[ext_resource type="Texture2D" uid="uid://b6nryne56ulcd" path="res://Units/Res/48/unit_ills_battle_30031.png" id="1_ivain"]
+[ext_resource type="Texture2D" uid="uid://8c57ad72wni7" path="res://Units/Res/48/unit_ills_full_30031.png" id="2_j71dj"]
+[ext_resource type="SpriteFrames" uid="uid://bcpyyk2kyq8yj" path="res://Units/Res/48/unit_sp_30031.tres" id="4_8v1ve"]
+[ext_resource type="Texture2D" uid="uid://f5s7422nfcs6" path="res://Units/Res/48/unit_ills_thum_30031.png" id="4_ks62t"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_ervtl")
+unit_number = 48
+data_id = 30031
+name = "King Mossy"
+element = "Earth"
+gender = "Genderless"
+rarity = 2
+cost = 3
+arena_type = 2
+level = 1
+max_level = 30
+is_dead = false
+number_of_hit = Array[int]([100])
+HP = 1300
+max_HP = 1300
+ATK = 300
+DEF = 450
+REC = 260
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_ks62t")
+battle_thumbnail = ExtResource("1_ivain")
+full_sprite = ExtResource("2_j71dj")
+sprite_sheet = ExtResource("4_8v1ve")
+char_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+atk_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+travel_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+unit_lore = ""

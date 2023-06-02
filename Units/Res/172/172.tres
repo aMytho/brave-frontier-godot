@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://cpfmkhe1wwm0o"]
+
+[ext_resource type="Texture2D" uid="uid://dtohy4ywmsht1" path="res://Units/Res/172/unit_ills_battle_20130.png" id="1_dc8b5"]
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_j75sw"]
+[ext_resource type="Texture2D" uid="uid://d2fcg8rpvb3ht" path="res://Units/Res/172/unit_ills_full_20130.png" id="2_yefse"]
+[ext_resource type="Texture2D" uid="uid://cj3i4k2lmcnvb" path="res://Units/Res/172/unit_ills_thum_20130.png" id="4_6x61g"]
+
+[resource]
+script = ExtResource("1_j75sw")
+unit_number = 172
+data_id = 20130
+name = "Water Nymph"
+element = "Water"
+gender = "Genderless"
+rarity = 1
+cost = 2
+arena_type = 3
+level = 1
+max_level = 1
+is_dead = false
+number_of_hit = Array[int]([100])
+HP = 1100
+max_HP = 1100
+ATK = 300
+DEF = 300
+REC = 300
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_6x61g")
+battle_thumbnail = ExtResource("1_dc8b5")
+full_sprite = ExtResource("2_yefse")
+char_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+atk_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+travel_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+unit_lore = ""

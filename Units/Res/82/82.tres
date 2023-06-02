@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://otg5hfgg0dqk"]
+
+[ext_resource type="Texture2D" uid="uid://vuk0a17xa7dx" path="res://Units/Res/82/unit_ills_battle_20062.png" id="1_ln6pj"]
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_qq1t6"]
+[ext_resource type="Texture2D" uid="uid://0c2vqqwm8tjn" path="res://Units/Res/82/unit_ills_full_20062.png" id="2_3dlee"]
+[ext_resource type="Texture2D" uid="uid://mjgqelivcoh6" path="res://Units/Res/82/unit_ills_thum_20062.png" id="4_d6jo3"]
+
+[resource]
+script = ExtResource("1_qq1t6")
+unit_number = 82
+data_id = 20062
+name = "Plunderer Verica"
+element = "Water"
+gender = "Male"
+rarity = 3
+cost = 6
+arena_type = 4
+level = 1
+max_level = 40
+is_dead = false
+number_of_hit = Array[int]([100])
+HP = 2035
+max_HP = 2035
+ATK = 675
+DEF = 479
+REC = 270
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_d6jo3")
+battle_thumbnail = ExtResource("1_ln6pj")
+full_sprite = ExtResource("2_3dlee")
+char_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+atk_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+travel_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+unit_lore = ""

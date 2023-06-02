@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://dqwe2imwbj5ll"]
+[gd_resource type="Resource" script_class="Unit" load_steps=6 format=3 uid="uid://dqwe2imwbj5ll"]
 
 [ext_resource type="Texture2D" uid="uid://bbgt1ag16sy33" path="res://Units/Res/67/unit_ills_battle_10050.png" id="1_fthtj"]
 [ext_resource type="Script" path="res://Units/unit_base.gd" id="1_t0xen"]
 [ext_resource type="Texture2D" uid="uid://dijahs1j8wov6" path="res://Units/Res/67/unit_ills_full_10050.png" id="2_sebt0"]
+[ext_resource type="SpriteFrames" uid="uid://21qw8c5j6rdq" path="res://Units/Res/67/unit_sp_10050.tres" id="4_btttm"]
 [ext_resource type="Texture2D" uid="uid://bhgpk4kwc4j25" path="res://Units/Res/67/unit_ills_thum_10050.png" id="4_nm7c1"]
 
 [resource]
@@ -17,7 +18,10 @@ cost = 2
 arena_type = 4
 level = 1
 max_level = 12
+is_dead = false
+number_of_hit = Array[int]([100])
 HP = 1000
+max_HP = 0
 ATK = 450
 DEF = 250
 REC = 100
@@ -25,4 +29,8 @@ skills = Array[Resource]([])
 thumbnail = ExtResource("4_nm7c1")
 battle_thumbnail = ExtResource("1_fthtj")
 full_sprite = ExtResource("2_sebt0")
+sprite_sheet = ExtResource("4_btttm")
+char_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+atk_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+travel_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
 unit_lore = "Goblins are said to be fairies who became hideous demons after being possessed by evil spirits. The mischievous nature of their fairy hearts lead them to cause trouble for humans. Although individually weak, their pack nature, high reproduction ability, and knowledge of weapons allow them to continually trouble folks all over the world."
