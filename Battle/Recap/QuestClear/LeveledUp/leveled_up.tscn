@@ -1,0 +1,110 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg2s66fun1qv5"]
+
+[ext_resource type="Script" path="res://Battle/Recap/QuestClear/LeveledUp/leveled_up.gd" id="1_xa1mt"]
+[ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="2_e8ij1"]
+
+[node name="leveled_up" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xa1mt")
+
+[node name="Lv" type="Label" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 72.0
+offset_right = 249.0
+offset_bottom = 103.0
+theme_override_fonts/font = ExtResource("2_e8ij1")
+theme_override_font_sizes/font_size = 24
+text = "You reached Lv"
+
+[node name="LvAmount" type="Label" parent="Lv"]
+layout_mode = 0
+offset_left = 184.0
+offset_right = 224.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.0941176, 0.592157, 0.788235, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_e8ij1")
+theme_override_font_sizes/font_size = 24
+text = "7"
+
+[node name="BenefitsContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 112.0
+offset_right = 320.0
+offset_bottom = 208.0
+
+[node name="Energy" type="Label" parent="BenefitsContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_e8ij1")
+theme_override_font_sizes/font_size = 22
+text = "Max friends +"
+
+[node name="EnergyAmount" type="Label" parent="BenefitsContainer/Energy"]
+layout_mode = 0
+offset_left = 144.0
+offset_right = 184.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.137255, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_e8ij1")
+theme_override_font_sizes/font_size = 22
+text = "1"
+
+[node name="Cost" type="Label" parent="BenefitsContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_e8ij1")
+theme_override_font_sizes/font_size = 22
+text = "Cost +"
+
+[node name="CostAmount" type="Label" parent="BenefitsContainer/Cost"]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 120.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.137255, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_e8ij1")
+theme_override_font_sizes/font_size = 22
+text = "1"
+
+[node name="Friend" type="Label" parent="BenefitsContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_e8ij1")
+theme_override_font_sizes/font_size = 22
+text = "Friend Capacity +"
+
+[node name="FriendAmount" type="Label" parent="BenefitsContainer/Friend"]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 232.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.137255, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_e8ij1")
+theme_override_font_sizes/font_size = 22
+text = "1"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 240.0
+offset_right = 402.0
+offset_bottom = 268.0
+theme_override_fonts/font = ExtResource("2_e8ij1")
+theme_override_font_sizes/font_size = 22
+text = "Energy has been fully restored."
