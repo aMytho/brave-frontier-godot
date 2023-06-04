@@ -73,3 +73,6 @@ func add_exp(new_exp: float):
 			# We can add the overflow without leveling again
 			self.current_exp = overflow
 			Database.query("UPDATE player_state SET current_exp = %s"% [self.current_exp])
+
+func get_level_info(new_level: int):
+	return Database.query("SELECT * from player_level where id = %s" % new_level)[0]
