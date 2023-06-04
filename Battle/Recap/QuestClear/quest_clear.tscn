@@ -18,7 +18,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j3vpv")
 
-[node name="Zel" type="Label" parent="."]
+[node name="ZelContainer" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1272.0
+offset_right = 1312.0
+offset_bottom = 40.0
+
+[node name="Zel" type="Label" parent="ZelContainer"]
 layout_mode = 0
 offset_left = 144.0
 offset_top = 40.0
@@ -28,7 +34,7 @@ theme_override_fonts/font = ExtResource("2_eg34b")
 theme_override_font_sizes/font_size = 35
 text = "Zel Obtained"
 
-[node name="ZelAmount" type="Label" parent="."]
+[node name="ZelAmount" type="Label" parent="ZelContainer"]
 layout_mode = 0
 offset_left = 496.0
 offset_top = 40.0
@@ -39,7 +45,21 @@ theme_override_font_sizes/font_size = 35
 text = "00"
 horizontal_alignment = 2
 
-[node name="Karma" type="Label" parent="."]
+[node name="ZelImg" type="TextureRect" parent="ZelContainer"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 8.0
+offset_right = 142.0
+offset_bottom = 110.0
+texture = ExtResource("3_dtn5c")
+
+[node name="KarmaContainer" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1272.0
+offset_right = 1312.0
+offset_bottom = 40.0
+
+[node name="Karma" type="Label" parent="KarmaContainer"]
 layout_mode = 0
 offset_left = 144.0
 offset_top = 120.0
@@ -49,7 +69,7 @@ theme_override_fonts/font = ExtResource("2_eg34b")
 theme_override_font_sizes/font_size = 35
 text = "Karma Obtained"
 
-[node name="KarmaAmount" type="Label" parent="."]
+[node name="KarmaAmount" type="Label" parent="KarmaContainer"]
 layout_mode = 0
 offset_left = 496.0
 offset_top = 120.0
@@ -60,7 +80,21 @@ theme_override_font_sizes/font_size = 35
 text = "00"
 horizontal_alignment = 2
 
-[node name="XP" type="Label" parent="."]
+[node name="KarmaImg" type="TextureRect" parent="KarmaContainer"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 88.0
+offset_right = 142.0
+offset_bottom = 190.0
+texture = ExtResource("4_0u7tt")
+
+[node name="XPContainer" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1272.0
+offset_right = 1312.0
+offset_bottom = 40.0
+
+[node name="XP" type="Label" parent="XPContainer"]
 layout_mode = 0
 offset_left = 144.0
 offset_top = 216.0
@@ -70,7 +104,7 @@ theme_override_fonts/font = ExtResource("2_eg34b")
 theme_override_font_sizes/font_size = 35
 text = "XP Obtained"
 
-[node name="NextLevel" type="Label" parent="."]
+[node name="NextLevel" type="Label" parent="XPContainer"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 304.0
@@ -80,7 +114,7 @@ theme_override_fonts/font = ExtResource("2_eg34b")
 theme_override_font_sizes/font_size = 35
 text = "XP to Next Level"
 
-[node name="XPCurrentAmount" type="Label" parent="."]
+[node name="XPCurrentAmount" type="Label" parent="XPContainer"]
 layout_mode = 0
 offset_left = 512.0
 offset_top = 216.0
@@ -91,7 +125,7 @@ theme_override_font_sizes/font_size = 35
 text = "00"
 horizontal_alignment = 2
 
-[node name="XPNextAmount" type="Label" parent="."]
+[node name="XPNextAmount" type="Label" parent="XPContainer"]
 layout_mode = 0
 offset_left = 512.0
 offset_top = 304.0
@@ -102,30 +136,13 @@ theme_override_font_sizes/font_size = 35
 text = "00"
 horizontal_alignment = 2
 
-[node name="ZelImg" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 8.0
-offset_right = 142.0
-offset_bottom = 110.0
-texture = ExtResource("3_dtn5c")
-
-[node name="KarmaImg" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 88.0
-offset_right = 142.0
-offset_bottom = 190.0
-texture = ExtResource("4_0u7tt")
-
-[node name="XPBar" type="TextureProgressBar" parent="."]
+[node name="XPBar" type="TextureProgressBar" parent="XPContainer"]
 layout_mode = 0
 offset_left = 128.0
 offset_top = 272.0
 offset_right = 496.0
 offset_bottom = 297.0
 max_value = 1000.0
-allow_greater = true
 texture_under = ExtResource("5_hh2wa")
 texture_progress = ExtResource("6_vw7yg")
 texture_progress_offset = Vector2(5, 0)
