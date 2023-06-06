@@ -307,6 +307,7 @@ offset_bottom = 282.0
 alignment = 1
 
 [node name="Energy" type="Label" parent="BenefitsContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_e8ij1")
@@ -327,6 +328,7 @@ theme_override_font_sizes/font_size = 30
 text = "1"
 
 [node name="Cost" type="Label" parent="BenefitsContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_e8ij1")
@@ -347,6 +349,7 @@ theme_override_font_sizes/font_size = 30
 text = "1"
 
 [node name="Friend" type="Label" parent="BenefitsContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_e8ij1")

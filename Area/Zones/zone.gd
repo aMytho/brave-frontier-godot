@@ -40,6 +40,7 @@ func _on_beginning_complete(dialogue:Node = null):
 func _on_battle_complete(is_victory: bool):
 	print("Victory: ", is_victory)
 	get_node("Battle").queue_free()
+	music.stop()
 	if zone.ending_cutscene:
 		print("There is an ending cutscene")
 		var dialogue = ResourceLoader.load("res://Area/Dialogue/dialogue.tscn").instantiate()
