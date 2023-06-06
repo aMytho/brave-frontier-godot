@@ -149,8 +149,8 @@ texture_progress_offset = Vector2(5, 0)
 
 [node name="content_switcher" parent="." instance=ExtResource("7_nb7j6")]
 layout_mode = 1
-offset_top = 376.0
-offset_bottom = 376.0
+offset_top = 352.0
+offset_bottom = 352.0
 
 [node name="LabelAnimator" parent="." instance=ExtResource("8_0qrdc")]
 
