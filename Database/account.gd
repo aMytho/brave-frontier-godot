@@ -5,8 +5,8 @@ class_name Account
 @export var id: int
 @export var player_name: String
 @export var level: int
-@export var current_exp: float
-@export var max_exp: float
+@export var current_exp: int
+@export var max_exp: int
 @export var energy: int
 @export var gems: int
 @export var zel: int
@@ -18,7 +18,7 @@ class_name Account
 func _ready():
 	pass # Replace with function body.
 
-func set_account_info(new_id: int, new_player_name: String, new_level: int, new_exp: float,
+func set_account_info(new_id: int, new_player_name: String, new_level: int, new_exp: int,
 new_energy: int, new_gems: int, new_zel: int, new_karma: int, new_arena_orbs: int):
 	self.id = new_id
 	self.player_name = new_player_name
@@ -41,13 +41,13 @@ func get_account_info() -> Array:
 func account_is_active() -> bool:
 	return player_name != ""
 
-func will_player_level_up(new_exp: float) -> bool:
+func will_player_level_up(new_exp: int) -> bool:
 	# Returns a bool indicating if adding an exp amount will trigger a level up. Does not affect DB/state
 	if new_exp + self.current_exp > self.max_exp:
 		return true
 	return false
 
-func add_exp(new_exp: float):
+func add_exp(new_exp: int):
 	print("Adding ", new_exp, " exp to summoner!")
 	if !will_player_level_up(new_exp):
 		# The player won't level up, add the exp normally
