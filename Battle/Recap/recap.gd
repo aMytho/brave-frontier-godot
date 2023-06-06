@@ -9,10 +9,6 @@ signal RecapComplete
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	var account = Database.query("SELECT * FROM player_state WHERE id==" + str(1))[0]
-	ActiveAccount.set_account_info(account.id, account.player_name, account.level, account.current_exp,
-	account.energy, account.gems, account.zel, account.karma, account.arena_orbs)
 	# Play Music
 	$AudioStreamPlayer.play()
 	
