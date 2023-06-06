@@ -126,9 +126,6 @@ offset_top = 89.0
 offset_right = 643.0
 offset_bottom = 543.0
 
-[node name="BattleOST" type="AudioStreamPlayer" parent="."]
-volume_db = -10.306
-
 [node name="Transition" parent="." instance=ExtResource("7_dgs5e")]
 z_index = 3
 

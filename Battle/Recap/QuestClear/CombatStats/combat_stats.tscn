@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwndfasfjp5pq"]
+
+[ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="1_4mn0b"]
+[ext_resource type="Script" path="res://Battle/Recap/QuestClear/CombatStats/combat_stats.gd" id="1_n2iql"]
+
+[node name="combat_stats" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n2iql")
+
+[node name="TotalSparks" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 16.0
+offset_right = 331.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("1_4mn0b")
+theme_override_font_sizes/font_size = 45
+text = "Total Sparks"
+
+[node name="SparkAmount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 16.0
+offset_right = 586.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("1_4mn0b")
+theme_override_font_sizes/font_size = 45
+text = "00"
+
+[node name="TotalCrits" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 72.0
+offset_right = 435.0
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("1_4mn0b")
+theme_override_font_sizes/font_size = 45
+text = "Total Critical Hits"
+
+[node name="CritAmount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 72.0
+offset_right = 586.0
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("1_4mn0b")
+theme_override_font_sizes/font_size = 45
+text = "00"
+
+[node name="BCDrop" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 128.0
+offset_right = 390.0
+offset_bottom = 182.0
+theme_override_fonts/font = ExtResource("1_4mn0b")
+theme_override_font_sizes/font_size = 45
+text = "BC Drop Count"
+
+[node name="BCDropAmount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 128.0
+offset_right = 586.0
+offset_bottom = 182.0
+theme_override_fonts/font = ExtResource("1_4mn0b")
+theme_override_font_sizes/font_size = 45
+text = "00"
+
+[node name="HCDropCount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 184.0
+offset_right = 390.0
+offset_bottom = 238.0
+theme_override_fonts/font = ExtResource("1_4mn0b")
+theme_override_font_sizes/font_size = 45
+text = "HC Drop Count"
+
+[node name="HCDropCountAmount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 184.0
+offset_right = 586.0
+offset_bottom = 238.0
+theme_override_fonts/font = ExtResource("1_4mn0b")
+theme_override_font_sizes/font_size = 45
+text = "00"
