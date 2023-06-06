@@ -26,8 +26,8 @@ new_energy: int, new_gems: int, new_zel: int, new_karma: int, new_arena_orbs: in
 	self.current_exp = new_exp
 	
 	# Get the max exp from the levels table. Later we can get friends, cost, etc.
-	var db_max_exp = Database.query("SELECT next_exp FROM player_level WHERE id = %s" % new_level)[0].next_exp
-	self.max_exp = db_max_exp
+	var level = Database.query("SELECT next_exp FROM player_level WHERE id = %s" % new_level)[0]
+	self.max_exp = level.next_exp
 	
 	self.energy = new_energy
 	self.gems = new_gems
@@ -62,17 +62,19 @@ func add_exp(new_exp: int):
 		self.current_exp = 0
 		Database.query("UPDATE player_state SET level = %s"% [self.level])
 		# Set the new max exp
-		var new_max_exp = Database.query("SELECT next_exp FROM player_level WHERE id = %s" % self.level)[0].next_exp
-		self.max_exp = new_max_exp
-		print("The new max exp is:", new_max_exp)
+		var new_level = Database.query("SELECT * FROM player_level WHERE id = %s" % self.level)[0]
+		self.max_exp = new_level.next_exp
+		print("The new max exp is:", new_level.next_exp)
 		# Check that we didn't level up more than once
-		if overflow > new_max_exp:
+		if overflow > new_level.next_exp:
 			# If we are still overflowing, run the function again
 			add_exp(overflow)
 		else:
 			# We can add the overflow without leveling again
 			self.current_exp = overflow
-			Database.query("UPDATE player_state SET current_exp = %s"% [self.current_exp])
+			Database.query("UPDATE player_state SET current_exp = %s, energy = %s"
+				% [self.current_exp, new_level.energy]
+			)
 
 func get_level_info(new_level: int):
 	return Database.query("SELECT * from player_level where id = %s" % new_level)[0]
