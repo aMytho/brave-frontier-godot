@@ -1,0 +1,457 @@
+[gd_scene load_steps=20 format=3 uid="uid://cg2s66fun1qv5"]
+
+[ext_resource type="Script" path="res://Battle/Recap/QuestClear/LeveledUp/leveled_up.gd" id="1_xa1mt"]
+[ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="2_e8ij1"]
+[ext_resource type="Texture2D" uid="uid://diixi6xbufyxq" path="res://Battle/Recap/QuestClear/LeveledUp/LevelUp_57x78.png" id="3_021a3"]
+[ext_resource type="Texture2D" uid="uid://b4fgg2oi3dwbd" path="res://Battle/Recap/QuestClear/LeveledUp/LevelUp_61x78.png" id="4_arcgl"]
+[ext_resource type="Texture2D" uid="uid://0ddmiicr4v2k" path="res://Battle/Recap/QuestClear/LeveledUp/LevelUp_75x78.png" id="5_s41vx"]
+[ext_resource type="Texture2D" uid="uid://ck5bl8lp4whm1" path="res://Battle/Recap/QuestClear/LeveledUp/LevelUp_61x78_2.png" id="6_nai4u"]
+[ext_resource type="Texture2D" uid="uid://c0gxhf88jjtgg" path="res://Battle/Recap/QuestClear/LeveledUp/LevelUp_56x78.png" id="7_wqncj"]
+[ext_resource type="Texture2D" uid="uid://b16qj3br3jeuf" path="res://Battle/Recap/QuestClear/LeveledUp/LevelUp_68x80.png" id="8_lfhf7"]
+[ext_resource type="Texture2D" uid="uid://dmho6eghif8qq" path="res://Battle/Recap/QuestClear/LeveledUp/LevelUp_63x78.png" id="9_dpr7o"]
+[ext_resource type="Texture2D" uid="uid://cfx0mosubguy" path="res://Battle/Recap/QuestClear/LeveledUp/LevelUp_64x78.png" id="10_v7lwb"]
+[ext_resource type="Texture2D" uid="uid://xer0tql6fga1" path="res://Battle/Recap/QuestClear/LeveledUp/LevelUpAdd_300x300.png" id="11_mgbok"]
+
+[sub_resource type="Animation" id="Animation_khwsm"]
+resource_name = "Bounce"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("L:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1, 0), Vector2(-1, -25), Vector2(-1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("E:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(56, 0), Vector2(56, -25), Vector2(56, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("V:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(112, 0), Vector2(112, -25), Vector2(112, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("E2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(184, 0), Vector2(184, -25), Vector2(184, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("L2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(245, 0), Vector2(245, -25), Vector2(245, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("U:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(336, 0), Vector2(336, -25), Vector2(336, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("P:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(404, 0), Vector2(404, -25), Vector2(404, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("!!:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.4, 1.6, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(464, 0), Vector2(464, -25), Vector2(464, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7j0uv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("L:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("E:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(56, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("V:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(112, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("E2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(184, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("L2:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(56, 78)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("L2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(245, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("U:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(336, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("P:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(404, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("!!:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(464, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wtd64"]
+_data = {
+"Bounce": SubResource("Animation_khwsm"),
+"RESET": SubResource("Animation_7j0uv")
+}
+
+[sub_resource type="Curve" id="Curve_aoar1"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, -183.273), 0.0, 0.0, 0, 0, Vector2(0.976923, -170.182), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_q1xjr"]
+curve = SubResource("Curve_aoar1")
+
+[sub_resource type="Curve" id="Curve_a08oe"]
+_data = [Vector2(0.0269231, 0.527273), 0.0, 0.0, 0, 0, Vector2(1, 0.818182), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_qbprm"]
+curve = SubResource("Curve_a08oe")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mf6pg"]
+emission_shape = 1
+emission_sphere_radius = 75.0
+particle_flag_disable_z = true
+direction = Vector3(0, -90, 0)
+spread = 100.0
+gravity = Vector3(0, -30, 0)
+initial_velocity_min = 54.34
+initial_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_max = 2.0
+damping_min = 0.88
+damping_max = 1.54
+angle_max = 20.0
+angle_curve = SubResource("CurveTexture_q1xjr")
+scale_min = 0.1
+scale_max = 0.3
+scale_curve = SubResource("CurveTexture_qbprm")
+
+[node name="leveled_up" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xa1mt")
+
+[node name="Lv" type="Label" parent="."]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 120.0
+offset_right = 434.0
+offset_bottom = 158.0
+theme_override_fonts/font = ExtResource("2_e8ij1")
+theme_override_font_sizes/font_size = 30
+text = "You reached Lv"
+
+[node name="LvAmount" type="Label" parent="Lv"]
+layout_mode = 0
+offset_left = 235.0
+offset_right = 275.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.0941176, 0.592157, 0.788235, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_e8ij1")
+theme_override_font_sizes/font_size = 30
+text = "7"
+
+[node name="BenefitsContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 160.0
+offset_right = 512.0
+offset_bottom = 282.0
+alignment = 1
+
+[node name="Energy" type="Label" parent="BenefitsContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_e8ij1")
+theme_override_font_sizes/font_size = 30
+text = "Max energy +"
+
+[node name="EnergyAmount" type="Label" parent="BenefitsContainer/Energy"]
+layout_mode = 0
+offset_left = 203.0
+offset_right = 243.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.137255, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_e8ij1")
+theme_override_font_sizes/font_size = 30
+text = "1"
+
+[node name="Cost" type="Label" parent="BenefitsContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_e8ij1")
+theme_override_font_sizes/font_size = 30
+text = "Cost +"
+
+[node name="CostAmount" type="Label" parent="BenefitsContainer/Cost"]
+layout_mode = 0
+offset_left = 105.0
+offset_right = 145.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.137255, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_e8ij1")
+theme_override_font_sizes/font_size = 30
+text = "1"
+
+[node name="Friend" type="Label" parent="BenefitsContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_e8ij1")
+theme_override_font_sizes/font_size = 30
+text = "Friend Capacity +"
+
+[node name="FriendAmount" type="Label" parent="BenefitsContainer/Friend"]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 296.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.137255, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_e8ij1")
+theme_override_font_sizes/font_size = 30
+text = "1"
+
+[node name="EnergyRestored" type="Label" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 282.0
+offset_right = 542.0
+offset_bottom = 320.0
+theme_override_fonts/font = ExtResource("2_e8ij1")
+theme_override_font_sizes/font_size = 30
+text = "Energy has been fully restored."
+
+[node name="AnimationContainer" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 56.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 72.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationContainer"]
+autoplay = "Bounce"
+libraries = {
+"": SubResource("AnimationLibrary_wtd64")
+}
+
+[node name="L" type="TextureRect" parent="AnimationContainer"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 56.0
+offset_bottom = 78.0
+texture = ExtResource("3_021a3")
+
+[node name="E" type="TextureRect" parent="AnimationContainer"]
+layout_mode = 0
+offset_left = 56.0
+offset_right = 117.0
+offset_bottom = 78.0
+texture = ExtResource("4_arcgl")
+
+[node name="V" type="TextureRect" parent="AnimationContainer"]
+layout_mode = 0
+offset_left = 112.0
+offset_right = 187.0
+offset_bottom = 78.0
+texture = ExtResource("5_s41vx")
+
+[node name="E2" type="TextureRect" parent="AnimationContainer"]
+layout_mode = 0
+offset_left = 184.0
+offset_right = 245.0
+offset_bottom = 78.0
+texture = ExtResource("6_nai4u")
+
+[node name="L2" type="TextureRect" parent="AnimationContainer"]
+layout_mode = 0
+offset_left = 245.0
+offset_right = 301.0
+offset_bottom = 78.0
+texture = ExtResource("7_wqncj")
+
+[node name="U" type="TextureRect" parent="AnimationContainer"]
+layout_mode = 0
+offset_left = 336.0
+offset_right = 404.0
+offset_bottom = 80.0
+texture = ExtResource("8_lfhf7")
+
+[node name="P" type="TextureRect" parent="AnimationContainer"]
+layout_mode = 0
+offset_left = 404.0
+offset_right = 467.0
+offset_bottom = 78.0
+texture = ExtResource("9_dpr7o")
+
+[node name="!!" type="TextureRect" parent="AnimationContainer"]
+layout_mode = 0
+offset_left = 464.0
+offset_right = 528.0
+offset_bottom = 78.0
+texture = ExtResource("10_v7lwb")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="AnimationContainer"]
+position = Vector2(240, 96)
+amount = 7
+process_material = SubResource("ParticleProcessMaterial_mf6pg")
+texture = ExtResource("11_mgbok")
+lifetime = 2.5
+preprocess = 1.0

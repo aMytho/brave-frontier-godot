@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://b0sqnjbw41xxy"]
+
+[ext_resource type="Texture2D" uid="uid://ku4h8un7lqso" path="res://Menu/base.jpg" id="1_bfob1"]
+[ext_resource type="Script" path="res://Battle/Recap/recap.gd" id="1_vys35"]
+[ext_resource type="Resource" uid="uid://df1q6xrrfp471" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/basics_of_battle.tres" id="2_026ng"]
+[ext_resource type="PackedScene" uid="uid://bfku18he8vhad" path="res://Menu/Header/header.tscn" id="2_sq6pn"]
+[ext_resource type="Texture2D" uid="uid://cjcdv3hfpt8es" path="res://Battle/Recap/header_title_base2.png" id="3_6g6fo"]
+[ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="4_vxi52"]
+[ext_resource type="PackedScene" uid="uid://b72w1jubrvjht" path="res://Common/UI/ContentSwitcher/content_switcher.tscn" id="5_w4fs0"]
+[ext_resource type="AudioStream" uid="uid://bofqba4py08vl" path="res://Music/x-xx Quest Clear.mp3" id="8_btsbi"]
+
+[node name="recap" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vys35")
+zone = ExtResource("2_026ng")
+dungeon_name = "Stylist Placeholder"
+
+[node name="BG" type="TextureRect" parent="."]
+self_modulate = Color(0.52549, 0.52549, 0.52549, 1)
+layout_mode = 0
+offset_right = 643.0
+offset_bottom = 1136.0
+texture = ExtResource("1_bfob1")
+
+[node name="Header" parent="." instance=ExtResource("2_sq6pn")]
+
+[node name="RecapHeader" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 183.0
+offset_right = 420.0
+offset_bottom = 271.0
+texture = ExtResource("3_6g6fo")
+
+[node name="Label" type="Label" parent="RecapHeader"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 25.0
+offset_right = 337.0
+offset_bottom = 68.0
+theme_override_fonts/font = ExtResource("4_vxi52")
+theme_override_font_sizes/font_size = 35
+text = "Quest Clear Reward"
+
+[node name="Dungeon" type="Label" parent="."]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 280.0
+offset_right = 468.0
+offset_bottom = 323.0
+theme_override_fonts/font = ExtResource("4_vxi52")
+theme_override_font_sizes/font_size = 35
+text = "Some Placeholder"
+horizontal_alignment = 1
+
+[node name="Zone" type="Label" parent="."]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 352.0
+offset_right = 549.0
+offset_bottom = 395.0
+theme_override_fonts/font = ExtResource("4_vxi52")
+theme_override_font_sizes/font_size = 35
+text = "\"Some Longer Placeholder\""
+horizontal_alignment = 1
+
+[node name="content_switcher" parent="." instance=ExtResource("5_w4fs0")]
+layout_mode = 1
+offset_top = 400.0
+offset_bottom = 400.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_btsbi")
+volume_db = -15.928
+autoplay = true

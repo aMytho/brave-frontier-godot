@@ -4,14 +4,14 @@ var db: SQLite
 #The path to the DB file
 var path: String = ""
 #Current DB version
-var current_version = 4
+var current_version = 7
 #Latest db version
-var latest_version = 5
+var latest_version = 8
 
 func _ready():
 	#Creates a new DB instance
 	db = SQLite.new()
-	db.verbosity_level = SQLite.VERBOSE
+	db.verbosity_level = SQLite.QUIET
 	db.path = set_path()
 	
 	#Connects to the db

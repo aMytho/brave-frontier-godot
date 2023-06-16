@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://edoy6mdie6n2"]
+
+[ext_resource type="Script" path="res://Battle/Recap/QuestClear/LabelAnimator.gd" id="1_j0m4f"]
+
+[node name="LabelAnimator" type="Node"]
+editor_description = "We use this to allow for animating non-numeric values. See the script in questclear.gd"
+script = ExtResource("1_j0m4f")

@@ -34,9 +34,7 @@ func _on_frame_changed():
 	var anim_name = get_animation()
 	if anim_name == "Wait" or anim_name == "Shadow":
 		return
-	
-	print("Equipment is changing in: ", anim_name, unit_equipment.name, frame)
-	
+		
 	# On each frame, dynamically adjust the equipment to match the current unit frame
 	# That data must be set on the unit equipment itself
 	if is_flipped:

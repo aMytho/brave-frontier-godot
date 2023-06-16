@@ -63,4 +63,4 @@ func _on_player_ready(units):
 	
 	var arg_props = [units, zone]
 	emit_signal("Closed")
-	get_tree().get_root().get_node("Game/GameContent").loadSceneWithProps("res://Battle/battle.tscn", arg_names, arg_props, true )
+	get_tree().get_root().get_node("Game/GameContent").loadSceneWithProps("res://Area/Zones/zone.tscn", arg_names, arg_props, true )

@@ -79,6 +79,10 @@ func animate_swap(new_scene, animation: int):
 	if animation == 0:
 		tween.tween_property(new_scene, "position", Vector2(0, new_scene.position.y), 0.3)
 
+# Loads a blank scene so another scene can be animated in
+func _set_blank_scene():
+	load_scene("res://Common/UI/ContentSwitcher/blank.tscn", 0)
+
 # Returns active scene
 func get_scene():
 	return current_scene

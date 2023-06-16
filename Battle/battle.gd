@@ -1,5 +1,7 @@
 extends Node2D
 
+signal BattleFinished(is_victory: bool)
+
 @export var zone: Zone:
 	set(new_zone):
 		zone = new_zone
@@ -25,10 +27,6 @@ var speed: float = 1.0:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Load the music
-	$BattleOST.stream = zone.music
-	$BattleOST.play()
-	
 	# Set the transition values
 	$Transition.set_properties(1, zone.Stage.size(), "Stylish Placeholder", zone.name)
 	
@@ -268,7 +266,7 @@ func resetUnitsStats():
 		if unit != null and !unit.is_dead:
 			total_allies = total_allies + 1
 			
-# Function who's trigger when the signal "unitHasDied" has been emited
+# Function who's trigger when the signal "unitHasDied" has been emitted
 # It will do some update like
 ### Hide the sprite of a unit
 ### Make the unit considered DEAD
@@ -312,8 +310,8 @@ func get_next_non_dead_unit(current_units: Array[Unit]):
 # Method call when the battle has ended
 # It can be a victory or a loose
 func _when_battle_end():
-	print(get_parent())
-	get_parent().loadScene("res://Menu/main_menu.tscn", true)
+	# To-do - get win/loss status
+	emit_signal("BattleFinished", true)
 	
 func _unit_UI_update(unit: Resource):
 	print("update unit UI HP")

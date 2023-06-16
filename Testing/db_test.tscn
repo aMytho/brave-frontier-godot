@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq7lg8n8hre5l"]
+
+[ext_resource type="Script" path="res://Testing/db_test.gd" id="1_egena"]
+
+[node name="db_test" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_egena")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 54.0
+offset_right = 137.0
+offset_bottom = 85.0
+text = "Upgrade 5"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Add 100"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
