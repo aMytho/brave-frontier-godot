@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://bmso7siwea2fh"]
+[gd_scene load_steps=23 format=3 uid="uid://bmso7siwea2fh"]
 
+[ext_resource type="Script" path="res://Battle/UI/Result/battle_result.gd" id="1_5ye1g"]
 [ext_resource type="Texture2D" uid="uid://dc4g6veqjbcvn" path="res://Battle/UI/Result/CongratulationAdd_254x50.png" id="1_xwf2u"]
 [ext_resource type="Texture2D" uid="uid://c3wu8kr4w3jib" path="res://Battle/UI/Result/CongratulationAdd_512x100.png" id="2_upba3"]
 [ext_resource type="Texture2D" uid="uid://cww3l6y1mfvp5" path="res://Battle/UI/Result/CongratulationAdd_512x512.png" id="3_xawnn"]
@@ -48,8 +49,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_63w47"]
 resource_name = "Victory"
-length = 4.0
-loop_mode = 1
+length = 5.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -304,6 +304,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5ye1g")
 
 [node name="BigBG" type="TextureRect" parent="."]
 layout_mode = 0
@@ -314,7 +315,7 @@ scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_xwf2u")
 
 [node name="MedBG" type="TextureRect" parent="."]
-self_modulate = Color(1, 1, 1, 0.6)
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 72.0
 offset_top = 24.0
@@ -323,7 +324,7 @@ offset_bottom = 124.0
 texture = ExtResource("2_upba3")
 
 [node name="SmallBG" type="TextureRect" parent="."]
-self_modulate = Color(1, 1, 1, 0.6)
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 64.0
 offset_top = -192.0
@@ -345,110 +346,111 @@ offset_bottom = 232.0
 
 [node name="C" type="TextureRect" parent="TopLetters"]
 layout_mode = 0
-offset_left = 457.0
-offset_right = 504.0
+offset_left = 384.0
+offset_right = 431.0
 offset_bottom = 55.0
 texture = ExtResource("4_s2t87")
 
 [node name="O" type="TextureRect" parent="TopLetters"]
 layout_mode = 0
-offset_left = 501.0
-offset_right = 550.0
+offset_left = 312.0
+offset_right = 361.0
 offset_bottom = 55.0
 texture = ExtResource("5_bgjku")
 
 [node name="N" type="TextureRect" parent="TopLetters"]
 layout_mode = 0
-offset_left = 550.0
-offset_right = 595.002
+offset_left = 248.0
+offset_right = 293.0
 offset_bottom = 53.0
 texture = ExtResource("6_j6yn3")
 
 [node name="G" type="TextureRect" parent="TopLetters"]
 layout_mode = 0
-offset_left = 595.0
-offset_right = 643.0
+offset_left = 168.0
+offset_right = 216.0
 offset_bottom = 55.0
 texture = ExtResource("7_eyt7w")
 
 [node name="R" type="TextureRect" parent="TopLetters"]
 layout_mode = 0
-offset_left = 643.0
-offset_right = 688.0
+offset_left = 96.0
+offset_right = 141.001
 offset_bottom = 53.0
 texture = ExtResource("8_pl5nj")
 
 [node name="A" type="TextureRect" parent="TopLetters"]
 layout_mode = 0
-offset_left = 685.0
-offset_right = 737.002
+offset_left = 24.0
+offset_right = 76.0013
 offset_bottom = 53.0
 texture = ExtResource("9_184sw")
 
 [node name="T" type="TextureRect" parent="TopLetters"]
 layout_mode = 0
-offset_left = 725.0
-offset_right = 769.0
+offset_left = -64.0
+offset_right = -20.0
 offset_bottom = 53.0
 texture = ExtResource("10_ewobi")
 
 [node name="U" type="TextureRect" parent="TopLetters"]
 layout_mode = 0
-offset_left = 766.0
-offset_right = 811.0
+offset_left = 1616.0
+offset_right = 1661.0
 offset_bottom = 54.0
 texture = ExtResource("11_ff3e3")
 
 [node name="L" type="TextureRect" parent="TopLetters"]
 layout_mode = 0
-offset_left = 810.0
-offset_right = 850.002
+offset_left = 1552.0
+offset_right = 1592.0
 offset_bottom = 53.0
 texture = ExtResource("12_xpu14")
 
 [node name="A2" type="TextureRect" parent="TopLetters"]
 layout_mode = 0
-offset_left = 849.0
-offset_right = 901.001
+offset_left = 1472.0
+offset_right = 1524.0
 offset_bottom = 53.0
 texture = ExtResource("9_184sw")
 
 [node name="T2" type="TextureRect" parent="TopLetters"]
 layout_mode = 0
-offset_left = 890.0
-offset_right = 934.0
+offset_left = 1400.0
+offset_right = 1444.0
 offset_bottom = 53.0
 texture = ExtResource("13_k5vqy")
 
 [node name="I" type="TextureRect" parent="TopLetters"]
 layout_mode = 0
-offset_left = 932.0
-offset_right = 953.003
+offset_left = 1336.0
+offset_right = 1357.0
 offset_bottom = 53.0
 texture = ExtResource("14_3f4wc")
 
 [node name="O2" type="TextureRect" parent="TopLetters"]
 layout_mode = 0
-offset_left = 952.0
-offset_right = 1001.0
+offset_left = 1264.0
+offset_right = 1313.0
 offset_bottom = 55.0
 texture = ExtResource("15_rijmn")
 
 [node name="N2" type="TextureRect" parent="TopLetters"]
 layout_mode = 0
-offset_left = 1000.0
-offset_right = 1045.01
+offset_left = 1200.0
+offset_right = 1245.01
 offset_bottom = 53.0
 texture = ExtResource("16_7qlv4")
 
 [node name="S" type="TextureRect" parent="TopLetters"]
 layout_mode = 0
-offset_left = 1045.0
-offset_right = 1090.0
+offset_left = 1128.0
+offset_right = 1173.0
 offset_bottom = 55.0
 texture = ExtResource("17_g260x")
 
 [node name="AreaCleared" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 z_index = -1
 layout_mode = 0
 offset_left = 229.0
@@ -456,3 +458,5 @@ offset_top = 96.0
 offset_right = 427.0
 offset_bottom = 119.0
 texture = ExtResource("18_d7q61")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
