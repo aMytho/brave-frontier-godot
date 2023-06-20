@@ -308,10 +308,17 @@ func get_next_non_dead_unit(current_units: Array[Unit]):
 	return null
 
 # Method call when the battle has ended
-# It can be a victory or a loose
+# It can be a victory or a loss
 func _when_battle_end():
-	# To-do - get win/loss status
-	emit_signal("BattleFinished", true)
+	# To-do - get win/loss status and display the proper animation
+	var result = ResourceLoader.load("res://Battle/UI/Result/battle_result.tscn").instantiate()
+	# Set the position
+	result.position = Vector2(4, 200)
+	add_child(result)
+	# Play victory (get status later)
+	result.play_victory()
+	# When animation is complete, emit the signal and wait to be switched to a new scene
+	result.connect("ResultComplete", func(): emit_signal("BattleFinished", true))
 	
 func _unit_UI_update(unit: Resource):
 	print("update unit UI HP")
