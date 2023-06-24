@@ -10,7 +10,7 @@ We are **not** remaking the full game. This project solely exists so we can prac
 
 ## Installation
 
-You must download the [Godot Engine v4.0.x](https://godotengine.org/) (normal installation) and this project (Zip available near the top of this page) to play the game. Once both are downloaded, open Godot and import the project. It will take a few minutes. Once complete, hit the play button near the top right of the editor and the game will begin.
+You must download the [Godot Engine v4.0.x](https://godotengine.org/) (normal installation) and [this project](https://github.com/aMytho/brave-frontier-godot/archive/refs/heads/main.zip) to play the game. Once both are downloaded, open Godot and import the project. It will take a few minutes. Once complete, hit the play button near the top right of the editor and the game will begin.
 
 ![image](https://github.com/aMytho/brave-frontier-godot/assets/58316242/dc721d08-9b28-419c-9fa7-f0081977e39c)
 
