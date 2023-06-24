@@ -22,6 +22,9 @@ Most of the data (Units, animations, etc) is stored as Godot resource files. For
 
 Player data is stored in an SQLite database. Rather than keep a full record of all player units, items, and other data, the database only contains what data the player has modified. For example, when the player aquires a unit it is added to the DB. When the player views the unit, we load the data from the DB and override the godot resource.
 
+![DB and Godot Resource](https://github.com/aMytho/brave-frontier-godot/assets/58316242/39dacee8-5dc4-462b-b888-9dc1dc17227f)
+
+
 Unlike the original game, this is a purely offline implementation. There are no plans to add multiplayer of any kind. As noted above, this project is just for practice with the Godot engine.
 
 ## Copyright Notice
