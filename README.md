@@ -2,24 +2,28 @@
 
 This is a small remake of the mobile game Brave Frontier. Brave frontier shutdown within the last year. This project implements many of the same features and structure.
 
-I am **not** remaking the full game. This project solely exists so I can practice with the Godot game engine. If you want to see this game again, have a look at [Brave Frontier Recoded](https://bravefrontierrecoded.com/).
+![Home screen, team selector, and battle scenes](https://github.com/aMytho/brave-frontier-godot/assets/58316242/b7d97886-8e13-4c37-a58e-ace2fbb32f8f)
+
+We are **not** remaking the full game. This project solely exists so we can practice with the Godot game engine. If you want to play the full game again, have a look at [Brave Frontier Recoded](https://bravefrontierrecoded.com/).
 
 *Side note, if any of the BFR folks want to use this project, they are more than welcome to!
 
+## Installation
+
+You must download the [Godot Engine v4.0.x](https://godotengine.org/) (normal installation) and this project (Zip available near the top of this page) to play the game. Once both are downloaded, open Godot and import the project. It will take a few minutes. Once complete, hit the play button near the top right of the editor and the game will begin.
+
+![image](https://github.com/aMytho/brave-frontier-godot/assets/58316242/dc721d08-9b28-419c-9fa7-f0081977e39c)
+
+You will have to sit through the Lucius cutscene (Sorry!), create an account, choose a starter unit (Selena is the only functional starter atm), and beat the first level. Then you are able to move between the existing levels. For development purposes, we only have a few levels in the in-game selector, but you can easily add more with Godot resources. This is a **very** beginner friendly engine, and we highly suggest you tinker with it. If you have any questions, create an issue to receive support. We are all volunteers, but we will do our best to respond in a timely fashion.
+
 ## Tech Stack
 
-Most of the data is stored as Godot resource files. For example, each unit works off of the [unit_base](https://github.com/aMytho/brave-frontier-godot/blob/main/Units/unit_base.gd) and extends it with its own properties. This differs from the JSON and CSV data that the original game used.
+Most of the data (Units, animations, etc) is stored as Godot resource files. For example, each unit works off of the [unit_base](https://github.com/aMytho/brave-frontier-godot/blob/main/Units/unit_base.gd) and extends it with its own properties. This differs from the JSON and CSV data that the original game used.
 
-Player data is stored in an SQLite database. Rather than keep a full record of all player units, items, and other data, the database only contains what data the player has modified. For example, when the player squires a unit it is added to the DB. The stats from the DB are the "real" stats since the Godot resource only includes the base values. This should be scalable.
+Player data is stored in an SQLite database. Rather than keep a full record of all player units, items, and other data, the database only contains what data the player has modified. For example, when the player aquires a unit it is added to the DB. When the player views the unit, we load the data from the DB and override the godot resource.
 
-Unlike the original game, this is a purely offline implementation. I have no plans to add multiplayer of any kind. As noted above, this project is just practice and I have no wish to expand it beyond the engine.
-
-## Current State
-
-This is in an alpha state. It contains some bugs and many features are not implemented. Some dialogue and other data differs from the game since records of certain events (lucius cutscene) could not be found. While this project can be ran, you may need to modify `GameContent.gd` to get the scene you want. When I am finished I will include an executable file for ease of access.
-
-By default, the game will load the Lucius cutscene and start the main character quest. Go through this once. After that, reload the project and press the accounts button on the bottom right of the start screen (or press A). Select your account and you will be sent to the main menu.
+Unlike the original game, this is a purely offline implementation. There are no plans to add multiplayer of any kind. As noted above, this project is just for practice with the Godot engine.
 
 ## Copyright Notice
 
-I do not own any of the assets. They are owned by Gumi / Alim and the Brave Frontier team. This project earns no revenue and is purely for educational purposes.
+We do not own any of the assets. They are owned by Gumi / Alim and the Brave Frontier team. This project earns no revenue and is purely for educational purposes.
