@@ -191,7 +191,7 @@ func _enemy_attack_finished(unit_place: int):
 		total_allies = $stats_checking.are_all_units_dead(units, $Friendlies.get_children())
 		if 0 == total_allies:
 			print("Battle lost . . .")
-			_when_battle_end()
+			_when_battle_end(false)
 		else:
 			$BattleUI.release_attack_lockout()
 
@@ -237,7 +237,7 @@ func move_to_next_stage():
 		$Transition.show_transition()
 	else:
 		print("Battle Complete!!!")
-		_when_battle_end()
+		_when_battle_end(true)
 
 
 func _on_transition_hide():
@@ -309,16 +309,18 @@ func get_next_non_dead_unit(current_units: Array[Unit]):
 
 # Method call when the battle has ended
 # It can be a victory or a loss
-func _when_battle_end():
-	# To-do - get win/loss status and display the proper animation
+func _when_battle_end(is_victory: bool):
 	var result = ResourceLoader.load("res://Battle/UI/Result/battle_result.tscn").instantiate()
 	# Set the position
 	result.position = Vector2(4, 200)
 	add_child(result)
-	# Play victory (get status later)
-	result.play_victory()
+	# Play animation depending on win/loss
+	if is_victory:
+		result.play_victory()
+	else:
+		result.play_failure()
 	# When animation is complete, emit the signal and wait to be switched to a new scene
-	result.connect("ResultComplete", func(): emit_signal("BattleFinished", true))
+	result.connect("ResultComplete", func(): emit_signal("BattleFinished", is_victory))
 	
 func _unit_UI_update(unit: Resource):
 	print("update unit UI HP")
