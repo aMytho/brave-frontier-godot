@@ -31,6 +31,10 @@ window/size/window_height_override=1000
 window/stretch/mode="viewport"
 window/handheld/orientation=1
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
+
 [input]
 
 Account={
