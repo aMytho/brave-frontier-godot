@@ -28,6 +28,106 @@
 [ext_resource type="Texture2D" uid="uid://f5tvqc1x26lm" path="res://Battle/UI/Result/GameOver_58x81.png" id="26_ef878"]
 [ext_resource type="Texture2D" uid="uid://bx3kxuvmcq4c1" path="res://Battle/UI/Result/GameOver_65x81.png" id="27_45r70"]
 
+[sub_resource type="Animation" id="Animation_64dga"]
+resource_name = "Loss"
+length = 4.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Loss/G:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7, 0.9, 1.5, 4.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 300), Vector2(0, 220), Vector2(0, 300), Vector2(0, 300), Vector2(0, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Loss/A:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.5, 0.8, 1, 1.5, 4.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(67, 0), Vector2(67, 300), Vector2(67, 220), Vector2(67, 300), Vector2(67, 300), Vector2(67, 300)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Loss/M:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.6, 0.9, 1.1, 1.5, 4.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(144, 0), Vector2(144, 300), Vector2(144, 220), Vector2(144, 300), Vector2(144, 300), Vector2(144, 300)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Loss/E:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 0.7, 1, 1.2, 1.5, 4.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(221, 0), Vector2(221, 300), Vector2(221, 220), Vector2(221, 300), Vector2(221, 300), Vector2(221, 300)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Loss/O:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.4, 0.8, 1.1, 1.3, 1.5, 4.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(328, 0), Vector2(328, 300), Vector2(328, 220), Vector2(328, 300), Vector2(328, 300), Vector2(328, 300)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Loss/V:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5, 0.9, 1.2, 1.4, 1.5, 4.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(392, 0), Vector2(392, 300), Vector2(392, 220), Vector2(392, 300), Vector2(392, 300), Vector2(392, 300)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Loss/E2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.6, 1, 1.3, 1.5, 4.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(465, 0), Vector2(465, 300), Vector2(465, 220), Vector2(465, 300), Vector2(465, 300)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Loss/R:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.7, 1.1, 1.4, 1.6, 4.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(523, 0), Vector2(523, 300), Vector2(523, 220), Vector2(523, 300), Vector2(523, 300)]
+}
+
 [sub_resource type="Animation" id="Animation_oytlr"]
 length = 0.001
 tracks/0/type = "value"
@@ -309,106 +409,6 @@ tracks/19/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_64dga"]
-resource_name = "Loss"
-length = 4.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Loss/G:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.7, 0.9, 1.5, 4.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 300), Vector2(0, 220), Vector2(0, 300), Vector2(0, 300), Vector2(0, 300)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Loss/A:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 0.5, 0.8, 1, 1.5, 4.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(67, 0), Vector2(67, 300), Vector2(67, 220), Vector2(67, 300), Vector2(67, 300), Vector2(67, 300)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Loss/M:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.2, 0.6, 0.9, 1.1, 1.5, 4.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(144, 0), Vector2(144, 300), Vector2(144, 220), Vector2(144, 300), Vector2(144, 300), Vector2(144, 300)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Loss/E:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.3, 0.7, 1, 1.2, 1.5, 4.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(221, 0), Vector2(221, 300), Vector2(221, 220), Vector2(221, 300), Vector2(221, 300), Vector2(221, 300)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Loss/O:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.4, 0.8, 1.1, 1.3, 1.5, 4.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(328, 0), Vector2(328, 300), Vector2(328, 220), Vector2(328, 300), Vector2(328, 300), Vector2(328, 300)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Loss/V:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0.5, 0.9, 1.2, 1.4, 1.5, 4.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(392, 0), Vector2(392, 300), Vector2(392, 220), Vector2(392, 300), Vector2(392, 300), Vector2(392, 300)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Loss/E2:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0.6, 1, 1.3, 1.5, 4.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(465, 0), Vector2(465, 300), Vector2(465, 220), Vector2(465, 300), Vector2(465, 300)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Loss/R:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0.7, 1.1, 1.4, 1.6, 4.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(523, 0), Vector2(523, 300), Vector2(523, 220), Vector2(523, 300), Vector2(523, 300)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6tums"]

@@ -20,6 +20,6 @@ func play_failure():
 	# The failure animation is already visible, play it
 	$AnimationPlayer.play("Loss")
 
-func _on_animation_player_animation_finished(anim_name):
+func _on_animation_player_animation_finished(_anim_name):
 	# Listen for the animation completion. When done, the parent scene will fade out
 	emit_signal("ResultComplete")
