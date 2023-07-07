@@ -32,7 +32,7 @@ wait_after = 0
 script = ExtResource("2_vr55d")
 message = "Huh?<wait=20> Guide you where?<wait=20> Through Grand Gaia, of course!<wait=20><br>My my, for someone who has the power to enter the Gate, you're pretty clueless, aren't you?"
 character = 0
-frame = 4
+frame = 3
 wait_before = 0
 wait_after = 0
 
@@ -40,7 +40,7 @@ wait_after = 0
 script = ExtResource("2_vr55d")
 message = "At any rate, we first need to get across this field<wait=40><br>We can talk more later."
 character = 0
-frame = 5
+frame = 6
 wait_before = 0
 wait_after = 0
 
@@ -64,7 +64,7 @@ wait_after = 0
 script = ExtResource("2_vr55d")
 message = "...What? <wait=20>You don't know how?"
 character = 0
-frame = 4
+frame = 2
 wait_before = 0
 wait_after = 0
 
