@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=8 format=3 uid="uid://dm2mvq5jid28c"]
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://dm2mvq5jid28c"]
 
 [ext_resource type="Texture2D" uid="uid://bvhu8n7f3yakc" path="res://Area/Dialogue/Character/Karl/navi_chara2_0.png" id="1_k02cw"]
 [ext_resource type="Script" path="res://Area/Dialogue/Character/character_base.gd" id="1_ya74d"]
@@ -12,4 +12,4 @@
 script = ExtResource("1_ya74d")
 id = 2
 name = "Karl"
-frames = [ExtResource("1_k02cw"), ExtResource("2_htrsf"), ExtResource("3_0lasg"), ExtResource("4_lunas"), ExtResource("5_vmn3s"), ExtResource("6_e5e1q")]
+frames = Array[CompressedTexture2D]([ExtResource("1_k02cw"), ExtResource("2_htrsf"), ExtResource("3_0lasg"), ExtResource("4_lunas"), ExtResource("5_vmn3s"), ExtResource("6_e5e1q")])

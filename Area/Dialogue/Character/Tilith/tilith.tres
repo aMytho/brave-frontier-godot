@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=10 format=3 uid="uid://df3y4snmapt1w"]
+[gd_resource type="Resource" script_class="Character" load_steps=10 format=3 uid="uid://df3y4snmapt1w"]
 
 [ext_resource type="Texture2D" uid="uid://d0tiej5satyk4" path="res://Area/Dialogue/Character/Tilith/navi_chara1_0.png" id="1_j27hk"]
 [ext_resource type="Script" path="res://Area/Dialogue/Character/character_base.gd" id="1_upvaw"]
@@ -14,4 +14,4 @@
 script = ExtResource("1_upvaw")
 id = 1
 name = "Tilith"
-frames = [ExtResource("1_j27hk"), ExtResource("2_ntyo8"), ExtResource("3_u6ef6"), ExtResource("4_kbaxp"), ExtResource("5_h2scf"), ExtResource("6_r5ltd"), ExtResource("7_8i5ws"), ExtResource("8_ypmgv")]
+frames = Array[CompressedTexture2D]([ExtResource("1_j27hk"), ExtResource("2_ntyo8"), ExtResource("3_u6ef6"), ExtResource("4_kbaxp"), ExtResource("5_h2scf"), ExtResource("6_r5ltd"), ExtResource("7_8i5ws"), ExtResource("8_ypmgv")])
