@@ -79,5 +79,5 @@ wait_after = 0
 [resource]
 script = ExtResource("1_ctyiu")
 id = 1
-characters = Array[Resource]([ExtResource("1_pn4ig")])
-content = Array[Resource]([SubResource("Resource_v0vfc"), SubResource("Resource_4alm8"), SubResource("Resource_ckvjn"), SubResource("Resource_yu8kw"), SubResource("Resource_yhf12"), SubResource("Resource_xntv3"), SubResource("Resource_frjl0"), SubResource("Resource_1ilf0"), SubResource("Resource_s30jd")])
+characters = Array[Resource("res://Area/Dialogue/Character/character_base.gd")]([ExtResource("1_pn4ig")])
+content = Array[ExtResource("2_vr55d")]([SubResource("Resource_v0vfc"), SubResource("Resource_4alm8"), SubResource("Resource_ckvjn"), SubResource("Resource_yu8kw"), SubResource("Resource_yhf12"), SubResource("Resource_xntv3"), SubResource("Resource_frjl0"), SubResource("Resource_1ilf0"), SubResource("Resource_s30jd")])
