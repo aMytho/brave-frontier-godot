@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Units/unit_base.gd" id="1_xyrvh"]
 [ext_resource type="Texture2D" uid="uid://fw61udsblgkb" path="res://Units/Res/49/unit_ills_full_40030.png" id="2_w2fi2"]
 [ext_resource type="Texture2D" uid="uid://b1ihhw8bugqhn" path="res://Units/Res/49/unit_ills_thum_40030.png" id="4_msopp"]
-[ext_resource type="SpriteFrames" path="res://Units/Res/49/unit_sp_40030.tres" id="4_ns7k2"]
+[ext_resource type="SpriteFrames" uid="uid://dwhpsl1xk5jvw" path="res://Units/Res/49/unit_sp_40030.tres" id="4_ns7k2"]
 
 [resource]
 resource_local_to_scene = true
@@ -20,7 +20,9 @@ arena_type = 2
 level = 1
 max_level = 10
 is_dead = false
+number_of_hit = Array[int]([100])
 HP = 830
+max_HP = 0
 ATK = 320
 DEF = 280
 REC = 210
@@ -29,4 +31,7 @@ thumbnail = ExtResource("4_msopp")
 battle_thumbnail = ExtResource("1_xaox0")
 full_sprite = ExtResource("2_w2fi2")
 sprite_sheet = ExtResource("4_ns7k2")
+char_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+atk_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+travel_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
 unit_lore = "A liquid-type demon wrapped in electricity, thought to appear when lightning strikes. It has a horn on its head and a black pattern on its body. It is mischievous and laughs with its friends as it electrically shocks humans. They are still weak and very low level, but like so many other slimes they are perfect sparring partners for new Summoners."

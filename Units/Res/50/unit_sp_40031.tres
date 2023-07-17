@@ -1,3 +1,69 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://cx6k0lcki67is"]
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://cx6k0lcki67is"]
+
+[ext_resource type="Texture2D" uid="uid://cy384a5a541ix" path="res://Units/Res/50/AtlasFrames/A1.tres" id="1_pbfoq"]
+[ext_resource type="Texture2D" uid="uid://dgpod1ot8ns0v" path="res://Units/Res/50/AtlasFrames/A2.tres" id="2_r0d13"]
+[ext_resource type="Texture2D" uid="uid://dnphc17tvpvex" path="res://Units/Res/50/AtlasFrames/A3.tres" id="3_324yb"]
+[ext_resource type="Texture2D" uid="uid://d4ii6d4ljs4h0" path="res://Units/Res/50/AtlasFrames/A4.tres" id="4_o5v4q"]
+[ext_resource type="Texture2D" uid="uid://bxv4gwhtl41xv" path="res://Units/Res/50/AtlasFrames/I1.tres" id="5_spuqk"]
+[ext_resource type="Texture2D" uid="uid://cvrqluawdwqgf" path="res://Units/Res/50/AtlasFrames/I2.tres" id="6_jwnfi"]
+[ext_resource type="Texture2D" uid="uid://cyu0xdt1e52wb" path="res://Units/Res/50/AtlasFrames/I3.tres" id="7_e6l55"]
+[ext_resource type="Texture2D" uid="uid://kcetivh0d0bp" path="res://Units/Res/50/AtlasFrames/S1.tres" id="8_uspf5"]
+[ext_resource type="Texture2D" uid="uid://dqi65mbbkambc" path="res://Units/Res/50/AtlasFrames/T1.tres" id="8_ymlyl"]
+[ext_resource type="Texture2D" uid="uid://e2oifxacrx76" path="res://Units/Res/50/AtlasFrames/T2.tres" id="9_7lcoq"]
 
 [resource]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pbfoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_r0d13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_324yb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_324yb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o5v4q")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_spuqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jwnfi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e6l55")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_uspf5")
+}],
+"loop": true,
+"name": &"Shadow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ymlyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7lcoq")
+}],
+"loop": true,
+"name": &"Travel",
+"speed": 5.0
+}]
