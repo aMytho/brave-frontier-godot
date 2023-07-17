@@ -1,28 +1,23 @@
-[gd_resource type="Resource" script_class="Zone" load_steps=12 format=3 uid="uid://drs5urtfcxnxy"]
+[gd_resource type="Resource" script_class="Zone" load_steps=17 format=3 uid="uid://drs5urtfcxnxy"]
 
 [ext_resource type="Script" path="res://Area/Zones/zone_base.gd" id="1_77xvr"]
 [ext_resource type="Texture2D" uid="uid://dxmjf1igdb02i" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/dungeon_battle_10100.jpg" id="1_87njc"]
+[ext_resource type="Resource" uid="uid://c8b4ts54e4r00" path="res://Units/Res/45/45.tres" id="2_lwdf4"]
 [ext_resource type="Resource" uid="uid://xhx2vl3wbp0f" path="res://Units/Res/49/49.tres" id="2_nnek0"]
 [ext_resource type="AudioStream" uid="uid://kmn3bs6klkkb" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/bf006_btl_boss.mp3" id="3_8pgl2"]
 [ext_resource type="Script" path="res://Area/Stages/stage_base.gd" id="3_ceoeb"]
 [ext_resource type="Resource" uid="uid://c7oo0nl02rohc" path="res://Units/Res/43/43.tres" id="4_bdtis"]
-[ext_resource type="Resource" uid="uid://ddjrp2iafbsjt" path="res://Units/Res/5/5.tres" id="5_6ymvg"]
+[ext_resource type="Resource" uid="uid://bs8suegyk8m10" path="res://Units/Res/51/51.tres" id="5_4hvge"]
+[ext_resource type="Resource" uid="uid://d14xftlgldw1c" path="res://Units/Res/47/47.tres" id="6_hunej"]
+[ext_resource type="Resource" uid="uid://caxylylmwjybe" path="res://Units/Res/53/53.tres" id="8_iuefm"]
+[ext_resource type="Resource" uid="uid://bx3jgtlb4xh8n" path="res://Units/Res/50/50.tres" id="9_601io"]
 
 [sub_resource type="Resource" id="Resource_g6bu8"]
 resource_local_to_scene = true
 script = ExtResource("3_ceoeb")
 id = 1
 is_boss = false
-monsters = Array[Resource("res://Units/unit_base.gd")]([null, ExtResource("2_nnek0"), null, null, null, null])
-mimic_count = 0
-mimic_chance = 0.0
-minic_types = []
-
-[sub_resource type="Resource" id="Resource_35cwk"]
-script = ExtResource("3_ceoeb")
-id = 2
-is_boss = false
-monsters = Array[Resource("res://Units/unit_base.gd")]([ExtResource("4_bdtis"), ExtResource("4_bdtis"), ExtResource("4_bdtis"), ExtResource("5_6ymvg"), ExtResource("5_6ymvg"), ExtResource("5_6ymvg")])
+monsters = Array[Resource("res://Units/unit_base.gd")]([ExtResource("2_lwdf4"), ExtResource("4_bdtis"), null, null, null, null])
 mimic_count = 0
 mimic_chance = 0.0
 minic_types = []
@@ -31,7 +26,16 @@ minic_types = []
 script = ExtResource("3_ceoeb")
 id = 2
 is_boss = false
-monsters = Array[Resource("res://Units/unit_base.gd")]([ExtResource("4_bdtis"), ExtResource("4_bdtis"), ExtResource("4_bdtis"), ExtResource("5_6ymvg"), ExtResource("5_6ymvg"), ExtResource("5_6ymvg")])
+monsters = Array[Resource("res://Units/unit_base.gd")]([ExtResource("2_nnek0"), ExtResource("6_hunej"), null, null, null, null])
+mimic_count = 0
+mimic_chance = 0.0
+minic_types = []
+
+[sub_resource type="Resource" id="Resource_35cwk"]
+script = ExtResource("3_ceoeb")
+id = 2
+is_boss = false
+monsters = Array[Resource("res://Units/unit_base.gd")]([ExtResource("5_4hvge"), ExtResource("4_bdtis"), ExtResource("6_hunej"), null, null, null])
 mimic_count = 0
 mimic_chance = 0.0
 minic_types = []
@@ -41,7 +45,16 @@ resource_local_to_scene = true
 script = ExtResource("3_ceoeb")
 id = 1
 is_boss = false
-monsters = Array[Resource("res://Units/unit_base.gd")]([null, ExtResource("2_nnek0"), null, null, null, null])
+monsters = Array[Resource("res://Units/unit_base.gd")]([ExtResource("8_iuefm"), ExtResource("2_lwdf4"), ExtResource("2_nnek0"), null, null, null])
+mimic_count = 0
+mimic_chance = 0.0
+minic_types = []
+
+[sub_resource type="Resource" id="Resource_mbihr"]
+script = ExtResource("3_ceoeb")
+id = 0
+is_boss = true
+monsters = Array[Resource("res://Units/unit_base.gd")]([null, ExtResource("9_601io"), null, null, null, null])
 mimic_count = 0
 mimic_chance = 0.0
 minic_types = []
@@ -53,7 +66,7 @@ name = "Start of Adventure"
 description = "Your journey as a SUmmoner traveling across Grand Gia has begun! Go forth, and don't forget what Tilith taught you!"
 stages = 4
 energy = 5
-Stage = Array[ExtResource("3_ceoeb")]([SubResource("Resource_g6bu8"), SubResource("Resource_35cwk"), SubResource("Resource_fa54l"), SubResource("Resource_gtcgx")])
+Stage = Array[ExtResource("3_ceoeb")]([SubResource("Resource_g6bu8"), SubResource("Resource_fa54l"), SubResource("Resource_35cwk"), SubResource("Resource_gtcgx"), SubResource("Resource_mbihr")])
 is_visible = true
 BG = ExtResource("1_87njc")
 music = ExtResource("3_8pgl2")

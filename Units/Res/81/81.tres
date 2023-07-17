@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://dcq6rv7kinvkj"]
+
+[ext_resource type="Texture2D" uid="uid://bkq47wvru8d3x" path="res://Units/Res/81/unit_ills_battle_20061.png" id="1_6u3h3"]
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_07tlp"]
+[ext_resource type="Texture2D" uid="uid://c2r2y8e8ne0uo" path="res://Units/Res/81/unit_ills_full_20061.png" id="2_ufc76"]
+[ext_resource type="Texture2D" uid="uid://dvl61ejwojngq" path="res://Units/Res/81/unit_ills_thum_20061.png" id="4_2op72"]
+
+[resource]
+script = ExtResource("1_07tlp")
+unit_number = 81
+data_id = 20061
+name = "Pirate Verica"
+element = "Water"
+gender = "Male"
+rarity = 2
+cost = 3
+arena_type = 4
+level = 1
+max_level = 30
+is_dead = false
+number_of_hit = Array[int]([100])
+HP = 1330
+max_HP = 1330
+ATK = 500
+DEF = 400
+REC = 200
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_2op72")
+battle_thumbnail = ExtResource("1_6u3h3")
+full_sprite = ExtResource("2_ufc76")
+char_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+atk_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+travel_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+unit_lore = ""

@@ -1,0 +1,65 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://cg1mahp2grveo"]
+
+[ext_resource type="Texture2D" uid="uid://sxw5224ykax5" path="res://Units/Res/52/AtlasFrame/A1.tres" id="1_r0r23"]
+[ext_resource type="Texture2D" uid="uid://bf4ldovuxs7g2" path="res://Units/Res/52/AtlasFrame/A2.tres" id="2_4k06p"]
+[ext_resource type="Texture2D" uid="uid://bvc40rf8a1igg" path="res://Units/Res/52/AtlasFrame/A3.tres" id="3_me3ho"]
+[ext_resource type="Texture2D" uid="uid://bqnrb4ood2ecn" path="res://Units/Res/52/AtlasFrame/A4.tres" id="4_3dox6"]
+[ext_resource type="Texture2D" uid="uid://bt7pqml131tvj" path="res://Units/Res/52/AtlasFrame/I1.tres" id="5_pwai2"]
+[ext_resource type="Texture2D" uid="uid://cypf8e6xpnqtc" path="res://Units/Res/52/AtlasFrame/I2.tres" id="6_am6m7"]
+[ext_resource type="Texture2D" uid="uid://bh42hpi6b8jx2" path="res://Units/Res/52/AtlasFrame/I3.tres" id="7_bcexm"]
+[ext_resource type="Texture2D" uid="uid://b0mrr8xt0vkbv" path="res://Units/Res/52/AtlasFrame/S1.tres" id="8_2kipx"]
+[ext_resource type="Texture2D" uid="uid://dj3aq1moc2np2" path="res://Units/Res/52/AtlasFrame/T1.tres" id="8_p4tuc"]
+[ext_resource type="Texture2D" uid="uid://dj1ovt2n2yu1i" path="res://Units/Res/52/AtlasFrame/T2.tres" id="9_habsb"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_r0r23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4k06p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_me3ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3dox6")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_pwai2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_am6m7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bcexm")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_2kipx")
+}],
+"loop": true,
+"name": &"Shadow",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_p4tuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_habsb")
+}],
+"loop": true,
+"name": &"Travel",
+"speed": 2.0
+}]
