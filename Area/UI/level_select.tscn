@@ -152,6 +152,7 @@ libraries = {
 [node name="content_switcher" parent="." instance=ExtResource("9_rchly")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
+offset_left = 16.0
 offset_top = 127.0
 offset_right = 640.0
 offset_bottom = 880.0
