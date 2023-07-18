@@ -14,6 +14,8 @@ func set_level(dun: Dungeon):
 		# When clicked, emit up
 		selectable_level.Clicked.connect(_on_zone_selected)
 		get_child(0).add_child(selectable_level)
+	# Add space after the last item so it isn't cut off (probably a bug)
+	get_child(0).add_spacer(false)
 
 func _on_zone_selected(zone):
 	# Someone clicked a zone

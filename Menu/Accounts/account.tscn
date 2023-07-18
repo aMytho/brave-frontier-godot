@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="1_fivyt"]
 [ext_resource type="Script" path="res://Menu/Accounts/account.gd" id="1_uf0e4"]
 [ext_resource type="Texture2D" uid="uid://ku4h8un7lqso" path="res://Menu/base.jpg" id="2_tb6ec"]
-[ext_resource type="PackedScene" uid="uid://cnhuvcugf1glt" path="res://Common/UI/Buttons/large_button.tscn" id="3_fp151"]
+[ext_resource type="PackedScene" uid="uid://dvtxwq4tw3g50" path="res://Common/UI/Buttons/large_button.tscn" id="3_fp151"]
 
 [node name="account" type="Control"]
 layout_mode = 3
