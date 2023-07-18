@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Zone" load_steps=17 format=3 uid="uid://d4e2c01jstk1a"]
+[gd_resource type="Resource" script_class="Zone" load_steps=17 format=3 uid="uid://dch8dkuapu7nb"]
 
 [ext_resource type="Texture2D" uid="uid://dxmjf1igdb02i" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/dungeon_battle_10100.jpg" id="1_v68l0"]
 [ext_resource type="Script" path="res://Area/Stages/stage_base.gd" id="2_5kkar"]

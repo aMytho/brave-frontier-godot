@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Zone" load_steps=18 format=3 uid="uid://uaclkiq1ctga"]
+[gd_resource type="Resource" script_class="Zone" load_steps=18 format=3 uid="uid://b8n43mvdfu4u2"]
 
 [ext_resource type="Texture2D" uid="uid://dxmjf1igdb02i" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/dungeon_battle_10100.jpg" id="1_wqiru"]
 [ext_resource type="Resource" uid="uid://dm7o2ytk14l63" path="res://Units/Res/71/71.tres" id="2_6dkig"]
@@ -70,7 +70,7 @@ minic_types = []
 script = ExtResource("11_yext1")
 id = 4
 name = "Guardians of the prairie"
-description = ""
+description = "You can see a rocky mountain faintly on the horizon. Tilith is waiting at the \"Cave of Flames\" just beyond here."
 stages = 6
 energy = 5
 Stage = Array[ExtResource("4_4o4fy")]([SubResource("Resource_flv8s"), SubResource("Resource_c3jjp"), SubResource("Resource_w7ew3"), SubResource("Resource_adjxm"), SubResource("Resource_gq22g"), SubResource("Resource_x6jtq")])
