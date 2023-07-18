@@ -72,6 +72,11 @@ func _on_char_chosen(character: Unit):
 	Database.query(
 		"INSERT INTO units (account_id, unit_id, level, hp, atk, def, rec) VALUES (%s, %s, %s, %s, %s, %s, %s)"
 		% [player_id, character.unit_number, character.level, character.HP, character.ATK, character.DEF, character.REC])
+	
+	# Set the active account
+	var account = Database.query("SELECT * FROM player_state WHERE id==" + str(player_id))[0]
+	ActiveAccount.set_account_info(account.id, account.player_name, account.level, account.current_exp,
+	account.energy, account.gems, account.zel, account.karma, account.arena_orbs)
 
 func _on_wake_up():
 	print("Summoner is awake, start tutorial 1")

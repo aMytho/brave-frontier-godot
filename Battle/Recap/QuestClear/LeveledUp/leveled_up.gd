@@ -7,7 +7,12 @@ signal LevelsComplete
 func _ready():
 	# Get level data
 	var current_level = ActiveAccount.get_level_info(new_level)
-	var last_level = ActiveAccount.get_level_info(new_level -1 )
+	# Handle new players that start at level 1. This prevents a crash by not searching for lvl 0
+	var last_level
+	if new_level - 1 == 0:
+		last_level = ActiveAccount.get_level_info(1)
+	else:
+		last_level = ActiveAccount.get_level_info(new_level - 1)
 	
 	# Hide any previous level data
 	$BenefitsContainer/Friend.visible = false
