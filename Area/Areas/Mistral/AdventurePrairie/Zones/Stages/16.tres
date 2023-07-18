@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stage" load_steps=4 format=3 uid="uid://c3ouhiw533leu"]
+
+[ext_resource type="Resource" uid="uid://c7oo0nl02rohc" path="res://Units/Res/43/43.tres" id="1_3x3qp"]
+[ext_resource type="Resource" uid="uid://dm7o2ytk14l63" path="res://Units/Res/71/71.tres" id="2_f6x43"]
+[ext_resource type="Script" path="res://Area/Stages/stage_base.gd" id="3_xgkj4"]
+
+[resource]
+script = ExtResource("3_xgkj4")
+id = 0
+is_boss = false
+monsters = Array[Resource("res://Units/unit_base.gd")]([ExtResource("1_3x3qp"), ExtResource("2_f6x43"), null, null, null, null])
+mimic_count = 0
+mimic_chance = 0.0
+minic_types = []

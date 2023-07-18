@@ -1,70 +1,15 @@
-[gd_resource type="Resource" script_class="Zone" load_steps=18 format=3 uid="uid://b8n43mvdfu4u2"]
+[gd_resource type="Resource" script_class="Zone" load_steps=11 format=3 uid="uid://b8n43mvdfu4u2"]
 
 [ext_resource type="Texture2D" uid="uid://dxmjf1igdb02i" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/dungeon_battle_10100.jpg" id="1_wqiru"]
-[ext_resource type="Resource" uid="uid://dm7o2ytk14l63" path="res://Units/Res/71/71.tres" id="2_6dkig"]
-[ext_resource type="Resource" uid="uid://c8b4ts54e4r00" path="res://Units/Res/45/45.tres" id="3_7t772"]
-[ext_resource type="Script" path="res://Area/Stages/stage_base.gd" id="4_4o4fy"]
-[ext_resource type="Resource" uid="uid://chcp7f762hndr" path="res://Units/Res/73/73.tres" id="5_vjgmy"]
-[ext_resource type="Resource" uid="uid://caxylylmwjybe" path="res://Units/Res/53/53.tres" id="6_rqur0"]
-[ext_resource type="Resource" uid="uid://c7oo0nl02rohc" path="res://Units/Res/43/43.tres" id="7_frgtq"]
-[ext_resource type="Resource" uid="uid://bp0wtucjsu00g" path="res://Units/Res/54/54.tres" id="8_ay4ca"]
+[ext_resource type="Resource" uid="uid://d3mkyqq4kmms5" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/14.tres" id="2_rtkh7"]
+[ext_resource type="Resource" uid="uid://bf0wvbc4cl8b2" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/15.tres" id="3_o5282"]
+[ext_resource type="Resource" uid="uid://c3ouhiw533leu" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/16.tres" id="4_pjhv7"]
+[ext_resource type="Resource" uid="uid://ywljgvn2djyy" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/17.tres" id="5_7yv64"]
+[ext_resource type="Resource" uid="uid://s3xrj34rmxfk" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/18.tres" id="6_lb0q2"]
+[ext_resource type="Resource" uid="uid://c141mdybuy0k8" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/19.tres" id="7_nv6cg"]
 [ext_resource type="AudioStream" uid="uid://kmn3bs6klkkb" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/bf006_btl_boss.mp3" id="9_6s8av"]
 [ext_resource type="AudioStream" uid="uid://dswmrha7t8lcg" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/bf010_map_grass.mp3" id="10_bu1ts"]
 [ext_resource type="Script" path="res://Area/Zones/zone_base.gd" id="11_yext1"]
-
-[sub_resource type="Resource" id="Resource_flv8s"]
-script = ExtResource("4_4o4fy")
-id = 0
-is_boss = false
-monsters = Array[Resource("res://Units/unit_base.gd")]([ExtResource("2_6dkig"), ExtResource("3_7t772"), null, null, null, null])
-mimic_count = 0
-mimic_chance = 0.0
-minic_types = []
-
-[sub_resource type="Resource" id="Resource_c3jjp"]
-script = ExtResource("4_4o4fy")
-id = 0
-is_boss = false
-monsters = Array[Resource("res://Units/unit_base.gd")]([ExtResource("5_vjgmy"), ExtResource("6_rqur0"), null, null, null, null])
-mimic_count = 0
-mimic_chance = 0.0
-minic_types = []
-
-[sub_resource type="Resource" id="Resource_w7ew3"]
-script = ExtResource("4_4o4fy")
-id = 0
-is_boss = false
-monsters = Array[Resource("res://Units/unit_base.gd")]([ExtResource("7_frgtq"), ExtResource("2_6dkig"), null, null, null, null])
-mimic_count = 0
-mimic_chance = 0.0
-minic_types = []
-
-[sub_resource type="Resource" id="Resource_adjxm"]
-script = ExtResource("4_4o4fy")
-id = 0
-is_boss = false
-monsters = Array[Resource("res://Units/unit_base.gd")]([ExtResource("5_vjgmy"), ExtResource("6_rqur0"), null, null, null, null])
-mimic_count = 0
-mimic_chance = 0.0
-minic_types = []
-
-[sub_resource type="Resource" id="Resource_gq22g"]
-script = ExtResource("4_4o4fy")
-id = 0
-is_boss = false
-monsters = Array[Resource("res://Units/unit_base.gd")]([ExtResource("2_6dkig"), ExtResource("3_7t772"), null, null, null, null])
-mimic_count = 0
-mimic_chance = 0.0
-minic_types = []
-
-[sub_resource type="Resource" id="Resource_x6jtq"]
-script = ExtResource("4_4o4fy")
-id = 0
-is_boss = false
-monsters = Array[Resource("res://Units/unit_base.gd")]([null, ExtResource("8_ay4ca"), null, null, null, null])
-mimic_count = 0
-mimic_chance = 0.0
-minic_types = []
 
 [resource]
 script = ExtResource("11_yext1")
@@ -73,7 +18,7 @@ name = "Guardians of the prairie"
 description = "You can see a rocky mountain faintly on the horizon. Tilith is waiting at the \"Cave of Flames\" just beyond here."
 stages = 6
 energy = 5
-Stage = Array[ExtResource("4_4o4fy")]([SubResource("Resource_flv8s"), SubResource("Resource_c3jjp"), SubResource("Resource_w7ew3"), SubResource("Resource_adjxm"), SubResource("Resource_gq22g"), SubResource("Resource_x6jtq")])
+Stage = Array[Resource("res://Area/Stages/stage_base.gd")]([ExtResource("2_rtkh7"), ExtResource("3_o5282"), ExtResource("4_pjhv7"), ExtResource("5_7yv64"), ExtResource("6_lb0q2"), ExtResource("7_nv6cg")])
 is_visible = false
 BG = ExtResource("1_wqiru")
 music = ExtResource("10_bu1ts")
