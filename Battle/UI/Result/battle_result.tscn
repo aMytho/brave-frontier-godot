@@ -587,9 +587,9 @@ texture = ExtResource("18_d7q61")
 [node name="Loss" type="Control" parent="."]
 anchors_preset = 0
 offset_left = 24.0
-offset_top = -264.0
+offset_top = -284.0
 offset_right = 64.0
-offset_bottom = -224.0
+offset_bottom = -244.0
 
 [node name="G" type="TextureRect" parent="Loss"]
 layout_mode = 0
