@@ -9,6 +9,6 @@
 script = ExtResource("1_v0fqd")
 id = 0
 name = "Adventurer's Prairie"
-zones = Array[Resource("res://Area/Zones/zone_base.gd")]([ExtResource("3_qlt6c"), ExtResource("4_os0vo")])
+zones = Array[Resource("res://Area/Zones/zone_base.gd")]([ExtResource("4_os0vo"), ExtResource("3_qlt6c")])
 bg = ExtResource("1_1il4c")
 is_visible = true

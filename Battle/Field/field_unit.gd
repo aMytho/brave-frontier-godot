@@ -184,7 +184,7 @@ func play_death_animation():
 func _on_input_event(_viewport: Viewport, event: InputEvent, _shape_idx):
 	# Listen for clicks or taps
 	# to do - allow number pad for unit target (1 targets unit1, 2 targets unit2, etc)
-	if ((event is InputEventMouseButton and event.is_pressed()) or event is InputEventScreenTouch) and !is_friendly and !is_dead:
+	if ((event is InputEventMouseButton and event.is_pressed()) or event is InputEventScreenTouch) and !is_friendly and !is_dead and is_unit:
 		is_targeted = true
 		$Target.visible = true
 		emit_signal("TargetSelected", place_ID)

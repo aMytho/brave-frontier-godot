@@ -5,7 +5,7 @@
 [node name="ScrollContainer" type="ScrollContainer"]
 offset_left = 16.0
 offset_right = 624.0
-offset_bottom = 400.0
+offset_bottom = 704.0
 horizontal_scroll_mode = 0
 script = ExtResource("1_vvur1")
 

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Zone" load_steps=17 format=3 uid="uid://drs5urtfcxnxy"]
+[gd_resource type="Resource" script_class="Zone" load_steps=24 format=3 uid="uid://drs5urtfcxnxy"]
 
 [ext_resource type="Script" path="res://Area/Zones/zone_base.gd" id="1_77xvr"]
 [ext_resource type="Texture2D" uid="uid://dxmjf1igdb02i" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/dungeon_battle_10100.jpg" id="1_87njc"]
@@ -11,6 +11,9 @@
 [ext_resource type="Resource" uid="uid://d14xftlgldw1c" path="res://Units/Res/47/47.tres" id="6_hunej"]
 [ext_resource type="Resource" uid="uid://caxylylmwjybe" path="res://Units/Res/53/53.tres" id="8_iuefm"]
 [ext_resource type="Resource" uid="uid://bx3jgtlb4xh8n" path="res://Units/Res/50/50.tres" id="9_601io"]
+[ext_resource type="Resource" uid="uid://df3y4snmapt1w" path="res://Area/Dialogue/Character/Tilith/tilith.tres" id="10_oohwx"]
+[ext_resource type="Script" path="res://Area/Dialogue/Content/dialogue_content.gd" id="11_hgn13"]
+[ext_resource type="Script" path="res://Area/Dialogue/dialogue_base.gd" id="12_3lcre"]
 
 [sub_resource type="Resource" id="Resource_g6bu8"]
 resource_local_to_scene = true
@@ -59,6 +62,36 @@ mimic_count = 0
 mimic_chance = 0.0
 minic_types = []
 
+[sub_resource type="Resource" id="Resource_px4od"]
+script = ExtResource("11_hgn13")
+message = "It seems like there's nothing left for me to teach you. Why don't you try getting out of the grasslands by yourself?"
+character = 0
+frame = 0
+wait_before = 0
+wait_after = 0
+
+[sub_resource type="Resource" id="Resource_lvwf6"]
+script = ExtResource("11_hgn13")
+message = "I'll come see you again once you've made it to the cave just beyond the grasslands."
+character = 0
+frame = 0
+wait_before = 0
+wait_after = 0
+
+[sub_resource type="Resource" id="Resource_xjdts"]
+script = ExtResource("11_hgn13")
+message = "Be sure to strengthen up before then! You can do it, Summoner!"
+character = 0
+frame = 1
+wait_before = 0
+wait_after = 0
+
+[sub_resource type="Resource" id="Resource_t57o7"]
+script = ExtResource("12_3lcre")
+id = 0
+characters = Array[Resource("res://Area/Dialogue/Character/character_base.gd")]([ExtResource("10_oohwx")])
+content = Array[ExtResource("11_hgn13")]([SubResource("Resource_px4od"), SubResource("Resource_lvwf6"), SubResource("Resource_xjdts")])
+
 [resource]
 script = ExtResource("1_77xvr")
 id = 2
@@ -75,3 +108,4 @@ difficulty = 1
 xp = 1.0
 karma = 1
 zel = 1
+beginning_cutscene = SubResource("Resource_t57o7")

@@ -14,17 +14,27 @@ signal Complete
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for interaction in dialogue.content:
+		# Set the main properties
 		$ColorRect/Message.modulate = Color(1,1,1,1)
 		$Frame/Speaker.text = dialogue.characters[interaction.character].name
 		$ColorRect/Message.text = interaction.message
 		$Person1.texture = dialogue.characters[interaction.character].frames[interaction.frame]
+		
+		# Handle wait before
+		if interaction.wait_before != 0:
+			await get_tree().create_timer(interaction.wait_before).timeout
 		
 		var tween = create_tween()
 		tween.tween_property($ColorRect/Message, "visible_ratio", 1, 4.0 * speed)
 		tween.set_trans(Tween.TRANS_CUBIC)
 		tween.tween_callback(hide_text)
 		
+		# Wait for the dialogue to finish
 		await Section
+		
+		# Handle wait after
+		if interaction.wait_after != 0:
+			await get_tree().create_timer(interaction.wait_after).timeout 
 	emit_signal("Complete", self)
 
 func hide_text():

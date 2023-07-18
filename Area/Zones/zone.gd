@@ -12,6 +12,7 @@ func _ready():
 	if zone.beginning_cutscene:
 		print("Loading cutscene...")
 		var dialogue = ResourceLoader.load("res://Area/Dialogue/dialogue.tscn").instantiate()
+		dialogue.dialogue = zone.beginning_cutscene
 		add_child(dialogue)
 		dialogue.connect("Complete", _on_beginning_complete)
 	else:
@@ -36,7 +37,6 @@ func _on_beginning_complete(dialogue:Node = null):
 	# Listen for ending
 	battle.BattleFinished.connect(_on_battle_complete)
 
-
 func _on_battle_complete(is_victory: bool):
 	print("Victory: ", is_victory)
 	get_node("Battle").queue_free()
@@ -44,6 +44,7 @@ func _on_battle_complete(is_victory: bool):
 	if zone.ending_cutscene:
 		print("There is an ending cutscene")
 		var dialogue = ResourceLoader.load("res://Area/Dialogue/dialogue.tscn").instantiate()
+		dialogue.dialogue = zone.ending_cutscene
 		add_child(dialogue)
 		dialogue.connect("Complete", _on_end_complete)
 	else:
@@ -55,10 +56,8 @@ func _on_battle_complete(is_victory: bool):
 		add_child(recap)
 		recap.connect("RecapComplete", _on_recap_complete)
 
-
-func _on_end_complete():
-	print("Dialogue is over")
-	print("Showing recap view")
+func _on_end_complete(_dialogue: Node = null):
+	print("Dialogue is over, showing recap view")
 	# To-do: Move to content switcher?
 	var recap = ResourceLoader.load("res://Battle/Recap/recap.tscn").instantiate()
 	recap.zone = zone
@@ -71,7 +70,7 @@ func _on_recap_complete():
 	# Load the home page
 	get_tree().get_root().get_node("Game/GameContent").loadScene("res://Menu/main_menu.tscn", true)
 
-func fade_control(action: int, music_file  = null):
+func fade_control(action: int, music_file = null):
 	var tween = create_tween()
 	if action == 0:
 		tween.tween_property(music, "volume_db", -80.0, 1.5)
