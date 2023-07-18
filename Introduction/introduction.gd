@@ -93,7 +93,7 @@ func _on_wake_up():
 			player_id, sparky.unit_number, sparky.level, sparky.HP, sparky.ATK, sparky.DEF, sparky.REC
 		])
 	
-	#Get units id so we can add to team
+	# Get units id so we can add to team
 	var units_ids = Database.query("SELECT id FROM units WHERE account_id == %s" % player_id)
 	print(units_ids)
 	
@@ -107,5 +107,14 @@ func _on_wake_up():
 	var zone = ResourceLoader.load("res://Area/Areas/Mistral/AdventurePrairie/Zones/basics_of_battle.tres")
 	var arg1 = ["zone", "units"]
 	var subArg: Array[Unit] = [burny, main_character, sparky, null, null, null]
+	# Get a unique instance for every monster in the stage
+	for stage in zone.Stage:
+		var enemies_list: Array[Unit] = []
+		for unit in stage.monsters:
+			if null != unit:
+				enemies_list.append(Lookups.get_unit_by_unit_number(unit.unit_number)["unit"])
+			else:
+				enemies_list.append(null)
+		stage.monsters = enemies_list
 	var arg2 = [zone, subArg]
 	get_tree().get_root().get_node("Game/GameContent").loadSceneWithProps("res://Area/Zones/zone.tscn", arg1, arg2)
