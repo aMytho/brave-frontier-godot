@@ -2,6 +2,8 @@
 
 This is a small remake of the mobile game Brave Frontier. Brave frontier shutdown within the last year. This project implements many of the same features and structure.
 
+> Interested in creating Custom Levels? View our [Wiki](https://github.com/aMytho/brave-frontier-godot/wiki)
+
 ![Home screen, team selector, and battle scenes](https://github.com/aMytho/brave-frontier-godot/assets/58316242/b7d97886-8e13-4c37-a58e-ace2fbb32f8f)
 
 We are **not** remaking the full game. This project solely exists so we can practice with the Godot game engine. If you want to play the full game again, have a look at [Brave Frontier Recoded](https://bravefrontierrecoded.com/).
