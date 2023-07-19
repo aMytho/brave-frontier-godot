@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Zone" load_steps=16 format=3 uid="uid://df1q6xrrfp471"]
+[gd_resource type="Resource" script_class="Zone" load_steps=17 format=3 uid="uid://df1q6xrrfp471"]
 
 [ext_resource type="Texture2D" uid="uid://dxmjf1igdb02i" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/dungeon_battle_10100.jpg" id="1_5lt5j"]
 [ext_resource type="Script" path="res://Area/Zones/zone_base.gd" id="1_bcj8e"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://dkcsqn051gfmg" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/2.tres" id="3_747vs"]
 [ext_resource type="AudioStream" uid="uid://dswmrha7t8lcg" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/bf010_map_grass.mp3" id="3_vdvdc"]
 [ext_resource type="Resource" uid="uid://wnxkh0vc1qwn" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/3.tres" id="4_xb5rb"]
+[ext_resource type="Resource" uid="uid://b4ul5u41htvtq" path="res://Area/Areas/Mistral/AdventurePrairie/Dialogue/beginners_prairie.tres" id="5_80uih"]
 [ext_resource type="Resource" uid="uid://df3y4snmapt1w" path="res://Area/Dialogue/Character/Tilith/tilith.tres" id="8_kasvd"]
 [ext_resource type="Script" path="res://Area/Dialogue/Content/dialogue_content.gd" id="9_j6og3"]
 [ext_resource type="Script" path="res://Area/Dialogue/dialogue_base.gd" id="10_bsggj"]
@@ -48,6 +49,7 @@ script = ExtResource("10_bsggj")
 id = 0
 characters = Array[Resource("res://Area/Dialogue/Character/character_base.gd")]([ExtResource("8_kasvd")])
 content = Array[ExtResource("9_j6og3")]([SubResource("Resource_v5gvr"), SubResource("Resource_neaem"), SubResource("Resource_uer8c"), SubResource("Resource_ln306")])
+music = ExtResource("3_vdvdc")
 
 [resource]
 script = ExtResource("1_bcj8e")
@@ -65,4 +67,5 @@ difficulty = 1
 xp = 5.0
 karma = 100
 zel = 500
+beginning_cutscene = ExtResource("5_80uih")
 ending_cutscene = SubResource("Resource_2tpm2")

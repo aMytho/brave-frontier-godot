@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=13 format=3 uid="uid://b4ul5u41htvtq"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=14 format=3 uid="uid://b4ul5u41htvtq"]
 
 [ext_resource type="Script" path="res://Area/Dialogue/dialogue_base.gd" id="1_ctyiu"]
 [ext_resource type="Resource" uid="uid://df3y4snmapt1w" path="res://Area/Dialogue/Character/Tilith/tilith.tres" id="1_pn4ig"]
 [ext_resource type="Script" path="res://Area/Dialogue/Content/dialogue_content.gd" id="2_vr55d"]
+[ext_resource type="AudioStream" uid="uid://dswmrha7t8lcg" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/bf010_map_grass.mp3" id="3_i4bdf"]
 
 [sub_resource type="Resource" id="Resource_v0vfc"]
 script = ExtResource("2_vr55d")
@@ -81,3 +82,4 @@ script = ExtResource("1_ctyiu")
 id = 1
 characters = Array[Resource("res://Area/Dialogue/Character/character_base.gd")]([ExtResource("1_pn4ig")])
 content = Array[ExtResource("2_vr55d")]([SubResource("Resource_v0vfc"), SubResource("Resource_4alm8"), SubResource("Resource_ckvjn"), SubResource("Resource_yu8kw"), SubResource("Resource_yhf12"), SubResource("Resource_xntv3"), SubResource("Resource_frjl0"), SubResource("Resource_1ilf0"), SubResource("Resource_s30jd")])
+music = ExtResource("3_i4bdf")
