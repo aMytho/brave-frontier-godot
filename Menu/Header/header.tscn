@@ -6,20 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://b2w12ch8fsvky" path="res://Menu/Header/header_arena_light_01.png" id="3_vxyyu"]
 [ext_resource type="Texture2D" uid="uid://b4d1areem0aco" path="res://Menu/Header/header_ui.png" id="4_esxgj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rseca"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie3eq"]
 atlas = ExtResource("4_esxgj")
-region = Rect2(0, 180.156, 143.511, 23.7753)
+region = Rect2(145.905, 180, 140.198, 24.1554)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nig2b"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sytoo"]
 atlas = ExtResource("4_esxgj")
-region = Rect2(145.809, 180.108, 140.304, 24.6906)
+region = Rect2(2, 180, 140, 24)
 
 [node name="Header" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_cvy25")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="HeaderBG" type="TextureRect" parent="."]
 z_index = 3
 layout_mode = 0
 offset_top = 1.0
@@ -27,7 +27,7 @@ offset_right = 643.0
 offset_bottom = 175.0
 texture = ExtResource("1_x24ba")
 
-[node name="Level" type="Label" parent="TextureRect"]
+[node name="Level" type="Label" parent="HeaderBG"]
 layout_mode = 0
 offset_left = 57.0
 offset_top = 40.0
@@ -35,7 +35,7 @@ offset_right = 97.0
 offset_bottom = 63.0
 text = "999"
 
-[node name="RC" type="Label" parent="TextureRect"]
+[node name="RC" type="Label" parent="HeaderBG"]
 layout_mode = 0
 offset_left = 161.0
 offset_top = 41.0
@@ -43,7 +43,7 @@ offset_right = 201.0
 offset_bottom = 67.0
 text = "7"
 
-[node name="Zel" type="Label" parent="TextureRect"]
+[node name="Zel" type="Label" parent="HeaderBG"]
 layout_mode = 0
 offset_left = 472.0
 offset_top = 72.0
@@ -52,7 +52,7 @@ offset_bottom = 98.0
 text = "3787893789237"
 horizontal_alignment = 2
 
-[node name="Karma" type="Label" parent="TextureRect"]
+[node name="Karma" type="Label" parent="HeaderBG"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -65,7 +65,7 @@ grow_horizontal = 0
 text = "19291291298391"
 horizontal_alignment = 2
 
-[node name="Gems" type="Label" parent="TextureRect"]
+[node name="Gems" type="Label" parent="HeaderBG"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -78,7 +78,8 @@ grow_horizontal = 0
 text = "517"
 horizontal_alignment = 2
 
-[node name="Refill" type="Label" parent="TextureRect"]
+[node name="Refill" type="Label" parent="HeaderBG"]
+visible = false
 layout_mode = 0
 offset_left = 49.0
 offset_top = 130.0
@@ -87,7 +88,10 @@ offset_bottom = 156.0
 text = "REFILL IN: 1:00"
 script = ExtResource("2_4dyew")
 
-[node name="EnergyCounter" type="Label" parent="TextureRect"]
+[node name="EnergyChecker" type="Timer" parent="HeaderBG/Refill"]
+autostart = true
+
+[node name="EnergyCounter" type="Label" parent="HeaderBG"]
 layout_mode = 0
 offset_left = 81.0
 offset_top = 104.0
@@ -96,7 +100,7 @@ offset_bottom = 130.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "400 / 400"
 
-[node name="Account" type="Label" parent="TextureRect"]
+[node name="Account" type="Label" parent="HeaderBG"]
 layout_mode = 0
 offset_left = 74.0
 offset_top = 6.0
@@ -104,7 +108,7 @@ offset_right = 124.0
 offset_bottom = 32.0
 text = "Mytho"
 
-[node name="Clan" type="Label" parent="TextureRect"]
+[node name="Clan" type="Label" parent="HeaderBG"]
 layout_mode = 0
 offset_left = 515.0
 offset_top = 6.0
@@ -113,7 +117,7 @@ offset_bottom = 32.0
 text = "Meeetho
 "
 
-[node name="Arena1" type="TextureRect" parent="TextureRect"]
+[node name="Arena1" type="TextureRect" parent="HeaderBG"]
 layout_mode = 0
 offset_left = 539.0
 offset_top = 128.0
@@ -121,7 +125,7 @@ offset_right = 571.0
 offset_bottom = 160.0
 texture = ExtResource("3_vxyyu")
 
-[node name="Arena2" type="TextureRect" parent="TextureRect"]
+[node name="Arena2" type="TextureRect" parent="HeaderBG"]
 layout_mode = 1
 offset_left = 566.0
 offset_top = 128.0
@@ -129,7 +133,7 @@ offset_right = 598.0
 offset_bottom = 160.0
 texture = ExtResource("3_vxyyu")
 
-[node name="Arena3" type="TextureRect" parent="TextureRect"]
+[node name="Arena3" type="TextureRect" parent="HeaderBG"]
 layout_mode = 1
 offset_left = 592.0
 offset_top = 128.0
@@ -137,20 +141,24 @@ offset_right = 624.0
 offset_bottom = 160.0
 texture = ExtResource("3_vxyyu")
 
-[node name="EXP" type="TextureRect" parent="TextureRect"]
+[node name="EnergyBar" type="TextureProgressBar" parent="HeaderBG"]
 z_index = -1
 layout_mode = 0
-offset_left = 46.0
-offset_top = 71.0
-offset_right = 189.0
-offset_bottom = 94.0
-texture = SubResource("AtlasTexture_rseca")
-
-[node name="TextureRect" type="TextureRect" parent="TextureRect"]
-z_index = -1
-layout_mode = 0
-offset_left = 46.0
+offset_left = 47.0
 offset_top = 102.0
-offset_right = 186.0
+offset_right = 187.0
 offset_bottom = 126.0
-texture = SubResource("AtlasTexture_nig2b")
+value = 100.0
+texture_progress = SubResource("AtlasTexture_ie3eq")
+
+[node name="ExpBar" type="TextureProgressBar" parent="HeaderBG"]
+z_index = -1
+layout_mode = 0
+offset_left = 46.0
+offset_top = 72.0
+offset_right = 186.0
+offset_bottom = 96.0
+value = 100.0
+texture_progress = SubResource("AtlasTexture_sytoo")
+
+[connection signal="timeout" from="HeaderBG/Refill/EnergyChecker" to="HeaderBG/Refill" method="_on_energy_checker_timeout"]
