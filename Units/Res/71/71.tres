@@ -1,9 +1,142 @@
-[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://dm7o2ytk14l63"]
+[gd_resource type="Resource" script_class="Unit" load_steps=30 format=3 uid="uid://dm7o2ytk14l63"]
 
+[ext_resource type="Script" path="res://Units/equipment_frame.gd" id="1_17b3t"]
 [ext_resource type="Texture2D" uid="uid://cbg5chyqpk2ge" path="res://Units/Res/71/unit_ills_battle_30050.png" id="1_o2k3i"]
 [ext_resource type="Script" path="res://Units/unit_base.gd" id="1_wd3uv"]
+[ext_resource type="Script" path="res://Units/char_equipment.gd" id="2_nfilg"]
 [ext_resource type="Texture2D" uid="uid://dtimoh0kl7rh7" path="res://Units/Res/71/unit_ills_full_30050.png" id="2_w2x5r"]
+[ext_resource type="SpriteFrames" uid="uid://bcy7dcn1ftlb" path="res://Units/Res/71/unit_sp_30050.tres" id="4_6ubu5"]
 [ext_resource type="Texture2D" uid="uid://x6dm6ecrilxc" path="res://Units/Res/71/unit_ills_thum_30050.png" id="4_n2clx"]
+
+[sub_resource type="Resource" id="Resource_qvt4u"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_vf2t2"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_or08i"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_55xql"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_jjeog"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_1ki28"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_gohs4"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_vwue1"]
+script = ExtResource("2_nfilg")
+name = "ScreamAttack"
+frames = Array[ExtResource("1_17b3t")]([SubResource("Resource_qvt4u"), SubResource("Resource_qvt4u"), SubResource("Resource_qvt4u"), SubResource("Resource_qvt4u"), SubResource("Resource_qvt4u"), SubResource("Resource_qvt4u"), SubResource("Resource_qvt4u"), SubResource("Resource_qvt4u"), SubResource("Resource_qvt4u"), SubResource("Resource_vf2t2"), SubResource("Resource_or08i"), SubResource("Resource_55xql"), SubResource("Resource_jjeog"), SubResource("Resource_1ki28"), SubResource("Resource_gohs4")])
+
+[sub_resource type="Resource" id="Resource_sqosg"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_tdsny"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_rbatm"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_yca7k"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_nshpr"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_12ntm"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_mhkrg"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_0wk60"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_xfedf"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_xrfqm"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_i1ejt"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_010ei"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_nkdhj"]
+script = ExtResource("1_17b3t")
+position = Vector2(0, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_vxg08"]
+script = ExtResource("2_nfilg")
+name = "ScreamAttack2"
+frames = Array[ExtResource("1_17b3t")]([SubResource("Resource_sqosg"), SubResource("Resource_tdsny"), SubResource("Resource_rbatm"), SubResource("Resource_yca7k"), SubResource("Resource_nshpr"), SubResource("Resource_12ntm"), SubResource("Resource_mhkrg"), SubResource("Resource_0wk60"), SubResource("Resource_xfedf"), SubResource("Resource_xrfqm"), SubResource("Resource_i1ejt"), SubResource("Resource_010ei"), SubResource("Resource_nkdhj")])
 
 [resource]
 script = ExtResource("1_wd3uv")
@@ -17,7 +150,10 @@ cost = 2
 arena_type = 1
 level = 1
 max_level = 12
+is_dead = false
+number_of_hit = Array[int]([100])
 HP = 1010
+max_HP = 0
 ATK = 300
 DEF = 400
 REC = 180
@@ -25,4 +161,9 @@ skills = Array[Resource]([])
 thumbnail = ExtResource("4_n2clx")
 battle_thumbnail = ExtResource("1_o2k3i")
 full_sprite = ExtResource("2_w2x5r")
+sprite_sheet = ExtResource("4_6ubu5")
+char_equipment = Array[ExtResource("2_nfilg")]([])
+atk_equipment = Array[ExtResource("2_nfilg")]([SubResource("Resource_vwue1"), SubResource("Resource_vxg08")])
+travel_equipment = Array[ExtResource("2_nfilg")]([])
+animationVersion = 2
 unit_lore = "A human-like plant native to deep forests where the sun can't reach. They sleep as they grow in the earth. If pulled from the ground they will become violent and attack whoever disturbed them. They are dangerous when carelessly touched as their scream can shake a person's very soul. However, it could just be that they're just a bit crazy as they are sometimes friendly."
