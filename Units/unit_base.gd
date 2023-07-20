@@ -62,6 +62,8 @@ var id: int = 0
 @export var atk_equipment: Array[CharEquipment] = []
 # Same as above but only shows during travel
 @export var travel_equipment: Array[CharEquipment] = []
+## Animation version. Our original assets used atlas textures, our new ones use compressed2d
+@export var animationVersion: int = 1
 
 @export_category("Info")
 # Snazzy comment

@@ -96,8 +96,14 @@ func set_properties(unit: Unit, flip: bool, new_idle_equipment, new_attack_equip
 	# Play the idle animation
 	sprite.play("Idle")
 	
-	# Set the target to be in the center of the unit
-	var center = sprite.sprite_frames.get_frame_texture("Idle", 0).region.size / 2
+	# Set the target to be in the center of the unit.
+	# Check the animVersion to see how to calculate the center
+	var center: Vector2
+	if unit.animationVersion == 1:
+		center = sprite.sprite_frames.get_frame_texture("Idle", 0).region.size / 2
+	else:
+		center = sprite.sprite_frames.get_frame_texture("Idle", 0).get_size() / 2
+
 	var reverse = -1 if flip == true else 1
 	# The target subtracts 24 its diameter is 24 = 12*2
 	$Clickable.position = center - Vector2(24,24)
