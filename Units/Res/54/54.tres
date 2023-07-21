@@ -1,9 +1,45 @@
-[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://bp0wtucjsu00g"]
+[gd_resource type="Resource" script_class="Unit" load_steps=14 format=3 uid="uid://bp0wtucjsu00g"]
 
 [ext_resource type="Script" path="res://Units/unit_base.gd" id="1_jpm60"]
 [ext_resource type="Texture2D" uid="uid://4nxn2lsfrdfr" path="res://Units/Res/54/unit_ills_battle_60031.png" id="1_y5ck1"]
 [ext_resource type="Texture2D" uid="uid://di32mven1ff11" path="res://Units/Res/54/unit_ills_full_60031.png" id="2_j8oke"]
+[ext_resource type="Script" path="res://Units/equipment_frame.gd" id="2_rgas2"]
+[ext_resource type="Script" path="res://Units/char_equipment.gd" id="3_t4hpf"]
 [ext_resource type="Texture2D" uid="uid://is53ihvnfi0n" path="res://Units/Res/54/unit_ills_thum_60031.png" id="4_maidf"]
+[ext_resource type="SpriteFrames" uid="uid://cte5qjshilci4" path="res://Units/Res/54/unit_sp_60031.tres" id="6_f0bm0"]
+
+[sub_resource type="Resource" id="Resource_6vric"]
+script = ExtResource("2_rgas2")
+position = Vector2(2, 28)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_nxixg"]
+script = ExtResource("3_t4hpf")
+name = "ShadowAttack"
+frames = Array[ExtResource("2_rgas2")]([SubResource("Resource_6vric")])
+
+[sub_resource type="Resource" id="Resource_v34cf"]
+script = ExtResource("2_rgas2")
+position = Vector2(2, 28)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_odaj8"]
+script = ExtResource("3_t4hpf")
+name = "Shadow"
+frames = Array[ExtResource("2_rgas2")]([SubResource("Resource_v34cf")])
+
+[sub_resource type="Resource" id="Resource_yan6c"]
+script = ExtResource("2_rgas2")
+position = Vector2(0, 27)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_hrn04"]
+script = ExtResource("3_t4hpf")
+name = "Shadow"
+frames = Array[ExtResource("2_rgas2")]([SubResource("Resource_yan6c")])
 
 [resource]
 script = ExtResource("1_jpm60")
@@ -17,7 +53,10 @@ cost = 3
 arena_type = 2
 level = 1
 max_level = 30
+is_dead = false
+number_of_hit = Array[int]([100])
 HP = 1000
+max_HP = 0
 ATK = 530
 DEF = 230
 REC = 230
@@ -25,4 +64,9 @@ skills = Array[Resource]([])
 thumbnail = ExtResource("4_maidf")
 battle_thumbnail = ExtResource("1_y5ck1")
 full_sprite = ExtResource("2_j8oke")
+sprite_sheet = ExtResource("6_f0bm0")
+char_equipment = Array[ExtResource("3_t4hpf")]([SubResource("Resource_odaj8")])
+atk_equipment = Array[ExtResource("3_t4hpf")]([SubResource("Resource_nxixg")])
+travel_equipment = Array[ExtResource("3_t4hpf")]([SubResource("Resource_hrn04")])
+animationVersion = 1
 unit_lore = "Just like Glowy Slime, when multiple Dark Slimes come together, they transform into Dark Slime King. Even though it's more brutal and obscene than Dark Slime, it still occasionally mixes in some kind words. Nonetheless, the destructive attacks it unleashes from its giant body are much stronger, and it is certainly more dangerous. It also has wings, but it has absolutely no ability to fly."

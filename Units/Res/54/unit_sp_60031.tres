@@ -1,0 +1,72 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://cte5qjshilci4"]
+
+[ext_resource type="Texture2D" uid="uid://nbdgmsgb1tuq" path="res://Units/Res/54/AtlasFrames/I1.tres" id="1_6vckq"]
+[ext_resource type="Texture2D" uid="uid://drmw0cxgcquy7" path="res://Units/Res/54/AtlasFrames/A1.tres" id="1_33bc4"]
+[ext_resource type="Texture2D" uid="uid://e0bt0j2hiumc" path="res://Units/Res/54/AtlasFrames/A2.tres" id="2_53myb"]
+[ext_resource type="Texture2D" uid="uid://cfsit5y16st16" path="res://Units/Res/54/AtlasFrames/I2.tres" id="2_83iu4"]
+[ext_resource type="Texture2D" uid="uid://phpjjdumrl7b" path="res://Units/Res/54/AtlasFrames/A3.tres" id="3_erxbg"]
+[ext_resource type="Texture2D" uid="uid://boolsvis2hprm" path="res://Units/Res/54/AtlasFrames/I3.tres" id="3_lgspv"]
+[ext_resource type="Texture2D" uid="uid://bvobspkf8utg" path="res://Units/Res/54/AtlasFrames/A4.tres" id="4_qosrw"]
+[ext_resource type="Texture2D" uid="uid://bedjhkuj2r4t7" path="res://Units/Res/54/AtlasFrames/A5.tres" id="5_oa0q5"]
+[ext_resource type="Texture2D" uid="uid://boyn1bnkxheaw" path="res://Units/Res/54/AtlasFrames/S1.tres" id="9_4phkx"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_33bc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_53myb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_erxbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qosrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oa0q5")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6vckq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_83iu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lgspv")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_4phkx")
+}],
+"loop": true,
+"name": &"Shadow",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_4phkx")
+}],
+"loop": false,
+"name": &"ShadowAttack",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"Wait",
+"speed": 5.0
+}]
