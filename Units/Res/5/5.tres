@@ -152,4 +152,5 @@ sprite_sheet = ExtResource("4_6pfmr")
 char_equipment = Array[ExtResource("1_mbryc")]([SubResource("Resource_prv2q")])
 atk_equipment = Array[ExtResource("1_mbryc")]([SubResource("Resource_dss08"), SubResource("Resource_07v35")])
 travel_equipment = Array[ExtResource("1_mbryc")]([SubResource("Resource_te5e2")])
+animationVersion = 1
 unit_lore = "A swordswoman from the ruined Sama Kingdom, she later became one of the Six Heroes. Born from a line of chiefs of the wandering sea people of Savat, she was raised in traditional long sword techniques. She stood out so much that she was offered the treasured sword Lexida as proof of her chiefdom at age 14. She refused it at the time, claiming she was inexperienced."
