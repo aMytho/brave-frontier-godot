@@ -1,14 +1,15 @@
-[gd_resource type="Resource" script_class="Dungeon" load_steps=5 format=3 uid="uid://63nosake3b0h"]
+[gd_resource type="Resource" script_class="Dungeon" load_steps=6 format=3 uid="uid://63nosake3b0h"]
 
 [ext_resource type="Texture2D" uid="uid://djbh1wxmdewjh" path="res://Area/World/area_0001_iph5.jpg" id="1_1il4c"]
 [ext_resource type="Script" path="res://Area/Dungeons/dungeon_base.gd" id="1_v0fqd"]
 [ext_resource type="Resource" uid="uid://drs5urtfcxnxy" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/adventure_start.tres" id="3_qlt6c"]
 [ext_resource type="Resource" uid="uid://df1q6xrrfp471" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/basics_of_battle.tres" id="4_os0vo"]
+[ext_resource type="Resource" uid="uid://dch8dkuapu7nb" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/prairie_monster.tres" id="5_3nnal"]
 
 [resource]
 script = ExtResource("1_v0fqd")
 id = 0
 name = "Adventurer's Prairie"
-zones = Array[Resource("res://Area/Zones/zone_base.gd")]([ExtResource("4_os0vo"), ExtResource("3_qlt6c")])
+zones = Array[Resource("res://Area/Zones/zone_base.gd")]([ExtResource("4_os0vo"), ExtResource("3_qlt6c"), ExtResource("5_3nnal")])
 bg = ExtResource("1_1il4c")
 is_visible = true
