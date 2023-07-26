@@ -2,47 +2,36 @@ extends Control
 
 signal Switched(scn: Node)
 
+# Animations - 
+# 0 is slide, 1 is fade
+# To-do: make that an enum
+
 @export var current_scene: Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-func load_scene(scene: String, animation: int, new_scene: Control = null):
+func load_scene(scene: String, animation: int, new_position: Vector2 = Vector2(0,0)):
 	print("Switching current scene to: ", scene)
-	if null == new_scene :
-		new_scene = ResourceLoader.load(scene).instantiate()
 
-	#Swap scenes
+	# Create the scene based on the path
+	var new_scene = ResourceLoader.load(scene).instantiate()
+	new_scene.position = new_position
+
+	# Swap scenes
 	animate_swap(new_scene, animation)
 
-	#Set the new scene
+	# Set the new scene
 	current_scene = new_scene
-	
-	#Let any listeners know we switched a scene. Usually, they will get the scene and set data
+
+	# Let any listeners know we switched a scene. Usually, they will get the scene and set data
 	emit_signal("Switched", current_scene)
 
-func load_scene_home(scene: String, animation: int = 0):
-	var new_scene = ResourceLoader.load(scene).instantiate()
-	new_scene.position.y = 163
-	load_scene(scene, animation, new_scene)
-
-func load_scene_home_with_props(scene: String, animation: int, keys, vals):
-	print("Switching home scene with properties to: ", scene)
-	var new_scene = ResourceLoader.load(scene).instantiate()
-	new_scene.position.y = 163
-	
-	#Set props
-	var count = 0
-	for key in keys:
-		new_scene[key] = vals[count]
-		count = count + 1
-	
-	load_scene(scene, animation, new_scene)
-
-func load_scene_with_props(scene: String, animation: int, keys, vals):
+func load_scene_with_props(scene: String, animation: int, keys, vals, pos: Vector2 = Vector2(0,0)):
 	print("Switching to the following scene with properties: ", scene)
 	var new_scene = ResourceLoader.load(scene).instantiate()
+	new_scene.position = pos
 	
 	#Set props
 	var count = 0

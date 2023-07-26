@@ -21,8 +21,10 @@ unique_name_in_owner = true
 layout_mode = 0
 offset_right = 608.0
 offset_bottom = 163.0
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_gww5b")
 theme_override_styles/hover = SubResource("StyleBoxTexture_gww5b")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_gww5b")
 alignment = 0
 
 [node name="Energy" type="Label" parent="LevelSelectButton"]

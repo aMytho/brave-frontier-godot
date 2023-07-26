@@ -39,13 +39,13 @@ func _on_unit_pressed(unit: Unit):
 	if use_signals:
 		emit_signal("UnitSelected", unit.id)
 	else:
-		get_parent().load_scene_home_with_props("res://Menu/SubMenu/Unit/Display/unit_display.tscn", 1, ["unit"], [unit])
+		get_parent().load_scene_with_props("res://Menu/SubMenu/Unit/Display/unit_display.tscn", 1, ["unit"], [unit], Vector2(0,163))
 
 func _on_back_pressed():
 	if use_signals:
 		emit_signal("BackPressed")
 	else:
-		get_parent().load_scene_home("res://Menu/SubMenu/Unit/unit_menu.tscn")
+		get_parent().load_scene("res://Menu/SubMenu/Unit/unit_menu.tscn", 0, Vector2(0, 163))
 
 
 func _on_remove_unit_gui_input(event):

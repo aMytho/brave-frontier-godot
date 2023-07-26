@@ -200,7 +200,7 @@ func unit_not_null(possible_unit):
 		return possible_unit
 
 func _on_back_section_clicked():
-	get_parent().load_scene_home("res://Menu/SubMenu/Unit/unit_menu.tscn")
+	get_parent().load_scene("res://Menu/SubMenu/Unit/unit_menu.tscn", 0, Vector2(0, 163))
 
 func _on_unit_select_back_section():
 	# Menu closed without choosing a unit, hide it
