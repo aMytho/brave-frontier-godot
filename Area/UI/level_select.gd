@@ -15,8 +15,9 @@ func _ready():
 	pass
 
 func display_zones(dun: Dungeon):
+	$content_switcher._set_blank_scene()
 	# Display the level scene in the switcher
-	$content_switcher.load_scene("res://Area/UI/LevelPrep/level_scrollable.tscn", 0)
+	$content_switcher.load_scene("res://Area/UI/LevelPrep/level_scrollable.tscn", 1, Vector2(10, 0))
 	# Display the levels
 	$content_switcher.get_scene().set_level(dun)
 	# When a level is selected, load the teams page
@@ -60,6 +61,9 @@ func _on_player_ready(units):
 			else:
 				enemies_list.append(null)
 		stage.monsters = enemies_list
+	
+	# Remove energy from player
+	ActiveAccount.energy = ActiveAccount.energy - zone.energy
 	
 	var arg_props = [units, zone]
 	emit_signal("Closed")
