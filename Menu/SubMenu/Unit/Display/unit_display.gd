@@ -20,4 +20,4 @@ func _ready():
 func _on_back_section_clicked():
 	# This needs to be a fade effect because the footer buttons are still visible.
 	# It looks really weird if its a slide transition
-	get_parent().load_scene("res://Menu/SubMenu/Unit/Display/view_units.tscn", 1, Vector2(0, 163))
+	get_parent().load_scene("res://Menu/SubMenu/Unit/Display/view_units.tscn", 1)

@@ -37,8 +37,9 @@ footer_message = "Welcome to Brave Frontier!"
 [node name="content_switcher" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+offset_top = 160.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 200.0
 script = ExtResource("7_0g887")
 
 [node name="MenuSlideAndFade" type="AnimationPlayer" parent="content_switcher"]
