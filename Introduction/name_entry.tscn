@@ -93,6 +93,7 @@ offset_bottom = 1080.0
 script = ExtResource("1_i0hto")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 168.0
 offset_top = 179.0
 offset_right = 437.0
@@ -102,6 +103,7 @@ theme_override_font_sizes/font_size = 50
 text = "Summoner"
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 102.0
 offset_top = 334.0
 offset_right = 519.0
@@ -111,6 +113,7 @@ theme_override_font_sizes/font_size = 50
 text = "Enter Your Name"
 
 [node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
 offset_left = 115.0
 offset_top = 479.0
 offset_right = 501.0
@@ -122,6 +125,7 @@ caret_blink = true
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 262.0
 offset_top = 669.0
 offset_right = 351.0
@@ -135,6 +139,16 @@ autoplay = "FadeIn"
 libraries = {
 "": SubResource("AnimationLibrary_obnb7")
 }
+
+[node name="Error" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 146.0
+offset_top = 829.0
+offset_right = 470.0
+offset_bottom = 855.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Do not take another Summoner's legacy..."
 
 [connection signal="focus_entered" from="TextEdit" to="." method="_on_text_edit_focus_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
