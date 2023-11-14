@@ -132,45 +132,49 @@ button = ExtResource("3_7a3tw")
 id = 2
 
 [node name="FooterButton3" parent="FooterContainer" instance=ExtResource("2_xiryr")]
+self_modulate = Color(1, 1, 1, 0.54902)
 layout_mode = 0
 offset_left = 208.0
 offset_top = 978.0
 offset_right = 326.0
 offset_bottom = 1096.0
-mouse_default_cursor_shape = 2
+mouse_default_cursor_shape = 8
 icon = ExtResource("4_mp4ih")
 button = ExtResource("4_mp4ih")
 id = 3
 
 [node name="FooterButton4" parent="FooterContainer" instance=ExtResource("2_xiryr")]
+self_modulate = Color(1, 1, 1, 0.54902)
 layout_mode = 0
 offset_left = 314.0
 offset_top = 978.0
 offset_right = 432.0
 offset_bottom = 1096.0
-mouse_default_cursor_shape = 2
+mouse_default_cursor_shape = 8
 icon = ExtResource("5_b22u2")
 button = ExtResource("5_b22u2")
 id = 4
 
 [node name="FooterButton5" parent="FooterContainer" instance=ExtResource("2_xiryr")]
+self_modulate = Color(1, 1, 1, 0.54902)
 layout_mode = 0
 offset_left = 420.0
 offset_top = 979.0
 offset_right = 538.0
 offset_bottom = 1097.0
-mouse_default_cursor_shape = 2
+mouse_default_cursor_shape = 8
 icon = ExtResource("6_fl517")
 button = ExtResource("6_fl517")
 id = 5
 
 [node name="FooterButton6" parent="FooterContainer" instance=ExtResource("2_xiryr")]
+self_modulate = Color(1, 1, 1, 0.54902)
 layout_mode = 0
 offset_left = 528.0
 offset_top = 979.0
 offset_right = 646.0
 offset_bottom = 1097.0
-mouse_default_cursor_shape = 2
+mouse_default_cursor_shape = 8
 icon = ExtResource("7_nfr07")
 button = ExtResource("7_nfr07")
 id = 6

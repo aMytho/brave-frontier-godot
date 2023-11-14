@@ -219,51 +219,63 @@ offset_top = -164.0
 offset_bottom = -164.0
 
 [node name="TextureRect" type="TextureRect" parent="Buttons and Banner"]
+self_modulate = Color(1, 1, 1, 0.54902)
 layout_mode = 0
 offset_left = 8.0
 offset_top = 522.0
 offset_right = 108.0
 offset_bottom = 602.0
+mouse_default_cursor_shape = 8
 texture = ExtResource("13_o2tak")
 
 [node name="TextureRect2" type="TextureRect" parent="Buttons and Banner"]
+self_modulate = Color(1, 1, 1, 0.54902)
 layout_mode = 0
 offset_left = 80.0
 offset_top = 522.0
 offset_right = 180.0
 offset_bottom = 602.0
+mouse_default_cursor_shape = 8
 texture = ExtResource("14_055s7")
 
 [node name="TextureRect3" type="TextureRect" parent="Buttons and Banner"]
+self_modulate = Color(1, 1, 1, 0.54902)
 layout_mode = 0
 offset_left = 160.0
 offset_top = 522.0
 offset_right = 260.0
 offset_bottom = 602.0
+mouse_default_cursor_shape = 8
 texture = ExtResource("15_eybrk")
 
 [node name="TextureRect4" type="TextureRect" parent="Buttons and Banner"]
+self_modulate = Color(1, 1, 1, 0.54902)
 layout_mode = 0
 offset_left = 385.0
 offset_top = 522.0
 offset_right = 485.0
 offset_bottom = 602.0
+mouse_default_cursor_shape = 8
 texture = ExtResource("16_neff8")
 
 [node name="TextureRect5" type="TextureRect" parent="Buttons and Banner"]
+self_modulate = Color(1, 1, 1, 0.54902)
 layout_mode = 0
 offset_left = 462.0
 offset_top = 522.0
 offset_right = 562.0
 offset_bottom = 602.0
+mouse_default_cursor_shape = 8
 texture = ExtResource("17_dvakf")
 
 [node name="TextureRect6" type="TextureRect" parent="Buttons and Banner"]
+self_modulate = Color(1, 1, 1, 0.54902)
 layout_mode = 0
 offset_left = 540.0
 offset_top = 522.0
 offset_right = 640.0
 offset_bottom = 602.0
+mouse_default_cursor_shape = 8
 texture = ExtResource("18_222t3")
 
 [node name="TextureRect7" type="TextureRect" parent="Buttons and Banner"]
