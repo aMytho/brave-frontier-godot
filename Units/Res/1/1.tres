@@ -1,52 +1,276 @@
-[gd_resource type="Resource" script_class="Unit" load_steps=13 format=3 uid="uid://bor1337h0gevd"]
+[gd_resource type="Resource" script_class="Unit" load_steps=53 format=3 uid="uid://bor1337h0gevd"]
 
 [ext_resource type="Texture2D" uid="uid://dq1ki4lshcx1e" path="res://Units/Res/1/unit_ills_full_10011.png" id="1_kiq5b"]
 [ext_resource type="Texture2D" uid="uid://cahc3s563ddg5" path="res://Units/Res/1/unit_ills_battle_10011.png" id="1_u40pv"]
-[ext_resource type="Script" path="res://Units/char_equipment.gd" id="2_0vumk"]
 [ext_resource type="Script" path="res://Units/unit_base.gd" id="2_cwhko"]
+[ext_resource type="Script" path="res://Units/equipment_frame.gd" id="2_whp7r"]
+[ext_resource type="Script" path="res://Units/char_equipment.gd" id="3_qwf78"]
+[ext_resource type="SpriteFrames" uid="uid://dbr2y53prfdtb" path="res://Units/Res/1/unit_sp_10011.tres" id="4_1c5i7"]
 [ext_resource type="Texture2D" uid="uid://bwqmqpt7rcwwh" path="res://Units/Res/1/unit_ills_thum_10011.png" id="4_08g4v"]
-[ext_resource type="Texture2D" uid="uid://dcuqpkh0ivmoh" path="res://Units/Res/1/unit_anime_10011.png" id="4_cnx2h"]
 
-[sub_resource type="Resource" id="Resource_6nhdf"]
-script = ExtResource("2_0vumk")
+[sub_resource type="Resource" id="Resource_fu434"]
+script = ExtResource("2_whp7r")
+position = Vector2(-40, 24)
+rotation = 0
+z_index = 1
+
+[sub_resource type="Resource" id="Resource_vy6r0"]
+script = ExtResource("2_whp7r")
+position = Vector2(-33, -48)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_m37f5"]
+script = ExtResource("2_whp7r")
+position = Vector2(-33, -48)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_3rpy6"]
+script = ExtResource("2_whp7r")
+position = Vector2(-33, -48)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_ygfkw"]
+script = ExtResource("2_whp7r")
+position = Vector2(-15, -50)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_uopr5"]
+script = ExtResource("2_whp7r")
+position = Vector2(-2, -60)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_hbn5u"]
+script = ExtResource("2_whp7r")
+position = Vector2(25, -15)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_13lfs"]
+script = ExtResource("2_whp7r")
+position = Vector2(14, 9)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_b8c28"]
+script = ExtResource("2_whp7r")
+position = Vector2(14, 9)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_ge6ab"]
+script = ExtResource("2_whp7r")
+position = Vector2(-20, -25)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_raaen"]
+script = ExtResource("3_qwf78")
+name = "SwordAttack"
+frames = Array[ExtResource("2_whp7r")]([SubResource("Resource_fu434"), SubResource("Resource_vy6r0"), SubResource("Resource_m37f5"), SubResource("Resource_3rpy6"), SubResource("Resource_ygfkw"), SubResource("Resource_uopr5"), SubResource("Resource_hbn5u"), SubResource("Resource_13lfs"), SubResource("Resource_b8c28"), SubResource("Resource_ge6ab")])
+
+[sub_resource type="Resource" id="Resource_elwmu"]
+script = ExtResource("2_whp7r")
 position = Vector2(0, 0)
+rotation = 0
 z_index = 0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bxhm6"]
-atlas = ExtResource("4_cnx2h")
-region = Rect2(0, 0, 35, 51)
+[sub_resource type="Resource" id="Resource_8wv24"]
+script = ExtResource("2_whp7r")
+position = Vector2(-37, -44)
+rotation = 0
+z_index = 0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yylfl"]
-atlas = ExtResource("4_cnx2h")
-region = Rect2(35, 0, 35, 51)
+[sub_resource type="Resource" id="Resource_jnb20"]
+script = ExtResource("2_whp7r")
+position = Vector2(-36, -47)
+rotation = 0
+z_index = 0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xr4ku"]
-atlas = ExtResource("4_cnx2h")
-region = Rect2(70, 0, 35, 51)
+[sub_resource type="Resource" id="Resource_ohs2g"]
+script = ExtResource("2_whp7r")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ju56"]
-atlas = ExtResource("4_cnx2h")
-region = Rect2(105, 0, 35, 51)
+[sub_resource type="Resource" id="Resource_4iye8"]
+script = ExtResource("2_whp7r")
+position = Vector2(-64, -31)
+rotation = 0
+z_index = 0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ubicg"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bxhm6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yylfl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xr4ku")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7ju56")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 5.0
-}]
+[sub_resource type="Resource" id="Resource_rsg1a"]
+script = ExtResource("2_whp7r")
+position = Vector2(28, -75)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_mufvb"]
+script = ExtResource("2_whp7r")
+position = Vector2(31, -45)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_6rp8y"]
+script = ExtResource("2_whp7r")
+position = Vector2(20, -1)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_0hecb"]
+script = ExtResource("2_whp7r")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_raeci"]
+script = ExtResource("2_whp7r")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_70vu0"]
+script = ExtResource("3_qwf78")
+name = "SwordEffect"
+frames = Array[ExtResource("2_whp7r")]([SubResource("Resource_elwmu"), SubResource("Resource_8wv24"), SubResource("Resource_jnb20"), SubResource("Resource_ohs2g"), SubResource("Resource_4iye8"), SubResource("Resource_rsg1a"), SubResource("Resource_mufvb"), SubResource("Resource_6rp8y"), SubResource("Resource_0hecb"), SubResource("Resource_raeci")])
+
+[sub_resource type="Resource" id="Resource_1ygwr"]
+script = ExtResource("2_whp7r")
+position = Vector2(-9, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_ixmc0"]
+script = ExtResource("2_whp7r")
+position = Vector2(-13, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_oi11r"]
+script = ExtResource("2_whp7r")
+position = Vector2(-12, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_5u4xj"]
+script = ExtResource("2_whp7r")
+position = Vector2(-12, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_kp1t5"]
+script = ExtResource("2_whp7r")
+position = Vector2(-9, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_ulj0k"]
+script = ExtResource("2_whp7r")
+position = Vector2(-8, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_1d55i"]
+script = ExtResource("2_whp7r")
+position = Vector2(-5, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_odjrs"]
+script = ExtResource("2_whp7r")
+position = Vector2(-2, 1)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_dfi8k"]
+script = ExtResource("2_whp7r")
+position = Vector2(-2, 1)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_jsskq"]
+script = ExtResource("2_whp7r")
+position = Vector2(-9, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_dchy6"]
+script = ExtResource("3_qwf78")
+name = "ShadowAttack"
+frames = Array[ExtResource("2_whp7r")]([SubResource("Resource_1ygwr"), SubResource("Resource_ixmc0"), SubResource("Resource_oi11r"), SubResource("Resource_5u4xj"), SubResource("Resource_kp1t5"), SubResource("Resource_ulj0k"), SubResource("Resource_1d55i"), SubResource("Resource_odjrs"), SubResource("Resource_dfi8k"), SubResource("Resource_jsskq")])
+
+[sub_resource type="Resource" id="Resource_qldiq"]
+script = ExtResource("2_whp7r")
+position = Vector2(-8, 15)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_c8mwl"]
+script = ExtResource("2_whp7r")
+position = Vector2(-8, 15)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_c72dn"]
+script = ExtResource("2_whp7r")
+position = Vector2(-8, 15)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_pfawy"]
+script = ExtResource("2_whp7r")
+position = Vector2(-8, 15)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_gj2uq"]
+script = ExtResource("3_qwf78")
+name = "CapeIdle"
+frames = Array[ExtResource("2_whp7r")]([SubResource("Resource_qldiq"), SubResource("Resource_c8mwl"), SubResource("Resource_c72dn"), SubResource("Resource_pfawy")])
+
+[sub_resource type="Resource" id="Resource_354ca"]
+script = ExtResource("2_whp7r")
+position = Vector2(-5, 1)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_n804g"]
+script = ExtResource("3_qwf78")
+name = "Shadow"
+frames = Array[ExtResource("2_whp7r")]([SubResource("Resource_354ca")])
+
+[sub_resource type="Resource" id="Resource_afmin"]
+script = ExtResource("2_whp7r")
+position = Vector2(-15, 0)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_7kk6d"]
+script = ExtResource("2_whp7r")
+position = Vector2(-15, 0)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_lb60i"]
+script = ExtResource("2_whp7r")
+position = Vector2(-15, 1)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_pjwwv"]
+script = ExtResource("2_whp7r")
+position = Vector2(-15, 0)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_fbqtb"]
+script = ExtResource("3_qwf78")
+name = "SwordIdle"
+frames = Array[ExtResource("2_whp7r")]([SubResource("Resource_afmin"), SubResource("Resource_7kk6d"), SubResource("Resource_lb60i"), SubResource("Resource_pjwwv")])
 
 [resource]
 script = ExtResource("2_cwhko")
@@ -61,6 +285,7 @@ arena_type = 4
 level = 1
 max_level = 12
 is_dead = false
+number_of_hit = Array[int]([100])
 HP = 1030
 max_HP = 0
 ATK = 500
@@ -70,7 +295,9 @@ skills = Array[Resource]([])
 thumbnail = ExtResource("4_08g4v")
 battle_thumbnail = ExtResource("1_u40pv")
 full_sprite = ExtResource("1_kiq5b")
-sprite_sheet = SubResource("SpriteFrames_ubicg")
-has_weapon_effect = false
-char_equipment = Array[ExtResource("2_0vumk")]([SubResource("Resource_6nhdf")])
+sprite_sheet = ExtResource("4_1c5i7")
+char_equipment = Array[ExtResource("3_qwf78")]([SubResource("Resource_gj2uq"), SubResource("Resource_n804g"), SubResource("Resource_fbqtb")])
+atk_equipment = Array[ExtResource("3_qwf78")]([SubResource("Resource_raaen"), SubResource("Resource_70vu0"), SubResource("Resource_dchy6")])
+travel_equipment = Array[ExtResource("3_qwf78")]([])
+animationVersion = 2
 unit_lore = "A swordsman from the ruined Agni Empire, he later became one of the Six Heroes. Proud of his late father, a Knight in the Order of Agni, he trained in the long sword, becoming a formidable knight. Although he is well-known for his countless victories over other warriors, he still considers himself inexperienced and continues to train with great zeal."
