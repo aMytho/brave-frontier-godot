@@ -1,9 +1,129 @@
-[gd_resource type="Resource" load_steps=5 format=3]
+[gd_resource type="Resource" script_class="Unit" load_steps=28 format=3 uid="uid://s11c36vke55w"]
 
+[ext_resource type="Script" path="res://Units/equipment_frame.gd" id="1_qelho"]
 [ext_resource type="Script" path="res://Units/unit_base.gd" id="1_qi3ka"]
 [ext_resource type="Texture2D" uid="uid://tjppaj44sj2q" path="res://Units/Res/9/unit_ills_battle_30011.png" id="1_sh2an"]
 [ext_resource type="Texture2D" uid="uid://dbm2lpm01u0h1" path="res://Units/Res/9/unit_ills_full_30011.png" id="2_acpmm"]
+[ext_resource type="Script" path="res://Units/char_equipment.gd" id="2_u74qg"]
+[ext_resource type="SpriteFrames" uid="uid://qepi6epi2pro" path="res://Units/Res/9/unit_sp_30011.tres" id="4_78myk"]
 [ext_resource type="Texture2D" uid="uid://dke6ogukmril4" path="res://Units/Res/9/unit_ills_thum_30011.png" id="4_jkicn"]
+
+[sub_resource type="Resource" id="Resource_3nu4o"]
+script = ExtResource("1_qelho")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_68376"]
+script = ExtResource("1_qelho")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_3y8k6"]
+script = ExtResource("1_qelho")
+position = Vector2(-25, -5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_jn3xt"]
+script = ExtResource("1_qelho")
+position = Vector2(-20, -5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_j6o1j"]
+script = ExtResource("1_qelho")
+position = Vector2(-15, -5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_3thia"]
+script = ExtResource("1_qelho")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_1w6kv"]
+script = ExtResource("1_qelho")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_lbloe"]
+script = ExtResource("1_qelho")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_ksd3f"]
+script = ExtResource("2_u74qg")
+name = "PikeEffects"
+frames = Array[ExtResource("1_qelho")]([SubResource("Resource_3nu4o"), SubResource("Resource_68376"), SubResource("Resource_3y8k6"), SubResource("Resource_jn3xt"), SubResource("Resource_j6o1j"), SubResource("Resource_3thia"), SubResource("Resource_1w6kv"), SubResource("Resource_lbloe")])
+
+[sub_resource type="Resource" id="Resource_pwuuj"]
+script = ExtResource("1_qelho")
+position = Vector2(38, 13)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_bgjrm"]
+script = ExtResource("1_qelho")
+position = Vector2(38, 13)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_yfa4s"]
+script = ExtResource("1_qelho")
+position = Vector2(6, 13)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_5wrdr"]
+script = ExtResource("1_qelho")
+position = Vector2(6, 13)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_tny4f"]
+script = ExtResource("1_qelho")
+position = Vector2(6, 13)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_1vu2u"]
+script = ExtResource("1_qelho")
+position = Vector2(6, 13)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_mhfya"]
+script = ExtResource("1_qelho")
+position = Vector2(6, 13)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_i5mbd"]
+script = ExtResource("1_qelho")
+position = Vector2(6, 13)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_3gr8j"]
+script = ExtResource("2_u74qg")
+name = "ShadowAttack"
+frames = Array[ExtResource("1_qelho")]([SubResource("Resource_pwuuj"), SubResource("Resource_bgjrm"), SubResource("Resource_yfa4s"), SubResource("Resource_5wrdr"), SubResource("Resource_tny4f"), SubResource("Resource_1vu2u"), SubResource("Resource_mhfya"), SubResource("Resource_i5mbd")])
+
+[sub_resource type="Resource" id="Resource_7wo3x"]
+script = ExtResource("1_qelho")
+position = Vector2(34, 12)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_oq5i6"]
+script = ExtResource("2_u74qg")
+name = "Shadow"
+frames = Array[ExtResource("1_qelho")]([SubResource("Resource_7wo3x")])
 
 [resource]
 script = ExtResource("1_qi3ka")
@@ -17,7 +137,10 @@ cost = 2
 arena_type = 2
 level = 1
 max_level = 12
+is_dead = false
+number_of_hit = Array[int]([100])
 HP = 1010
+max_HP = 0
 ATK = 500
 DEF = 500
 REC = 150
@@ -25,4 +148,9 @@ skills = null
 thumbnail = ExtResource("4_jkicn")
 battle_thumbnail = ExtResource("1_sh2an")
 full_sprite = ExtResource("2_acpmm")
+sprite_sheet = ExtResource("4_78myk")
+char_equipment = Array[ExtResource("2_u74qg")]([SubResource("Resource_oq5i6")])
+atk_equipment = Array[ExtResource("2_u74qg")]([SubResource("Resource_ksd3f"), SubResource("Resource_3gr8j")])
+travel_equipment = Array[ExtResource("2_u74qg")]([])
+animationVersion = 2
 unit_lore = "A pikeman from the ruined Principality of Vriksha, he eventually became one of the Six Heroes. He was a quiet, noble boy, but one day he saw the Demon Pike Drevas, lying in a storehouse on his estate. Suddenly, he informed his family he was leaving to train. His parents strongly opposed, but in the end he ran away, Drevas in hand. Rumors are that the spear spoke to him."
