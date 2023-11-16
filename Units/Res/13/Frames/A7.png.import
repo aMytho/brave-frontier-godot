@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0w64w77rdjdm"
-path="res://.godot/imported/unit_anime_40011.png-c25c87bbd5ad026d11289d4d69c7c77b.ctex"
+uid="uid://cwm41fxhsrl66"
+path="res://.godot/imported/A7.png-63bf59e18324f2278db32fd41dd66037.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Units/Res/13/unit_anime_40011.png"
-dest_files=["res://.godot/imported/unit_anime_40011.png-c25c87bbd5ad026d11289d4d69c7c77b.ctex"]
+source_file="res://Units/Res/13/Frames/A7.png"
+dest_files=["res://.godot/imported/A7.png-63bf59e18324f2278db32fd41dd66037.ctex"]
 
 [params]
 
