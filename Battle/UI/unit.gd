@@ -93,9 +93,9 @@ func setElement(element):
 			return ElementLocations[2]
 		"Thunder":
 			return ElementLocations[3]
-		"Dark":
-			return ElementLocations[4]
 		"Light":
+			return ElementLocations[4]
+		"Dark":
 			return ElementLocations[5]
 	return ElementLocations[0]
 
