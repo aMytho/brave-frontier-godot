@@ -1,9 +1,105 @@
-[gd_resource type="Resource" load_steps=5 format=3]
+[gd_resource type="Resource" script_class="Unit" load_steps=24 format=3 uid="uid://drm4y2c43yddp"]
 
 [ext_resource type="Texture2D" uid="uid://cvrjfm158gbv1" path="res://Units/Res/17/unit_ills_battle_50011.png" id="1_tgp3m"]
+[ext_resource type="Script" path="res://Units/equipment_frame.gd" id="1_u3fg5"]
 [ext_resource type="Script" path="res://Units/unit_base.gd" id="1_uxr78"]
+[ext_resource type="Script" path="res://Units/char_equipment.gd" id="2_dfa6x"]
 [ext_resource type="Texture2D" uid="uid://c5gx5cp2nsb4k" path="res://Units/Res/17/unit_ills_full_50011.png" id="2_polhi"]
 [ext_resource type="Texture2D" uid="uid://n51x2is7p3sx" path="res://Units/Res/17/unit_ills_thum_50011.png" id="4_5i33p"]
+[ext_resource type="SpriteFrames" uid="uid://dxscloygeievt" path="res://Units/Res/17/unit_sp_50011.tres" id="4_e4j42"]
+
+[sub_resource type="Resource" id="Resource_motw3"]
+script = ExtResource("1_u3fg5")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_bcl16"]
+script = ExtResource("1_u3fg5")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_pauwb"]
+script = ExtResource("1_u3fg5")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_dvdl3"]
+script = ExtResource("1_u3fg5")
+position = Vector2(-50, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_b2kcf"]
+script = ExtResource("1_u3fg5")
+position = Vector2(-20, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_lnrkd"]
+script = ExtResource("1_u3fg5")
+position = Vector2(-5, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_xlwqp"]
+script = ExtResource("2_dfa6x")
+name = "SwordEffects"
+frames = Array[ExtResource("1_u3fg5")]([SubResource("Resource_motw3"), SubResource("Resource_bcl16"), SubResource("Resource_pauwb"), SubResource("Resource_dvdl3"), SubResource("Resource_b2kcf"), SubResource("Resource_lnrkd")])
+
+[sub_resource type="Resource" id="Resource_b6gfp"]
+script = ExtResource("1_u3fg5")
+position = Vector2(27, 20)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_rneyi"]
+script = ExtResource("1_u3fg5")
+position = Vector2(27, 20)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_3o4kq"]
+script = ExtResource("1_u3fg5")
+position = Vector2(27, 20)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_po2fu"]
+script = ExtResource("1_u3fg5")
+position = Vector2(27, 20)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_npmr6"]
+script = ExtResource("1_u3fg5")
+position = Vector2(27, 20)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_xnwgk"]
+script = ExtResource("1_u3fg5")
+position = Vector2(27, 20)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_xlh3h"]
+script = ExtResource("2_dfa6x")
+name = "ShadowAttack"
+frames = Array[ExtResource("1_u3fg5")]([SubResource("Resource_b6gfp"), SubResource("Resource_rneyi"), SubResource("Resource_3o4kq"), SubResource("Resource_po2fu"), SubResource("Resource_npmr6"), SubResource("Resource_xnwgk")])
+
+[sub_resource type="Resource" id="Resource_g3wt4"]
+script = ExtResource("1_u3fg5")
+position = Vector2(27, 20)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_7ir0l"]
+script = ExtResource("2_dfa6x")
+name = "Shadow"
+frames = Array[ExtResource("1_u3fg5")]([SubResource("Resource_g3wt4")])
 
 [resource]
 script = ExtResource("1_uxr78")
@@ -17,7 +113,10 @@ cost = 2
 arena_type = 2
 level = 1
 max_level = 30
+is_dead = false
+number_of_hit = Array[int]([100])
 HP = 970
+max_HP = 0
 ATK = 500
 DEF = 500
 REC = 500
@@ -25,4 +124,9 @@ skills = null
 thumbnail = ExtResource("4_5i33p")
 battle_thumbnail = ExtResource("1_tgp3m")
 full_sprite = ExtResource("2_polhi")
+sprite_sheet = ExtResource("4_e4j42")
+char_equipment = Array[ExtResource("2_dfa6x")]([SubResource("Resource_7ir0l")])
+atk_equipment = Array[ExtResource("2_dfa6x")]([SubResource("Resource_xlwqp"), SubResource("Resource_xlh3h")])
+travel_equipment = Array[ExtResource("2_dfa6x")]([])
+animationVersion = 2
 unit_lore = "A swordsman from the ruined La Veda Republic, he later became one of the Six Heroes. Raised as an orphan in a monastery, he originally wanted to become a monk. However one day, bandits attacked the monastery. After Atro repelled them with just a tree branch, the Friar recommended he seek a Vedan fencing expert. Atro followed the Friar's words and began his journey."
