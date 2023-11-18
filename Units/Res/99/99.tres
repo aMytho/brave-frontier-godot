@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Unit" load_steps=39 format=3 uid="uid://c2v3rp1mfwv0k"]
+[gd_resource type="Resource" script_class="Unit" load_steps=36 format=3 uid="uid://c2v3rp1mfwv0k"]
 
 [ext_resource type="Texture2D" uid="uid://dv2hx080r1f8y" path="res://Units/Res/99/unit_ills_battle_10081.png" id="1_fif0u"]
 [ext_resource type="Script" path="res://Units/unit_base.gd" id="1_h5l7t"]
@@ -155,28 +155,10 @@ position = Vector2(0, 20)
 rotation = 0
 z_index = -1
 
-[sub_resource type="Resource" id="Resource_2et0p"]
-script = ExtResource("1_jmoh6")
-position = Vector2(0, 20)
-rotation = 0
-z_index = -1
-
-[sub_resource type="Resource" id="Resource_0l2ur"]
-script = ExtResource("1_jmoh6")
-position = Vector2(0, 20)
-rotation = 0
-z_index = -1
-
-[sub_resource type="Resource" id="Resource_juyb1"]
-script = ExtResource("1_jmoh6")
-position = Vector2(0, 20)
-rotation = 0
-z_index = -1
-
 [sub_resource type="Resource" id="Resource_xrbn3"]
 script = ExtResource("2_y4jkr")
 name = "Shadow"
-frames = Array[ExtResource("1_jmoh6")]([SubResource("Resource_itqi6"), SubResource("Resource_2et0p"), SubResource("Resource_0l2ur"), SubResource("Resource_juyb1")])
+frames = Array[ExtResource("1_jmoh6")]([SubResource("Resource_itqi6")])
 
 [sub_resource type="Resource" id="Resource_wxpg5"]
 script = ExtResource("1_jmoh6")
