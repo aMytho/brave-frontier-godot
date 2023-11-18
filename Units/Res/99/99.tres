@@ -1,0 +1,220 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=39 format=3 uid="uid://c2v3rp1mfwv0k"]
+
+[ext_resource type="Texture2D" uid="uid://dv2hx080r1f8y" path="res://Units/Res/99/unit_ills_battle_10081.png" id="1_fif0u"]
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_h5l7t"]
+[ext_resource type="Script" path="res://Units/equipment_frame.gd" id="1_jmoh6"]
+[ext_resource type="Texture2D" uid="uid://b8wk675h2y7c1" path="res://Units/Res/99/unit_ills_full_10081.png" id="2_34c0e"]
+[ext_resource type="Script" path="res://Units/char_equipment.gd" id="2_y4jkr"]
+[ext_resource type="Texture2D" uid="uid://1yeckuclujnq" path="res://Units/Res/99/unit_ills_thum_10081.png" id="4_b25x7"]
+[ext_resource type="SpriteFrames" uid="uid://cpbs316oqpq0q" path="res://Units/Res/99/unit_sp_10081.tres" id="4_n37vg"]
+
+[sub_resource type="Resource" id="Resource_b5tnm"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_byydf"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_rb18r"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_c4uga"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_1eum8"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_642qk"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_me4ah"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_ybves"]
+script = ExtResource("2_y4jkr")
+name = "FireChargeEffect"
+frames = Array[ExtResource("1_jmoh6")]([SubResource("Resource_b5tnm"), SubResource("Resource_byydf"), SubResource("Resource_rb18r"), SubResource("Resource_c4uga"), SubResource("Resource_1eum8"), SubResource("Resource_642qk"), SubResource("Resource_me4ah")])
+
+[sub_resource type="Resource" id="Resource_di5f4"]
+script = ExtResource("1_jmoh6")
+position = Vector2(-40, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_d1jbr"]
+script = ExtResource("1_jmoh6")
+position = Vector2(-40, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_65ric"]
+script = ExtResource("1_jmoh6")
+position = Vector2(-40, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_nsfic"]
+script = ExtResource("1_jmoh6")
+position = Vector2(-40, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_671g7"]
+script = ExtResource("1_jmoh6")
+position = Vector2(-40, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_07g6s"]
+script = ExtResource("1_jmoh6")
+position = Vector2(-40, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_g70m5"]
+script = ExtResource("1_jmoh6")
+position = Vector2(-40, 5)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_2kb0b"]
+script = ExtResource("2_y4jkr")
+name = "FireBlastEffect"
+frames = Array[ExtResource("1_jmoh6")]([SubResource("Resource_di5f4"), SubResource("Resource_d1jbr"), SubResource("Resource_65ric"), SubResource("Resource_nsfic"), SubResource("Resource_671g7"), SubResource("Resource_07g6s"), SubResource("Resource_g70m5")])
+
+[sub_resource type="Resource" id="Resource_yk5sv"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 20)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_ci8un"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 20)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_8pf44"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 20)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_fu30p"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 20)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_w1edr"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 20)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_h1h77"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 20)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_mo86d"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 20)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_xx24q"]
+script = ExtResource("2_y4jkr")
+name = "ShadowAttack"
+frames = Array[ExtResource("1_jmoh6")]([SubResource("Resource_yk5sv"), SubResource("Resource_ci8un"), SubResource("Resource_8pf44"), SubResource("Resource_fu30p"), SubResource("Resource_w1edr"), SubResource("Resource_h1h77"), SubResource("Resource_mo86d")])
+
+[sub_resource type="Resource" id="Resource_itqi6"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 20)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_2et0p"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 20)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_0l2ur"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 20)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_juyb1"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 20)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_xrbn3"]
+script = ExtResource("2_y4jkr")
+name = "Shadow"
+frames = Array[ExtResource("1_jmoh6")]([SubResource("Resource_itqi6"), SubResource("Resource_2et0p"), SubResource("Resource_0l2ur"), SubResource("Resource_juyb1")])
+
+[sub_resource type="Resource" id="Resource_wxpg5"]
+script = ExtResource("1_jmoh6")
+position = Vector2(0, 20)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_n0asn"]
+script = ExtResource("2_y4jkr")
+name = "Shadow"
+frames = Array[ExtResource("1_jmoh6")]([SubResource("Resource_wxpg5")])
+
+[resource]
+script = ExtResource("1_h5l7t")
+unit_number = 99
+data_id = 10081
+name = "Salamander"
+element = "Fire"
+gender = "Genderless"
+rarity = 2
+cost = 2
+arena_type = 1
+level = 1
+max_level = 30
+is_dead = false
+number_of_hit = Array[int]([100])
+HP = 1350
+max_HP = 1350
+ATK = 380
+DEF = 450
+REC = 180
+skills = Array[Resource]([])
+thumbnail = ExtResource("4_b25x7")
+battle_thumbnail = ExtResource("1_fif0u")
+full_sprite = ExtResource("2_34c0e")
+sprite_sheet = ExtResource("4_n37vg")
+char_equipment = Array[ExtResource("2_y4jkr")]([SubResource("Resource_xrbn3")])
+atk_equipment = Array[ExtResource("2_y4jkr")]([SubResource("Resource_ybves"), SubResource("Resource_2kb0b"), SubResource("Resource_xx24q")])
+travel_equipment = Array[ExtResource("2_y4jkr")]([SubResource("Resource_n0asn")])
+animationVersion = 2
+unit_lore = "A small dragon ranked lowest among the fire dragon clan. Although it is technically a fire spirit, it's far fiercer than other spirits so it's usually classified as a fire dragon. It continuously attacks humans it encounters with its fire breath. Summoners who travel to the lava belts often bring along a Squirty to avoid them, but it is unknown how effective that is."
