@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://clljapostalh"]
+
+[ext_resource type="PackedScene" uid="uid://cath12l63t3sv" path="res://Common/UI/back_section.tscn" id="1_8slfl"]
+[ext_resource type="Script" path="res://Menu/SubMenu/Unit/AddUnits/add_unit.gd" id="1_vhmkt"]
+[ext_resource type="Texture2D" uid="uid://cdb3v63h3rpyj" path="res://Menu/SubMenu/Unit/Display/remove_frame1.png" id="3_kxrs0"]
+
+[node name="add_unit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vhmkt")
+playable_units = Array[int]([5, 9, 13, 17, 43, 45, 47, 48, 49, 50, 51, 52, 53, 54, 67, 69, 71])
+
+[node name="BackSection" parent="." instance=ExtResource("1_8slfl")]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 419.0
+offset_bottom = 104.0
+heading = "Add Units (Dev)"
+
+[node name="UnitList" type="GridContainer" parent="."]
+offset_left = 40.0
+offset_top = 131.0
+offset_right = 608.0
+offset_bottom = 600.0
+columns = 5
+
+[node name="RemoveUnit" type="TextureRect" parent="UnitList"]
+visible = false
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("3_kxrs0")
+metadata/is_remove = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 696.0
+offset_right = 590.0
+offset_bottom = 780.0
+theme_override_font_sizes/font_size = 28
+text = "Click a unit to add them to your unit list.
+No notification will be shown."
+horizontal_alignment = 1

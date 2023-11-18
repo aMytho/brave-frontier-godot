@@ -29,15 +29,18 @@ func _ready():
 		$Character/TextureRect/Char5/CharElement
 	]
 	
+	# Get the main team to display on the homepage
 	var accountFirstTeam = Lookups.get_first_team_by_account_id(ActiveAccount.id)
-	var unitNumber = 1
 	
+	# Add each unit
+	var unitNumber = 1
 	while unitNumber <= 5:
 		var unitId = accountFirstTeam[0].get("unit%s" % unitNumber)
 		var currentCharTextute = charTextureList[unitNumber-1]
 		var currentCharBG = charBGList[unitNumber-1]
 		var currentCharElement = charElementList[unitNumber-1]
 		
+		# Handle no unit in slot
 		if unitId == null:
 			symbolEnum.set_symbol_pos("default", currentCharElement)
 			currentCharBG.element = "none"
@@ -46,6 +49,7 @@ func _ready():
 			unitNumber = unitNumber + 1
 			continue
 			
+		# Add the unit to the window
 		var unit = Lookups.get_unit_by_ID(unitId)
 		currentCharTextute.texture = load(unit.unit.full_sprite.get_load_path())
 		currentCharTextute.expand_mode = 1

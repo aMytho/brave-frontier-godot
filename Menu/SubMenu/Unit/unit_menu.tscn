@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3wkfbdkll4ig"]
+[gd_scene load_steps=11 format=3 uid="uid://c3wkfbdkll4ig"]
 
 [ext_resource type="Script" path="res://Menu/SubMenu/Unit/unit_menu.gd" id="1_bp6xs"]
 [ext_resource type="PackedScene" uid="uid://cath12l63t3sv" path="res://Common/UI/back_section.tscn" id="1_immeq"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://bn50xdq755rsl" path="res://Menu/SubMenu/Unit/unit_top_evo_btn1.png" id="5_1l4gn"]
 [ext_resource type="Texture2D" uid="uid://bx0wsjfhf1lfh" path="res://Menu/SubMenu/Unit/unit_top_sell_btn1.png" id="6_nybw0"]
 [ext_resource type="Texture2D" uid="uid://ckyyjry6iyims" path="res://Menu/SubMenu/Unit/sphere_eqp_btn1.png" id="7_vpteg"]
+[ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="9_hf1qw"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sg1kn"]
 
 [node name="UnitMenu" type="Control"]
 layout_mode = 3
@@ -84,3 +87,17 @@ offset_bottom = 674.0
 mouse_default_cursor_shape = 8
 icon = ExtResource("6_nybw0")
 id = 6
+
+[node name="DevButton" parent="." instance=ExtResource("2_gawrm")]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 674.0
+offset_right = 464.0
+offset_bottom = 768.0
+theme_override_fonts/font = ExtResource("9_hf1qw")
+theme_override_font_sizes/font_size = 41
+text = "Dev Menu"
+icon = SubResource("CompressedTexture2D_sg1kn")
+id = -1
+
+[connection signal="Clicked" from="DevButton" to="." method="_on_button_pressed"]
