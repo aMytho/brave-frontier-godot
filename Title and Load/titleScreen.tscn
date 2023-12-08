@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cino0hqryo7ae" path="res://Title and Load/title_logo2.jpg" id="2_hxqcl"]
 [ext_resource type="Texture2D" uid="uid://dfwjiybx0k3h1" path="res://Title and Load/spotlight_8.png" id="4_f5806"]
 [ext_resource type="Texture2D" uid="uid://b7lwy5xccju6l" path="res://Title and Load/title_msg.png" id="4_y81k8"]
-[ext_resource type="PackedScene" uid="uid://cnhuvcugf1glt" path="res://Common/UI/Buttons/large_button.tscn" id="5_aymor"]
+[ext_resource type="PackedScene" uid="uid://dvtxwq4tw3g50" path="res://Common/UI/Buttons/large_button.tscn" id="5_aymor"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yh7iv"]
 light_mode = 2
@@ -19,14 +19,12 @@ gradient = SubResource("Gradient_2ro35")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p7msp"]
 lifetime_randomness = 0.13
 particle_flag_disable_z = true
-direction = Vector3(1, -2, 0)
-spread = 90.0
-gravity = Vector3(0, -90, 0)
-initial_velocity_max = 471.83
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
 angle_min = -223.1
 angle_max = 273.8
+direction = Vector3(1, -2, 0)
+spread = 90.0
+initial_velocity_max = 471.83
+gravity = Vector3(0, -90, 0)
 color = Color(1, 0.811765, 0.0823529, 1)
 
 [sub_resource type="Gradient" id="Gradient_mev65"]
@@ -68,23 +66,21 @@ point_count = 2
 curve = SubResource("Curve_a08oe")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_am24w"]
+particle_flag_disable_z = true
 emission_shape = 1
 emission_sphere_radius = 9.11
-particle_flag_disable_z = true
+angle_min = 40.6
+angle_max = 40.6
+angle_curve = SubResource("CurveTexture_q1xjr")
 direction = Vector3(0, -90, 0)
 spread = 50.0
-gravity = Vector3(0, -20, 0)
 initial_velocity_min = 54.34
 initial_velocity_max = 108.69
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
+gravity = Vector3(0, -20, 0)
 linear_accel_min = 2.0
 linear_accel_max = 2.0
 damping_min = 0.88
 damping_max = 1.54
-angle_min = 40.6
-angle_max = 40.6
-angle_curve = SubResource("CurveTexture_q1xjr")
 scale_min = 1.36
 scale_max = 2.72
 scale_curve = SubResource("CurveTexture_qbprm")
@@ -100,22 +96,10 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 1, 2.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
@@ -127,22 +111,10 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0.945098, 0.564706, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -198,10 +170,10 @@ offset_bottom = 1011.0
 texture = ExtResource("4_y81k8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Touch Screen"]
-autoplay = "FadeInOut"
 libraries = {
 "": SubResource("AnimationLibrary_h0eup")
 }
+autoplay = "FadeInOut"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 volume_db = -5.0
