@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dcw33maqu4xpa" path="res://Menu/SubMenu/Unit/Squad/unit_table.tscn" id="8_pamr2"]
 [ext_resource type="Texture2D" uid="uid://cbt02jlr7yuga" path="res://Menu/SubMenu/Unit/Squad/plate_total_cost.png" id="10_bci3m"]
 [ext_resource type="Texture2D" uid="uid://bkdwd2ucuf3gq" path="res://Menu/SubMenu/Unit/Squad/deck_name_label.png" id="11_essau"]
-[ext_resource type="PackedScene" path="res://Common/UI/Buttons/small_button.tscn" id="12_h1ve7"]
+[ext_resource type="PackedScene" uid="uid://c77at5003ad30" path="res://Common/UI/Buttons/small_button.tscn" id="12_h1ve7"]
 [ext_resource type="Texture2D" uid="uid://dl7jr0beivpa4" path="res://Menu/SubMenu/Unit/Squad/leader_change_btn_label1.png" id="13_7bt8l"]
 [ext_resource type="Texture2D" uid="uid://ku4h8un7lqso" path="res://Menu/base.jpg" id="14_lcwxe"]
 [ext_resource type="PackedScene" uid="uid://b72w1jubrvjht" path="res://Common/UI/ContentSwitcher/content_switcher.tscn" id="14_m6rce"]

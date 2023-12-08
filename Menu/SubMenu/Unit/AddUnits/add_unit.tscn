@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vhmkt")
-playable_units = Array[int]([5, 9, 13, 17, 43, 45, 47, 48, 49, 50, 51, 52, 53, 54, 67, 69, 71])
+playable_units = Array[int]([5, 9, 13, 17, 43, 45, 47, 48, 49, 50, 51, 52, 53, 54, 67, 69, 71, 99])
 
 [node name="BackSection" parent="." instance=ExtResource("1_8slfl")]
 layout_mode = 0
@@ -22,6 +22,7 @@ offset_bottom = 104.0
 heading = "Add Units (Dev)"
 
 [node name="UnitList" type="GridContainer" parent="."]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 131.0
 offset_right = 608.0

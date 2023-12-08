@@ -1,9 +1,11 @@
 extends TextureRect
 
+# The health bars for good, meh, and bad HPs
 const green_bar = Rect2(2, 545, 176, 10)
 const yellow_bar = Rect2(2, 560, 176, 11)
 const red_bar = Rect2(2, 575, 176, 12)
 
+# The atlastexture coordinates for the elemental symbol 
 var ElementLocations = [
 	Rect2(37, 919, 27, 27), # Fire
 	Rect2(64, 919, 26, 26), # Water
@@ -16,9 +18,14 @@ var ElementLocations = [
 var normal_border = Rect2(2, 2, 320, 117)
 var attacked_border = Rect2(3, 122, 319, 116)
 
+## Attack a unit with a given placeID
 signal Attack(place: int)
+
+# Unimplemented
 signal BraveBurstReady
 signal BraveBurst
+
+# Occurs on death
 signal Die
 
 @export_category("Unit Stats")
@@ -30,14 +37,15 @@ signal Die
 @export var live_unit_HP: int = 500
 @export var is_dead: bool = false
 
+## This info is what we add to the units for additional identification and logic
 @export_category("Unit Dev Info")
 @export var place_ID: int = 0
 @export var has_attacked: bool = false
 
 
 func create_unit(icon, uName, element, HP):
-	print(icon, uName, element, HP)
-	#Set props
+	print("Creating Unit: ", uName)
+	# Set props
 	unit_icon = icon
 	unit_name = uName
 	unit_element = element
@@ -46,20 +54,23 @@ func create_unit(icon, uName, element, HP):
 	has_unit = true
 	$HPContainer/Bar.max_value = unit_HP
 	$HPContainer/Bar.value = live_unit_HP	
-	#Get their actual values
+	
+	# Get their actual values
 	get_node("Element").texture.region = setElement(unit_element)
 	get_node("Name").text = unit_name
 	update_HP_container(live_unit_HP)
 	get_node("PlayerFrame").texture = icon
 
+
+# Runs when a unit isn't in a slot. Reset all values
 func reset_placeholder():
-	# runs when a unit isn't in a slot. Reset all values
 	unit_icon = null
 	unit_name = ""
 	unit_element = "Fire"
 	unit_HP = 500
 	is_dead = false
-	#Reset viewable stats
+	
+	# Reset viewable stats
 	self.modulate = Color(0.29, 0.29, 0.29)
 	get_node("Element").texture.region = Rect2(0,0,0,0)
 	$Name.visible = false
@@ -68,6 +79,7 @@ func reset_placeholder():
 	$BBContainer.visible = false
 	$HPContainer.visible = false
 	$PlayerFrame.visible = false
+
 
 # When called, update the live HP of a unit with the new HP send in parameters
 func update_HP_container(new_HP: int):
@@ -82,6 +94,7 @@ func update_HP_container(new_HP: int):
 		HP_bar.texture_progress.region = yellow_bar
 	else:
 		HP_bar.texture_progress.region = red_bar
+
 
 func setElement(element):
 	match element:
@@ -99,9 +112,10 @@ func setElement(element):
 			return ElementLocations[5]
 	return ElementLocations[0]
 
+
 func _on_gui_input(event: InputEvent):
-	#If clicked, attack if possible
-	if event.is_pressed() and has_unit and has_attacked == false and false == is_dead:
+	# If clicked, attack if possible
+	if event.is_pressed() and has_unit and has_attacked == false and is_dead == false:
 		print("Attack!")
 		has_attacked = true
 		# Dim the border
@@ -109,11 +123,14 @@ func _on_gui_input(event: InputEvent):
 		# Emit event
 		emit_signal("Attack", place_ID)
 
+
+# Allow the unit to attack again (if not dead)
 func allow_attacks():
 	if false == is_dead and has_unit:
 		texture.region = normal_border
 		has_attacked = false
-		
+
+
 # This function could be used to update all the data about the unit when it dies
 # For example : 
 ## Remember the unit is dead

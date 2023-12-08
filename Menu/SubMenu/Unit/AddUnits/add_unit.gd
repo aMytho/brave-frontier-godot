@@ -1,5 +1,6 @@
 extends Control
 
+## The unit thumbnail.
 var thumbnail = preload("res://Menu/SubMenu/Unit/Display/unit_thumbnail.tscn").instantiate()
 
 ## Each ID represents a unitID that is playable.

@@ -4,6 +4,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Display the values, some are placeholders
 	$Type.value = "Guardian"
 	$Lv.value = "150 / 150"
 	$NextLv.value = "_ _ _"
@@ -16,6 +17,7 @@ func _ready():
 	$Item1Frame.value = "Empty"
 	$Item2Frame.value = "Empty"
 	$Character.texture = unit.full_sprite
+
 
 func _on_back_section_clicked():
 	# This needs to be a fade effect because the footer buttons are still visible.

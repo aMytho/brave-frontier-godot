@@ -3,15 +3,20 @@ extends Control
 # to do - signal items
 signal PlayerReady(team)
 
+## The teams the player owns (currently max of 1)
 @export var teams: Array = []
+## The team_id of the current team
 @export var team_id: int = 0
+## The units in the current team
 @export var units: Array[Unit] = [
 	null, null, null, null, null, null
 ]
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+
 
 func set_team_info(new_teams: Array):
 	teams = new_teams
@@ -34,6 +39,7 @@ func set_team_info(new_teams: Array):
 			team.unit5 = -1
 	# Set first team to be active
 	set_active_team(0)
+
 
 func set_active_team(id: int):
 	# Remove any units from the last selection
@@ -79,6 +85,7 @@ func set_active_team(id: int):
 	$ScrollContainer/HBoxContainer.get_child(id).turn_on()
 	team_id = id
 
+
 func display_unit(unit: Unit, place: int):
 	print("Displaying unit: ", unit)
 	match place:
@@ -95,6 +102,7 @@ func display_unit(unit: Unit, place: int):
 			$UnitThumbnail5.icon = unit.thumbnail
 		# to do - friend stuff
 
+
 func reset_unit(place: int):
 	match place:
 		1:
@@ -108,9 +116,11 @@ func reset_unit(place: int):
 		5:
 			$UnitThumbnail5.icon = null
 
+
 func _on_begin_clicked(_id):
-	#send the signal with the active units
+	# Send the signal with the active units
 	emit_signal("PlayerReady", units)
+
 
 func _on_directional_left_clicked():
 	# Switch to the last team
@@ -119,6 +129,7 @@ func _on_directional_left_clicked():
 		$ScrollContainer/HBoxContainer.get_child(team_id).turn_off()
 		# Switch team
 		set_active_team(team_id - 1)
+
 
 func _on_directional_right_clicked():
 	# Switch to the next team
