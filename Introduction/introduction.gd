@@ -108,7 +108,7 @@ func _on_wake_up():
 	var arg1 = ["zone", "units"]
 	var subArg: Array[Unit] = [burny, main_character, sparky, null, null, null]
 	# Get a unique instance for every monster in the stage
-	for stage in zone.Stage:
+	for stage in zone.stage:
 		var enemies_list: Array[Unit] = []
 		for unit in stage.monsters:
 			if null != unit:

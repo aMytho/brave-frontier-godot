@@ -14,10 +14,10 @@
 script = ExtResource("5_iqnpe")
 id = 3
 name = "Monsters of the Prairie"
-description = "The calm grassland keep on going. The monsters here are juste right for a beginner. Keep moving forward."
+description = "The calm grassland keep on going. The monsters here are just right for a beginner. Keep moving forward."
 stages = 5
 energy = 3
-Stage = Array[Resource("res://Area/Stages/stage_base.gd")]([ExtResource("2_62ol8"), ExtResource("3_rjo7x"), ExtResource("4_14jja"), ExtResource("5_nmnaw"), ExtResource("6_n5urp")])
+stage = Array[Resource("res://Area/Stages/stage_base.gd")]([ExtResource("2_62ol8"), ExtResource("3_rjo7x"), ExtResource("4_14jja"), ExtResource("5_nmnaw"), ExtResource("6_n5urp")])
 is_visible = true
 BG = ExtResource("1_v68l0")
 music = ExtResource("4_eopuv")

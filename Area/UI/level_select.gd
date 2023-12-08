@@ -53,7 +53,7 @@ func _on_player_ready(units):
 	# Get the stage and load the battle!
 	var arg_names = ["units", "zone"]
 	
-	for stage in zone.Stage:
+	for stage in zone.stage:
 		var enemies_list: Array[Unit] = []
 		for unit in stage.monsters:
 			if null != unit:

@@ -10,7 +10,7 @@ class_name Zone
 ## Energy cost for this zone
 @export var energy: int = 5
 ## The stages to use. Make a new zone and add it to the Zones folder
-@export var Stage: Array[Stage] = []
+@export var stage: Array[Stage] = []
 ## Hide the zone if its not playable!
 @export var is_visible: bool = false
 

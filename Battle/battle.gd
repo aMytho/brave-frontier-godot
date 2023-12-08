@@ -28,7 +28,7 @@ var speed: float = 1.0:
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Set the transition values
-	$Transition.set_properties(1, zone.Stage.size(), "Stylish Placeholder", zone.name)
+	$Transition.set_properties(1, zone.stage.size(), "Stylish Placeholder", zone.name)
 	
 	# Pass in the friendly units
 	$BattleUI.units = units
@@ -69,7 +69,7 @@ func battleUIUnitAttackConnect():
 # Called when the signal DamagingEnemy from field_unit is trigger
 # Will get all the data needed to do the damage calculation and update
 func _damaging_targeted_unit(damaging_unit_id: int, hurt_unit_id: int, quantity_of_damage: int):
-	var monsters_list = zone.Stage[current_stage - 1].monsters
+	var monsters_list = zone.stage[current_stage - 1].monsters
 	var damaging_field_unit
 	var damaging_unit
 	var hurt_field_unit
@@ -124,7 +124,7 @@ func check_if_unit_is_dead(unit, is_friendly_attacking: bool):
 	print("Is the unit dead ?")
 	var hurted_unit_place_ID = unit.targeted_place_ID
 	var hurted_field_unit = get_node(str("./Enemies/Unit", hurted_unit_place_ID)) if is_friendly_attacking else get_node(str("./Friendlies/Unit", hurted_unit_place_ID))
-	var hurted_unit = zone.Stage[current_stage - 1].monsters[hurted_unit_place_ID - 1] if is_friendly_attacking else units[hurted_unit_place_ID - 1]
+	var hurted_unit = zone.stage[current_stage - 1].monsters[hurted_unit_place_ID - 1] if is_friendly_attacking else units[hurted_unit_place_ID - 1]
 	
 	unit.targeted_place_ID = 0
 	hurted_field_unit.time_being_targeted -= 1
@@ -135,7 +135,7 @@ func check_if_unit_is_dead(unit, is_friendly_attacking: bool):
 	return false
 
 func _update_enemy_s_data(place_ID: int):
-	$BattleUI.set_selected_enemy_health(zone.Stage[current_stage-1].monsters[place_ID-1])
+	$BattleUI.set_selected_enemy_health(zone.stage[current_stage-1].monsters[place_ID-1])
 
 # If all the alive friendly unit has attacked, we end the friendly turn and do a check
 ### Are all enemies dead ?
@@ -143,7 +143,7 @@ func _update_enemy_s_data(place_ID: int):
 ### if not, enemy turn start
 func check_if_player_turn_complete():
 	# If the player has had all units attack, end turn
-	var enemy_unit_left = $stats_checking.are_all_units_dead(zone.Stage[current_stage-1].monsters, $Enemies.get_children())
+	var enemy_unit_left = $stats_checking.are_all_units_dead(zone.stage[current_stage-1].monsters, $Enemies.get_children())
 	if units_attacked == total_allies or 0 == enemy_unit_left:
 		print("Ready for enemy turn")
 		player_turn = false
@@ -164,7 +164,7 @@ func run_enemy_turn():
 	var enemy_count = 0
 	for enemy in $Enemies.get_children():
 		# Only play animation for units that exist
-		var monstersArray = zone.Stage[current_stage-1].monsters
+		var monstersArray = zone.stage[current_stage-1].monsters
 		if enemy.is_unit and !monstersArray[enemy_count].is_dead:
 			var unit_to_hurt = $Friendlies.get_random_target()
 			unit_to_hurt.time_being_targeted += 1
@@ -207,7 +207,7 @@ func load_next_stage(stage: int):
 	resetUnitsStats()
 	
 	# Load next stage of monsters
-	for unit in zone.Stage[stage].monsters:
+	for unit in zone.stage[stage].monsters:
 		if null != unit:
 			unit.max_HP = unit.HP
 			if 0 == total_enemies:
@@ -232,7 +232,7 @@ func get_unit_count():
 # When triggered, we would move to the next stage of the level or make the end complete
 func move_to_next_stage():
 	# Check for next stage, if exists, the transition will load the next one
-	if current_stage < zone.Stage.size():
+	if current_stage < zone.stage.size():
 		print("Moving to next stage")
 		$Transition.show_transition()
 	else:
@@ -280,7 +280,7 @@ func when_unit_has_died(place_ID: int, is_ally: bool = false):
 		dead_unit_UI.unitHasDied()
 		units[place_ID - 1].is_dead = true
 	else:
-		var monsters_units = zone.Stage[current_stage-1].monsters
+		var monsters_units = zone.stage[current_stage-1].monsters
 		var new_UI_unit_update = get_next_non_dead_unit(monsters_units)
 		monsters_units[place_ID - 1].is_dead = true
 		if null != new_UI_unit_update and monsters_units[place_ID -1] == $BattleUI.selected_enemy:
