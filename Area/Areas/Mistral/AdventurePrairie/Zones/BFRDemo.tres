@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Zone" load_steps=6 format=3 uid="uid://by1litd0kxdf5"]
+
+[ext_resource type="Texture2D" uid="uid://dxmjf1igdb02i" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/dungeon_battle_10100.jpg" id="1_owmfs"]
+[ext_resource type="Script" path="res://Area/Zones/zone_base.gd" id="1_ydr14"]
+[ext_resource type="AudioStream" uid="uid://kmn3bs6klkkb" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/bf006_btl_boss.mp3" id="2_13tjk"]
+[ext_resource type="Resource" uid="uid://dvvx67hef5pyu" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/20.tres" id="2_thioe"]
+[ext_resource type="AudioStream" uid="uid://bjf6ko7jfrgqv" path="res://Music/1-19 HAZAMA.mp3" id="3_e7oxd"]
+
+[resource]
+script = ExtResource("1_ydr14")
+id = 777
+name = "BFR Demo"
+description = "An epic fight for an epic trailer. Prepare Summoner!"
+stages = 1
+energy = 5
+Stage = Array[Resource("res://Area/Stages/stage_base.gd")]([ExtResource("2_thioe")])
+is_visible = true
+BG = ExtResource("1_owmfs")
+music = ExtResource("3_e7oxd")
+boss_music = ExtResource("2_13tjk")
+difficulty = 3
+xp = 1.0
+karma = 1
+zel = 1
