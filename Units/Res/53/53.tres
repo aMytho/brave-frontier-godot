@@ -34,4 +34,5 @@ sprite_sheet = ExtResource("4_ioint")
 char_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
 atk_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
 travel_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+animationVersion = 1
 unit_lore = "Glowy Slime's mutated form after being showered with magic. It has an extremely brutal nature and attacks humans it finds, all whilst constantly spitting out obscenities. However, since it is very weak like other slimes, it still is a good sparring partner for new Summoners. They've also been said to show kindness at times. Some think that it's actually just like Glowy Slime and that maybe it's just lonely."
