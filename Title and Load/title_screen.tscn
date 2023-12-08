@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://befbdkxgyv5qk"]
 
-[ext_resource type="Script" path="res://startGame.gd" id="1_u5emr"]
+[ext_resource type="Script" path="res://Title and Load/title_screen.gd" id="1_u5emr"]
 [ext_resource type="Texture2D" uid="uid://cino0hqryo7ae" path="res://Title and Load/title_logo2.jpg" id="2_hxqcl"]
 [ext_resource type="Texture2D" uid="uid://dfwjiybx0k3h1" path="res://Title and Load/spotlight_8.png" id="4_f5806"]
 [ext_resource type="Texture2D" uid="uid://b7lwy5xccju6l" path="res://Title and Load/title_msg.png" id="4_y81k8"]

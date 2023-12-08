@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bvintu8hyr1oq"]
 
-[ext_resource type="PackedScene" uid="uid://befbdkxgyv5qk" path="res://Title and Load/titleScreen.tscn" id="1_8433n"]
+[ext_resource type="PackedScene" uid="uid://befbdkxgyv5qk" path="res://Title and Load/title_screen.tscn" id="1_8433n"]
 [ext_resource type="Script" path="res://BackgroundMusic.gd" id="1_m7u6l"]
 [ext_resource type="Script" path="res://GameContent.gd" id="2_7aou3"]
 
