@@ -1,6 +1,6 @@
 # Brave Frontier Godot
 
-This is a small remake of the mobile game Brave Frontier. Brave frontier shutdown within the last year. This project implements many of the same features and structure.
+This is a p remake of the mobile game Brave Frontier. Brave frontier shutdown within the last year. This project implements many of the same features and structure.
 
 > Interested in creating Custom Levels? View our [Wiki](https://github.com/aMytho/brave-frontier-godot/wiki)
 
