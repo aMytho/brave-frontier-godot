@@ -1,9 +1,248 @@
-[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://g5lrp48aqynn"]
+[gd_resource type="Resource" script_class="Unit" load_steps=49 format=3 uid="uid://g5lrp48aqynn"]
 
 [ext_resource type="Script" path="res://Units/unit_base.gd" id="1_8k5d3"]
 [ext_resource type="Texture2D" uid="uid://cnidsukf76pfx" path="res://Units/Res/21/unit_ills_battle_60011.png" id="1_bt55p"]
+[ext_resource type="Script" path="res://Units/equipment_frame.gd" id="2_j8x7h"]
 [ext_resource type="Texture2D" uid="uid://cbeu0al0c5ugr" path="res://Units/Res/21/unit_ills_full_60011.png" id="2_m7ceq"]
+[ext_resource type="Script" path="res://Units/char_equipment.gd" id="2_pjmf4"]
+[ext_resource type="SpriteFrames" uid="uid://g6ysqlhemmr" path="res://Units/Res/21/unit_sp_60011.tres" id="4_3idf2"]
 [ext_resource type="Texture2D" uid="uid://bo1ygxhhtdsl2" path="res://Units/Res/21/unit_ills_thum_60011.png" id="4_ph35h"]
+
+[sub_resource type="Resource" id="Resource_imodm"]
+script = ExtResource("2_j8x7h")
+position = Vector2(32, -20)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_lt3iu"]
+script = ExtResource("2_j8x7h")
+position = Vector2(32, -21)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_on1ho"]
+script = ExtResource("2_j8x7h")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_jx4ag"]
+script = ExtResource("2_j8x7h")
+position = Vector2(-55, 18)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_mjac3"]
+script = ExtResource("2_j8x7h")
+position = Vector2(-55, 18)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_mccmh"]
+script = ExtResource("2_pjmf4")
+name = "LanceAttack"
+frames = Array[ExtResource("2_j8x7h")]([SubResource("Resource_imodm"), SubResource("Resource_lt3iu"), SubResource("Resource_on1ho"), SubResource("Resource_jx4ag"), SubResource("Resource_mjac3")])
+
+[sub_resource type="Resource" id="Resource_7noh3"]
+script = ExtResource("2_j8x7h")
+position = Vector2(-5, 15)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_85at0"]
+script = ExtResource("2_j8x7h")
+position = Vector2(-5, 15)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_cqoth"]
+script = ExtResource("2_j8x7h")
+position = Vector2(10, 20)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_assan"]
+script = ExtResource("2_j8x7h")
+position = Vector2(15, 20)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_prkt3"]
+script = ExtResource("2_pjmf4")
+name = "ShieldAttack"
+frames = Array[ExtResource("2_j8x7h")]([SubResource("Resource_7noh3"), SubResource("Resource_85at0"), SubResource("Resource_cqoth"), SubResource("Resource_assan")])
+
+[sub_resource type="Resource" id="Resource_bfy3p"]
+script = ExtResource("2_j8x7h")
+position = Vector2(30, 37)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_2ny5l"]
+script = ExtResource("2_j8x7h")
+position = Vector2(30, 37)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_3dy2j"]
+script = ExtResource("2_j8x7h")
+position = Vector2(16, 37)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_tsiu6"]
+script = ExtResource("2_j8x7h")
+position = Vector2(-15, 37)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_adpbi"]
+script = ExtResource("2_pjmf4")
+name = "ShadowAttack"
+frames = Array[ExtResource("2_j8x7h")]([SubResource("Resource_bfy3p"), SubResource("Resource_2ny5l"), SubResource("Resource_3dy2j"), SubResource("Resource_tsiu6")])
+
+[sub_resource type="Resource" id="Resource_foep0"]
+script = ExtResource("2_j8x7h")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_58b4p"]
+script = ExtResource("2_j8x7h")
+position = Vector2(0, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_a3gwv"]
+script = ExtResource("2_j8x7h")
+position = Vector2(-60, 20)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_usurm"]
+script = ExtResource("2_j8x7h")
+position = Vector2(-80, 25)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_crlan"]
+script = ExtResource("2_j8x7h")
+position = Vector2(-80, 23)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_vb6jw"]
+script = ExtResource("2_j8x7h")
+position = Vector2(-60, 15)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_k8nwy"]
+script = ExtResource("2_j8x7h")
+position = Vector2(-60, 15)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_1q44c"]
+script = ExtResource("2_pjmf4")
+name = "LanceSparkle"
+frames = Array[ExtResource("2_j8x7h")]([SubResource("Resource_foep0"), SubResource("Resource_58b4p"), SubResource("Resource_a3gwv"), SubResource("Resource_usurm"), SubResource("Resource_crlan"), SubResource("Resource_vb6jw"), SubResource("Resource_k8nwy")])
+
+[sub_resource type="Resource" id="Resource_f4d4d"]
+script = ExtResource("2_j8x7h")
+position = Vector2(48, 25)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_hpven"]
+script = ExtResource("2_j8x7h")
+position = Vector2(48, 23)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_8ans8"]
+script = ExtResource("2_j8x7h")
+position = Vector2(48, 22)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_gt41k"]
+script = ExtResource("2_j8x7h")
+position = Vector2(48, 21)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_d25su"]
+script = ExtResource("2_j8x7h")
+position = Vector2(48, 25)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_iwht1"]
+script = ExtResource("2_pjmf4")
+name = "ShieldIdle"
+frames = Array[ExtResource("2_j8x7h")]([SubResource("Resource_f4d4d"), SubResource("Resource_hpven"), SubResource("Resource_8ans8"), SubResource("Resource_gt41k"), SubResource("Resource_d25su")])
+
+[sub_resource type="Resource" id="Resource_fcy0j"]
+script = ExtResource("2_j8x7h")
+position = Vector2(-5, 0)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_ld1mj"]
+script = ExtResource("2_j8x7h")
+position = Vector2(-5, -2)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_25c6g"]
+script = ExtResource("2_j8x7h")
+position = Vector2(-5, -3)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_4g5kg"]
+script = ExtResource("2_j8x7h")
+position = Vector2(-5, -4)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_m73nx"]
+script = ExtResource("2_j8x7h")
+position = Vector2(-5, 1)
+rotation = 0
+z_index = 0
+
+[sub_resource type="Resource" id="Resource_rdkc6"]
+script = ExtResource("2_pjmf4")
+name = "LanceIdle"
+frames = Array[ExtResource("2_j8x7h")]([SubResource("Resource_fcy0j"), SubResource("Resource_ld1mj"), SubResource("Resource_25c6g"), SubResource("Resource_4g5kg"), SubResource("Resource_m73nx")])
+
+[sub_resource type="Resource" id="Resource_dafrb"]
+script = ExtResource("2_j8x7h")
+position = Vector2(38, 37)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_wkpx8"]
+script = ExtResource("2_pjmf4")
+name = "Shadow"
+frames = Array[ExtResource("2_j8x7h")]([SubResource("Resource_dafrb")])
+
+[sub_resource type="Resource" id="Resource_hbdxs"]
+script = ExtResource("2_pjmf4")
+name = "ShieldIdle"
+frames = Array[ExtResource("2_j8x7h")]([SubResource("Resource_f4d4d"), SubResource("Resource_hpven"), SubResource("Resource_8ans8"), SubResource("Resource_gt41k"), SubResource("Resource_d25su")])
+
+[sub_resource type="Resource" id="Resource_2xd1f"]
+script = ExtResource("2_pjmf4")
+name = "LanceIdle"
+frames = Array[ExtResource("2_j8x7h")]([SubResource("Resource_fcy0j"), SubResource("Resource_ld1mj"), SubResource("Resource_25c6g"), SubResource("Resource_4g5kg"), SubResource("Resource_m73nx")])
+
+[sub_resource type="Resource" id="Resource_b07f3"]
+script = ExtResource("2_pjmf4")
+name = "Shadow"
+frames = Array[ExtResource("2_j8x7h")]([SubResource("Resource_dafrb")])
 
 [resource]
 script = ExtResource("1_8k5d3")
@@ -17,7 +256,10 @@ cost = 2
 arena_type = 2
 level = 1
 max_level = 30
+is_dead = false
+number_of_hit = Array[int]([100])
 HP = 1500
+max_HP = 0
 ATK = 430
 DEF = 530
 REC = 120
@@ -25,4 +267,9 @@ skills = null
 thumbnail = ExtResource("4_ph35h")
 battle_thumbnail = ExtResource("1_bt55p")
 full_sprite = ExtResource("2_m7ceq")
+sprite_sheet = ExtResource("4_3idf2")
+char_equipment = Array[ExtResource("2_pjmf4")]([SubResource("Resource_iwht1"), SubResource("Resource_rdkc6"), SubResource("Resource_wkpx8")])
+atk_equipment = Array[ExtResource("2_pjmf4")]([SubResource("Resource_mccmh"), SubResource("Resource_prkt3"), SubResource("Resource_adpbi"), SubResource("Resource_1q44c")])
+travel_equipment = Array[ExtResource("2_pjmf4")]([SubResource("Resource_hbdxs"), SubResource("Resource_2xd1f"), SubResource("Resource_b07f3")])
+animationVersion = 2
 unit_lore = "A knight from the utterly devastated Bariura Empire, he later became one of the Six Heroes. As a cavalry leader's son, from childhood he knew of the empire's wish of unifying the continent. He joined the cavalry at 16 intent on gaining the skills necessary to defeat anything that stood in his way. His talent grew quickly and he was soon considered for promotion."
