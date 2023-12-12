@@ -161,10 +161,10 @@ pivot_offset = Vector2(33, 33)
 texture = ExtResource("2_qsoj3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Target"]
-autoplay = "Spin"
 libraries = {
 "": SubResource("AnimationLibrary_a086f")
 }
+autoplay = "Spin"
 
 [node name="Clickable" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jgt8k")

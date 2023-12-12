@@ -14,11 +14,10 @@ const symbolEnum = preload("res://Menu/SubMenu/Home/Characters/symbolEnum.gd")
 func _ready():
 	pass # Replace with function body.
 
+
 func set_properties(unit: Unit):
-	# Display sprite sheet
-	$Unit.sprite_frames = unit.sprite_sheet
-	# Play Idle animation
-	$Unit.play("Idle")
+	# Display unit
+	$Unit.set_properties(unit)
 	# Display element
 	symbolEnum.set_symbol_pos(unit.element.to_lower(), $Element)
 	
@@ -34,13 +33,15 @@ func set_properties(unit: Unit):
 	$PanelInfo.visible = true
 	$Element.visible = true
 
+
 func reset_properties():
-	# Display sprite sheet
-	$Unit.sprite_frames = null
+	# Show no unit
+	$Unit.reset()
 	
 	# Hide nodes
 	$PanelInfo.visible = false
 	$Element.visible = false
+
 
 func _on_gui_input(event: InputEvent):
 	if event is InputEventMouseButton and event.is_pressed():

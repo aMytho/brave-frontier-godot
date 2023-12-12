@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://dcw33maqu4xpa"]
+[gd_scene load_steps=18 format=3 uid="uid://dcw33maqu4xpa"]
 
 [ext_resource type="Texture2D" uid="uid://c5m6p0m77cjyt" path="res://Menu/SubMenu/Unit/Squad/unit_table.png" id="1_70emg"]
 [ext_resource type="Script" path="res://Menu/SubMenu/Unit/Squad/unit_table.gd" id="2_d4v6s"]
 [ext_resource type="Texture2D" uid="uid://dh74087tv6qdo" path="res://Menu/SubMenu/Unit/StatusFrame/status_frame_b_l.png" id="3_4xot0"]
+[ext_resource type="PackedScene" uid="uid://cpamhnofgrbd8" path="res://Menu/SubMenu/Unit/Squad/unit_idle_display.tscn" id="3_nq15m"]
 [ext_resource type="Texture2D" uid="uid://cfwj506ceatkt" path="res://Menu/SubMenu/Unit/StatusFrame/status_frame_b_r.png" id="4_j678x"]
 [ext_resource type="Texture2D" uid="uid://bqnthovfshwy4" path="res://Menu/SubMenu/Unit/StatusFrame/status_frame_b_c.png" id="5_h7eca"]
 [ext_resource type="Texture2D" uid="uid://bh437ie8cy7g1" path="res://Menu/SubMenu/Unit/Squad/party_status_char.png" id="6_dy1go"]
@@ -42,9 +43,12 @@ mouse_default_cursor_shape = 2
 texture = ExtResource("1_70emg")
 script = ExtResource("2_d4v6s")
 
-[node name="Unit" type="AnimatedSprite2D" parent="."]
-position = Vector2(88, 16)
-scale = Vector2(2, 2)
+[node name="Unit" parent="." instance=ExtResource("3_nq15m")]
+layout_mode = 1
+offset_left = 64.0
+offset_right = 64.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
 
 [node name="PanelInfo" type="Control" parent="."]
 clip_contents = true

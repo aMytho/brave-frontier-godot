@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpamhnofgrbd8"]
+
+[ext_resource type="Script" path="res://Menu/SubMenu/Unit/Squad/unit_idle_display.gd" id="1_h8a6w"]
+
+[node name="UnitIdleDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h8a6w")
+
+[node name="Unit" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="IdleEquipmentContainer" type="Node2D" parent="Unit"]
