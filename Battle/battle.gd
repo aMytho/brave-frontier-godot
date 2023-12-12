@@ -244,9 +244,13 @@ func _on_transition_hide():
 	# Now that they can see, allow the player to attack.
 	# All enemy units have now spawned in
 	$BattleUI.release_attack_lockout()
+	$BattleUI.allow_actions()
 
 
 func _on_transition_show():
+	# Prevent player actions
+	$BattleUI.prevent_actions()
+	
 	# Load the next stage while the field is hidden
 	load_next_stage(current_stage)
 	# Show the stage in the transition

@@ -259,3 +259,12 @@ offset_top = 481.0
 offset_right = 644.0
 offset_bottom = 661.0
 texture = ExtResource("7_vq6j1")
+
+[node name="ClickBlocker" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 115.0
+offset_right = 651.0
+offset_bottom = 658.0
+mouse_default_cursor_shape = 8

@@ -3,16 +3,16 @@ extends Control
 @export var units: Array[Unit] = []:
 	set(new_units):
 		units = new_units
-		setCharacter()
+		set_character()
 
 @export var selected_enemy: Resource
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Its ready")
-	setCharacter()
+	print("Battle scene ready!")
+	set_character()
 
-func setCharacter():
+func set_character():
 	var count = 1
 	for unit in units:
 		print(unit)
@@ -41,3 +41,12 @@ func release_attack_lockout():
 	$Unit4.allow_attacks()
 	$Unit5.allow_attacks()
 	$Unit6.allow_attacks()
+
+# Function prevents any sort of unit action.
+# The transition triggers this
+func prevent_actions():
+	$ClickBlocker.visible = true
+
+# Undoes the above function
+func allow_actions():
+	$ClickBlocker.visible = false
