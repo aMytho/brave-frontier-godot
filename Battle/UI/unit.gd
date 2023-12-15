@@ -43,12 +43,12 @@ signal Die
 @export var has_attacked: bool = false
 
 
-func create_unit(icon, unit_name, element, HP):
-	print("Creating Unit: ", unit_name)
+func create_unit(icon, new_unit_name, element, HP):
+	print("Creating Unit: ", new_unit_name)
 	
 	# Set props
 	unit_icon = icon
-	unit_name = unit_name
+	unit_name = new_unit_name
 	unit_element = element
 	unit_HP = HP
 	live_unit_HP = HP

@@ -78,18 +78,15 @@ func _damaging_targeted_unit(damaging_unit_id: int, hurt_unit_id: int, quantity_
 	var monsters_list = zone.stage[current_stage - 1].monsters
 	var percent_of_damage = quantity_of_damage / 100.0
 	var damaging_unit
-	var hurt_field_unit
 	var hurt_unit
 	var friend_is_hurt
 	
 	if player_turn:
 		damaging_unit = units[damaging_unit_id - 1]
-		hurt_field_unit = get_node(str("./Enemies/Unit", hurt_unit_id))
 		hurt_unit = monsters_list[hurt_unit_id - 1]
 		friend_is_hurt = false
 	else:
 		damaging_unit = monsters_list[damaging_unit_id - 1]
-		hurt_field_unit = get_node(str("./Friendlies/Unit", hurt_unit_id))
 		hurt_unit = units[hurt_unit_id - 1]
 		friend_is_hurt = true
 	
