@@ -21,7 +21,7 @@ var attacked_border = Rect2(3, 122, 319, 116)
 ## Attack a unit with a given placeID
 signal Attack(place: int)
 
-# Unimplemented
+# Unimplemented (for now)
 signal BraveBurstReady
 signal BraveBurst
 
@@ -43,23 +43,24 @@ signal Die
 @export var has_attacked: bool = false
 
 
-func create_unit(icon, uName, element, HP):
-	print("Creating Unit: ", uName)
+func create_unit(icon, unit_name, element, HP):
+	print("Creating Unit: ", unit_name)
+	
 	# Set props
 	unit_icon = icon
-	unit_name = uName
+	unit_name = unit_name
 	unit_element = element
 	unit_HP = HP
 	live_unit_HP = HP
 	has_unit = true
 	$HPContainer/Bar.max_value = unit_HP
-	$HPContainer/Bar.value = live_unit_HP	
+	$HPContainer/Bar.value = live_unit_HP
 	
-	# Get their actual values
-	get_node("Element").texture.region = setElement(unit_element)
+	# Show the properties in the UI
+	get_node("Element").texture.region = get_element_icon_region(unit_element)
 	get_node("Name").text = unit_name
-	update_HP_container(live_unit_HP)
 	get_node("PlayerFrame").texture = icon
+	update_HP_container(live_unit_HP)
 
 
 # Runs when a unit isn't in a slot. Reset all values
@@ -81,13 +82,14 @@ func reset_placeholder():
 	$PlayerFrame.visible = false
 
 
-# When called, update the live HP of a unit with the new HP send in parameters
+# When called, update the unit HP
 func update_HP_container(new_HP: int):
-	print("HP container updated")
 	var HP_bar = $HPContainer/Bar
 	live_unit_HP = new_HP if new_HP > 0 else 0
 	HP_bar.value = live_unit_HP
 	get_node("HPContainer/Label").text = str(live_unit_HP, "/", unit_HP)
+	
+	# based on the HP, show the correct color of HP bar
 	if (unit_HP == live_unit_HP):
 		HP_bar.texture_progress.region = green_bar
 	elif int(unit_HP/3.0) <= live_unit_HP:
@@ -96,7 +98,7 @@ func update_HP_container(new_HP: int):
 		HP_bar.texture_progress.region = red_bar
 
 
-func setElement(element):
+func get_element_icon_region(element):
 	match element:
 		"Fire":
 			return ElementLocations[0]
@@ -116,7 +118,7 @@ func setElement(element):
 func _on_gui_input(event: InputEvent):
 	# If clicked, attack if possible
 	if event.is_pressed() and has_unit and has_attacked == false and is_dead == false:
-		print("Attack!")
+		print("Unit ordered to attack.")
 		has_attacked = true
 		# Dim the border
 		texture.region = attacked_border
@@ -126,15 +128,10 @@ func _on_gui_input(event: InputEvent):
 
 # Allow the unit to attack again (if not dead)
 func allow_attacks():
-	if false == is_dead and has_unit:
+	if is_dead == false and has_unit:
 		texture.region = normal_border
 		has_attacked = false
 
 
-# This function could be used to update all the data about the unit when it dies
-# For example : 
-## Remember the unit is dead
-## Fade the sprite out
-## make the unit button darker, meaning it has died, or something similar
-func unitHasDied():
+func set_unit_dead():
 	is_dead = true

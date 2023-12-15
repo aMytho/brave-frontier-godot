@@ -12,6 +12,7 @@ signal Switched(scn: Node)
 func _ready():
 	pass # Replace with function body.
 
+
 func load_scene(scene: String, animation: int, new_position: Vector2 = Vector2(0,0)):
 	print("Switching current scene to: ", scene)
 
@@ -28,8 +29,9 @@ func load_scene(scene: String, animation: int, new_position: Vector2 = Vector2(0
 	# Let any listeners know we switched a scene. Usually, they will get the scene and set data
 	emit_signal("Switched", current_scene)
 
+
 func load_scene_with_props(scene: String, animation: int, keys, vals, pos: Vector2 = Vector2(0,0)):
-	print("Switching to the following scene with properties: ", scene)
+	print("(With props) Switching current scene to: ", scene)
 	var new_scene = ResourceLoader.load(scene).instantiate()
 	new_scene.position = pos
 	
@@ -47,6 +49,7 @@ func load_scene_with_props(scene: String, animation: int, keys, vals, pos: Vecto
 	
 	#Let any listeners know we switched a scene. Usually, they will get the scene and set data
 	emit_signal("Switched", current_scene)
+
 
 func animate_swap(new_scene, animation: int):
 	var tween = create_tween()
@@ -68,9 +71,11 @@ func animate_swap(new_scene, animation: int):
 	if animation == 0:
 		tween.tween_property(new_scene, "position", Vector2(0, new_scene.position.y), 0.3)
 
+
 # Loads a blank scene so another scene can be animated in
 func _set_blank_scene():
 	load_scene("res://Common/UI/ContentSwitcher/blank.tscn", 0)
+
 
 # Returns active scene
 func get_scene():

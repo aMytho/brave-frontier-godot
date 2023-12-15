@@ -41,7 +41,7 @@ func _ready():
 	initial_position = position
 
 
-func set_properties(unit: Unit, flip: bool, new_idle_equipment, new_attack_equipment, new_travel_equipment):
+func set_properties(unit: Unit, flip: bool):
 	# Show the correct unit
 	sprite.sprite_frames = unit.sprite_sheet
 	# Rest any animations from units that previously had this place_id
@@ -63,7 +63,7 @@ func set_properties(unit: Unit, flip: bool, new_idle_equipment, new_attack_equip
 		is_friendly = false
 	
 	# For each piece of equipment, make a sprite and align it
-	for equipment_piece in new_idle_equipment:
+	for equipment_piece in unit.char_equipment:
 		print(equipment_piece)
 		idle_equipment.append(equipment_piece)
 		var new_sprite = ResourceLoader.load("res://Battle/Field/equipment.tscn").instantiate()
@@ -73,7 +73,7 @@ func set_properties(unit: Unit, flip: bool, new_idle_equipment, new_attack_equip
 		# Add to tree
 		$Sprite/EquipmentContainer.add_child(new_sprite)
 
-	for equipment_piece in new_attack_equipment:
+	for equipment_piece in unit.atk_equipment:
 		# Store the piece
 		attack_equipment.append(equipment_piece)
 		# Load the equipment scene and set its properties
@@ -83,7 +83,7 @@ func set_properties(unit: Unit, flip: bool, new_idle_equipment, new_attack_equip
 		# Add to tree
 		$Sprite/AtkEquipmentContainer.add_child(new_sprite)
 	
-	for equipment_piece in new_travel_equipment:
+	for equipment_piece in unit.travel_equipment:
 		# Store the piece
 		travel_equipment.append(equipment_piece)
 		# Load the equipment scene and set its properties
@@ -112,13 +112,15 @@ func set_properties(unit: Unit, flip: bool, new_idle_equipment, new_attack_equip
 	# Same as above, but subtracts 33 to mitigate the pivot offset
 	$Target.position = $Clickable.position - Vector2(33,33)
 
+
 func reset_spritesheet():
 	sprite.sprite_frames = null
 	$Sprite/Shadow.sprite_frames = null
 
+
 # This method move the attacking unit to the target unit (depending the position)
 func attack(enemy_position: Vector2):
-	print("Attack animation")
+	print("Playing unit attack animation.")
 	# Move towards enemy
 	var tween = create_tween()
 	tween.tween_property(self, "position", enemy_position, 1.0 * speed)
@@ -135,6 +137,7 @@ func attack(enemy_position: Vector2):
 			$Sprite/EquipmentContainer.get_child(counter).play("Wait")
 			counter = counter + 1
 	tween.tween_callback(_on_move_finished.bind(true))
+
 
 func _on_move_finished(play_atk_animation: bool):
 	# Plays an attack animation or returns home
@@ -159,6 +162,7 @@ func _on_move_finished(play_atk_animation: bool):
 		tween.tween_property(self, "position", initial_position, 1.0 * speed)
 		tween.tween_callback(_on_attack_finished)
 
+
 func _on_attack_finished():
 	emit_signal("AttackFinished", place_ID)
 	var counter = 0
@@ -166,10 +170,11 @@ func _on_attack_finished():
 		$Sprite/EquipmentContainer.get_child(counter).play(equipment.name)
 		counter = counter + 1
 
+
 func _on_unit_animation_finished(anim_name):
 	# Switch to idle if attack is complete
 	# This does NOT include the death animations, as they are handled by the animitationPlayer
-	print(anim_name, " is the anim name")
+	print("Finished animation ", anim_name)
 	if anim_name == "Attack":
 		# Attack finished, switch to idle animation
 		sprite.play("Idle")
@@ -182,11 +187,13 @@ func remove_target():
 	is_targeted = false
 	$Target.visible = false
 
+
 func play_death_animation():
 	$Sprite/AnimationPlayer.play("Death")
 
+
 # This event is trigger when the user click on a unit.
-# If it's an enemy unit (!is_friendly), this will add a target on it, if the unit is not dead
+# If we are an enemy unit and not dead, this will add a target
 func _on_input_event(_viewport: Viewport, event: InputEvent, _shape_idx):
 	# Listen for clicks or taps
 	# to do - allow number pad for unit target (1 targets unit1, 2 targets unit2, etc)
@@ -194,6 +201,7 @@ func _on_input_event(_viewport: Viewport, event: InputEvent, _shape_idx):
 		is_targeted = true
 		$Target.visible = true
 		emit_signal("TargetSelected", place_ID)
+
 
 func _on_death_animation_finished(_anim_name):
 	emit_signal("DeathAnimationFinished", place_ID, is_friendly)

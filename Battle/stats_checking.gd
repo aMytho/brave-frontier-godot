@@ -10,9 +10,7 @@ func unit_taking_damage(atk_unit_atk: int, def_unit: Resource, friend_is_hurt: b
 	if friend_is_hurt:
 		emit_signal("FriendlyUnitHasTakenDamage", def_unit)
 
-# Function call at the end of each turn
-# It check if a every unit of a team (units) still have enought HP
-# If not, it emit the signal "unitHasDied" which is catch by battle.gd
+# Runs at the end of each turn, checks if all units are dead
 func are_all_units_dead(units: Array[Unit], field_units: Array[Node]):
 	var unitLeft = 0
 	var unit_counter = 0

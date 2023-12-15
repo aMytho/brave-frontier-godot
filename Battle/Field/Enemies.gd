@@ -9,9 +9,9 @@ signal UpdateTarget(place_ID: int)
 func _ready():
 	pass # Replace with function body.
 
+
 # Function triggered when the user select an enemy unit
 func _on_target_selected(id: int):
-	# A target was made!
 	print("Targeting enemy unit: ", id)
 	
 	# Remove all other targets
@@ -26,30 +26,30 @@ func _on_target_selected(id: int):
 			current_target = id
 			emit_signal("UpdateTarget", target.place_ID)
 
-# Get the target in the enemy team
-### If no target, then we choose a random target
+
+# Returns the target unit or a random unit if none is selected
 func get_target():
-	# Returns the target unit or a random unit if none is selected
 	if current_target == -1:
 		return get_random_target()
 	return get_child(current_target - 1)
 
-# Get a random target in the enemies list depending if they are alive or not
-# In the end, we take a random unit in the Children list that has been purge
+
+# Get a random target from the existing units
 func get_random_target():
 	var children = get_children()
 	
-	# Remove any child that isn't a unit (empty slot)
+	# Remove any child that isn't a unit (empty slot) or dead
 	var counter = 0
 	while counter < children.size():
 		if children[counter].is_unit == false or children[counter].is_dead:
 			children.remove_at(counter)
-		else :
+		else:
 			# Only increment if a unit is found, otherwise it isn't accurate (children.size() updates when removed)
 			counter += 1
 
 	# Pick a random unit
 	return children[randi_range(1, children.size()) -1]
+
 
 func clear_units():
 	for child in get_children():
@@ -58,6 +58,7 @@ func clear_units():
 		child.reset_spritesheet()
 		child.show()
 		child.remove_target()
+
 
 func set_speed(new_speed: float):
 	# Loop through each unit and set its speed

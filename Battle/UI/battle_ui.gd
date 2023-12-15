@@ -9,20 +9,23 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Battle scene ready!")
+	print("Battle UI ready!")
 	set_character()
+
 
 func set_character():
 	var count = 1
 	for unit in units:
-		print(unit)
 		var charPath = str("Unit", count)
 		if unit == null:
-			print(null, " sadly")
+			print("Found an unused unit slot")
+			# No unit here, dim section
 			get_node(charPath).reset_placeholder()
 		else:
+			print("Loading the UI for unit: ", unit.name)
 			get_node(charPath).create_unit(unit.battle_thumbnail, unit.name, unit.element, unit.HP)
 		count = count + 1
+
 
 func set_selected_enemy_health(enemy_unit: Resource):
 	selected_enemy = enemy_unit
@@ -33,6 +36,7 @@ func set_selected_enemy_health(enemy_unit: Resource):
 	enemy_health_bar.max_value = selected_enemy.max_HP
 	enemy_health_bar.value = selected_enemy.HP
 
+
 func release_attack_lockout():
 	# allow each unit to attack again
 	$Unit1.allow_attacks()
@@ -42,10 +46,12 @@ func release_attack_lockout():
 	$Unit5.allow_attacks()
 	$Unit6.allow_attacks()
 
+
 # Function prevents any sort of unit action.
 # The transition triggers this
 func prevent_actions():
 	$ClickBlocker.visible = true
+
 
 # Undoes the above function
 func allow_actions():
