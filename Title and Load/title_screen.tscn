@@ -167,6 +167,7 @@ offset_left = -2.0
 offset_top = 899.0
 offset_right = 638.0
 offset_bottom = 1011.0
+mouse_default_cursor_shape = 2
 texture = ExtResource("4_y81k8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Touch Screen"]
