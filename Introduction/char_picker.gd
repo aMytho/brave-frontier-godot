@@ -20,7 +20,7 @@ var units: Array[Unit] = [
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	load_unit(0)
-	
+
 
 func load_unit(index):
 	#Fade out
@@ -29,7 +29,8 @@ func load_unit(index):
 	
 	#Switch
 	tween.tween_callback(switch_unit.bind(units[index].full_sprite, index))
-	
+
+
 func switch_unit(sprite, index):
 	$Unit.texture = sprite
 	

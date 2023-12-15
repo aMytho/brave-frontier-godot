@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dqcry55ki1wb4"]
 
-[ext_resource type="PackedScene" uid="uid://cnhuvcugf1glt" path="res://Common/UI/Buttons/large_button.tscn" id="1_jlqtg"]
+[ext_resource type="PackedScene" uid="uid://dvtxwq4tw3g50" path="res://Common/UI/Buttons/large_button.tscn" id="1_jlqtg"]
 [ext_resource type="Texture2D" uid="uid://bqnthovfshwy4" path="res://Menu/SubMenu/Unit/StatusFrame/status_frame_b_c.png" id="1_uieac"]
 [ext_resource type="Script" path="res://Menu/Accounts/account_entry.gd" id="1_y5mud"]
 [ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="2_ndkdy"]
@@ -52,8 +52,7 @@ theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_ndkdy")
 theme_override_font_sizes/font_size = 43
 text = "Load"
-icon = null
-button_content = SubResource("CompressedTexture2D_0wwcb")
+icon = SubResource("CompressedTexture2D_0wwcb")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

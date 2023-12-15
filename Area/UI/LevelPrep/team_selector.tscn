@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://cs4xpdvhah7vi"]
+[gd_scene load_steps=16 format=3 uid="uid://cs4xpdvhah7vi"]
 
 [ext_resource type="Script" path="res://Area/UI/LevelPrep/team_selector.gd" id="1_gqch5"]
 [ext_resource type="PackedScene" uid="uid://drwq23rlohss0" path="res://Common/UI/Buttons/Directional.tscn" id="1_r6vfd"]
-[ext_resource type="Texture2D" uid="uid://dcmx86738cdsa" path="res://Common/UI/Buttons/Textures/left.tres" id="2_216wv"]
 [ext_resource type="Texture2D" uid="uid://bly3ctegc7ako" path="res://Common/UI/Buttons/Textures/right.tres" id="3_3i0mx"]
 [ext_resource type="PackedScene" uid="uid://b08d1lxgq7d4s" path="res://Menu/Footer/footer_button.tscn" id="3_tefpo"]
 [ext_resource type="Texture2D" uid="uid://ccrd25xnktxko" path="res://Common/UI/Buttons/Textures/party_frame_quest_btn1.png" id="4_wv8dn"]
@@ -11,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://do4ohitulwyul" path="res://Common/Arial Bold.ttf" id="8_ev5ey"]
 [ext_resource type="Texture2D" uid="uid://ixplshaltyki" path="res://Area/UI/LevelPrep/Textures/leader_skill_cap.png" id="9_v1ryt"]
 [ext_resource type="Texture2D" uid="uid://bqyns4860aro6" path="res://Area/UI/LevelPrep/Textures/friend_skill_cap.png" id="10_tbnxk"]
-[ext_resource type="PackedScene" uid="uid://cnhuvcugf1glt" path="res://Common/UI/Buttons/large_button.tscn" id="13_hpqig"]
+[ext_resource type="PackedScene" uid="uid://dvtxwq4tw3g50" path="res://Common/UI/Buttons/large_button.tscn" id="13_hpqig"]
 [ext_resource type="Texture2D" uid="uid://dc8c5x4mctnti" path="res://Area/UI/LevelPrep/Textures/deck_name_label.png" id="13_nbeer"]
 
 [sub_resource type="Animation" id="Animation_cmxit"]
@@ -91,7 +90,6 @@ offset_left = 8.0
 offset_top = 360.0
 offset_right = 68.0
 offset_bottom = 423.0
-icon = ExtResource("2_216wv")
 
 [node name="Directional2" parent="." instance=ExtResource("1_r6vfd")]
 layout_mode = 0
@@ -212,10 +210,10 @@ offset_bottom = 315.0
 texture = ExtResource("10_tbnxk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "MoveText"
 libraries = {
 "": SubResource("AnimationLibrary_q2k63")
 }
+autoplay = "MoveText"
 
 [node name="SquadNameBG" type="TextureRect" parent="."]
 z_index = -1
