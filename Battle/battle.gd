@@ -1,6 +1,7 @@
 extends Node2D
 
 signal BattleFinished(is_victory: bool)
+signal StageStarted(stage: Stage)
 
 ## Util functions
 @onready var util = $util
@@ -227,6 +228,7 @@ func load_next_stage(stage: int):
 			
 		counter = counter + 1
 	current_stage = current_stage + 1
+	emit_signal("StageStarted", zone.stage[stage])
 
 
 func get_unit_count():

@@ -1,13 +1,5 @@
 extends Control
 
-## The state of the music player
-enum Music {
-	## Start the music
-	START,
-	## Stop the music
-	STOP
-}
-
 @export var zone: Zone:
 	set(new_zone):
 		zone = new_zone
@@ -23,9 +15,10 @@ func _ready():
 		dialogue.dialogue = zone.beginning_cutscene
 		add_child(dialogue)
 		dialogue.connect("Complete", _on_beginning_complete)
-		fade_control(Music.START, zone.beginning_cutscene.music)
+		music.fade_control(music.MusicState.START, zone.beginning_cutscene.music)
 	else:
 		_on_beginning_complete()
+
 
 func _on_beginning_complete(dialogue:Node = null):
 	# Remove dialogue if it exists
@@ -33,24 +26,27 @@ func _on_beginning_complete(dialogue:Node = null):
 		remove_child(dialogue)
 	
 	# Fade music
-	fade_control(Music.STOP)
+	music.fade_control(music.MusicState.STOP)
 	# Load battle
 	var battle = ResourceLoader.load("res://Battle/battle.tscn").instantiate()
 	battle.zone = zone
 	battle.units = units
 	# Play music when the battle is loaded
-	battle.ready.connect(fade_control.bind(Music.START, zone.music))
+	battle.ready.connect(music.fade_control.bind(music.MusicState.START, zone.music))
 	add_child(battle)
 	
+	# Listen for stage start
+	battle.StageStarted.connect(_on_stage_started)
 	# Listen for ending
 	battle.BattleFinished.connect(_on_battle_complete)
+
 
 func _on_battle_complete(is_victory: bool):
 	print("Victory: ", is_victory)
 	get_node("Battle").queue_free()
 	
 	# Stop the music
-	fade_control(Music.STOP)
+	music.fade_control(music.MusicState.STOP)
 	
 	if zone.ending_cutscene:
 		print("There is an ending cutscene")
@@ -58,7 +54,7 @@ func _on_battle_complete(is_victory: bool):
 		dialogue.dialogue = zone.ending_cutscene
 		add_child(dialogue)
 		dialogue.connect("Complete", _on_end_complete)
-		fade_control(Music.START, zone.ending_cutscene.music)
+		music.fade_control(music.MusicState.START, zone.ending_cutscene.music)
 	else:
 		print("Showing recap view")
 		# To-do: Move to content switcher?
@@ -68,11 +64,12 @@ func _on_battle_complete(is_victory: bool):
 		add_child(recap)
 		recap.connect("RecapComplete", _on_recap_complete)
 
+
 func _on_end_complete(_dialogue: Node = null):
 	print("Dialogue is over, showing recap view")
 	
 	# Stop the music
-	fade_control(Music.STOP)
+	music.fade_control(music.MusicState.STOP)
 	
 	# To-do: Move to content switcher?
 	var recap = ResourceLoader.load("res://Battle/Recap/recap.tscn").instantiate()
@@ -81,21 +78,14 @@ func _on_end_complete(_dialogue: Node = null):
 	add_child(recap)
 	recap.connect("RecapComplete", _on_recap_complete)
 
+
 func _on_recap_complete():
 	print("Recap is complete")
 	# Load the home page
 	get_tree().get_root().get_node("Game/GameContent").loadScene("res://Menu/main_menu.tscn", true)
 
-func fade_control(action: Music, music_file = null):
-	var tween = create_tween()
-	match action:
-		Music.STOP:
-			# Stop the music
-			tween.tween_property(music, "volume_db", -80.0, 1.5)
-			tween.tween_callback(music.stop)
-		Music.START:
-			# Play the music
-			if music_file != null:
-				music.stream = music_file
-			tween.tween_property(music, "volume_db", -10.0, 1.5)
-			tween.tween_callback(music.play)
+
+func _on_stage_started(stage: Stage):
+	# When a stage is loading, we check if it needs boss music
+	if stage.is_boss:
+		music.fade_control(music.MusicState.START, zone.boss_music)
