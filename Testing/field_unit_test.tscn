@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://dspsfw6gjdhv5" path="res://Battle/Field/field_unit.tscn" id="1_nb3rg"]
 [ext_resource type="Script" path="res://Testing/field_unit_test.gd" id="1_vgal4"]
-[ext_resource type="Resource" uid="uid://bor1337h0gevd" path="res://Units/Res/1/1.tres" id="2_lpu1m"]
+[ext_resource type="Resource" uid="uid://bx3jgtlb4xh8n" path="res://Units/Res/50/50.tres" id="2_0ik7u"]
 [ext_resource type="SpriteFrames" uid="uid://b6bus0ti7qprp" path="res://Units/Res/5/unit_sp_20011.tres" id="4_5ep7q"]
 
 [node name="Field Unit Test" type="Node2D"]
 position = Vector2(232, 200)
 script = ExtResource("1_vgal4")
-unit = ExtResource("2_lpu1m")
+unit = ExtResource("2_0ik7u")
 
 [node name="Field Unit" parent="." instance=ExtResource("1_nb3rg")]
 position = Vector2(299, 60)
