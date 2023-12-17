@@ -47,6 +47,13 @@ func get_random_target():
 			# Only increment if a unit is found, otherwise it isn't accurate (children.size() updates when removed)
 			counter += 1
 
+	# If the player attacks after unit has died, but before atks are disabled,
+	# there may be no more units left.
+	# We return null in this case. It is caught by the calling function.
+	if len(children) == 0:
+		print("No enemies available to target.")
+		return null
+
 	# Pick a random unit
 	return children[randi_range(1, children.size()) -1]
 

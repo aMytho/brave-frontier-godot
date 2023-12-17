@@ -101,6 +101,12 @@ func _unit_attack(unit_place: int):
 	if units[unit_place-1] != null and !units[unit_place-1].is_dead:
 		# Gets a random target or the one specified by usr
 		var target = $Enemies.get_target()
+		# If no enemies are left, stop!
+		# This only happens if the player attacks at just the right (wrong) time.
+		if target == null:
+			return
+		
+		# Attack!
 		var attaking_unit = get_node(str("./Friendlies/Unit", unit_place))
 		target.time_being_targeted += 1
 		attaking_unit.targeted_place_ID = target.place_ID
@@ -122,7 +128,7 @@ func _unit_attack_finished(unit_place: int):
 		check_if_player_turn_complete()
 
 
-# Once the unit attack has ended, this method is called to see if the hurt unit is dead or not
+# Once the unit attack has ended, this method is called to see if the hurt unit is dead
 func check_if_unit_is_dead(unit, is_friendly_attacking: bool):
 	var hurted_unit_place_ID = unit.targeted_place_ID
 	var hurted_field_unit = get_node(str("./Enemies/Unit", hurted_unit_place_ID)) if is_friendly_attacking else get_node(str("./Friendlies/Unit", hurted_unit_place_ID))
@@ -175,7 +181,7 @@ func run_enemy_turn():
 		enemy_count = enemy_count + 1
 
 
-# When trigger, see if all alive enemies have made a move and will trigger the next friendly unit round or end the level
+# When ran, see if all alive enemies have made a move and will trigger the next friendly unit round or end the level
 func _enemy_attack_finished(unit_place: int):
 	# Disconnect the signal
 	var attacking_unit = get_node(str("./Enemies/Unit", unit_place))
@@ -273,7 +279,7 @@ func reset_unit_stats():
 			total_allies = total_allies + 1
 
 
-# Function who's trigger when the signal "unitHasDied" has been emitted
+# Function runs when the signal "unitHasDied" has been emitted
 func when_unit_has_died(place_ID: int, is_ally: bool = false):
 	var unit_side = "Enemies" if !is_ally else "Friendlies"
 	var dead_unit = get_node(str("./", unit_side, "/Unit", place_ID))
