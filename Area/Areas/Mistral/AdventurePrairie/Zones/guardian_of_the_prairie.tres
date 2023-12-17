@@ -15,7 +15,6 @@ script = ExtResource("11_yext1")
 id = 4
 name = "Guardians of the prairie"
 description = "You can see a rocky mountain faintly on the horizon. Tilith is waiting at the \"Cave of Flames\" just beyond here."
-stages = 6
 energy = 5
 stage = Array[Resource("res://Area/Stages/stage_base.gd")]([ExtResource("5_iooge"), ExtResource("6_6hesb"), ExtResource("7_1eiy1"), ExtResource("8_1ppeg"), ExtResource("5_iooge"), ExtResource("9_kgd63")])
 is_visible = false

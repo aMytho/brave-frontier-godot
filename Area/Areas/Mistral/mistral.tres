@@ -1,6 +1,15 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://8vq0qar848h5"]
+[gd_resource type="Resource" script_class="Area" load_steps=6 format=3 uid="uid://8vq0qar848h5"]
 
+[ext_resource type="Texture2D" uid="uid://djbh1wxmdewjh" path="res://Area/World/area_0001_iph5.jpg" id="1_2iplw"]
 [ext_resource type="Script" path="res://Area/area_base.gd" id="1_lbq3x"]
+[ext_resource type="Resource" uid="uid://63nosake3b0h" path="res://Area/Areas/Mistral/AdventurePrairie/adventure_prairie.tres" id="1_t8i1i"]
+[ext_resource type="Script" path="res://Area/Areas/dungeon_placement.gd" id="2_bafre"]
+
+[sub_resource type="Resource" id="Resource_m5ro7"]
+script = ExtResource("2_bafre")
+name = "Adventurer's Prairie"
+coordinates = Vector2(394, 982)
+dungeon = ExtResource("1_t8i1i")
 
 [resource]
 script = ExtResource("1_lbq3x")
@@ -9,4 +18,5 @@ name = "Mistral"
 description = "The first land you arrive at passing through Lucius’ Gate. Ruled over by Maxwell, mighty God of Creation and one of the Four Fallen Gods."
 visible = true
 completed = false
-dungeons = null
+dungeons = Array[ExtResource("2_bafre")]([SubResource("Resource_m5ro7")])
+background = ExtResource("1_2iplw")
