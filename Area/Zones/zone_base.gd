@@ -5,8 +5,6 @@ class_name Zone
 @export var id: int = 0
 @export var name: String = ""
 @export var description: String = ""
-## The amount of stages. You need at least 1
-@export var stages: int = 2
 ## Energy cost for this zone
 @export var energy: int = 5
 ## The stages to use. Make a new zone and add it to the Zones folder

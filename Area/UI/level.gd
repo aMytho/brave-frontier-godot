@@ -14,7 +14,7 @@ func _on_level_select_button_pressed():
 
 func setProperties(zn: Zone):
 	%LevelSelectButton/Label.text = zn.description
-	%LevelSelectButton/BattleCount.text = str(zn.stages)
+	%LevelSelectButton/BattleCount.text = str(len(zn.stage))
 	%LevelSelectButton/EnergyAmount.text = str(zn.energy)
 	%LevelSelectButton/LevelName.text = zn.name
 	zone = zn
