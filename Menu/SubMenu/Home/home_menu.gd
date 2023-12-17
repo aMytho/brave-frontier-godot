@@ -32,7 +32,9 @@ func _on_gui_input(event: Object):
 		print("Loading sub menu")
 		if selectedItem == 0:
 			print("Loading Quest")
-			get_tree().get_root().get_node("Game/GameContent").loadScene("res://Area/World/mistral.tscn")
+			var names = ["area"]
+			var data = [load("res://Area/Areas/Mistral/mistral.tres")]
+			get_tree().get_root().get_node("Game/GameContent").loadSceneWithProps("res://Area/Areas/area.tscn", names, data)
 		elif selectedItem == 1:
 			print("You selected the Vortex, but nothing happened since it doesn't exist!")
 			
