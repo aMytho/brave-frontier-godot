@@ -1,17 +1,94 @@
-[gd_resource type="Resource" script_class="Unit" load_steps=6 format=3 uid="uid://bx3jgtlb4xh8n"]
+[gd_resource type="Resource" script_class="Unit" load_steps=21 format=3 uid="uid://bx3jgtlb4xh8n"]
 
 [ext_resource type="Script" path="res://Units/unit_base.gd" id="1_45ohe"]
 [ext_resource type="Texture2D" uid="uid://c71dtvg3i1gwr" path="res://Units/Res/50/unit_ills_battle_40031.png" id="1_icu3p"]
 [ext_resource type="Texture2D" uid="uid://cqho0sf2ymrhr" path="res://Units/Res/50/unit_ills_full_40031.png" id="2_67rp7"]
+[ext_resource type="Script" path="res://Units/equipment_frame.gd" id="2_pdyy0"]
+[ext_resource type="Script" path="res://Units/char_equipment.gd" id="3_pjbin"]
 [ext_resource type="SpriteFrames" uid="uid://cx6k0lcki67is" path="res://Units/Res/50/unit_sp_40031.tres" id="4_tynjw"]
 [ext_resource type="Texture2D" uid="uid://brln80vg0pw7n" path="res://Units/Res/50/unit_ills_thum_40031.png" id="5_5ig6t"]
+
+[sub_resource type="Resource" id="Resource_m04hu"]
+script = ExtResource("2_pdyy0")
+position = Vector2(0, 13)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_wc72t"]
+script = ExtResource("2_pdyy0")
+position = Vector2(0, 13)
+rotation = 90
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_55c7t"]
+script = ExtResource("2_pdyy0")
+position = Vector2(-5, 0)
+rotation = 0
+z_index = 1
+
+[sub_resource type="Resource" id="Resource_lvexv"]
+script = ExtResource("2_pdyy0")
+position = Vector2(-7, 0)
+rotation = 0
+z_index = 1
+
+[sub_resource type="Resource" id="Resource_qdpgx"]
+script = ExtResource("2_pdyy0")
+position = Vector2(-10, 15)
+rotation = -50
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_vv4mb"]
+script = ExtResource("3_pjbin")
+name = "SparksAttack"
+frames = Array[ExtResource("2_pdyy0")]([SubResource("Resource_m04hu"), SubResource("Resource_wc72t"), SubResource("Resource_55c7t"), SubResource("Resource_lvexv"), SubResource("Resource_qdpgx")])
+
+[sub_resource type="Resource" id="Resource_pul7b"]
+script = ExtResource("2_pdyy0")
+position = Vector2(0, 20)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_l0ovx"]
+script = ExtResource("2_pdyy0")
+position = Vector2(0, 20)
+rotation = 90
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_p5yo1"]
+script = ExtResource("2_pdyy0")
+position = Vector2(0, 20)
+rotation = -90
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_l781g"]
+script = ExtResource("3_pjbin")
+name = "SparksIdle"
+frames = Array[ExtResource("2_pdyy0")]([SubResource("Resource_pul7b"), SubResource("Resource_l0ovx"), SubResource("Resource_p5yo1")])
+
+[sub_resource type="Resource" id="Resource_vhh2e"]
+script = ExtResource("2_pdyy0")
+position = Vector2(0, 20)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_jui47"]
+script = ExtResource("2_pdyy0")
+position = Vector2(0, 20)
+rotation = 0
+z_index = -1
+
+[sub_resource type="Resource" id="Resource_hhx5u"]
+script = ExtResource("3_pjbin")
+name = "SparksTravel"
+frames = Array[ExtResource("2_pdyy0")]([SubResource("Resource_vhh2e"), SubResource("Resource_jui47")])
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_45ohe")
 unit_number = 50
 data_id = 40031
-name = "King sSparky"
+name = "King Sparky"
 element = "Thunder"
 gender = "Genderless"
 rarity = 2
@@ -31,7 +108,8 @@ thumbnail = ExtResource("5_5ig6t")
 battle_thumbnail = ExtResource("1_icu3p")
 full_sprite = ExtResource("2_67rp7")
 sprite_sheet = ExtResource("4_tynjw")
-char_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
-atk_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
-travel_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+char_equipment = Array[ExtResource("3_pjbin")]([SubResource("Resource_l781g")])
+atk_equipment = Array[ExtResource("3_pjbin")]([SubResource("Resource_vv4mb")])
+travel_equipment = Array[ExtResource("3_pjbin")]([SubResource("Resource_hhx5u")])
+animationVersion = 1
 unit_lore = "When Sparky charges up, it evolves into King Sparky. Its new electric shock power far exceeds that of Sparky, and it can quickly put new Summoners in a bind. It has a very warlike nature, forcing Summoners into battle once it spots them. Thus, many Summoners immediately hide after spotting King Sparky."

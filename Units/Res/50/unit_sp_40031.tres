@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://cx6k0lcki67is"]
+[gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://cx6k0lcki67is"]
 
 [ext_resource type="Texture2D" uid="uid://cy384a5a541ix" path="res://Units/Res/50/AtlasFrames/A1.tres" id="1_pbfoq"]
 [ext_resource type="Texture2D" uid="uid://dgpod1ot8ns0v" path="res://Units/Res/50/AtlasFrames/A2.tres" id="2_r0d13"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://kcetivh0d0bp" path="res://Units/Res/50/AtlasFrames/S1.tres" id="8_uspf5"]
 [ext_resource type="Texture2D" uid="uid://dqi65mbbkambc" path="res://Units/Res/50/AtlasFrames/T1.tres" id="8_ymlyl"]
 [ext_resource type="Texture2D" uid="uid://e2oifxacrx76" path="res://Units/Res/50/AtlasFrames/T2.tres" id="9_7lcoq"]
+[ext_resource type="Texture2D" uid="uid://b3fs083e5eyp2" path="res://Units/Res/50/AtlasFrames/E1.tres" id="9_qvs6j"]
+[ext_resource type="Texture2D" uid="uid://j0ju762l1uy1" path="res://Units/Res/50/AtlasFrames/E2.tres" id="10_hhx1j"]
+[ext_resource type="Texture2D" uid="uid://b8yhlewvcyy07" path="res://Units/Res/50/AtlasFrames/E3.tres" id="11_wbvkl"]
 
 [resource]
 resource_local_to_scene = true
@@ -27,7 +30,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_324yb")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("4_o5v4q")
 }],
 "loop": false,
@@ -54,7 +57,52 @@ animations = [{
 }],
 "loop": true,
 "name": &"Shadow",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_qvs6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wbvkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hhx1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qvs6j")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_wbvkl")
+}],
+"loop": false,
+"name": &"SparksAttack",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_qvs6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hhx1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qvs6j")
+}],
+"loop": true,
+"name": &"SparksIdle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_qvs6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wbvkl")
+}],
+"loop": true,
+"name": &"SparksTravel",
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -65,5 +113,13 @@ animations = [{
 }],
 "loop": true,
 "name": &"Travel",
-"speed": 5.0
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"Wait",
+"speed": 1.0
 }]
