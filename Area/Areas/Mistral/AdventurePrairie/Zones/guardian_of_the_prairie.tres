@@ -1,7 +1,12 @@
-[gd_resource type="Resource" script_class="Zone" load_steps=5 format=3 uid="uid://b8n43mvdfu4u2"]
+[gd_resource type="Resource" script_class="Zone" load_steps=10 format=3 uid="uid://b8n43mvdfu4u2"]
 
 [ext_resource type="Texture2D" uid="uid://dxmjf1igdb02i" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/dungeon_battle_10100.jpg" id="1_wqiru"]
+[ext_resource type="Resource" uid="uid://s3xrj34rmxfk" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/18.tres" id="5_iooge"]
+[ext_resource type="Resource" uid="uid://ywljgvn2djyy" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/17.tres" id="6_6hesb"]
+[ext_resource type="Resource" uid="uid://c3ouhiw533leu" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/16.tres" id="7_1eiy1"]
+[ext_resource type="Resource" uid="uid://bf0wvbc4cl8b2" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/15.tres" id="8_1ppeg"]
 [ext_resource type="AudioStream" uid="uid://kmn3bs6klkkb" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/bf006_btl_boss.mp3" id="9_6s8av"]
+[ext_resource type="Resource" uid="uid://c141mdybuy0k8" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/19.tres" id="9_kgd63"]
 [ext_resource type="AudioStream" uid="uid://dswmrha7t8lcg" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/bf010_map_grass.mp3" id="10_bu1ts"]
 [ext_resource type="Script" path="res://Area/Zones/zone_base.gd" id="11_yext1"]
 
@@ -12,7 +17,7 @@ name = "Guardians of the prairie"
 description = "You can see a rocky mountain faintly on the horizon. Tilith is waiting at the \"Cave of Flames\" just beyond here."
 stages = 6
 energy = 5
-stage = Array[Resource("res://Area/Stages/stage_base.gd")]([])
+stage = Array[Resource("res://Area/Stages/stage_base.gd")]([ExtResource("5_iooge"), ExtResource("6_6hesb"), ExtResource("7_1eiy1"), ExtResource("8_1ppeg"), ExtResource("5_iooge"), ExtResource("9_kgd63")])
 is_visible = false
 BG = ExtResource("1_wqiru")
 music = ExtResource("10_bu1ts")

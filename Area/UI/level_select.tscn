@@ -146,10 +146,10 @@ expand_mode = 1
 
 [node name="MessageAnimate" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Message")
-autoplay = "MovingText"
 libraries = {
 "": SubResource("AnimationLibrary_83b73")
 }
+autoplay = "MovingText"
 
 [node name="content_switcher" parent="." instance=ExtResource("9_rchly")]
 custom_minimum_size = Vector2(50, 50)
