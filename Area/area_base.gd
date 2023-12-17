@@ -13,4 +13,7 @@ class_name Area
 @export var completed: bool = false
 
 ## The dungeons for the area
-@export var dungeons: Array[Dungeon] = []
+@export var dungeons: Array[DungeonPlacement] = []
+
+## The area background image. Uses mistral as default if none provided
+@export var background: CompressedTexture2D

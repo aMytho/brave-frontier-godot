@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuykmslycgu3h"]
+
+[ext_resource type="Texture2D" uid="uid://cngvyovg6rtve" path="res://Area/World/grand_map_name_btn1.png" id="1_riw4e"]
+[ext_resource type="Texture2D" uid="uid://c2i1pwr0e78e0" path="res://Area/UI/grand_map_name_frame_off.png" id="2_4wuue"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v0dp3"]
+texture = ExtResource("1_riw4e")
+region_rect = Rect2(0, 0, 204, 79)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_na8ss"]
+texture = ExtResource("2_4wuue")
+region_rect = Rect2(0, 0, 204, 79)
+modulate_color = Color(0.372549, 0.372549, 0.372549, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afenm"]
+texture = ExtResource("2_4wuue")
+region_rect = Rect2(0, 0, 204, 79)
+modulate_color = Color(0.372549, 0.372549, 0.372549, 1)
+
+[node name="Button" type="Button"]
+offset_left = 394.0
+offset_top = 982.0
+offset_right = 636.0
+offset_bottom = 1012.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxTexture_v0dp3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_na8ss")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_afenm")
+text = "Adventurer's Prairie"

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DungeonPlacement" load_steps=2 format=3 uid="uid://cgxdrixf3860r"]
+
+[ext_resource type="Script" path="res://Area/Areas/dungeon_placement.gd" id="1_c8ukh"]
+
+[resource]
+script = ExtResource("1_c8ukh")
+name = "My Dungeon"
+coordinates = Vector2(0, 0)
