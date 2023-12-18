@@ -1,12 +1,12 @@
 extends TextureRect
 
 # The health bars for good, meh, and bad HPs
-const green_bar = Rect2(2, 545, 176, 10)
-const yellow_bar = Rect2(2, 560, 176, 11)
-const red_bar = Rect2(2, 575, 176, 12)
+static var green_bar = Rect2(2, 545, 176, 10)
+static var yellow_bar = Rect2(2, 560, 176, 11)
+static var red_bar = Rect2(2, 575, 176, 12)
 
 # The atlastexture coordinates for the elemental symbol 
-var ElementLocations = [
+static var ElementLocations = [
 	Rect2(37, 919, 27, 27), # Fire
 	Rect2(64, 919, 26, 26), # Water
 	Rect2(92, 920, 25, 25), # Earth
@@ -15,8 +15,8 @@ var ElementLocations = [
 	Rect2(172, 920, 26, 26) # Dark
 ]
 
-var normal_border = Rect2(2, 2, 320, 117)
-var attacked_border = Rect2(3, 122, 319, 116)
+static var normal_border = Rect2(2, 2, 320, 117)
+static var attacked_border = Rect2(3, 122, 319, 116)
 
 ## Attack a unit with a given placeID
 signal Attack(place: int)
@@ -53,6 +53,7 @@ func create_unit(icon, new_unit_name, element, HP):
 	unit_HP = HP
 	live_unit_HP = HP
 	has_unit = true
+	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	$HPContainer/Bar.max_value = unit_HP
 	$HPContainer/Bar.value = live_unit_HP
 	
@@ -98,7 +99,7 @@ func update_HP_container(new_HP: int):
 		HP_bar.texture_progress.region = red_bar
 
 
-func get_element_icon_region(element):
+static func get_element_icon_region(element):
 	match element:
 		"Fire":
 			return ElementLocations[0]
@@ -122,6 +123,7 @@ func _on_gui_input(event: InputEvent):
 		has_attacked = true
 		# Dim the border
 		texture.region = attacked_border
+		mouse_default_cursor_shape = Control.CURSOR_ARROW
 		# Emit event
 		emit_signal("Attack", place_ID)
 
@@ -131,7 +133,11 @@ func allow_attacks():
 	if is_dead == false and has_unit:
 		texture.region = normal_border
 		has_attacked = false
+		mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 
 
 func set_unit_dead():
 	is_dead = true
+	# Dim the unit
+	self.modulate = Color(0.29, 0.29, 0.29)
+	mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN

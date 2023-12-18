@@ -170,9 +170,9 @@ offset_bottom = 105.0
 texture = SubResource("AtlasTexture_tn3ip")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BBAnimation"]
-autoplay = "Idle"
 libraries = {
 "": SubResource("AnimationLibrary_dqfs5")
 }
+autoplay = "Idle"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
