@@ -11,10 +11,11 @@ config_version=5
 [application]
 
 config/name="braveFontier"
+config/description="An open source implementation of Brave Frontier."
 run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/image="res://Title and Load/download_bg.png"
-config/icon="res://Units/Battle/unit_ills_battle_10011.png"
+config/icon="res://Units/Res/1/unit_ills_battle_10011.png"
 
 [autoload]
 
