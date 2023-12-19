@@ -48,6 +48,16 @@ func _on_battle_complete(is_victory: bool):
 	# Stop the music
 	music.fade_control(music.MusicState.STOP)
 	
+	# If loss, exit here before rewards and cutscenes
+	if is_victory == false:
+		get_tree().get_root().get_node("Game/GameContent").loadScene("res://Menu/main_menu.tscn", true)
+		return
+	
+	# Mark the zone as complete
+	zone.is_complete = true
+	ResourceSaver.save(zone, zone.resource_path)
+	
+	# Display a custscene (if any) or go to recap
 	if zone.ending_cutscene:
 		print("There is an ending cutscene")
 		var dialogue = ResourceLoader.load("res://Area/Dialogue/dialogue.tscn").instantiate()
