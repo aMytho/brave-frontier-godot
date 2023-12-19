@@ -29,17 +29,20 @@ func _ready():
 	# Get back button click event
 	$BackSection.Clicked.connect(_on_back_pressed)
 
+
 func create_thumbnail(unit: Unit):
 	var new_thumbnail = thumbnail.duplicate()
 	new_thumbnail.icon = unit.thumbnail
 	new_thumbnail.unit = unit
 	return new_thumbnail
 
+
 func _on_unit_pressed(unit: Unit):
 	if use_signals:
 		emit_signal("UnitSelected", unit.id)
 	else:
 		get_parent().load_scene_with_props("res://Menu/SubMenu/Unit/Display/unit_display.tscn", 1, ["unit"], [unit])
+
 
 func _on_back_pressed():
 	if use_signals:

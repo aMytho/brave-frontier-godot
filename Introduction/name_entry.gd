@@ -11,6 +11,7 @@ func _ready():
 
 func _on_button_pressed():
 	var input = $TextEdit.text
+	# Check that a name was entered and it is a new one.
 	if len(input) > 0 and name_is_new(input):
 		var tween = create_tween()
 		tween.tween_property(self, "modulate", Color(0,0,0,0), 4.0)
@@ -27,6 +28,7 @@ func _on_text_edit_focus_entered():
 		tween.tween_property($Button, "modulate", Color(1,1,1,1), 1.5)
 
 
+# Checks if a player name already exists
 func name_is_new(new_name: String):
 	var names = Database.query(
 		'SELECT COUNT(*) as count FROM player_state WHERE player_name = "%s"' % new_name.to_lower()

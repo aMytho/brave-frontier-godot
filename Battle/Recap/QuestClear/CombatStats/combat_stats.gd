@@ -8,6 +8,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Show the combat stats on the recap view
 	$SparkAmount.text = str(sparks)
 	$CritAmount.text = str(crits)
 	$BCDropAmount.text = str(bc)

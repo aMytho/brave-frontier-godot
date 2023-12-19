@@ -9,6 +9,7 @@ extends TextureRect
 func _ready():
 	set_element(element)
 
+
 func set_element(elem: String):
 	if elem == "none":
 		# If no element is selected, load no background

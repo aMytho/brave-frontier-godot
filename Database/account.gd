@@ -35,6 +35,7 @@ var timer: SceneTreeTimer
 func _ready():
 	pass # Replace with function body.
 
+
 func set_account_info(new_id: int, new_player_name: String, new_level: int, new_exp: int,
 new_energy: int, new_gems: int, new_zel: int, new_karma: int, new_arena_orbs: int):
 	self.id = new_id
@@ -56,17 +57,21 @@ new_energy: int, new_gems: int, new_zel: int, new_karma: int, new_arena_orbs: in
 	timer = get_tree().create_timer(ENERGY_RECHARGE)
 	timer.connect("timeout", _on_energy_recharged)
 
+
 func get_account_info() -> Array:
 	return [id, player_name, level, current_exp, max_exp, energy, gems, zel, karma, arena_orbs]
 
+
 func account_is_active() -> bool:
 	return player_name != ""
+
 
 func will_player_level_up(new_exp: int) -> bool:
 	# Returns a bool indicating if adding an exp amount will trigger a level up. Does not affect DB/state
 	if new_exp + self.current_exp > self.max_exp:
 		return true
 	return false
+
 
 func add_exp(new_exp: int):
 	print("Adding ", new_exp, " exp to summoner!")
@@ -103,8 +108,10 @@ func add_exp(new_exp: int):
 				% [self.current_exp, new_level.energy]
 			)
 
+
 func get_level_info(new_level: int):
 	return Database.query("SELECT * from player_level where id = %s" % new_level)[0]
+
 
 func _on_energy_recharged():
 	# Get the current lvl info

@@ -25,6 +25,7 @@ func _ready():
 		current_level.cost - last_level.cost
 	)
 
+
 func set_values(friends: int, energy: int, cost: int):
 	# Set the label values
 	$Lv/LvAmount.text = str(new_level)

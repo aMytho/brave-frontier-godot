@@ -37,4 +37,3 @@ func _on_gui_input(event: Object):
 			get_tree().get_root().get_node("Game/GameContent").loadSceneWithProps("res://Area/Areas/area.tscn", names, data)
 		elif selectedItem == 1:
 			print("You selected the Vortex, but nothing happened since it doesn't exist!")
-			

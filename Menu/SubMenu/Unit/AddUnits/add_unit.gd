@@ -21,7 +21,7 @@ func _ready():
 	for unit_thumbnial in $UnitList.get_children():
 		if !unit_thumbnial.has_meta("is_remove"):
 			unit_thumbnial.connect("Clicked", _on_unit_clicked)
-	
+
 
 # Creates a thumbnail for the unit
 func create_thumbnail(unit: Unit):

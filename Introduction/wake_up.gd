@@ -14,8 +14,9 @@ signal ImAwake
 func _ready():
 	animate_text(content)
 
+
 func wake_up():
-	#The summoner needs to wake up :)
+	# The summoner needs to wake up :)
 	if times == 1:
 		await get_tree().create_timer(1.5).timeout
 		animate_text(str(content, "?"), 2.5)
@@ -25,21 +26,23 @@ func wake_up():
 	else:
 		emit_signal("ImAwake")
 
+
 func animate_text(text, duration: float = 2.0):
-	#Set the value
+	# Set the text content
 	$RichTextLabel.clear()
 	$RichTextLabel.append_text(text)
 	
-	#Show the text
+	# Show the text
 	var tween = create_tween()
 	tween.tween_property($RichTextLabel, "modulate", Color(1,1,1,1), 1.0)
 	tween.tween_property($RichTextLabel, "visible_ratio", 1, duration)
 	tween.set_trans(Tween.TRANS_CUBIC)
-	#Hide it
+	# Hide it
 	tween.tween_callback(hide_text)
 
+
 func hide_text():
-	#Fade text
+	# Fade text
 	var tween = create_tween()
 	tween.tween_property($RichTextLabel, "modulate", Color(1,1,1,0), 2.5)
 	tween.tween_property($RichTextLabel, "visible_ratio", 0, 1.0)

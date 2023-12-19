@@ -2,7 +2,7 @@ extends Control
 
 signal UnitsComplete
 
-# The units the summoner acquired
+## The units the summoner acquired (these are placeholders atm)
 @export var units: Array = []
 
 # Called when the node enters the scene tree for the first time.
@@ -14,6 +14,7 @@ func _ready():
 		$UnitsContainer.add_child(new_unit)
 	await get_tree().create_timer(2.0).timeout
 	show_units()
+
 
 func show_units():
 	var counter = 0

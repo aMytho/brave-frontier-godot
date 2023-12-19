@@ -8,17 +8,18 @@ extends HBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#Desc is optional
+	# Description is optional
 	if description != null:
-		#Set it
+		# If one was set, use it
 		$Center/HBoxContainer/Description.texture.region = get_region(description)
-	#Sets the value
+	# Sets the value
 	$Center/HBoxContainer/Value.text = value
 
-#Gets the region on the png corresponding to its position represented by a number (1-15)
+
+# Gets the region on the png corresponding to its position represented by a number (1-15)
 func get_region(region: int):
 	match region:
-		0: return Rect2(0,0,1,1) #No image
+		0: return Rect2(0,0,1,1) # No image
 		1: return Rect2(0, 1, 49, 30)
 		2: return Rect2(0, 31, 43, 24)
 		3: return Rect2(0, 61, 88, 24)
@@ -34,4 +35,4 @@ func get_region(region: int):
 		13: return Rect2(0, 361, 90, 25)
 		14: return Rect2(0, 390, 92, 30)
 		15: return Rect2(0, 421, 59, 25)
-		# To-do: add cost to list
+		# TODO: add cost to list

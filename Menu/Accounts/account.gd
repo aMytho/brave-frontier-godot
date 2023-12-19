@@ -14,10 +14,14 @@ func _ready():
 		acc.set_account_info(account.player_name, account.id)
 		$ScrollContainer/BoxContainer.add_child(acc)
 		acc.LoadAccount.connect(_on_account_selected)
+	
 	# Add a spacer so the last item isn't cut off (this is probably a bug(
 	$ScrollContainer/BoxContainer.add_spacer(false)
+
+
 func _close_button_clicked():
 	emit_signal("NoSelection", self)
+
 
 func _on_account_selected(id: int, new_name: String):
 	print("Loading account with id:", id)

@@ -13,12 +13,14 @@ signal Clicked(nm: String)
 func _ready():
 	pass
 
+
 func set_properties(new_collectable, new_texture, new_amount: int, show_count: bool):
 	# The the initial properties
 	collectable = new_collectable
 	collectable_texture = new_texture
 	amount = new_amount
 	show_amount = show_count
+
 
 func show_item():
 	# Remove the unknown texture, show the new one

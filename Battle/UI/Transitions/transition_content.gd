@@ -7,6 +7,7 @@ extends ColorRect
 func _ready():
 	pass # Replace with function body.
 
+
 func set_properties(new_stage, max_stages, dungeon_name: String, zone_name: String):
 	# Sets the initial properties without showing the animations
 	stage = new_stage
@@ -28,10 +29,11 @@ func set_properties(new_stage, max_stages, dungeon_name: String, zone_name: Stri
 	$Name/Dungeon.text = dungeon_name
 	$Name/Stage.text = zone_name
 
+
 func update_progress(new_stage: int):
 	print("Setting transition value to ", new_stage)
 	$CurrentProgressLbl.text = str(new_stage)
-	# To-do: Animate the bar
+	# TODO: Animate the bar
 	var bar_tween = create_tween()
 	var sword_tween = create_tween()
 	# Same as above, but we don't move half of the sword length and we move to the new_stage, instead of the max - 1

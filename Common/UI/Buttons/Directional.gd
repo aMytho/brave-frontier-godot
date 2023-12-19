@@ -12,11 +12,13 @@ signal Clicked
 func _ready():
 	set_direction(direction)
 
+
 func set_direction(dir):
 	if dir == "Left":
 		icon = ResourceLoader.load("res://Common/UI/Buttons/Textures/left.tres")
 	else:
 		icon = ResourceLoader.load("res://Common/UI/Buttons/Textures/right.tres")
+
 
 func _on_pressed():
 	emit_signal("Clicked")

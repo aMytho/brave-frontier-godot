@@ -23,18 +23,18 @@ func _ready():
 
 
 func load_unit(index):
-	#Fade out
+	# Fade out
 	var tween = create_tween()
 	tween.tween_property($Unit, "modulate", Color(1,1,1,0), 2.0)
 	
-	#Switch
+	# Switch
 	tween.tween_callback(switch_unit.bind(units[index].full_sprite, index))
 
 
 func switch_unit(sprite, index):
 	$Unit.texture = sprite
 	
-	#Fade in
+	# Fade in
 	var tween_in = create_tween()
 	tween_in.tween_property($Unit, "modulate", Color(1,1,1,1), 1)
 	$Lore.lore = units[index].unit_lore

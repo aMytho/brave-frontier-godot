@@ -5,31 +5,31 @@ signal TargetSelected(id: int)
 signal DamagingEnemy(actual_unit: int, targeted_unit: int)
 signal DeathAnimationFinished(id: int, is_ally: bool)
 
-# Flag to let parent scenes check if a unit is in this slot
+## Flag to let parent scenes check if a unit is in this slot
 @export var is_unit = false
-# Corresponds to the unit placement in unit_display
+## Corresponds to the unit placement in unit_display
 @export var place_ID: int = 0
-# Is the unit currently being targeted?
+## Is the unit currently being targeted?
 @export var is_targeted: bool = false
-# Is this our unit, or an enemy?
+## Is this our unit, or an enemy?
 @export var is_friendly: bool = true
-#Let the game know if the unit is dead or not
+## Let the game know if the unit is dead or not
 @export var is_dead: bool = false
-# Remember the place ID of the unit being targeted by it's attack
+## Remember the place ID of the unit being targeted by it's attack
 @export var targeted_place_ID:int = 0
-# Remember the number of unit currently attacking this unit
+## Remember the number of unit currently attacking this unit
 @export var time_being_targeted:int = 0
 
 @export var hit_array:Array[int]
-# The sprite for the unit
+## The sprite for the unit
 @onready var sprite = $Sprite
 # Store the equipment for the unit
 @export var idle_equipment: Array[CharEquipment] = []
 @export var attack_equipment: Array[CharEquipment] = []
 @export var travel_equipment: Array[CharEquipment] = []
+
 # Used to allow the unit to return to their initial spot
 var initial_position = Vector2(0,0)
-
 var speed: float = 1.0
 
 # Called when the node enters the scene tree for the first time.

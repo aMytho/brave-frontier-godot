@@ -19,6 +19,7 @@ func _ready():
 	add_child(intro)
 	intro.connect("FlashComplete", _on_flash_complete)
 
+
 func _on_flash_complete():
 	if count == 0:
 		var name_picker = load("res://Introduction/name_entry.tscn").instantiate()
@@ -38,6 +39,7 @@ func _on_flash_complete():
 		tween.tween_callback($Music.stop)
 	count += 1
 
+
 func _on_name_chosen(nm: String):
 	player_name = nm
 	remove_child($Creator)
@@ -50,6 +52,7 @@ func _on_name_chosen(nm: String):
 	]
 	add_child(intro)
 	intro.connect("FlashComplete", _on_flash_complete)
+
 
 func _on_char_chosen(character: Unit):
 	print("The summoner picked the starter unit:", character)
@@ -78,6 +81,7 @@ func _on_char_chosen(character: Unit):
 	ActiveAccount.set_account_info(account.id, account.player_name, account.level, account.current_exp,
 	account.energy, account.gems, account.zel, account.karma, account.arena_orbs)
 
+
 func _on_wake_up():
 	print("Summoner is awake, start tutorial 1")
 	
@@ -103,7 +107,7 @@ func _on_wake_up():
 		% [units_ids[1].id, units_ids[0].id, units_ids[2].id, player_id]
 	)
 	
-	#Load the battle scene, insert units. The journey begins!
+	# Load the battle scene, insert units. The journey begins!
 	var zone = ResourceLoader.load("res://Area/Areas/Mistral/AdventurePrairie/Zones/basics_of_battle.tres")
 	var arg1 = ["zone", "units"]
 	var subArg: Array[Unit] = [burny, main_character, sparky, null, null, null]

@@ -4,9 +4,9 @@ signal RewardsComplete
 
 @export var zel: int = 0
 @export var karma: int = 0
-# The total amount of xp
+## The total amount of xp
 @export var xp: int = 0
-# The amount of xp added so far. We keep track of this for the xpcurrentamount label
+## The amount of xp added so far. We keep track of this for the xpcurrentamount label
 @export var exp_added: int = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -17,11 +17,13 @@ func _ready():
 	# Begin animations
 	move_zel()
 
+
 func move_zel():
 	# Show the zel
 	var zel_tween = create_tween()
 	zel_tween.tween_property($ZelContainer, "position", Vector2(0,0), 1.0)
 	zel_tween.tween_callback(animate_zel)
+
 
 func animate_zel():
 	# Wait, then animate the value
@@ -31,11 +33,13 @@ func animate_zel():
 	zel_tween.tween_property($LabelAnimator, "current_val", zel, 2.0)
 	zel_tween.tween_callback(move_karma)
 
+
 func move_karma():
 	# Show the karma
 	var karma_tween = create_tween()
 	karma_tween.tween_property($KarmaContainer, "position", Vector2(0,0), 1.0)
 	karma_tween.tween_callback(animate_karma)
+
 
 func animate_karma():
 	# Wait, then animate the value
@@ -44,6 +48,7 @@ func animate_karma():
 	var karma_twen = create_tween()
 	karma_twen.tween_property($LabelAnimator, "current_val", karma, 2.0)
 	karma_twen.tween_callback(move_bar)
+
 
 func move_bar():
 	# Show the bar
@@ -55,6 +60,7 @@ func move_bar():
 			ActiveAccount.current_exp, ActiveAccount.max_exp - ActiveAccount.current_exp, true))
 	else:
 		exp_tween.tween_callback(animate_bar.bind(ActiveAccount.current_exp, xp, false))
+
 
 func animate_bar(initial_exp: int, bar_amount: int, is_overlfow: bool):
 	print(
@@ -122,9 +128,10 @@ func check_for_level_up(exp_amount: int, is_overflow: bool):
 				$content_switcher.get_scene().connect("LevelsComplete",
 					animate_bar.bind(0, xp, false))
 
+
 func _on_XP_awarded():
 	await get_tree().create_timer(2.0).timeout
-	# To-do: get real values
+	# TODO: Get real values
 	var arg_names = ["sparks", "crits", "hc", "bc"]
 	var arg_vals = [111, 222, 333, 444]
 	$content_switcher._set_blank_scene()

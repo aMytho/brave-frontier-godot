@@ -1,13 +1,14 @@
 extends AnimatedSprite2D
 
-# Is the sprite flipped?
+## Is the sprite flipped?
 @export var is_flipped: bool = false
-# The equipment of the unit
+## The equipment of the unit
 @export var unit_equipment: CharEquipment
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+
 
 func set_properties(frames: SpriteFrames, equipment: CharEquipment, flip: bool):
 	# Set the initial sprite_frames and equipment data
@@ -28,6 +29,7 @@ func set_properties(frames: SpriteFrames, equipment: CharEquipment, flip: bool):
 	rotation = unit_equipment.frames[0].rotation
 	z_index = unit_equipment.frames[0].z_index
 
+
 func _on_frame_changed():
 	# Runs on every frame change. 0 is NOT included (starts at 1)
 	# We only adjust the equipment if it is active, not waiting/shadow (waiting is waiting, shadow has 1 frame)
@@ -44,6 +46,7 @@ func _on_frame_changed():
 		position = unit_equipment.frames[frame].position
 	rotation = unit_equipment.frames[frame].rotation
 	z_index = unit_equipment.frames[frame].z_index
+
 
 func _on_animation_finished():
 	# When the animation is done, play the wait animation so no equipment is visible

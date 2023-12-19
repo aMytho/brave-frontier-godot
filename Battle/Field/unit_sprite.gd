@@ -6,6 +6,7 @@ signal AnimationFinished(anim_name: String)
 func _ready():
 	pass
 
+
 func _on_animation_finished():
 	# Emit the name of the finished animation
 	emit_signal("AnimationFinished", get_animation())

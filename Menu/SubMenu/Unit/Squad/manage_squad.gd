@@ -35,6 +35,7 @@ func _ready():
 	$UnitSelectBG/content_switcher.get_scene().connect("UnitSelected", _on_unit_select_unit_selected)
 	$UnitSelectBG/content_switcher.get_scene().connect("RemoveUnitPressed",_on_remove_unit)
 
+
 func set_team_info(team_id: int):
 	# Set the name
 	$SquadContainer/SquadName.text = teams[team_id].name
@@ -82,6 +83,7 @@ func set_team_info(team_id: int):
 	$ScrollContainer/TeamSelctionContainer.get_child(team_id).turn_on()
 	current_team = team_id
 
+
 func get_squad_cost():
 	# Returns the current cost of the squad
 	var total: int = 0
@@ -98,6 +100,7 @@ func _on_select_last_team_clicked():
 		$ScrollContainer/TeamSelctionContainer.get_child(current_team).turn_off()
 		# Switch team
 		set_team_info(current_team - 1)
+
 
 func _on_select_next_team_clicked():
 	# Switch to the next team
@@ -183,15 +186,18 @@ func _on_change_clicked(id):
 	# Reset the unit position
 	unit_position = {"new": null, "old": null}
 
+
 func dim_ui():
 	# Put the visual focus on the tables
 	$ColorRect.material.blend_mode = CanvasItemMaterial.BLEND_MODE_MUL
 	$ColorRect.visible = true
 
+
 func undim_ui():
 	# Return to normal focus
 	$ColorRect.material.blend_mode = CanvasItemMaterial.BLEND_MODE_MIX
 	$ColorRect.visible = false
+
 
 func unit_not_null(possible_unit):
 	if possible_unit == null:
@@ -199,12 +205,15 @@ func unit_not_null(possible_unit):
 	else:
 		return possible_unit
 
+
 func _on_back_section_clicked():
 	get_parent().load_scene("res://Menu/SubMenu/Unit/unit_menu.tscn", 0)
+
 
 func _on_unit_select_back_section():
 	# Menu closed without choosing a unit, hide it
 	$UnitSelectBG.visible = false
+
 
 func _on_unit_select_unit_selected(id: int):
 	# A unit was chosen
@@ -237,6 +246,7 @@ func _on_unit_select_unit_selected(id: int):
 	teams = Database.query("SELECT * FROM teams WHERE account_id = %s" % ActiveAccount.id)
 	print("Unir swapped/added to the team")
 	set_team_info(current_team)
+
 
 func _on_remove_unit():
 	# Remove the selected unit

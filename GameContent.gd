@@ -9,14 +9,14 @@ func _ready():
 
 func loadScene(scene:String, showLoadScreen: bool = false):
 	if showLoadScreen:
-		#display loading screen
+		# Display loading screen
 		add_child(loadWindow.instantiate())
 		await get_tree().create_timer(1.0).timeout
-	#Load the next scene
+	# Load the next scene
 	var nextScene = ResourceLoader.load(scene).instantiate()
-	#Display next scene
+	# Display next scene
 	add_child(nextScene)
-	#Unload last scene
+	# Unload last scene
 	get_child(0).queue_free()
 	if showLoadScreen:
 		get_node("Load").queue_free()
@@ -24,10 +24,10 @@ func loadScene(scene:String, showLoadScreen: bool = false):
 
 func loadSceneWithProps(scene: String, names, props, showLoadScreen: bool = false):
 	if showLoadScreen:
-		#display loading screen
+		# Display loading screen
 		add_child(loadWindow.instantiate())
 		await get_tree().create_timer(1.0).timeout
-	#Load the next scene
+	# Load the next scene
 	var nextScene = ResourceLoader.load(scene).instantiate()
 	
 	var count = 0
@@ -35,9 +35,9 @@ func loadSceneWithProps(scene: String, names, props, showLoadScreen: bool = fals
 		nextScene[key] = props[count]
 		count = count + 1
 	
-	#Display next scene
+	# Display next scene
 	add_child(nextScene)
-	#Unload last scene
+	# Unload last scene
 	get_child(0).queue_free()
 	if showLoadScreen:
 		get_node("Load").queue_free()

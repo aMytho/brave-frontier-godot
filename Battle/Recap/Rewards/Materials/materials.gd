@@ -2,7 +2,7 @@ extends Control
 
 signal MaterialsComplete
 
-# To-do: Determine material structure, add to DB
+# TODO: Determine material structure, add to DB
 # For the moment, all materials are a single string with a placeholder name and img
 @export var materials: Array = []
 
@@ -15,6 +15,7 @@ func _ready():
 		$MaterialContainer.add_child(new_material)
 	await get_tree().create_timer(2.0).timeout
 	show_materials()
+
 
 func show_materials():
 	var counter = 0
