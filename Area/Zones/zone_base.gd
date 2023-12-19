@@ -11,6 +11,10 @@ class_name Zone
 @export var stage: Array[Stage] = []
 ## Hide the zone if its not playable!
 @export var is_visible: bool = false
+## If true, this level will only be visible if the past stage is completed.
+@export var require_past_completion: bool = false
+## The completion state of the zone. This is automatically set when a user wins in a zone.
+@export var is_complete: bool = false
 
 @export_category("Assets")
 @export var BG: CompressedTexture2D

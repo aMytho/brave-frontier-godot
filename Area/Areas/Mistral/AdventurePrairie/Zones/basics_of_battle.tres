@@ -59,6 +59,7 @@ description = "It's time to discuss basic combat techniques!"
 energy = 0
 stage = Array[Resource("res://Area/Stages/stage_base.gd")]([ExtResource("2_pmpjo"), ExtResource("3_747vs"), ExtResource("4_xb5rb")])
 is_visible = true
+require_past_completion = false
 BG = ExtResource("1_5lt5j")
 music = ExtResource("3_vdvdc")
 boss_music = ExtResource("2_jmrnj")

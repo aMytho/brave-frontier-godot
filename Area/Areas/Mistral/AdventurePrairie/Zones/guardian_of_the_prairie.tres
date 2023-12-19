@@ -18,6 +18,7 @@ description = "You can see a rocky mountain faintly on the horizon. Tilith is wa
 energy = 5
 stage = Array[Resource("res://Area/Stages/stage_base.gd")]([ExtResource("5_iooge"), ExtResource("6_6hesb"), ExtResource("7_1eiy1"), ExtResource("8_1ppeg"), ExtResource("5_iooge"), ExtResource("9_kgd63")])
 is_visible = false
+require_past_completion = true
 BG = ExtResource("1_wqiru")
 music = ExtResource("10_bu1ts")
 boss_music = ExtResource("9_6s8av")
