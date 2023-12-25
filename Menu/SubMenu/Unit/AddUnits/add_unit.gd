@@ -36,3 +36,8 @@ func _on_unit_clicked(unit: Unit):
 	Database.query(
 		"INSERT INTO units (account_id, unit_id, level, hp, atk, def, rec) VALUES (%s, %s, %s, %s, %s, %s, %s)"
 		% [ActiveAccount.id, unit.unit_number, unit.level, unit.HP, unit.ATK, unit.DEF, unit.REC])
+
+
+# When back clicked, move to unit menu
+func _on_back_section_clicked():
+	get_parent().load_scene("res://Menu/SubMenu/Unit/unit_menu.tscn", 0)

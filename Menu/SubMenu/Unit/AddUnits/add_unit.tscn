@@ -46,3 +46,5 @@ theme_override_font_sizes/font_size = 28
 text = "Click a unit to add them to your unit list.
 No notification will be shown."
 horizontal_alignment = 1
+
+[connection signal="Clicked" from="BackSection" to="." method="_on_back_section_clicked"]
