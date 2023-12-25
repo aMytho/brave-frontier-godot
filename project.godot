@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="braveFontier"
+config/name="Brave Frontier Godot"
 config/description="An open source implementation of Brave Frontier."
 run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
