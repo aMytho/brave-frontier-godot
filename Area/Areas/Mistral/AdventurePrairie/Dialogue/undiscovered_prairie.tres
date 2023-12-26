@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=6 format=3 uid="uid://ojvxia7xwv15"]
+
+[ext_resource type="Script" path="res://Area/Dialogue/dialogue_base.gd" id="1_8remv"]
+[ext_resource type="Resource" uid="uid://df3y4snmapt1w" path="res://Area/Dialogue/Character/Tilith/tilith.tres" id="1_otjfq"]
+[ext_resource type="Script" path="res://Area/Dialogue/Content/dialogue_content.gd" id="2_8n4xy"]
+[ext_resource type="AudioStream" uid="uid://bjf6ko7jfrgqv" path="res://Music/1-19 HAZAMA.mp3" id="3_5kj6h"]
+
+[sub_resource type="Resource" id="Resource_yfwsq"]
+script = ExtResource("2_8n4xy")
+message = "Wow!"
+character = 0
+frame = 6
+wait_before = 0
+wait_after = 0
+
+[resource]
+script = ExtResource("1_8remv")
+id = 5
+characters = Array[Resource("res://Area/Dialogue/Character/character_base.gd")]([ExtResource("1_otjfq")])
+content = Array[ExtResource("2_8n4xy")]([SubResource("Resource_yfwsq")])
+music = ExtResource("3_5kj6h")

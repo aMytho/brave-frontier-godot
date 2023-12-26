@@ -4,13 +4,13 @@
 [ext_resource type="Script" path="res://Area/Dungeons/dungeon_base.gd" id="1_v0fqd"]
 [ext_resource type="Resource" uid="uid://drs5urtfcxnxy" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/adventure_start.tres" id="3_qlt6c"]
 [ext_resource type="Resource" uid="uid://df1q6xrrfp471" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/basics_of_battle.tres" id="4_os0vo"]
-[ext_resource type="Resource" uid="uid://dch8dkuapu7nb" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/prairie_monster.tres" id="5_3nnal"]
-[ext_resource type="Resource" uid="uid://b8n43mvdfu4u2" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/guardian_of_the_prairie.tres" id="6_2ua81"]
+[ext_resource type="Resource" uid="uid://ce8ix1t50j7ow" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/prairie_monster.tres" id="5_3nnal"]
+[ext_resource type="Resource" uid="uid://b00l6c5jh5axv" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Undiscovered_Prairie.tres" id="7_ngp6q"]
 
 [resource]
 script = ExtResource("1_v0fqd")
 id = 0
 name = "Adventurer's Prairie"
-zones = Array[Resource("res://Area/Zones/zone_base.gd")]([ExtResource("4_os0vo"), ExtResource("3_qlt6c"), ExtResource("5_3nnal"), ExtResource("6_2ua81")])
+zones = Array[Resource("res://Area/Zones/zone_base.gd")]([ExtResource("4_os0vo"), ExtResource("3_qlt6c"), ExtResource("5_3nnal"), ExtResource("7_ngp6q")])
 bg = ExtResource("1_1il4c")
 is_visible = true
