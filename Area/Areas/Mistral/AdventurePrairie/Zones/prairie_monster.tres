@@ -1,14 +1,14 @@
-[gd_resource type="Resource" script_class="Zone" load_steps=10 format=3]
+[gd_resource type="Resource" script_class="Zone" load_steps=10 format=3 uid="uid://ce8ix1t50j7ow"]
 
-[ext_resource type="Texture2D" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/dungeon_battle_10100.jpg" id="1_v68l0"]
-[ext_resource type="Resource" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/9.tres" id="2_62ol8"]
-[ext_resource type="Resource" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/10.tres" id="3_rjo7x"]
-[ext_resource type="AudioStream" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/bf006_btl_boss.mp3" id="3_s4ri1"]
-[ext_resource type="Resource" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/11.tres" id="4_14jja"]
-[ext_resource type="AudioStream" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/bf010_map_grass.mp3" id="4_eopuv"]
+[ext_resource type="Texture2D" uid="uid://dxmjf1igdb02i" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/dungeon_battle_10100.jpg" id="1_v68l0"]
+[ext_resource type="Resource" uid="uid://bo76x5dv8n61m" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/9.tres" id="2_62ol8"]
+[ext_resource type="Resource" uid="uid://cxdwxtkg43bhe" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/10.tres" id="3_rjo7x"]
+[ext_resource type="AudioStream" uid="uid://kmn3bs6klkkb" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/bf006_btl_boss.mp3" id="3_s4ri1"]
+[ext_resource type="Resource" uid="uid://bc8pdubbl37cq" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/11.tres" id="4_14jja"]
+[ext_resource type="AudioStream" uid="uid://dswmrha7t8lcg" path="res://Area/Areas/Mistral/AdventurePrairie/Assets/bf010_map_grass.mp3" id="4_eopuv"]
 [ext_resource type="Script" path="res://Area/Zones/zone_base.gd" id="5_iqnpe"]
-[ext_resource type="Resource" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/12.tres" id="5_nmnaw"]
-[ext_resource type="Resource" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/13.tres" id="6_n5urp"]
+[ext_resource type="Resource" uid="uid://cu6qcqh3w3t3h" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/12.tres" id="5_nmnaw"]
+[ext_resource type="Resource" uid="uid://qxomff7cdmp3" path="res://Area/Areas/Mistral/AdventurePrairie/Zones/Stages/13.tres" id="6_n5urp"]
 
 [resource]
 script = ExtResource("5_iqnpe")
