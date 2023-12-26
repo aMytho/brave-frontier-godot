@@ -33,6 +33,12 @@ The project is open source so changes that require code (such as adding a new fe
 
 All related info is on our [Wiki](https://github.com/aMytho/brave-frontier-godot/wiki)
 
+## Requirements
+
+Brave-Frontier-Godot can run on Windows, Mac, and Linux. However, only windows and Linux have been tested. Mobile *may* work, but it would require that the game be ran from the engine instead of the production build.
+
+> In the following week I will provide production builds of the current state of the project. These will not require the engine to use. Windows and Linux only.
+
 ## Installation
 
 You must download the [Godot Engine v4.2.x](https://godotengine.org/) (normal installation) and [this project](https://github.com/aMytho/brave-frontier-godot/archive/refs/heads/main.zip) to play the game. Once both are downloaded, open Godot and import the project. It will take a few minutes. Once complete, hit the play button near the top right of the editor and the game will begin.
