@@ -36,9 +36,9 @@ All related info is on our [Wiki](https://github.com/aMytho/brave-frontier-godot
 
 ## Requirements
 
-Brave-Frontier-Godot can run on Windows, Mac, and Linux. However, only windows and Linux have been tested. Mobile *may* work, but it would require that the game be ran from the engine instead of the production build.
+Brave-Frontier-Godot can run on Windows, Mac, and Linux. However, only Windows and Linux have been tested. Mobile *may* work, but it would require that the game be ran from the engine instead of the production build.
 
-> In the following week I will provide production builds of the current state of the project. These will not require the engine to use. Windows and Linux only.
+Production builds for Linux and Windows can be found [here](https://github.com/aMytho/brave-frontier-godot/releases/tag/0.1). Use these if you have no interest in custom levels/units. If you want to create custom units/levels/features, read the below section. 
 
 ## Installation
 
