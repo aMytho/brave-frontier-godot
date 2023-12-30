@@ -60,6 +60,12 @@ Player data is stored in an SQLite database. Rather than keep a full record of a
 
 Unlike the original game, this is a purely offline implementation. There are no plans to add multiplayer of any kind. As noted above, this project is just for practice with the Godot engine.
 
+## Contributing
+
+We do accept contributions for new levels, units, and features. We ask that you try to follow our [coding guidelines](https://github.com/aMytho/brave-frontier-godot/issues/28). If you want to add a feature but are not sure how, open an issue! We would be happy to discuss ideas and implementation details.
+
+If you have received any value from the project, consider starring it on Github. This boosts its discoverability and allows others to find the project.
+
 ## Copyright Notice
 
 We do not own any of the assets. They are owned by Gumi / Alim and the Brave Frontier team. This project earns no revenue and is purely for educational purposes.
