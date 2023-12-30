@@ -23,6 +23,7 @@ The project is open source so changes that require code (such as adding a new fe
 - Experience basic combat.
 - Play through a few of the early levels.
 - - Once you've beaten them, try [Creating Your Own](https://github.com/aMytho/brave-frontier-godot/wiki/Creating-a-Unit)!
+- - If you can't beat them, add more units via the Dev Menu on the Unit Page.
 - Add units via the dev menu. All summoners start with one of the Six Heroes and a Sparky and Burny.
 - View the old menus and manage your team.
 - Create multiple accounts to test different team combinations.
