@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="Stage" load_steps=5 format=3 uid="uid://djc8h2lj0jall"]
+
+[ext_resource type="Script" path="res://Area/Stages/stage_base.gd" id="1_1q6b7"]
+[ext_resource type="Script" path="res://Units/unit_base.gd" id="1_6aq6l"]
+[ext_resource type="Resource" uid="uid://dqwe2imwbj5ll" path="res://Units/Res/67/67.tres" id="2_3po1h"]
+
+[sub_resource type="Resource" id="Resource_ly84u"]
+script = ExtResource("1_6aq6l")
+unit_number = 0
+data_id = 0
+name = ""
+element = ""
+gender = ""
+rarity = 1
+cost = 1
+arena_type = 0
+level = 0
+max_level = 0
+is_dead = false
+number_of_hit = Array[int]([100])
+HP = 0
+max_HP = 0
+ATK = 0
+DEF = 0
+REC = 0
+skills = Array[Resource]([])
+char_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+atk_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+travel_equipment = Array[Resource("res://Units/char_equipment.gd")]([])
+animationVersion = 1
+unit_lore = ""
+
+[resource]
+script = ExtResource("1_1q6b7")
+id = 0
+is_boss = true
+monsters = Array[ExtResource("1_6aq6l")]([null, null, null, SubResource("Resource_ly84u"), ExtResource("2_3po1h"), ExtResource("2_3po1h")])
+mimic_count = 0
+mimic_chance = 0.0
+minic_types = []

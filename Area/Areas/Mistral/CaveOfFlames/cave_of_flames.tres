@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Dungeon" load_steps=5 format=3 uid="uid://hlealojykexs"]
+
+[ext_resource type="Script" path="res://Area/Dungeons/dungeon_base.gd" id="1_7nkp0"]
+[ext_resource type="Texture2D" uid="uid://djbh1wxmdewjh" path="res://Area/World/area_0001_iph5.jpg" id="1_51811"]
+[ext_resource type="Resource" uid="uid://blgoe6fjummrd" path="res://Area/Areas/Mistral/CaveOfFlames/Zones/cave_of_dancing_flames.tres" id="3_teajl"]
+[ext_resource type="Resource" uid="uid://bhx7bua2jnjqq" path="res://Area/Areas/Mistral/CaveOfFlames/Zones/wielder_of_the_fire.tres" id="4_b8oum"]
+
+[resource]
+script = ExtResource("1_7nkp0")
+id = 0
+name = "Cave of Flames"
+zones = Array[Resource("res://Area/Zones/zone_base.gd")]([ExtResource("3_teajl"), ExtResource("4_b8oum"), null, null])
+bg = ExtResource("1_51811")
+is_visible = false

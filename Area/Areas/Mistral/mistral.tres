@@ -1,15 +1,22 @@
-[gd_resource type="Resource" script_class="Area" load_steps=6 format=3 uid="uid://8vq0qar848h5"]
+[gd_resource type="Resource" script_class="Area" load_steps=8 format=3 uid="uid://8vq0qar848h5"]
 
 [ext_resource type="Texture2D" uid="uid://djbh1wxmdewjh" path="res://Area/World/area_0001_iph5.jpg" id="1_2iplw"]
 [ext_resource type="Script" path="res://Area/area_base.gd" id="1_lbq3x"]
 [ext_resource type="Resource" uid="uid://63nosake3b0h" path="res://Area/Areas/Mistral/AdventurePrairie/adventure_prairie.tres" id="1_t8i1i"]
 [ext_resource type="Script" path="res://Area/Areas/dungeon_placement.gd" id="2_bafre"]
+[ext_resource type="Resource" uid="uid://hlealojykexs" path="res://Area/Areas/Mistral/CaveOfFlames/cave_of_flames.tres" id="4_nqjlh"]
 
 [sub_resource type="Resource" id="Resource_m5ro7"]
 script = ExtResource("2_bafre")
 name = "Adventurer's Prairie"
 coordinates = Vector2(394, 982)
 dungeon = ExtResource("1_t8i1i")
+
+[sub_resource type="Resource" id="Resource_10ltd"]
+script = ExtResource("2_bafre")
+name = "Cave of Flames"
+coordinates = Vector2(20, 800)
+dungeon = ExtResource("4_nqjlh")
 
 [resource]
 script = ExtResource("1_lbq3x")
@@ -18,5 +25,5 @@ name = "Mistral"
 description = "The first land you arrive at passing through Lucius’ Gate. Ruled over by Maxwell, mighty God of Creation and one of the Four Fallen Gods."
 visible = true
 completed = false
-dungeons = Array[ExtResource("2_bafre")]([SubResource("Resource_m5ro7")])
+dungeons = Array[ExtResource("2_bafre")]([SubResource("Resource_m5ro7"), SubResource("Resource_10ltd")])
 background = ExtResource("1_2iplw")
