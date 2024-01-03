@@ -66,7 +66,7 @@ func _on_char_chosen(character: Unit):
 	add_child(intro)
 	intro.connect("FlashComplete", _on_flash_complete)
 	
-	#Save the changes
+	# Save the changes
 	# Add player, get unique ID
 	Database.query("INSERT INTO player_state ( arena_orbs, karma, zel, gems, energy, current_exp, level, player_name ) VALUES ( 3, 100, 100, 5, 5, 0, 1, '%s' );" % player_name)
 	player_id = Database.query("SELECT id from player_state WHERE player_name == '%s'" % player_name)[0].id
@@ -75,6 +75,16 @@ func _on_char_chosen(character: Unit):
 	Database.query(
 		"INSERT INTO units (account_id, unit_id, level, hp, atk, def, rec) VALUES (%s, %s, %s, %s, %s, %s, %s)"
 		% [player_id, character.unit_number, character.level, character.HP, character.ATK, character.DEF, character.REC])
+	
+	# Mark first 2 zones as always visible
+	Database.query(
+		"INSERT INTO zones (player_id, zone_id, is_complete) VALUES (%s, 1, 1)"
+		% player_id
+	)
+	Database.query(
+		"INSERT INTO zones (player_id, zone_id, is_complete) VALUES (%s, 1, 2)"
+		% player_id
+	)
 	
 	# Set the active account
 	var account = Database.query("SELECT * FROM player_state WHERE id==" + str(player_id))[0]

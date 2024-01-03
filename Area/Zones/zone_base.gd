@@ -9,10 +9,10 @@ class_name Zone
 @export var energy: int = 5
 ## The stages to use. Make a new zone and add it to the Zones folder
 @export var stage: Array[Stage] = []
-## Hide the zone if its not playable!
-@export var is_visible: bool = false
+## If false, will never show to player. Set false while in development (incomplete zone)
+@export var can_be_visible: bool = true
 ## If true, this level will only be visible if the past stage is completed.
-@export var require_past_completion: bool = false
+@export var require_past_completion: bool = true
 ## The completion state of the zone. This is automatically set when a user wins in a zone.
 @export var is_complete: bool = false
 
@@ -35,3 +35,8 @@ class_name Zone
 @export var beginning_cutscene: Dialogue
 ## Optional, may leave blank if not desired
 @export var ending_cutscene: Dialogue
+
+
+## If the zone is visible and doesn't require past completions, it's playable
+func is_playable_by_default() -> bool:
+	return can_be_visible and require_past_completion == false
