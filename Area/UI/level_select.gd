@@ -19,8 +19,8 @@ func _ready():
 func update_zone_completions(existing_zones: Array[Zone]):
 	# Get IDs from each zone
 	var id_group: String = ""
-	for zone in existing_zones:
-		id_group = id_group + str(zone.id) + "," 
+	for existing_zone in existing_zones:
+		id_group = id_group + str(existing_zone.id) + "," 
 	id_group = id_group.substr(0, id_group.length() - 1)
 	
 	# Request every zone by their ID
@@ -29,19 +29,16 @@ func update_zone_completions(existing_zones: Array[Zone]):
 	)
 	
 	# For each zone in the DB...
-	var new_zones: Array[Zone] = []
-	# use index instead of this method!
-	for zone in db_zones:
-		# Try to find matching zone if complete
-		if zone.is_complete:
+	for db_zone in db_zones:
+		# Try to find matching resource zone if complete
+		if db_zone.is_complete:
 			var index = 0
 			for existing_zone in existing_zones:
-				# If the db zone matches the existing zone, set as complete
-				if existing_zone.id == zone.zone_id:
+				# If the db zone matches the resource zone, set as complete
+				if existing_zone.id == db_zone.zone_id:
 					existing_zones[index].is_complete = true
 					break
 				index = index + 1
-	return existing_zones
 
 
 func display_zones(dun: Dungeon):
