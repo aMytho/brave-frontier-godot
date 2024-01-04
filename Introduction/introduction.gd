@@ -82,7 +82,7 @@ func _on_char_chosen(character: Unit):
 		% player_id
 	)
 	Database.query(
-		"INSERT INTO zones (player_id, zone_id, is_complete) VALUES (%s, 1, 2)"
+		"INSERT INTO zones (player_id, zone_id, is_complete) VALUES (%s, 2, 1)"
 		% player_id
 	)
 	
