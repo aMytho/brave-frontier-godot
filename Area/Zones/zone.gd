@@ -53,9 +53,15 @@ func _on_battle_complete(is_victory: bool):
 		get_tree().get_root().get_node("Game/GameContent").loadScene("res://Menu/main_menu.tscn", true)
 		return
 	
-	# Mark the zone as complete
-	zone.is_complete = true
-	ResourceSaver.save(zone, zone.resource_path)
+	# If the zone is not complete, make it so
+	if not zone.is_complete:
+		# Mark the zone as complete
+		zone.is_complete = true
+		# Save completion to DB
+		Database.query(
+			"INSERT INTO zones (player_id, zone_id, is_complete) VALUES (%s, %s, 1)"
+			% [ActiveAccount.id, zone.id]
+		)
 	
 	# Display a custscene (if any) or go to recap
 	if zone.ending_cutscene:
@@ -84,7 +90,7 @@ func _on_end_complete(_dialogue: Node = null):
 	# To-do: Move to content switcher?
 	var recap = ResourceLoader.load("res://Battle/Recap/recap.tscn").instantiate()
 	recap.zone = zone
-	recap.dungeon_name = "Stylish Placeholder"
+	recap.dungeon_name = zone.name
 	add_child(recap)
 	recap.connect("RecapComplete", _on_recap_complete)
 

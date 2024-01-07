@@ -10,12 +10,12 @@
 
 [resource]
 script = ExtResource("1_o0ey1")
-id = 1
+id = 5
 name = "Undiscovered Prairie"
 description = "Tilith didn't mention anything about this area..."
 energy = 10
 stage = Array[Resource("res://Area/Stages/stage_base.gd")]([ExtResource("4_ymqat"), ExtResource("5_7uiho"), ExtResource("6_8vn0r")])
-is_visible = true
+can_be_visible = true
 require_past_completion = true
 is_complete = false
 BG = ExtResource("1_6ulja")

@@ -17,7 +17,7 @@ func set_level(dun: Dungeon):
 	var index = 0
 	for zone in dun.zones:
 		# Don't show hidden zones (likely in development)
-		if zone.is_visible == false:
+		if zone.can_be_visible == false:
 			index = index + 1
 			continue
 		

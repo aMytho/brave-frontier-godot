@@ -4,6 +4,7 @@ signal Closed
 
 @export var dungeon: Dungeon:
 	set(new_dungeon):
+		update_zone_completions(new_dungeon.zones)
 		display_zones(new_dungeon)
 		dungeon = new_dungeon
 @export var zone: Zone
@@ -14,6 +15,32 @@ signal Closed
 func _ready():
 	pass
 
+
+func update_zone_completions(existing_zones: Array[Zone]):
+	# Get IDs from each zone
+	var id_group: String = ""
+	for existing_zone in existing_zones:
+		id_group = id_group + str(existing_zone.id) + "," 
+	id_group = id_group.substr(0, id_group.length() - 1)
+	
+	# Request every zone by their ID
+	var db_zones = Database.query(
+		"SELECT * FROM zones WHERE player_id = %s and zone_id in (%s)" % [ActiveAccount.id, id_group]
+	)
+	
+	# For each zone in the DB...
+	for db_zone in db_zones:
+		# Try to find matching resource zone if complete
+		if db_zone.is_complete:
+			var index = 0
+			for existing_zone in existing_zones:
+				# If the db zone matches the resource zone, set as complete
+				if existing_zone.id == db_zone.zone_id:
+					existing_zones[index].is_complete = true
+					break
+				index = index + 1
+
+
 func display_zones(dun: Dungeon):
 	$content_switcher._set_blank_scene()
 	# Display the level scene in the switcher
@@ -21,9 +48,10 @@ func display_zones(dun: Dungeon):
 	# Display the levels
 	$content_switcher.get_scene().set_level(dun)
 	# When a level is selected, load the teams page
-	$content_switcher.get_scene().ZoneSelected.connect(loadLevel)
+	$content_switcher.get_scene().ZoneSelected.connect(load_level)
 
-func loadLevel(zn: Zone):
+
+func load_level(zn: Zone):
 	print("Zone Selected!")
 	zone = zn
 	
@@ -39,13 +67,16 @@ func loadLevel(zn: Zone):
 	# Listen for PlayerReady signal
 	$content_switcher.get_scene().PlayerReady.connect(_on_player_ready)
 
+
 func _on_home_button_pressed():
 	print("Home")
 	get_tree().get_root().get_node("Game/GameContent").loadScene("res://Menu/main_menu.tscn", false)
 
+
 func _on_back_button_pressed():
 	emit_signal("Closed")
 	self.queue_free()
+
 
 func _on_player_ready(units):
 	# Stop the music
