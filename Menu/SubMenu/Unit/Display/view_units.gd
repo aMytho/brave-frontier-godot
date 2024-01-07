@@ -7,6 +7,7 @@ signal BackPressed
 @export var units: Array[Unit] = []
 @export var use_signals: bool = false
 @export var remove_button: bool = false
+@onready var unit_list = $ScrollContainer/UnitList
 
 var thumbnail = preload("res://Menu/SubMenu/Unit/Display/unit_thumbnail.tscn").instantiate()
 
@@ -14,14 +15,14 @@ var thumbnail = preload("res://Menu/SubMenu/Unit/Display/unit_thumbnail.tscn").i
 func _ready():
 	# Show remove button if enabled
 	if remove_button:
-		$UnitList/RemoveUnit.visible = true
+		$ScrollContainer/UnitList/RemoveUnit.visible = true
 	
 	var user_units = Lookups.get_units_by_account_id(ActiveAccount.id)
 	for unit in user_units:
-		$UnitList.add_child(create_thumbnail(Lookups.get_unit_by_ID(unit["id"])["unit"]))
+		$ScrollContainer/UnitList.add_child(create_thumbnail(Lookups.get_unit_by_ID(unit["id"])["unit"]))
 
 	# Handle each unit click event
-	for child in $UnitList.get_children():
+	for child in $ScrollContainer/UnitList.get_children():
 		# Only connect units, not the remove unit button
 		if !child.has_meta("is_remove"):
 			child.connect("Clicked", _on_unit_pressed)

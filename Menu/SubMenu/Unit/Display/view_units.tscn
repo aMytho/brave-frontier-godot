@@ -19,19 +19,23 @@ offset_top = 24.0
 offset_right = 419.0
 offset_bottom = 112.0
 
-[node name="UnitList" type="GridContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 131.0
-offset_right = 608.0
-offset_bottom = 600.0
+offset_right = 624.0
+offset_bottom = 784.0
+follow_focus = true
+
+[node name="UnitList" type="GridContainer" parent="ScrollContainer"]
+layout_mode = 2
 columns = 5
 
-[node name="RemoveUnit" type="TextureRect" parent="UnitList"]
+[node name="RemoveUnit" type="TextureRect" parent="ScrollContainer/UnitList"]
 visible = false
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("3_v5f77")
 metadata/is_remove = true
 
-[connection signal="gui_input" from="UnitList/RemoveUnit" to="." method="_on_remove_unit_gui_input"]
+[connection signal="gui_input" from="ScrollContainer/UnitList/RemoveUnit" to="." method="_on_remove_unit_gui_input"]
