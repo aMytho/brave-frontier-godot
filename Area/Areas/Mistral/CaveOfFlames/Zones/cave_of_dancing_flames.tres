@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Zone" load_steps=10 format=3 uid="uid://blgoe6fjummrd"]
+
+[ext_resource type="Texture2D" uid="uid://bf50t2ifhthd4" path="res://Area/Areas/Mistral/CaveOfFlames/Assets/dungeon_battle_10200.jpg" id="1_6imw6"]
+[ext_resource type="Script" path="res://Area/Zones/zone_base.gd" id="1_wegga"]
+[ext_resource type="AudioStream" uid="uid://qia3eydhdepd" path="res://Area/Areas/Mistral/CaveOfFlames/Assets/bf006_btl_boss.mp3" id="2_hmj7q"]
+[ext_resource type="AudioStream" uid="uid://b35my08uggfen" path="res://Area/Areas/Mistral/CaveOfFlames/Assets/bf011_map_firecave.mp3" id="3_ytj4g"]
+[ext_resource type="Resource" uid="uid://rrelc2k1e6ys" path="res://Area/Areas/Mistral/CaveOfFlames/Zones/Stages/1.tres" id="5_ao5l7"]
+[ext_resource type="Resource" uid="uid://bfdumb6nenntd" path="res://Area/Areas/Mistral/CaveOfFlames/Zones/Stages/2.tres" id="6_3i1rw"]
+[ext_resource type="Resource" uid="uid://c6fio3binrxx5" path="res://Area/Areas/Mistral/CaveOfFlames/Zones/Stages/3.tres" id="7_qxy3m"]
+[ext_resource type="Resource" uid="uid://i5n0dxau7aso" path="res://Area/Areas/Mistral/CaveOfFlames/Zones/Stages/4.tres" id="8_0mavq"]
+[ext_resource type="Resource" uid="uid://c0yuafleko4pb" path="res://Area/Areas/Mistral/CaveOfFlames/Zones/Stages/5.tres" id="9_8cave"]
+
+[resource]
+script = ExtResource("1_wegga")
+id = 0
+name = "Cave of Dancing Flames"
+description = ""
+energy = 3
+stage = Array[Resource("res://Area/Stages/stage_base.gd")]([ExtResource("5_ao5l7"), ExtResource("6_3i1rw"), ExtResource("7_qxy3m"), ExtResource("8_0mavq"), ExtResource("9_8cave")])
+is_visible = false
+require_past_completion = false
+is_complete = false
+BG = ExtResource("1_6imw6")
+music = ExtResource("3_ytj4g")
+boss_music = ExtResource("2_hmj7q")
+difficulty = 1
+xp = 32.0
+karma = 1
+zel = 1

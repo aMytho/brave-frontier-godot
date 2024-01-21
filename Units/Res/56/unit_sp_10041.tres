@@ -1,0 +1,41 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://lm8nyyb7xtsb"]
+
+[ext_resource type="Texture2D" uid="uid://cf7nkc5ipfipb" path="res://Units/Res/56/AtlasFrame/I1.tres" id="1_5j2x1"]
+[ext_resource type="Texture2D" uid="uid://dldamcqgaca0e" path="res://Units/Res/56/AtlasFrame/I2.tres" id="2_l0r1q"]
+[ext_resource type="Texture2D" uid="uid://exravvipb5w4" path="res://Units/Res/56/AtlasFrame/I3.tres" id="3_wc7c0"]
+[ext_resource type="Texture2D" uid="uid://bls1shx8x4na6" path="res://Units/Res/56/AtlasFrame/I4.tres" id="4_t1df0"]
+
+[resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5j2x1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_l0r1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wc7c0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t1df0")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 4.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Shadow",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Wait",
+"speed": 5.0
+}]

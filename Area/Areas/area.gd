@@ -41,8 +41,10 @@ func _on_dungeon_selected(dungeon: Dungeon):
 	# Lod the header, level loader, and area
 	header = ResourceLoader.load("res://Menu/Header/header.tscn").instantiate()
 	var level_loader = ResourceLoader.load("res://Area/UI/level_select.tscn").instantiate()
-	var res = load("res://Area/Areas/Mistral/AdventurePrairie/adventure_prairie.tres")
+	var res = load(dungeon.resource_path)
 	
+	level_loader.get_node('TextureRect').get_node('AreaName').text = dungeon.name
+
 	# Display header and level loader, set its position
 	add_child(header)
 	add_child(level_loader)

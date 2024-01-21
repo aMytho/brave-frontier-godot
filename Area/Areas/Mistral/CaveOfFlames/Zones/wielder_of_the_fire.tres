@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Zone" load_steps=9 format=3 uid="uid://bhx7bua2jnjqq"]
+
+[ext_resource type="Script" path="res://Area/Zones/zone_base.gd" id="1_c3i6y"]
+[ext_resource type="Texture2D" uid="uid://bf50t2ifhthd4" path="res://Area/Areas/Mistral/CaveOfFlames/Assets/dungeon_battle_10200.jpg" id="1_ydlyd"]
+[ext_resource type="AudioStream" uid="uid://qia3eydhdepd" path="res://Area/Areas/Mistral/CaveOfFlames/Assets/bf006_btl_boss.mp3" id="2_65fye"]
+[ext_resource type="AudioStream" uid="uid://b35my08uggfen" path="res://Area/Areas/Mistral/CaveOfFlames/Assets/bf011_map_firecave.mp3" id="3_ffyqo"]
+[ext_resource type="Resource" uid="uid://c6fio3binrxx5" path="res://Area/Areas/Mistral/CaveOfFlames/Zones/Stages/3.tres" id="5_3lewb"]
+[ext_resource type="Resource" uid="uid://crbrqad1thidq" path="res://Area/Areas/Mistral/CaveOfFlames/Zones/Stages/6.tres" id="6_7il0m"]
+[ext_resource type="Resource" uid="uid://bfdumb6nenntd" path="res://Area/Areas/Mistral/CaveOfFlames/Zones/Stages/2.tres" id="7_j6yot"]
+[ext_resource type="Resource" uid="uid://djc8h2lj0jall" path="res://Area/Areas/Mistral/CaveOfFlames/Zones/Stages/7.tres" id="8_d4o5x"]
+
+[resource]
+script = ExtResource("1_c3i6y")
+id = 0
+name = "Wielder of the Fire"
+description = ""
+energy = 3
+stage = Array[Resource("res://Area/Stages/stage_base.gd")]([ExtResource("5_3lewb"), ExtResource("6_7il0m"), ExtResource("7_j6yot"), ExtResource("5_3lewb"), ExtResource("8_d4o5x")])
+is_visible = false
+require_past_completion = false
+is_complete = false
+BG = ExtResource("1_ydlyd")
+music = ExtResource("3_ffyqo")
+boss_music = ExtResource("2_65fye")
+difficulty = 1
+xp = 1.0
+karma = 1
+zel = 1
