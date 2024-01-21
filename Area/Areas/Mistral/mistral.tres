@@ -11,12 +11,14 @@ script = ExtResource("2_bafre")
 name = "Adventurer's Prairie"
 coordinates = Vector2(394, 982)
 dungeon = ExtResource("1_t8i1i")
+is_visible = true
 
 [sub_resource type="Resource" id="Resource_10ltd"]
 script = ExtResource("2_bafre")
 name = "Cave of Flames"
 coordinates = Vector2(20, 800)
 dungeon = ExtResource("4_nqjlh")
+is_visible = false
 
 [resource]
 script = ExtResource("1_lbq3x")

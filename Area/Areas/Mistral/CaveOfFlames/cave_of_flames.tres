@@ -9,6 +9,5 @@
 script = ExtResource("1_7nkp0")
 id = 0
 name = "Cave of Flames"
-zones = Array[Resource("res://Area/Zones/zone_base.gd")]([ExtResource("3_teajl"), ExtResource("4_b8oum"), null, null])
+zones = Array[Resource("res://Area/Zones/zone_base.gd")]([ExtResource("3_teajl"), ExtResource("4_b8oum")])
 bg = ExtResource("1_51811")
-is_visible = false

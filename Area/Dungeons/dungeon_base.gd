@@ -7,4 +7,3 @@ class_name Dungeon
 ## Zones for the dungeon. Add them in the order you want them displayed
 @export var zones: Array[Zone] = []
 @export var bg: CompressedTexture2D
-@export var is_visible: bool = false

@@ -21,8 +21,9 @@ func show_area():
 
 func show_dungeons():
 	for dungeon in area.dungeons:
-		var btn = _create_dungeon_button(dungeon)
-		$Background.add_child(btn)
+		if dungeon.is_visible:
+			var btn = _create_dungeon_button(dungeon)
+			$Background.add_child(btn)
 
 
 # Create dungeon button, assign text/position, listen for click
