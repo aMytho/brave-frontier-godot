@@ -15,6 +15,7 @@
 [sub_resource type="Resource" id="Resource_v5gvr"]
 script = ExtResource("9_j6og3")
 message = "Hey, you! Do you know how long I've been waiting here!?"
+# added french dialogue - message = "Salut toi! Sais-tu combien de temps que tu es ici!?"
 character = 0
 frame = 2
 wait_before = 0
@@ -23,6 +24,7 @@ wait_after = 0
 [sub_resource type="Resource" id="Resource_neaem"]
 script = ExtResource("9_j6og3")
 message = "Wow! Looks like you've already fused some of your Units, am I right? They do look stronger!"
+# added french dialogue - message = "Wow! Il semble que tu ais fusionné tes unités, ai-je tords? Tes unité semblent plus forte!"
 character = 0
 frame = 0
 wait_before = 0
@@ -31,6 +33,7 @@ wait_after = 0
 [sub_resource type="Resource" id="Resource_uer8c"]
 script = ExtResource("9_j6og3")
 message = "But the path ahead is truly a long one. Never forget to strengthen your units, your enemies will only grow stronger from here on out."
+# added french dialogue - message = "Le chemin que tu vas prendre est vraiment long. N'oublie jamais d'améliorer les unités qui t'accompagnent, tes ennemis seront de plus en plus fort."
 character = 0
 frame = 3
 wait_before = 0
@@ -39,6 +42,7 @@ wait_after = 0
 [sub_resource type="Resource" id="Resource_ln306"]
 script = ExtResource("9_j6og3")
 message = "Well then, let's continue with the fundamentals of battle. Are you ready? Then let's make our way across the grasslands!"
+# added french dialogue - message = "Bon, continuons les fondamentaux du combat. Est-tu prêt? Faisons notre chemin à travers ces plaines!"
 character = 0
 frame = 0
 wait_before = 0
@@ -55,7 +59,9 @@ music = ExtResource("3_vdvdc")
 script = ExtResource("1_bcj8e")
 id = 1
 name = "Basics of Battle"
+# Added french - name = "Les bases du combat"
 description = "It's time to discuss basic combat techniques!"
+# Added french - description = "Apprenons les techniques de base!"
 energy = 0
 stage = Array[Resource("res://Area/Stages/stage_base.gd")]([ExtResource("2_pmpjo"), ExtResource("3_747vs"), ExtResource("4_xb5rb")])
 is_visible = false
