@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bsxy37kw7c7gk"
+
+[deps]
+
+files=["res://Area/Areas/Mistral/AdventurePrairie/Assets/translations.en_US.translation"]
+
+source_file="res://Area/Areas/Mistral/AdventurePrairie/Assets/translations.csv"
+dest_files=["res://Area/Areas/Mistral/AdventurePrairie/Assets/translations.en_US.translation"]
+
+[params]
+
+compress=true
+delimiter=0

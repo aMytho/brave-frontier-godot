@@ -42,3 +42,7 @@ Account={
 "deadzone": 0.5,
 "events": []
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://Area/Areas/Mistral/AdventurePrairie/Assets/translations.en_US.translation")
