@@ -45,4 +45,4 @@ Account={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://Area/Areas/Mistral/AdventurePrairie/Assets/translations.en_US.translation")
+locale/translations=PackedStringArray("res://Area/Areas/Mistral/AdventurePrairie/Assets/translations.en_US.translation", "res://Area/Areas/Mistral/AdventurePrairie/Assets/translations.fr_FR.translation")
