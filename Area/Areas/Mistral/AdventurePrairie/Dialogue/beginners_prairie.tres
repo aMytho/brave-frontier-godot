@@ -7,7 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_v0vfc"]
 script = ExtResource("2_vr55d")
-message = "Come on... <wait=20>WAKE UP ALREADY!!!"
+message = "BASICS_OF_BATTLE_DIALOGUE_1"
 character = 0
 frame = 2
 wait_before = 0
@@ -15,7 +15,7 @@ wait_after = 0
 
 [sub_resource type="Resource" id="Resource_4alm8"]
 script = ExtResource("2_vr55d")
-message = "...Hmm?<wait=30> Me?<wait=40><br>I'm your guide, can't you tell?!<br>Didn't you hear from Lord Lucius?<wait=40><br>Hmph…"
+message = "BASICS_OF_BATTLE_DIALOGUE_2"
 character = 0
 frame = 6
 wait_before = 0
@@ -23,7 +23,7 @@ wait_after = 0
 
 [sub_resource type="Resource" id="Resource_ckvjn"]
 script = ExtResource("2_vr55d")
-message = "I'm the goddess, Tilith. <wait=40><br>I've been assigned as your guide to help you"
+message = "BASICS_OF_BATTLE_DIALOGUE_3"
 character = 0
 frame = 0
 wait_before = 0
@@ -31,7 +31,7 @@ wait_after = 0
 
 [sub_resource type="Resource" id="Resource_yu8kw"]
 script = ExtResource("2_vr55d")
-message = "Huh?<wait=20> Guide you where?<wait=20> Through Grand Gaia, of course!<wait=20><br>My my, for someone who has the power to enter the Gate, you're pretty clueless, aren't you?"
+message = "BASICS_OF_BATTLE_DIALOGUE_4"
 character = 0
 frame = 3
 wait_before = 0
@@ -39,7 +39,7 @@ wait_after = 0
 
 [sub_resource type="Resource" id="Resource_yhf12"]
 script = ExtResource("2_vr55d")
-message = "At any rate, we first need to get across this field<wait=40><br>We can talk more later."
+message = "BASICS_OF_BATTLE_DIALOGUE_5"
 character = 0
 frame = 6
 wait_before = 0
@@ -47,7 +47,7 @@ wait_after = 0
 
 [sub_resource type="Resource" id="Resource_xntv3"]
 script = ExtResource("2_vr55d")
-message = "Wh-<wait=20>What's that?!"
+message = "BASICS_OF_BATTLE_DIALOGUE_6"
 character = 0
 frame = 3
 wait_before = 0
@@ -55,7 +55,7 @@ wait_after = 0
 
 [sub_resource type="Resource" id="Resource_frjl0"]
 script = ExtResource("2_vr55d")
-message = "<size=24>Look out!!<wait=20><br>I-It's a monster!!<br><size=20>Quick, do something, summon your Units!"
+message = "BASICS_OF_BATTLE_DIALOGUE_7"
 character = 0
 frame = 4
 wait_before = 0
@@ -63,7 +63,7 @@ wait_after = 0
 
 [sub_resource type="Resource" id="Resource_1ilf0"]
 script = ExtResource("2_vr55d")
-message = "...What? <wait=20>You don't know how?"
+message = "BASICS_OF_BATTLE_DIALOGUE_8"
 character = 0
 frame = 2
 wait_before = 0
@@ -71,7 +71,7 @@ wait_after = 0
 
 [sub_resource type="Resource" id="Resource_s30jd"]
 script = ExtResource("2_vr55d")
-message = "You're a summoner, aren't you?!<br>Just concentrate!!"
+message = "BASICS_OF_BATTLE_DIALOGUE_9"
 character = 0
 frame = 2
 wait_before = 0

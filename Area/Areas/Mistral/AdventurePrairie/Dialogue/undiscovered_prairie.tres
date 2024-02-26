@@ -7,7 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_yfwsq"]
 script = ExtResource("2_8n4xy")
-message = "Wow!"
+message = "UNDISCOVERED_PRAIRIE_DIALOGUE_1"
 character = 0
 frame = 6
 wait_before = 0

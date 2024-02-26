@@ -14,7 +14,7 @@
 
 [sub_resource type="Resource" id="Resource_v5gvr"]
 script = ExtResource("9_j6og3")
-message = "Hey, you! Do you know how long I've been waiting here!?"
+message = "BASICS_OF_BATTLE_DIALOGUE_10"
 character = 0
 frame = 2
 wait_before = 0
@@ -22,7 +22,7 @@ wait_after = 0
 
 [sub_resource type="Resource" id="Resource_neaem"]
 script = ExtResource("9_j6og3")
-message = "Wow! Looks like you've already fused some of your Units, am I right? They do look stronger!"
+message = "BASICS_OF_BATTLE_DIALOGUE_11"
 character = 0
 frame = 0
 wait_before = 0
@@ -30,7 +30,7 @@ wait_after = 0
 
 [sub_resource type="Resource" id="Resource_uer8c"]
 script = ExtResource("9_j6og3")
-message = "But the path ahead is truly a long one. Never forget to strengthen your units, your enemies will only grow stronger from here on out."
+message = "BASICS_OF_BATTLE_DIALOGUE_12"
 character = 0
 frame = 3
 wait_before = 0
@@ -38,7 +38,7 @@ wait_after = 0
 
 [sub_resource type="Resource" id="Resource_ln306"]
 script = ExtResource("9_j6og3")
-message = "Well then, let's continue with the fundamentals of battle. Are you ready? Then let's make our way across the grasslands!"
+message = "BASICS_OF_BATTLE_DIALOGUE_13"
 character = 0
 frame = 0
 wait_before = 0

@@ -13,4 +13,3 @@ id = 0
 name = "Adventurer's Prairie"
 zones = Array[Resource("res://Area/Zones/zone_base.gd")]([ExtResource("4_os0vo"), ExtResource("3_qlt6c"), ExtResource("5_3nnal"), ExtResource("7_ngp6q")])
 bg = ExtResource("1_1il4c")
-is_visible = true

@@ -15,7 +15,7 @@
 
 [sub_resource type="Resource" id="Resource_px4od"]
 script = ExtResource("11_hgn13")
-message = "It seems like there's nothing left for me to teach you. Why don't you try getting out of the grasslands by yourself?"
+message = "ADVENTURE_START_DIALOGUE_1"
 character = 0
 frame = 0
 wait_before = 0
@@ -23,7 +23,7 @@ wait_after = 0
 
 [sub_resource type="Resource" id="Resource_lvwf6"]
 script = ExtResource("11_hgn13")
-message = "I'll come see you again once you've made it to the cave just beyond the grasslands."
+message = "ADVENTURE_START_DIALOGUE_2"
 character = 0
 frame = 0
 wait_before = 0
@@ -31,7 +31,7 @@ wait_after = 0
 
 [sub_resource type="Resource" id="Resource_xjdts"]
 script = ExtResource("11_hgn13")
-message = "Be sure to strengthen up before then! You can do it, Summoner!"
+message = "ADVENTURE_START_DIALOGUE_3"
 character = 0
 frame = 1
 wait_before = 0

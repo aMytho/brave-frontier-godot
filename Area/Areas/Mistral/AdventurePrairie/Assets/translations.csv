@@ -9,3 +9,20 @@ BASICS_OF_BATTLE_DESC,It's time to discuss basic combat techniques!,Parlons des 
 GUARDIAN_OF_THE_PRAIRIE_DESC,"You can see a rocky mountain faintly on the horizon. Tilith is waiting at the ""Cave of Flames"" just beyond here.","Tu vois la grande montagne là bas? Tilith t'attends dans la ""Grotte Enflammé""."
 PRAIRIE_MONSTER_DESC,The calm grassland keep on going. The monsters here are just right for a beginner. Keep moving forward.,Cette plaine est tellement calme. Les monstres présent sont juste là pour entraîner les débutant.
 UNDISCOVERED_PRAIRIE_DESC,Tilith didn't mention anything about this area…,Tilith n'a jamais parlé de cet endroit...
+BASICS_OF_BATTLE_DIALOGUE_1,Come on... <wait=20>WAKE UP ALREADY!!!,
+BASICS_OF_BATTLE_DIALOGUE_2,"...Hmm?<wait=30> Me?<wait=40><br>I'm your guide, can't you tell?!<br>Didn't you hear from Lord Lucius?<wait=40><br>Hmph…",
+BASICS_OF_BATTLE_DIALOGUE_3,"I'm the goddess, Tilith. <wait=40><br>I've been assigned as your guide to help you",
+BASICS_OF_BATTLE_DIALOGUE_4,"Huh?<wait=20> Guide you where?<wait=20> Through Grand Gaia, of course!<wait=20><br>My my, for someone who has the power to enter the Gate, you're pretty clueless, aren't you?",
+BASICS_OF_BATTLE_DIALOGUE_5,"At any rate, we first need to get across this field<wait=40><br>We can talk more later.",
+BASICS_OF_BATTLE_DIALOGUE_6,Wh-<wait=20>What's that?!,
+BASICS_OF_BATTLE_DIALOGUE_7,"<size=24>Look out!!<wait=20><br>I-It's a monster!!<br><size=20>Quick, do something, summon your Units!",
+BASICS_OF_BATTLE_DIALOGUE_8,...What? <wait=20>You don't know how?,
+BASICS_OF_BATTLE_DIALOGUE_9,"You're a summoner, aren't you?!<br>Just concentrate!!",
+BASICS_OF_BATTLE_DIALOGUE_10,"Hey, you! Do you know how long I've been waiting here!?",
+BASICS_OF_BATTLE_DIALOGUE_11,"Wow! Looks like you've already fused some of your Units, am I right? They do look stronger!",
+BASICS_OF_BATTLE_DIALOGUE_12,"But the path ahead is truly a long one. Never forget to strengthen your units, your enemies will only grow stronger from here on out.",
+BASICS_OF_BATTLE_DIALOGUE_13,"Well then, let's continue with the fundamentals of battle. Are you ready? Then let's make our way across the grasslands!",
+ADVENTURE_START_DIALOGUE_1,It seems like there's nothing left for me to teach you. Why don't you try getting out of the grasslands by yourself?,
+ADVENTURE_START_DIALOGUE_2,I'll come see you again once you've made it to the cave just beyond the grasslands.,
+ADVENTURE_START_DIALOGUE_3,"Be sure to strengthen up before then! You can do it, Summoner!",
+UNDISCOVERED_PRAIRIE_DIALOGUE_1,Wow!,
