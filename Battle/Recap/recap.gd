@@ -13,8 +13,8 @@ func _ready():
 	$AudioStreamPlayer.play()
 	
 	# Set names of dungeon and zone
-	$Dungeon.text = dungeon_name
-	$Zone.text = '"' + zone.name + '"'
+	$Dungeon.text = tr(dungeon_name)
+	$Zone.text = '"' + tr(zone.name) + '"'
 	
 	# Load the rewards scene in the content switcher
 	# TODO: Get the actual rewards to display them
