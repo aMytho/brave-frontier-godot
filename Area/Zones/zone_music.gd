@@ -19,11 +19,11 @@ func fade_control(action: MusicState, music_file = null):
 	match action:
 		MusicState.STOP:
 			# Stop the music
-			tween.tween_property(self, "volume_db", -80.0, 1.5)
+			tween.tween_property(self, "volume_db", -80.0, 2.0)
 			tween.tween_callback(self.stop)
 		MusicState.START:
 			# Play the music
 			if music_file != null:
 				self.stream = music_file
-			tween.tween_property(self, "volume_db", -10.0, 1.5)
+			tween.tween_property(self, "volume_db", -10.0, 2.0)
 			tween.tween_callback(self.play)
