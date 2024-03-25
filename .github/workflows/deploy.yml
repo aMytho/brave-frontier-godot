@@ -24,8 +24,6 @@ permissions:
   pages: write
   contents: write
 env:
-  GODOT_VERSION: 4.2.1
-  EXPORT_NAME: Brave-Frontier-Godot
   PROJECT_PATH: .
   GODOT_VERSION: ${{ github.event.inputs.godot_version }}
   EXPORT_PLATFORM: ${{ github.event.inputs.export_platform }}
