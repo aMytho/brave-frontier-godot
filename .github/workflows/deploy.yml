@@ -48,7 +48,7 @@ jobs:
         run: |
           cd ${EXPORT_FOLDER}
           mkdir -v -p build/web
-          godot -v --export "HTML5" ./build/web/index.html
+          godot -v --headless --export-release "HTML5" ./build/web/index.html
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
