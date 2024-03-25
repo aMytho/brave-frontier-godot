@@ -7,7 +7,7 @@ on:
 env:
   GODOT_VERSION: 4.2.1
   EXPORT_NAME: Brave-Frontier-Godot
-  PROJECT_PATH: Brave-Frontier-Godot
+  PROJECT_PATH: ./
 
 jobs:
   export-web:
