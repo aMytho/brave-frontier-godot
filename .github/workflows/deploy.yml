@@ -55,6 +55,9 @@ jobs:
           name: Web
           path: ${{ env.EXPORT_FOLDER }}/build/web
       # Installing rsync is needed in order to deploy to GitHub Pages. Without it, the build will fail.
+      - name: Fix Dubious Repo
+        run: |
+          git config --global safe.directory '*'
       - name: Install rsync 📚
         run: |
           apt-get update && apt-get install -y rsync
