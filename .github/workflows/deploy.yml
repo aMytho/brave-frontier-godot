@@ -11,6 +11,9 @@ env:
 
 jobs:
   export-web:
+    permissions:
+      pages: write
+      id-token: write
     name: Web Export
     runs-on: ubuntu-20.04
     container:
