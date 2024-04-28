@@ -1,52 +1,42 @@
-image: barichello/godot-ci:4.0.2
+name: "godot-ci export"
+on: push
 
-# NOTE: the `cd` command in each build stage is not necessary if your
-# project.godot is at the repo root
-
-# Cache imported assets between runs
-cache:
-  key: import-assets
-  paths:
-    - .godot/imported/
-
-stages:
-  - import-assets
-  - export
-  - deploy
-
-variables:
+env:
+  GODOT_VERSION: 4.2.1
   EXPORT_NAME: Brave-Frontier-Godot
+  PROJECT_PATH: Brave-Frontier-Godot
 
-# Open the editor to import assets in case the cache was empty or outdated
-import-assets:
-  stage: import-assets
-  script:
-    - godot --headless --verbose --editor --quit
-
-web:
-  stage: export
-  script:
-    - mkdir -v -p build/web
-    - godot --headless --verbose --export-release "HTML5" ../build/web/index.html
-  artifacts:
-    name: $EXPORT_NAME-$CI_JOB_NAME
-    paths:
-      - build/web
-
-# GitHub Pages Deploy
-deploy-github-pages:
-  stage: deploy
-  dependencies:
-    - web
-  script:
-    # This ensures the `gh-pages` branch is available.
-    - git fetch
-    - git checkout gh-pages
-    - rm -f *.md
-    - mv build/web/** .
-    - git config user.email $GIT_EMAIL
-    - git config user.name $GIT_USERNAME
-    - git remote add github $REMOTE_URL
-    - git add -A
-    - 'git commit -m "ci: Deploy GitHub Page | $EXPORT_NAME:$CI_JOB_NAME" -m "Deploy from GitLab pipeline #$CI_PIPELINE_ID" || true'
-    - git push github gh-pages -f
+jobs:
+  export-web:
+    name: Web Export
+    runs-on: ubuntu-20.04
+    container:
+      image: barichello/godot-ci:4.2.1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+      - name: Web Build
+        run: |
+          mkdir -v -p build/web
+          cd $PROJECT_PATH
+          godot --headless --verbose --editor --quit-after 10
+          godot --headless --verbose --export-release "HTML5" ../build/web/index.html
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: web
+          path: build/web
+      - name: Install rsync 📚
+        run: |
+          apt-get update && apt-get install -y rsync
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build/web # The folder the action should deploy.
