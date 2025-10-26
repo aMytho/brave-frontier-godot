@@ -58,6 +58,7 @@ Player data is stored in an SQLite database. Rather than keep a full record of a
 
 ![DB and Godot Resource](https://github.com/aMytho/brave-frontier-godot/assets/58316242/39dacee8-5dc4-462b-b888-9dc1dc17227f)
 
+The database is located in your app data folder. Windows users should look in `Users/AppData/Roaming/Brave-Frontier-Godot`. In this directory (or one of the sub folders), find the main.db or dev.db. The first file is used if you download the production build from the release page. The 2nd file is used if you are editing this project with the engine. You can modify anything in the database with an external DB client. Mac and Linux users should look in their application configuration folders. This varies based on platform and distribution.
 
 Unlike the original game, this is a purely offline implementation. There are no plans to add multiplayer of any kind. As noted above, this project is just for practice with the Godot engine.
 
